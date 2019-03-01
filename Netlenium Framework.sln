@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium.Driver", "Netlenium.Driver\Netlenium.Driver.csproj", "{0C046F1E-8A63-4722-94D9-80986978C017}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium", "Netlenium\Netlenium.csproj", "{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{13590606-25D6-4391-8688-19B81895682B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium.Driver.Chrome", "Netlenium.Driver.Chrome\Netlenium.Driver.Chrome.csproj", "{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium.Driver.GeckoFXLib", "Netlenium.Driver.GeckoFXLib\Netlenium.Driver.GeckoFXLib.csproj", "{8D0A4270-8BA5-4C69-9402-5A4FFBE54E21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C046F1E-8A63-4722-94D9-80986978C017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C046F1E-8A63-4722-94D9-80986978C017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C046F1E-8A63-4722-94D9-80986978C017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C046F1E-8A63-4722-94D9-80986978C017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13590606-25D6-4391-8688-19B81895682B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13590606-25D6-4391-8688-19B81895682B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13590606-25D6-4391-8688-19B81895682B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13590606-25D6-4391-8688-19B81895682B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0A4270-8BA5-4C69-9402-5A4FFBE54E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0A4270-8BA5-4C69-9402-5A4FFBE54E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0A4270-8BA5-4C69-9402-5A4FFBE54E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0A4270-8BA5-4C69-9402-5A4FFBE54E21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
