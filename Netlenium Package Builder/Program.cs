@@ -225,7 +225,7 @@ namespace NetleniumBuild
             Data.Add("internal", Convert.ToString(VersionInformation.InternalName));
             Data.Add("publisher", Convert.ToString(VersionInformation.CompanyName));
 
-            var Results = new XElement("Netlenium.Framework", Data.AllKeys.Select(o => new XElement(o, Data[o])));
+            var Results = new XElement("Netlenium_Framework", Data.AllKeys.Select(o => new XElement(o, Data[o])));
             return Results.ToString();
 
         }
