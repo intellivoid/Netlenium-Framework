@@ -177,7 +177,7 @@ namespace NetleniumBuild
             Print(MessageType.Information, $"Name: {(string)JsonPackageMetaInformation["name"]}");
             Print(MessageType.Information, $"Version: {(string)JsonPackageMetaInformation["version"]}");
 
-            if ((string)JsonPackageMetaInformation["author"] == null)
+            if ((string)JsonPackageMetaInformation["author"] != null)
             {
                 Print(MessageType.Information, $"Author: {(string)JsonPackageMetaInformation["author"]}");
             }
@@ -186,7 +186,7 @@ namespace NetleniumBuild
                 Print(MessageType.Information, $"Author: None");
             }
 
-            if ((string)JsonPackageMetaInformation["company"] == null)
+            if ((string)JsonPackageMetaInformation["company"] != null)
             {
                 Print(MessageType.Information, $"Company: {(string)JsonPackageMetaInformation["company"]}");
             }
