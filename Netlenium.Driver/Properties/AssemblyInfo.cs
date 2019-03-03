@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Netlenium.Driver")]
+[assembly: AssemblyTitle("Netlenium Driver Controller/Handler")]
 [assembly: AssemblyDescription("Driver handler for Netlenium")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Intellivoid")]
-[assembly: AssemblyProduct("Netlenium")]
+[assembly: AssemblyProduct("Netlenium Framework")]
 [assembly: AssemblyCopyright("Copyright © Intellivoid 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

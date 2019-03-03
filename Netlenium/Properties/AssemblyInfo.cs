@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Netlenium Framework Library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Intellivoid")]
-[assembly: AssemblyProduct("Netlenium")]
+[assembly: AssemblyProduct("Netlenium Framework")]
 [assembly: AssemblyCopyright("Copyright © Intellivoid 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
