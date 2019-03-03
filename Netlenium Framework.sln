@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium.Driver.GeckoFXLib
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium Package Builder", "Netlenium Package Builder\Netlenium Package Builder.csproj", "{0CBD9069-3BD7-4EAC-A4B7-DC0765F01641}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium Runtime", "Netlenium Runtime\Netlenium Runtime.csproj", "{D87FFE89-5CA2-4E16-9C5C-DB0F9EB4CC2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium Runtime", "Netlenium Runtime\Netlenium Runtime.csproj", "{EAC91731-F4E8-4E4D-B7C2-A1E972DB10FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,12 +59,12 @@ Global
 		{0CBD9069-3BD7-4EAC-A4B7-DC0765F01641}.Full Compile|Any CPU.Build.0 = Full Compile|Any CPU
 		{0CBD9069-3BD7-4EAC-A4B7-DC0765F01641}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CBD9069-3BD7-4EAC-A4B7-DC0765F01641}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D87FFE89-5CA2-4E16-9C5C-DB0F9EB4CC2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D87FFE89-5CA2-4E16-9C5C-DB0F9EB4CC2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D87FFE89-5CA2-4E16-9C5C-DB0F9EB4CC2F}.Full Compile|Any CPU.ActiveCfg = Release|Any CPU
-		{D87FFE89-5CA2-4E16-9C5C-DB0F9EB4CC2F}.Full Compile|Any CPU.Build.0 = Release|Any CPU
-		{D87FFE89-5CA2-4E16-9C5C-DB0F9EB4CC2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D87FFE89-5CA2-4E16-9C5C-DB0F9EB4CC2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC91731-F4E8-4E4D-B7C2-A1E972DB10FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC91731-F4E8-4E4D-B7C2-A1E972DB10FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC91731-F4E8-4E4D-B7C2-A1E972DB10FE}.Full Compile|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC91731-F4E8-4E4D-B7C2-A1E972DB10FE}.Full Compile|Any CPU.Build.0 = Release|Any CPU
+		{EAC91731-F4E8-4E4D-B7C2-A1E972DB10FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC91731-F4E8-4E4D-B7C2-A1E972DB10FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

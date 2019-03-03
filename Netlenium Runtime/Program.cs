@@ -1,123 +1,115 @@
-﻿using CommandLine;
-using Ionic.Zip;
+﻿using Ionic.Zip;
+using Microsoft.Scripting.Hosting;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Console = Colorful.Console;
 
 namespace NetleniumRuntime
 {
-    public class CLIOptions
-    {
-        [Option('f', "file", Required = true, HelpText = "The Netlenium Package file location (.np file)")]
-        public string Source { get; set; }
-
-    }
-
     class Program
     {
+        private static string RuntimeID;
+
+        static void ProcessExitHandler(object sender, EventArgs e)
+        {
+            ClearRuntime();
+            Environment.Exit(0);
+        }
+        public static string AssemblyDirectory
+        {
+            get
+            {
+                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                UriBuilder uri = new UriBuilder(codeBase);
+                string path = Uri.UnescapeDataString(uri.Path);
+                return Path.GetDirectoryName(path);
+            }
+        }
+
+        [STAThread]
         static void Main(string[] args)
         {
             AppDomain.CurrentDomain.ProcessExit += ProcessExitHandler;
-            var Opotions = Parser.Default.ParseArguments<CLIOptions>(args).WithParsed(
-                options => {
-                    Main(options);
-                });
-        }
+            string PackageFile = Convert.ToString(args[0]);
 
-        private static string RuntimeID;
-
-        static void Main(CLIOptions Options)
-        {
-            // Check if the File Exists
-            if (File.Exists(Options.Source) == false)
+            if (File.Exists(PackageFile) == false)
             {
-                Console.WriteLine($"Error: The file \"{Options.Source}\" does not exist!", System.Drawing.Color.Red);
+                Console.WriteLine(PackageFile);
+                Console.WriteLine($"Error: The file \"{PackageFile}\" does not exist!", System.Drawing.Color.Red);
                 Environment.Exit(1);
             }
 
-            // Check if the Runtime Directory Exists
-            string RuntimeDirectory = $"{Netlenium.Configuration.ApplicationDataDirectory}{Path.DirectorySeparatorChar}Runtime";
-
-            if (Directory.Exists(RuntimeDirectory) == false)
-            {
-                try
-                {
-                    Directory.CreateDirectory(RuntimeDirectory);
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine($"Error: The runtime directory cannot be created, {exception.Message}", System.Drawing.Color.Red);
-                    Environment.Exit(1);
-                }
-            }
-
-            // Assign a Runtime ID and create the enviroment
-            RuntimeID = RandomRuntimeID(12);
-            string RuntimeEnvironment = $"{Netlenium.Configuration.ApplicationDataDirectory}{Path.DirectorySeparatorChar}Runtime{Path.DirectorySeparatorChar}{RuntimeID}";
-
-            if (Directory.Exists(RuntimeEnvironment))
-            {
-                try
-                {
-                    Directory.Delete(RuntimeEnvironment);
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Error: Duplicate Runtime", System.Drawing.Color.Red);
-                    Environment.Exit(1);
-                }
-            }
-
-            Directory.CreateDirectory(RuntimeEnvironment);
+            string RuntimeEnvironment = CreateEnvironment();
 
             // Extract the package contents
             try
             {
-                ZipFile zip = ZipFile.Read(Options.Source);
+                ZipFile zip = ZipFile.Read(PackageFile);
                 Directory.CreateDirectory(RuntimeEnvironment);
                 zip.ExtractAll(RuntimeEnvironment, ExtractExistingFileAction.OverwriteSilently);
             }
-            catch(Exception)
+            catch (Exception)
             {
                 Console.WriteLine("Error: There was an issue while trying to read the Netlenium Package", System.Drawing.Color.Red);
-                ClearRuntime();
                 Environment.Exit(1);
             }
 
-            // Include the CLR Modules in the Python Script
+            // Build from source
             string MainScript = $"{RuntimeEnvironment}{Path.DirectorySeparatorChar}source{Path.DirectorySeparatorChar}main.py";
             string ImportedScript = $"{RuntimeEnvironment}{Path.DirectorySeparatorChar}source{Path.DirectorySeparatorChar}c_main.py";
-            string CompiledScript = $"{Properties.Resources.RuntimeImportModules}{Environment.NewLine}{File.ReadAllText(MainScript)}";
-
+            string CompiledScript = $"{Properties.Resources.ImportModules}{Environment.NewLine}{File.ReadAllText(MainScript)}";
             File.WriteAllText(ImportedScript, CompiledScript);
+            
+            ScriptEngine pythonEngine = IronPython.Hosting.Python.CreateEngine();
+            ScriptScope scope = pythonEngine.CreateScope();
+            scope.SetVariable("NetleniumRuntime", AssemblyDirectory);
+            scope.SetVariable("LIB_Netlenium", "Netlenium.dll");
+            scope.SetVariable("LIB_NetleniumDriver", "Netlenium.Driver.dll");
+            ScriptSource pythonScript = pythonEngine.CreateScriptSourceFromFile(ImportedScript);
+            pythonScript.Execute(scope);
 
-            Process.Start("explorer.exe", RuntimeEnvironment);
-
-            ClearRuntime();
             Environment.Exit(0);
-
+            
         }
 
-        private static Random RandomObject = new Random();
-
-        public static string RandomRuntimeID(int length)
+        /// <summary>
+        /// Creates a runtime environment
+        /// </summary>
+        /// <returns></returns>
+        private static string CreateEnvironment()
         {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length).Select(s => s[RandomObject.Next(s.Length)]).ToArray());
-        }
+            RuntimeID = RandomRuntimeID(12);
 
-        private static void ClearRuntime()
-        {
-            if (Directory.Exists($"{Netlenium.Configuration.ApplicationDataDirectory}{Path.DirectorySeparatorChar}Runtime{Path.DirectorySeparatorChar}{RuntimeID}"))
+            if (Directory.Exists($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}"))
             {
                 try
                 {
-                    Directory.Delete($"{Netlenium.Configuration.ApplicationDataDirectory}{Path.DirectorySeparatorChar}Runtime{Path.DirectorySeparatorChar}{RuntimeID}");
+                    Directory.Delete($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}");
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error: Duplicate Runtime", System.Drawing.Color.Red);
+                }
+            }
+
+            Directory.CreateDirectory($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}");
+
+            return $"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}";
+        }
+
+       
+
+        private static void ClearRuntime()
+        {
+            if (Directory.Exists($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}"))
+            {
+                try
+                {
+                    Directory.Delete($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}", true);
                 }
                 catch (Exception)
                 {
@@ -126,10 +118,12 @@ namespace NetleniumRuntime
             }
         }
 
-        static void ProcessExitHandler(object sender, EventArgs e)
+        private static Random RandomObject = new Random();
+
+        public static string RandomRuntimeID(int length)
         {
-            ClearRuntime();
-            Environment.Exit(0);
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length).Select(s => s[RandomObject.Next(s.Length)]).ToArray());
         }
     }
 }

@@ -117,9 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="RuntimeImportModules" xml:space="preserve">
-    <value>import clr
-clr.AddReference('Netlenium')
-clr.AddReference('Netlenium.Driver')</value>
+  <data name="ImportModules" xml:space="preserve">
+    <value>import sys
+import clr
+sys.path.append(NetleniumRuntime)
+clr.AddReference(LIB_Netlenium)
+clr.AddReference(LIB_NetleniumDriver)</value>
+    <comment>The runtime modules that get imported before execution of the Python File</comment>
   </data>
 </root>

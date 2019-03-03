@@ -48,6 +48,24 @@ namespace Netlenium
             }
         }
 
-        
+        /// <summary>
+        /// The runtime directory for Python Programs
+        /// </summary>
+        public static string RuntimeDirectory
+        {
+            get
+            {
+                string DirectoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}Runtime";
+
+                if (Directory.Exists(DirectoryPath) == false)
+                {
+                    Directory.CreateDirectory(DirectoryPath);
+                }
+
+                return DirectoryPath;
+            }
+        }
+
+
     }
 }

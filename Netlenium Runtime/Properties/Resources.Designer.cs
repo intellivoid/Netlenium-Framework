@@ -61,13 +61,15 @@ namespace NetleniumRuntime.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to import clr
-        ///clr.AddReference(&apos;Netlenium&apos;)
-        ///clr.AddReference(&apos;Netlenium.Driver&apos;).
+        ///   Looks up a localized string similar to import sys
+        ///import clr
+        ///sys.path.append(NetleniumRuntime)
+        ///clr.AddReference(LIB_Netlenium)
+        ///clr.AddReference(LIB_NetleniumDriver).
         /// </summary>
-        internal static string RuntimeImportModules {
+        internal static string ImportModules {
             get {
-                return ResourceManager.GetString("RuntimeImportModules", resourceCulture);
+                return ResourceManager.GetString("ImportModules", resourceCulture);
             }
         }
     }
