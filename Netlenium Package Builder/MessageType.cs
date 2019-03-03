@@ -1,4 +1,4 @@
-﻿namespace npbuild
+﻿namespace NetleniumBuild
 {
     public enum MessageType
     {

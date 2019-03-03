@@ -1,7 +1,6 @@
 ﻿using CommandLine;
 using Ionic.Zip;
 using Newtonsoft.Json.Linq;
-using npbuild;
 using System;
 using System.Collections.Specialized;
 using System.Diagnostics;
@@ -12,7 +11,7 @@ using System.Reflection;
 using System.Xml.Linq;
 using Console = Colorful.Console;
 
-namespace Netlenium_Package_Builder
+namespace NetleniumBuild
 {
     /// <summary>
     /// CLI Options for Netlenium package Builder
@@ -91,22 +90,22 @@ namespace Netlenium_Package_Builder
             switch(Type)
             {
                 case MessageType.Out:
-                    Console.Write("> ", Color.White);
+                    Console.Write(" > ", Color.White);
                     Console.WriteLine(Output);
                     break;
 
                 case MessageType.Information:
-                    Console.Write("[INFO] ", Color.Cyan);
+                    Console.Write(" [INFO] ", Color.Cyan);
                     Console.WriteLine(Output);
                     break;
 
                 case MessageType.Warning:
-                    Console.Write("[WARNING] ", Color.Yellow);
+                    Console.Write(" [WARNING] ", Color.Yellow);
                     Console.WriteLine(Output);
                     break;
 
                 case MessageType.Error:
-                    Console.Write("[ERROR] ", Color.Red);
+                    Console.Write(" [ERROR] ", Color.Red);
                     Console.WriteLine(Output);
                     break;
             }
@@ -143,7 +142,7 @@ namespace Netlenium_Package_Builder
                     Zip.AddEntry("c_netlenium.driver.xml", ConstructDependency("Netlenium.Driver"));
                     Zip.AddEntry("c_netlenium.driver.chrome.xml", ConstructDependency("Netlenium.Driver.Chrome"));
                     Zip.AddEntry("c_netlenium.driver.geckofxlib.xml", ConstructDependency("Netlenium.Driver.GeckoFXLib"));
-                    Print(MessageType.Out, "Writing build to disk");
+                    Print(MessageType.Out, "Writing package to disk");
                     Zip.Save($"{Source}.np");
                 }
             }
