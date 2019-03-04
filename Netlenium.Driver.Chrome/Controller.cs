@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,9 +12,20 @@ namespace Netlenium.Driver.Chrome
     /// </summary>
     public class Controller
     {
+        /// <summary>
+        /// Primary Driver Controller
+        /// </summary>
         public ChromeDriver _Driver;
 
+        /// <summary>
+        /// Container for executing Javascript Calls
+        /// </summary>
         private IJavaScriptExecutor _JavascriptExecuter;
+
+        /// <summary>
+        /// Handles Selenium interactions
+        /// </summary>
+        private Actions _DriverAction;
 
         /// <summary>
         /// Constructs the chrome controller and configures the chrome driver
@@ -41,6 +53,7 @@ namespace Netlenium.Driver.Chrome
         {
             this._Driver = new ChromeDriver(Driver.DriverDirectory);
             this._JavascriptExecuter = (IJavaScriptExecutor)this._Driver;
+            this._DriverAction = new Actions(this._Driver);
         }
 
         /// <summary>
@@ -106,6 +119,23 @@ namespace Netlenium.Driver.Chrome
         public void GoForward()
         {
             this._Driver.Navigate().Forward();
+        }
+
+        /// <summary>
+        /// Moves to the given IWebElement
+        /// </summary>
+        /// <param name="Element"></param>
+        public void MoveTo(IWebElement Element)
+        {
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver.Chrome", $"Moving to element \"{Element.ToString()}\"");
+            try
+            {
+                _DriverAction.MoveToElement(Element);
+            }
+            catch (Exception exception)
+            {
+                Logging.WriteEntry(Types.LogType.Warning, "Netlenium.Driver.Chrome", $"Cannot move to element; {exception.Message}");
+            }
         }
 
         /// <summary>

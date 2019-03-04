@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Netlenium.Driver
 {
@@ -64,7 +65,7 @@ namespace Netlenium.Driver
         }
 
         /// <summary>
-        /// Gets the attribute value of the element
+        /// Returns the value of a specified attribute on the element. 
         /// </summary>
         /// <param name="AttributeName"></param>
         /// <returns></returns>
@@ -84,7 +85,7 @@ namespace Netlenium.Driver
         }
 
         /// <summary>
-        /// Sets/Changes the attribute name of the 
+        /// Sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
         /// </summary>
         /// <param name="AttributeName"></param>
         /// <param name="Value"></param>
@@ -102,6 +103,44 @@ namespace Netlenium.Driver
 
                 default:
                     throw new ElementMethodNotSupportedForDriver();
+            }
+        }
+
+        /// <summary>
+        /// Simulates a mouse click on an element
+        /// </summary>
+        public void Click()
+        {
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Invoking Click Event on Element");
+
+            switch(TargetDriver)
+            {
+                case Types.Driver.Chrome:
+                    try
+                    {
+                        this.ChromeElement.Click();
+                        break;
+                    }
+                    catch(Exception exception)
+                    {
+                        Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", $"There was an error while trying to click the element; {exception.Message}");
+                        throw new InvokeFailureException();
+                    }
+
+                case Types.Driver.GeckoLib:
+                    try
+                    {
+                        this.GeckoFXLibElement.Click();
+                        break;
+                    }
+                    catch (Exception exception)
+                    {
+                        Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", $"There was an error while trying to click the element; {exception.Message}");
+                        throw new InvokeFailureException();
+                    }
+
+                default:
+                    throw new MethodNotSupportedForDriver();
             }
         }
 

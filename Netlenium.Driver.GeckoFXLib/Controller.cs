@@ -12,7 +12,7 @@ namespace Netlenium.Driver.GeckoFXLib
         /// <summary>
         /// The private GeckoWebBrowser Control
         /// </summary>
-        private GeckoWebBrowser _GeckoWebBrowser;
+        public GeckoWebBrowser _GeckoWebBrowser;
 
         /// <summary>
         /// The web view UI, if Hide Paramerter is set to false in Initialize() this won't be shown.

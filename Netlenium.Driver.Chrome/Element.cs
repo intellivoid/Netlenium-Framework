@@ -66,6 +66,16 @@ namespace Netlenium.Driver.Chrome
         }
 
         /// <summary>
+        /// simulates a mouse click on an element.
+        /// </summary>
+        public void Click()
+        {
+            _DriverController.MoveTo(_Element);
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver.Chrome", $"Clicking Element \"{_Element.ToString()}\"");
+            _Element.Click();
+        }
+
+        /// <summary>
         /// Returns a live ElementCollection of elements with the given search type name and input
         /// </summary>
         /// <param name="SearchType"></param>

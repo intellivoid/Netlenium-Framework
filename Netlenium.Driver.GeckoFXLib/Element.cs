@@ -1,4 +1,5 @@
 ﻿using Gecko;
+using Gecko.WebIDL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,15 @@ namespace Netlenium.Driver.GeckoFXLib
         public void SetAttribute(string AttributeName, string Value)
         {
             this._Element.SetAttribute(AttributeName, Value);
+        }
+
+        /// <summary>
+        /// Simulates a mouse click on an element.
+        /// </summary>
+        public void Click()
+        {
+            GeckoHtmlElement GeckoHTMLElement = (GeckoHtmlElement)_Element;
+            GeckoHTMLElement.Click();
         }
 
         /// <summary>
