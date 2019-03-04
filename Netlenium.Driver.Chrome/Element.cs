@@ -6,10 +6,13 @@ namespace Netlenium.Driver.Chrome
 {
     public class Element
     {
+        /// <summary>
+        /// The IWebElement from Chrome
+        /// </summary>
         private IWebElement _Element;
 
         /// <summary>
-        /// 
+        /// Driver Controller
         /// </summary>
         private Controller _DriverController;
 
@@ -24,6 +27,9 @@ namespace Netlenium.Driver.Chrome
             this._DriverController = DriverController;
         }
 
+        /// <summary>
+        /// The Text-Contents from the Element
+        /// </summary>
         public string Text
         {
             get
@@ -32,6 +38,11 @@ namespace Netlenium.Driver.Chrome
             }
         }
 
+        /// <summary>
+        /// returns the value of a specified attribute on the element
+        /// </summary>
+        /// <param name="AttributeName"></param>
+        /// <returns></returns>
         public string GetAttribute(string AttributeName)
         {
             try
@@ -44,11 +55,22 @@ namespace Netlenium.Driver.Chrome
             }
         }
 
+        /// <summary>
+        /// Sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
+        /// </summary>
+        /// <param name="AttributeName"></param>
+        /// <param name="Value"></param>
         public void SetAttribute(string AttributeName, string Value)
         {
             _DriverController._Driver.ExecuteScript("arguments[0].setAttribute(arguments[1], arguments[2]);", this._Element, AttributeName, Value);
         }
 
+        /// <summary>
+        /// Returns a live ElementCollection of elements with the given search type name and input
+        /// </summary>
+        /// <param name="SearchType"></param>
+        /// <param name="Input"></param>
+        /// <returns></returns>
         public List<Element> GetElements(Types.SearchType SearchType, string Input)
         {
             List<Element> Elements = new List<Element>();

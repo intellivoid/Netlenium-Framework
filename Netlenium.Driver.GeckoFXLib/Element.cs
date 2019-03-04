@@ -41,6 +41,12 @@ namespace Netlenium.Driver.GeckoFXLib
             this._Element.SetAttribute(AttributeName, Value);
         }
 
+        /// <summary>
+        /// Returns a live ElementCollection of elements with the given search type name and input
+        /// </summary>
+        /// <param name="SearchType"></param>
+        /// <param name="Input"></param>
+        /// <returns></returns>
         public List<Element> GetElements(Types.SearchType SearchType, string Input)
         {
             List<Element> Elements = new List<Element>();
@@ -53,6 +59,7 @@ namespace Netlenium.Driver.GeckoFXLib
                     {
                         Elements.Add(new Element(FoundElement, this._DriverController));
                     }
+                    
 
                     return Elements;
 

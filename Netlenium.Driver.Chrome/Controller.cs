@@ -44,6 +44,36 @@ namespace Netlenium.Driver.Chrome
         }
 
         /// <summary>
+        /// Quits the driver and unreleases used resources
+        /// </summary>
+        public void Quit()
+        {
+            _Driver.Quit();
+        }
+
+        /// <summary>
+        /// the current title of the document
+        /// </summary>
+        public string DocumentTitle
+        {
+            get
+            {
+                return _Driver.Title;
+            }
+        }
+
+        /// <summary>
+        /// The current URL
+        /// </summary>
+        public string URL
+        {
+            get
+            {
+                return _Driver.Url;
+            }
+        }
+
+        /// <summary>
         /// Executes Javascript Code
         /// </summary>
         /// <param name="Code"></param>
@@ -79,7 +109,7 @@ namespace Netlenium.Driver.Chrome
         }
 
         /// <summary>
-        /// Finds the requested elements on the page
+        /// Returns a live ElementCollection of elements with the given search type name and input
         /// </summary>
         /// <param name="SearchType"></param>
         /// <param name="Input"></param>

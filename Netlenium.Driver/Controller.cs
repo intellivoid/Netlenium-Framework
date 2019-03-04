@@ -44,17 +44,22 @@ namespace Netlenium.Driver
         /// <summary>
         /// Initializes the driver
         /// </summary>
-        public void Initialize()
+        /// <param name="Hide">Hides the WebView, throws a warning if it's not available for the driver</param>
+        public void Initialize(bool Hide = false)
         {
             Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Initializing Driver");
             switch (_DriverType)
             {
                 case Types.Driver.Chrome:
+                    if (Hide == true)
+                    {
+                        Logging.WriteEntry(Types.LogType.Warning, "Netlenium.Driver", "The hide paramerter is not available for the selected driver");
+                    }
                     this._ChromeController.Initialize();
                     break;
 
                 case Types.Driver.GeckoLib:
-                    this._GeckoController.Initialize();
+                    this._GeckoController.Initialize(Hide);
                     break;
 
                 default:
@@ -64,19 +69,100 @@ namespace Netlenium.Driver
         }
 
         /// <summary>
+        /// Quits the driver and unreleases used resources
+        /// </summary>
+        public void Quit()
+        {
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Quitting Driver, unreleasing used resources");
+            switch(_DriverType)
+            {
+                case Types.Driver.Chrome:
+                    _ChromeController.Quit();
+                    Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Success");
+                    break;
+
+                case Types.Driver.GeckoLib:
+                    _GeckoController.Quit();
+                    Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Success");
+                    break;
+
+                default:
+                    Logging.WriteEntry(Types.LogType.Error, "Neltneium.Driver", "The given method Quit() is not supported for the given driver");
+                    throw new MethodNotSupportedForDriver();
+            }
+        }
+
+        /// <summary>
+        /// the current title of the document
+        /// </summary>
+        public string DocumentTitle
+        {
+            get
+            {
+                switch(_DriverType)
+                {
+                    case Types.Driver.Chrome:
+                        return _ChromeController.DocumentTitle;
+
+                    case Types.Driver.GeckoLib:
+                        return _GeckoController.DocumentTitle;
+
+                    default:
+                        throw new PropertyNotAvailableForSelectedDriver();
+                }
+            }
+        }
+
+        /// <summary>
+        /// The current URL
+        /// </summary>
+        public string URL
+        {
+            get
+            {
+                switch(_DriverType)
+                {
+                    case Types.Driver.Chrome:
+                        return _ChromeController.URL;
+
+                    case Types.Driver.GeckoLib:
+                        return _GeckoController.URL;
+
+                    default:
+                        throw new PropertyNotAvailableForSelectedDriver();
+                }
+            }
+        }
+
+        /// <summary>
         /// Executes Javascript Code
         /// </summary>
         /// <param name="Code"></param>
-        /// <returns></returns>
+        /// <returns>Execution Results</returns>
         public string ExecuteJS(string Code)
         {
             switch (_DriverType)
             {
                 case Types.Driver.Chrome:
-                    return this._ChromeController.ExecuterJS(Code);
+                    try
+                    {
+
+                        return this._ChromeController.ExecuterJS(Code);
+                    }
+                    catch(Exception exception)
+                    {
+                        throw new JavascriptExecutionException(exception.Message);
+                    }
 
                 case Types.Driver.GeckoLib:
-                    return this._GeckoController.ExecuteJS(Code);
+                    try
+                    {
+                        return this._GeckoController.ExecuteJS(Code);
+                    }
+                    catch(Exception exception)
+                    {
+                        throw new JavascriptExecutionException(exception.Message);
+                    }
 
                 default:
                     throw new MethodNotSupportedForDriver();
@@ -159,6 +245,12 @@ namespace Netlenium.Driver
             Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Navigated");
         }
 
+        /// <summary>
+        /// Returns a live ElementCollection of elements with the given search type name and input
+        /// </summary>
+        /// <param name="SearchType"></param>
+        /// <param name="Input"></param>
+        /// <returns></returns>
         public List<WebElement> GetElements(Types.SearchType SearchType, string Input)
         {
             Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Getting Elements by {SearchType.ToString()} ({Input})");
