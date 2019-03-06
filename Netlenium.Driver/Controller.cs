@@ -51,11 +51,7 @@ namespace Netlenium.Driver
             switch (_DriverType)
             {
                 case Types.Driver.Chrome:
-                    if (Hide == true)
-                    {
-                        Logging.WriteEntry(Types.LogType.Warning, "Netlenium.Driver", "The hide paramerter is not available for the selected driver");
-                    }
-                    this._ChromeController.Initialize();
+                    this._ChromeController.Initialize(Hide);
                     break;
 
                 case Types.Driver.GeckoLib:

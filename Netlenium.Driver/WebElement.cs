@@ -145,7 +145,7 @@ namespace Netlenium.Driver
                     catch(Exception exception)
                     {
                         Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", $"There was an error while trying to click the element; {exception.Message}");
-                        throw new InvokeFailureException();
+                        throw new InvokeFailureException(exception.Message);
                     }
 
                 case Types.Driver.GeckoLib:
@@ -157,7 +157,7 @@ namespace Netlenium.Driver
                     catch (Exception exception)
                     {
                         Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", $"There was an error while trying to click the element; {exception.Message}");
-                        throw new InvokeFailureException();
+                        throw new InvokeFailureException(exception.Message);
                     }
 
                 default:

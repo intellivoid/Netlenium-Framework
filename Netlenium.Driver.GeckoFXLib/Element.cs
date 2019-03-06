@@ -184,6 +184,8 @@ namespace Netlenium.Driver.GeckoFXLib
                     {
                         Elements.Add(new Element(FoundElement, this._DriverController));
                     }
+
+                    GeckoHtmlElement EMTL = (GeckoHtmlElement)_Element;
                     
 
                     return Elements;

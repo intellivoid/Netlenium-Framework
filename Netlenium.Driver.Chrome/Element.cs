@@ -34,6 +34,7 @@ namespace Netlenium.Driver.Chrome
         {
             get
             {
+                _DriverController.MoveTo(_Element);
                 return this._Element.Text;
             }
         }

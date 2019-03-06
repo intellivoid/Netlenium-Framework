@@ -49,11 +49,24 @@ namespace Netlenium.Driver.Chrome
         /// <summary>
         /// Initializes the Chrome Driver
         /// </summary>
-        public void Initialize()
+        /// <param name="Hide"></param>
+        public void Initialize(bool Hide = false)
         {
-            this._Driver = new ChromeDriver(Driver.DriverDirectory);
+            if(Hide == true)
+            {
+                ChromeOptions options = new ChromeOptions();
+                options.AddArgument("headless");
+                options.AddArguments("window-size=1200x600");
+
+                this._Driver = new ChromeDriver(Driver.DriverDirectory, options);
+            }
+            else
+            {
+                this._Driver = new ChromeDriver(Driver.DriverDirectory);
+            }
             this._JavascriptExecuter = (IJavaScriptExecutor)this._Driver;
             this._DriverAction = new Actions(this._Driver);
+
         }
 
         /// <summary>
