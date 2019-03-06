@@ -191,6 +191,12 @@ namespace Netlenium.Driver
             Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Success");
         }
 
+        /// <summary>
+        /// Returns a collection of all elements in the document with the specified search method
+        /// </summary>
+        /// <param name="SearchType"></param>
+        /// <param name="Input"></param>
+        /// <returns></returns>
         public List<WebElement> GetElements(Types.SearchType SearchType, string Input)
         {
             List<WebElement> WebElements = new List<WebElement>();
@@ -216,6 +222,41 @@ namespace Netlenium.Driver
                     }
 
                     return WebElements;
+
+                default:
+                    throw new MethodNotSupportedForDriver();
+            }
+        }
+
+        /// <summary>
+        /// <returns></returns>
+        /// Returns the first element of all elements in the document with the specified search method
+        /// </summary>
+        /// <param name="SearchType"></param>
+        /// <param name="Input"></param>
+        public WebElement GetElement(Types.SearchType SearchType, string Input)
+        {
+            switch(TargetDriver)
+            {
+                case Types.Driver.Chrome:
+                    List<Chrome.Element> ChromeResults = ChromeElement.GetElements(SearchType, Input);
+
+                    if(ChromeResults.Count > 1)
+                    {
+                        return new WebElement(ChromeResults[0]);
+                    }
+
+                    throw new NoElementsFoundException();
+
+                case Types.Driver.GeckoLib:
+                    List<GeckoFXLib.Element> GeckoFXLibResults = GeckoFXLibElement.GetElements(SearchType, Input);
+
+                    if(GeckoFXLibResults.Count > 1)
+                    {
+                        return new WebElement(GeckoFXLibResults[0]);
+                    }
+
+                    throw new NoElementsFoundException();
 
                 default:
                     throw new MethodNotSupportedForDriver();

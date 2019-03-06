@@ -56,6 +56,7 @@
     <Compile Include="InvokeFailureException.cs" />
     <Compile Include="JavascriptExecutionException.cs" />
     <Compile Include="MethodNotSupportedForDriver.cs" />
+    <Compile Include="NoElementsFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
