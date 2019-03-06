@@ -54,7 +54,7 @@ namespace Netlenium.Driver.GeckoFXLib
         public void Click()
         {
             GeckoHtmlElement GeckoHTMLElement = (GeckoHtmlElement)_Element;
-
+            // TODO: Need to simulate mousedown and mouseup event
             GeckoHTMLElement.Click();
             //DomEventArgs ev = _DriverController._GeckoWebBrowser.Document.CreateEvent("MouseEvent");
             //var webEvent = new Event(_DriverController._GeckoWebBrowser.Window.DomWindow, ev.DomEvent as nsISupports);
@@ -69,6 +69,10 @@ namespace Netlenium.Driver.GeckoFXLib
             //_Element.GetEventTarget().DispatchEvent(ev);
         }
 
+        /// <summary>
+        /// Simulates typing into the event
+        /// </summary>
+        /// <param name="Text"></param>
         public void SendKeys(string Text)
         {
             GeckoHtmlElement GeckoHTMLElement = (GeckoHtmlElement)_Element;
@@ -88,9 +92,16 @@ namespace Netlenium.Driver.GeckoFXLib
 
         }
 
+        /// <summary>
+        /// Simulates a key press event
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="key"></param>
+        /// <param name="alt"></param>
+        /// <param name="ctrl"></param>
+        /// <param name="shift"></param>
         private void SendKeyEvent(string type, string key, bool alt, bool ctrl, bool shift)
         {
-            var WebBrowser = _DriverController._GeckoWebBrowser;
             // Escape for JS.
             key = key.Replace("\\", "\\\\");
             var instance = Xpcom.CreateInstance<nsITextInputProcessor>("@mozilla.org/text-input-processor;1");
@@ -98,7 +109,7 @@ namespace Netlenium.Driver.GeckoFXLib
             {
                 var result = context.EvaluateScript(
                     $@"new KeyboardEvent('', {{ key: '{key}', code: '', keyCode: 0, ctrlKey : {(ctrl ? "true" : "false")}, shiftKey : {(shift ? "true" : "false")}, altKey : {(alt ? "true" : "false")} }});");
-                instance.BeginInputTransaction((mozIDOMWindow)((GeckoWebBrowser)WebBrowser).Document.DefaultView.DomWindow, new KeyEventCallback());
+                instance.BeginInputTransaction((mozIDOMWindow)((GeckoWebBrowser)_DriverController._GeckoWebBrowser).Document.DefaultView.DomWindow, new KeyEventCallback());
                 instance.Keydown((nsIDOMEvent)result.ToObject(), 0, 1);
                 instance.Keyup((nsIDOMEvent)result.ToObject(), 0, 1);
             }
@@ -106,7 +117,10 @@ namespace Netlenium.Driver.GeckoFXLib
             Marshal.ReleaseComObject(instance);
         }
 
-        public class KeyEventCallback : nsITextInputProcessorCallback
+        /// <summary>
+        /// Callback Processor for GeckoFX LibEventss
+        /// </summary>
+        private class KeyEventCallback : nsITextInputProcessorCallback
         {
             public bool OnNotify(nsITextInputProcessor aTextInputProcessor, nsITextInputProcessorNotification aNotification)
             {

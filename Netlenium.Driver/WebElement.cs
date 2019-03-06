@@ -140,13 +140,34 @@ namespace Netlenium.Driver
                     }
 
                 default:
-                    throw new MethodNotSupportedForDriver();
+                    throw new ElementMethodNotSupportedForDriver();
             }
         }
 
+        /// <summary>
+        /// Simulates typing into the event
+        /// </summary>
+        /// <param name="Keys"></param>
         public void SendKeys(string Keys)
         {
-            this.GeckoFXLibElement.SendKeys(Keys);
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Simulating typing to element");
+            switch(TargetDriver)
+            {
+                case Types.Driver.Chrome:
+                    ChromeElement.SendKeys(Keys);
+                    break;
+
+                case Types.Driver.GeckoLib:
+                    GeckoFXLibElement.SendKeys(Keys);
+                    break;
+
+                default:
+                    Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", $"The method SendKeys() on this element is not supported for the given Driver.");
+                    throw new ElementMethodNotSupportedForDriver();
+
+            }
+
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Success");
         }
 
         public List<WebElement> GetElements(Types.SearchType SearchType, string Input)

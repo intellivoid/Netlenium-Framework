@@ -76,6 +76,36 @@ namespace Netlenium.Driver.Chrome
         }
 
         /// <summary>
+        /// Simulates typing into the event
+        /// </summary>
+        /// <param name="Text"></param>
+        public void SendKeys(string Text)
+        {
+            _DriverController.MoveTo(_Element);
+
+            try
+            {
+                _Element.SendKeys(Text);
+            }
+            catch (ElementNotVisibleException exception)
+            {
+                Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver.Chrome", $"Cannot send keys to elemet \"{_Element.ToString()}\" because the element is not visible");
+                throw exception;
+            }
+            catch (ElementNotInteractableException exception)
+            {
+                Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver.Chrome", $"Cannot send keys to elemet \"{_Element.ToString()}\" because the element is not interactable");
+                throw exception;
+            }
+            catch(Exception exception)
+            {
+                Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver.Chrome", $"Cannot send keys to elemet \"{_Element.ToString()}\", {exception.Message}");
+                throw exception;
+            }
+            
+        }
+
+        /// <summary>
         /// Returns a live ElementCollection of elements with the given search type name and input
         /// </summary>
         /// <param name="SearchType"></param>
