@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace NetleniumRuntime
@@ -122,6 +123,7 @@ namespace NetleniumRuntime
             ScriptSource pythonScript = pythonEngine.CreateScriptSourceFromFile(ImportedScript);
             pythonScript.Execute(scope);
 
+            Application.Run();
             Environment.Exit(0);
             
         }

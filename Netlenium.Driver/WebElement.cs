@@ -144,6 +144,11 @@ namespace Netlenium.Driver
             }
         }
 
+        public void SendKeys(string Keys)
+        {
+            this.GeckoFXLibElement.SendKeys(Keys);
+        }
+
         public List<WebElement> GetElements(Types.SearchType SearchType, string Input)
         {
             List<WebElement> WebElements = new List<WebElement>();

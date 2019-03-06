@@ -53,6 +53,7 @@
     <Compile Include="Controller.cs" />
     <Compile Include="ElementMethodNotSupportedForDriver.cs" />
     <Compile Include="ElementPropertyNotSupportedForDriver.cs" />
+    <Compile Include="InvokeFailureException.cs" />
     <Compile Include="JavascriptExecutionException.cs" />
     <Compile Include="MethodNotSupportedForDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

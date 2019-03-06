@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
 using Gecko.DOM;
+using System.Diagnostics;
 
 namespace Netlenium.Driver.GeckoFXLib
 {
@@ -68,6 +69,25 @@ namespace Netlenium.Driver.GeckoFXLib
             //_Element.GetEventTarget().DispatchEvent(ev);
         }
 
+        public void SendKeys(string Text)
+        {
+            GeckoHtmlElement GeckoHTMLElement = (GeckoHtmlElement)_Element;
+            GeckoHTMLElement.Focus();
+
+            foreach (char Key in Text)
+            {
+                try
+                {
+                    SendKeyEvent("keypress", Key.ToString(), false, false, false);
+                }
+                catch(Exception exception)
+                {
+                    Logging.WriteEntry(Types.LogType.Warning, "Netlenium.Driver.GeckoFXLib", $"Cannot simulate keypress for \"{Key}\", {exception.Message}");
+                }
+            }
+
+        }
+
         private void SendKeyEvent(string type, string key, bool alt, bool ctrl, bool shift)
         {
             var WebBrowser = _DriverController._GeckoWebBrowser;
@@ -78,18 +98,19 @@ namespace Netlenium.Driver.GeckoFXLib
             {
                 var result = context.EvaluateScript(
                     $@"new KeyboardEvent('', {{ key: '{key}', code: '', keyCode: 0, ctrlKey : {(ctrl ? "true" : "false")}, shiftKey : {(shift ? "true" : "false")}, altKey : {(alt ? "true" : "false")} }});");
-                instance.BeginInputTransaction((mozIDOMWindow)((GeckoWebBrowser)WebBrowser).Document.DefaultView.DomWindow, new TestCallback());
+                instance.BeginInputTransaction((mozIDOMWindow)((GeckoWebBrowser)WebBrowser).Document.DefaultView.DomWindow, new KeyEventCallback());
                 instance.Keydown((nsIDOMEvent)result.ToObject(), 0, 1);
                 instance.Keyup((nsIDOMEvent)result.ToObject(), 0, 1);
             }
 
             Marshal.ReleaseComObject(instance);
         }
-        public class TestCallback : nsITextInputProcessorCallback
+
+        public class KeyEventCallback : nsITextInputProcessorCallback
         {
             public bool OnNotify(nsITextInputProcessor aTextInputProcessor, nsITextInputProcessorNotification aNotification)
             {
-                Console.WriteLine("TestCallback:OnNotify");
+                Debug.Print(aNotification.ToString());
                 return true;
             }
         }
