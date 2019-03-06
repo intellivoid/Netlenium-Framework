@@ -93,20 +93,17 @@ namespace Netlenium.Driver.GeckoFXLib
         /// </summary>
         public void Click()
         {
-            GeckoHtmlElement GeckoHTMLElement = (GeckoHtmlElement)_Element;
-            // TODO: Need to simulate mousedown and mouseup event
-            GeckoHTMLElement.Click();
-            //DomEventArgs ev = _DriverController._GeckoWebBrowser.Document.CreateEvent("MouseEvent");
-            //var webEvent = new Event(_DriverController._GeckoWebBrowser.Window.DomWindow, ev.DomEvent as nsISupports);
+            DomEventArgs ev = _DriverController._GeckoWebBrowser.Document.CreateEvent("MouseEvent");
+            var webEvent = new Event(_Element.Window, ev.DomEvent as nsISupports);
 
-            //webEvent.InitEvent("mousedown", true, true);
-            //_Element.GetEventTarget().DispatchEvent(ev);
+            webEvent.InitEvent("mousedown", true, true);
+            _Element.GetEventTarget().DispatchEvent(ev);
 
-            //webEvent.InitEvent("mouseup", true, true);
-            //_Element.GetEventTarget().DispatchEvent(ev);
+            webEvent.InitEvent("mouseup", true, true);
+            _Element.GetEventTarget().DispatchEvent(ev);
 
-            //webEvent.InitEvent("click", true, true);
-            //_Element.GetEventTarget().DispatchEvent(ev);
+            webEvent.InitEvent("click", true, true);
+            _Element.GetEventTarget().DispatchEvent(ev);
         }
 
         /// <summary>
