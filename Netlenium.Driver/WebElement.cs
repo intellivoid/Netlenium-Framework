@@ -44,19 +44,40 @@ namespace Netlenium.Driver
         }
 
         /// <summary>
-        /// Returns the text content of the elementc
+        /// The Text-Contents from the Element
         /// </summary>
         public string Text
         {
             get
             {
-                switch(TargetDriver)
+                switch (TargetDriver)
                 {
                     case Types.Driver.Chrome:
                         return this.ChromeElement.Text;
 
                     case Types.Driver.GeckoLib:
                         return this.GeckoFXLibElement.Text;
+
+                    default:
+                        throw new ElementPropertyNotSupportedForDriver();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether or not this element is displayed.
+        /// </summary>
+        public bool Visible
+        {
+            get
+            {
+                switch(TargetDriver)
+                {
+                    case Types.Driver.Chrome:
+                        return this.ChromeElement.Visible;
+
+                    case Types.Driver.GeckoLib:
+                        return this.GeckoFXLibElement.Visible;
 
                     default:
                         throw new ElementPropertyNotSupportedForDriver();

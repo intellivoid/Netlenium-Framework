@@ -39,6 +39,17 @@ namespace Netlenium.Driver.Chrome
         }
 
         /// <summary>
+        /// Gets a value indicating whether or not this element is displayed.
+        /// </summary>
+        public bool Visible
+        {
+            get
+            {
+                return this._Element.Displayed;
+            }
+        }
+
+        /// <summary>
         /// returns the value of a specified attribute on the element
         /// </summary>
         /// <param name="AttributeName"></param>

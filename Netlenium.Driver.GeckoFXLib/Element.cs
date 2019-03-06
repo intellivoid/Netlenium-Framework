@@ -16,16 +16,30 @@ namespace Netlenium.Driver.GeckoFXLib
 {
     public class Element
     {
+        /// <summary>
+        /// Element Object
+        /// </summary>
         private GeckoElement _Element;
 
+        /// <summary>
+        /// Driver Controller
+        /// </summary>
         private Controller _DriverController;
 
+        /// <summary>
+        /// Constructs a GeckoElement
+        /// </summary>
+        /// <param name="Element"></param>
+        /// <param name="DriverController"></param>
         public Element(GeckoElement Element, Controller DriverController)
         {
             this._Element = Element;
             this._DriverController = DriverController;
         }
 
+        /// <summary>
+        /// The Text-Contents from the Element
+        /// </summary>
         public string Text
         {
             get
@@ -38,11 +52,37 @@ namespace Netlenium.Driver.GeckoFXLib
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether or not this element is displayed.
+        /// </summary>
+        public bool Visible
+        {
+            get
+            {
+                if(_Element != null)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// returns the value of a specified attribute on the element
+        /// </summary>
+        /// <param name="AttributeName"></param>
+        /// <returns></returns>
         public string GetAttribute(string AttributeName)
         {
             return this._Element.GetAttribute(AttributeName);
         }
 
+        /// <summary>
+        /// Sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
+        /// </summary>
+        /// <param name="AttributeName"></param>
+        /// <param name="Value"></param>
         public void SetAttribute(string AttributeName, string Value)
         {
             this._Element.SetAttribute(AttributeName, Value);
