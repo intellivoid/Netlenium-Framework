@@ -121,6 +121,7 @@
     <value>import sys
 import clr
 sys.path.append(NetleniumRuntime)
+sys.path.append(RuntimeDirectory)
 clr.AddReference(LIB_Netlenium)
 clr.AddReference(LIB_NetleniumDriver)</value>
     <comment>The runtime modules that get imported before execution of the Python File</comment>

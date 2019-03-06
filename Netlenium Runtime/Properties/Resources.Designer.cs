@@ -64,6 +64,7 @@ namespace NetleniumRuntime.Properties {
         ///   Looks up a localized string similar to import sys
         ///import clr
         ///sys.path.append(NetleniumRuntime)
+        ///sys.path.append(RuntimeDirectory)
         ///clr.AddReference(LIB_Netlenium)
         ///clr.AddReference(LIB_NetleniumDriver).
         /// </summary>

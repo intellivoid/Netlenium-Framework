@@ -118,6 +118,7 @@ namespace NetleniumRuntime
             ScriptEngine pythonEngine = IronPython.Hosting.Python.CreateEngine();
             ScriptScope scope = pythonEngine.CreateScope();
             scope.SetVariable("NetleniumRuntime", AssemblyDirectory);
+            scope.SetVariable("RuntimeDirectory", $"{RuntimeEnvironment}{Path.DirectorySeparatorChar}source");
             scope.SetVariable("LIB_Netlenium", "Netlenium.dll");
             scope.SetVariable("LIB_NetleniumDriver", "Netlenium.Driver.dll");
             ScriptSource pythonScript = pythonEngine.CreateScriptSourceFromFile(ImportedScript);
