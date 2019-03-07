@@ -33,7 +33,7 @@ namespace NetleniumBuild
         {
             var Opotions = Parser.Default.ParseArguments<CLIOptions>(args).WithParsed(
                 options => {
-                    Main(options);
+                    MainCLI(options);
                 });
         }
 
@@ -55,7 +55,7 @@ namespace NetleniumBuild
         /// Main Program for Building the Package
         /// </summary>
         /// <param name="Options"></param>
-        static void Main(CLIOptions Options)
+        static void MainCLI(CLIOptions Options)
         {
             Console.WriteLine($"Netlenium package Builder v{FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion}");
             Console.WriteLine("Written by Zi Xing Narrakas");

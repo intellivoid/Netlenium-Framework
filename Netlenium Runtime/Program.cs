@@ -68,7 +68,7 @@ namespace NetleniumRuntime
         {
             var Opotions = Parser.Default.ParseArguments<CLIOptions>(args).WithParsed(
                 options => {
-                    Main(options);
+                    MainCLI(options);
                 });
         }
 
@@ -76,7 +76,7 @@ namespace NetleniumRuntime
         /// Main Method of Execution for Netlenium Runtime
         /// </summary>
         /// <param name="Options"></param>
-        static void Main(CLIOptions Options)
+        static void MainCLI(CLIOptions Options)
         {
             AppDomain.CurrentDomain.ProcessExit += ProcessExitHandler;
             string PackageFile = Convert.ToString(Options.File);
