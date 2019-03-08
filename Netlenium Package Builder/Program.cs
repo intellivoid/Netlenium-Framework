@@ -1,5 +1,4 @@
-﻿using CommandLine;
-using Ionic.Zip;
+﻿using Ionic.Zip;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Specialized;

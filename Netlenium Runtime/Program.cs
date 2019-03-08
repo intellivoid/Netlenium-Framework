@@ -1,6 +1,6 @@
-﻿using CommandLine;
-using Ionic.Zip;
+﻿using Ionic.Zip;
 using Microsoft.Scripting.Hosting;
+using Mono.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,24 +11,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using Console = Colorful.Console;
 
 namespace NetleniumRuntime
 {
     /// <summary>
-    /// The command line arguments
+    /// The paramerters used for this Application
     /// </summary>
-    public class CLIOptions
+    class Paramerters
     {
-        [Option('f', "file", Required = true, HelpText = "Netlenium Package File Location (.np File)")]
-        public string File { get; set; }
+        /// <summary>
+        /// The Netlenium Package to execute (.np file)
+        /// </summary>
+        public string PackageFile
+        {
+            get; set;
+        }
 
-        [Option("skip-dependency-check", Required = false, Default = false, HelpText = "Skips the dependency check (No warnings/errors will be thrown for version mismatches)")]
-        public bool SkipDependencyCheck { get; set; }
-
+        /// <summary>
+        /// Skips the dependency check of the package
+        /// </summary>
+        public bool SkipDependencyCheck
+        {
+            get; set;
+        }
     }
 
     class Program
     {
+        private static Paramerters UsedParamerters;
+
         /// <summary>
         /// The Runtime ID that's currently set
         /// </summary>
@@ -48,7 +60,7 @@ namespace NetleniumRuntime
         /// <summary>
         /// The directory of the executing 
         /// </summary>
-        public static string AssemblyDirectory
+        private static string AssemblyDirectory
         {
             get
             {
@@ -60,31 +72,77 @@ namespace NetleniumRuntime
         }
 
         /// <summary>
-        /// Main Program which parses the arguements
+        /// Parses the arguments and returns the paramerters given
         /// </summary>
         /// <param name="args"></param>
-        [STAThread]
-        static void Main(string[] args)
+        /// <returns></returns>
+        private static void GetParamerters(string[] args)
         {
-            var Opotions = Parser.Default.ParseArguments<CLIOptions>(args).WithParsed(
-                options => {
-                    MainCLI(options);
-                });
+            UsedParamerters = new Paramerters();
+
+            var p = new OptionSet()
+            {
+                {
+                    "f|file=", "The Netlenium Package to execute (.np file)",
+                    v => {
+                        UsedParamerters.PackageFile = v;
+                    }
+                },
+                {
+                    "skip-dependency-check", "Skips the dependency check of the package",
+                    v => {
+                        UsedParamerters.SkipDependencyCheck = Convert.ToBoolean(v);
+                    }
+                }
+            };
+
+            try
+            {
+                p.Parse(args);
+
+                if (UsedParamerters.PackageFile == null)
+                {
+                    Console.WriteLine($"Error: Missing paramerter \"file\"{Environment.NewLine}", System.Drawing.Color.Red);
+                    ShowHelp();
+                    Environment.Exit(1);
+                }
+
+            }
+            catch (Exception)
+            {
+                ShowHelp();
+                Environment.Exit(1);
+            }
+        }
+
+        /// <summary>
+        /// Displays the help usage for this command-line application
+        /// </summary>
+        private static void ShowHelp()
+        {
+            Version ApplicationVersion = Assembly.GetExecutingAssembly().GetName().Version;
+
+            Console.WriteLine("Netlenium Package Builder");
+            Console.WriteLine($"Version {ApplicationVersion.ToString()}{Environment.NewLine}");
+
+            Console.WriteLine("usage: npbuild [options]");
+            Console.WriteLine(" options:");
+            Console.WriteLine("     -f, --file  required        The Netlenium Package to execute (.np file)");
+            Console.WriteLine("     --skip-dependency-check     Skips the dependency check of the package");
         }
 
         /// <summary>
         /// Main Method of Execution for Netlenium Runtime
         /// </summary>
         /// <param name="Options"></param>
-        static void MainCLI(CLIOptions Options)
+        static void Main(string[] args)
         {
             AppDomain.CurrentDomain.ProcessExit += ProcessExitHandler;
-            string PackageFile = Convert.ToString(Options.File);
+            GetParamerters(args);
 
-            if (File.Exists(PackageFile) == false)
+            if (File.Exists(UsedParamerters.PackageFile) == false)
             {
-                Console.WriteLine(PackageFile);
-                Console.WriteLine($"Error: The file \"{PackageFile}\" does not exist!", System.Drawing.Color.Red);
+                Console.WriteLine($"Error: The file \"{UsedParamerters.PackageFile}\" does not exist!", System.Drawing.Color.Red);
                 Environment.Exit(1);
             }
 
@@ -93,7 +151,7 @@ namespace NetleniumRuntime
             // Extract the package contents
             try
             {
-                ZipFile zip = ZipFile.Read(PackageFile);
+                ZipFile zip = ZipFile.Read(UsedParamerters.PackageFile);
                 Directory.CreateDirectory(RuntimeEnvironment);
                 zip.ExtractAll(RuntimeEnvironment, ExtractExistingFileAction.OverwriteSilently);
             }
@@ -103,8 +161,8 @@ namespace NetleniumRuntime
                 Environment.Exit(1);
             }
 
-            // Check required dependencies
-            if(Options.SkipDependencyCheck == false)
+            //Check required dependencies
+            if(UsedParamerters.SkipDependencyCheck == false)
             {
                 CheckDependencies(RuntimeEnvironment);
             }
