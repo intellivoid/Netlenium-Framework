@@ -1,5 +1,8 @@
 ﻿using Gecko;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace Netlenium.Driver.GeckoFXLib
@@ -9,6 +12,20 @@ namespace Netlenium.Driver.GeckoFXLib
     /// </summary>
     public class Controller
     {
+        /// <summary>
+        /// Fetches the Assembly's executing directory
+        /// </summary>
+        private static string AssemblyDirectory
+        {
+            get
+            {
+                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                UriBuilder uri = new UriBuilder(codeBase);
+                string path = Uri.UnescapeDataString(uri.Path);
+                return Path.GetDirectoryName(path);
+            }
+        }
+        
         /// <summary>
         /// The private GeckoWebBrowser Control
         /// </summary>
@@ -29,7 +46,7 @@ namespace Netlenium.Driver.GeckoFXLib
         /// </summary>
         public Controller()
         {
-            Xpcom.Initialize("Firefox");
+            Xpcom.Initialize($"{AssemblyDirectory}{Path.DirectorySeparatorChar}Firefox");
         }
 
         /// <summary>
