@@ -35,6 +35,14 @@ namespace NetleniumRuntime
         {
             get; set;
         }
+
+        /// <summary>
+        /// Displays the help menu
+        /// </summary>
+        public bool Help
+        {
+            get; set;
+        }
     }
 
     class Program
@@ -83,6 +91,19 @@ namespace NetleniumRuntime
             var p = new OptionSet()
             {
                 {
+                    "h|help=", "Displays the help menu",
+                    v => {
+                        if(v == null)
+                        {
+                            UsedParameters.Help = false;
+                        }
+                        else
+                        {
+                            UsedParameters.Help = true;
+                        }
+                    }
+                },
+                {
                     "f|file=", "The Netlenium Package to execute (.np file)",
                     v => {
                         UsedParameters.PackageFile = v;
@@ -91,14 +112,25 @@ namespace NetleniumRuntime
                 {
                     "skip-dependency-check", "Skips the dependency check of the package",
                     v => {
-                        UsedParameters.SkipDependencyCheck = Convert.ToBoolean(v);
+                        if(v == null)
+                        {
+                            UsedParameters.SkipDependencyCheck = false;
+                        }
+                        else
+                        {
+                            UsedParameters.SkipDependencyCheck = true;
+                        }
                     }
                 }
             };
 
             try
             {
-                p.Parse(args);
+                if(UsedParameters.Help == true)
+                {
+                    ShowHelp();
+                    Environment.Exit(0);
+                }
 
                 if (UsedParameters.PackageFile == null)
                 {
@@ -108,8 +140,9 @@ namespace NetleniumRuntime
                 }
 
             }
-            catch (Exception)
+            catch (Exception exception)
             {
+                Console.WriteLine(exception.Message);
                 ShowHelp();
                 Environment.Exit(1);
             }
@@ -127,6 +160,7 @@ namespace NetleniumRuntime
 
             Console.WriteLine("usage: netlenium_re [options]");
             Console.WriteLine(" options:");
+            Console.WriteLine("     -h, --help                  Displays the help menu");
             Console.WriteLine("     -f, --file  required        The Netlenium Package to execute (.np file)");
             Console.WriteLine("     --skip-dependency-check     Skips the dependency check of the package");
         }
