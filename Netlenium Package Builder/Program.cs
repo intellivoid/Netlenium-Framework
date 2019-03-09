@@ -22,6 +22,11 @@ namespace NetleniumBuild
         {
             get; set;
         }
+
+        public bool Help
+        {
+            get; set;
+        }
     }
 
     /// <summary>
@@ -42,12 +47,32 @@ namespace NetleniumBuild
                     v => {
                         UsedParameters.Source = v;
                     }
+                },
+                {
+                    "h|help=", "Displays the help menu",
+                    v =>
+                    {
+                        if(v == null)
+                        {
+                            UsedParameters.Help = false;
+                        }
+                        else
+                        {
+                            UsedParameters.Help = true;
+                        }
+                    }
                 }
             };
 
             try
             {
                 p.Parse(args);
+
+                if(UsedParameters.Help == true)
+                {
+                    ShowHelp();
+                    Environment.Exit(1);
+                }
 
                 if (UsedParameters.Source == null)
                 {
@@ -73,6 +98,7 @@ namespace NetleniumBuild
 
             Console.WriteLine("usage: npbuild [options]");
             Console.WriteLine(" options:");
+            Console.WriteLine("     -h, --help                  Displays the help menu");
             Console.WriteLine("     -s, --source  required      The source directory which contains the main python script and package metadata");
         }
 
