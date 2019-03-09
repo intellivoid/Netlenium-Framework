@@ -99,10 +99,6 @@
       <Project>{8d0a4270-8ba5-4c69-9402-5a4ffbe54e21}</Project>
       <Name>Netlenium.Driver.GeckoFXLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Netlenium.Driver.Linux_GeckoFXLib\Netlenium.Driver.Linux_GeckoFXLib.csproj">
-      <Project>{0ff92ea3-2c54-4d67-bcc3-5d001a5b98b3}</Project>
-      <Name>Netlenium.Driver.Linux_GeckoFXLib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Netlenium\Netlenium.csproj">
       <Project>{771c3ff1-37cb-4e3c-b86d-c8d88bb2c7a7}</Project>
       <Name>Netlenium</Name>

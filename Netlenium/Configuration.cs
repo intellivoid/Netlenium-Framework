@@ -13,6 +13,15 @@ namespace Netlenium
     public class Configuration
     {
         /// <summary>
+        /// Indicates if the Library is running in Mono
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsRunningOnMono()
+        {
+            return Type.GetType("Mono.Runtime") != null;
+        }
+
+        /// <summary>
         /// The Netlenium Application Data Directory
         /// </summary>
         public static string ApplicationDataDirectory

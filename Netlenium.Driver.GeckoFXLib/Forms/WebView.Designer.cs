@@ -46,9 +46,9 @@
             this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripStatusLabel,
             this.ToolStripProgressBar});
-            this.StatusStrip.Location = new System.Drawing.Point(0, 293);
+            this.StatusStrip.Location = new System.Drawing.Point(0, 288);
             this.StatusStrip.Name = "StatusStrip";
-            this.StatusStrip.Size = new System.Drawing.Size(559, 22);
+            this.StatusStrip.Size = new System.Drawing.Size(554, 22);
             this.StatusStrip.TabIndex = 0;
             // 
             // ToolStripStatusLabel
@@ -102,7 +102,7 @@
             this.GeckoWebBrowser.FrameEventsPropagateToMainWindow = false;
             this.GeckoWebBrowser.Location = new System.Drawing.Point(0, 0);
             this.GeckoWebBrowser.Name = "GeckoWebBrowser";
-            this.GeckoWebBrowser.Size = new System.Drawing.Size(559, 293);
+            this.GeckoWebBrowser.Size = new System.Drawing.Size(554, 288);
             this.GeckoWebBrowser.TabIndex = 1;
             this.GeckoWebBrowser.UseHttpActivityObserver = false;
             this.GeckoWebBrowser.DocumentCompleted += new System.EventHandler<Gecko.Events.GeckoDocumentCompletedEventArgs>(this.GeckoWebBrowser_DocumentCompleted);
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 315);
+            this.ClientSize = new System.Drawing.Size(554, 310);
             this.Controls.Add(this.GeckoWebBrowser);
             this.Controls.Add(this.StatusStrip);
             this.Icon = global::Netlenium.Driver.GeckoFXLib.Properties.Resources.logo;

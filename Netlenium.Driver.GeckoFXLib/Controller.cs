@@ -57,7 +57,7 @@ namespace Netlenium.Driver.GeckoFXLib
         {
             this._WebView = new Forms.WebView();
             this._GeckoWebBrowser = this._WebView.GeckoWebBrowser;
-            if(Hide == false)
+            if (Hide == false)
             {
                 this._WebView.Show();
             }
