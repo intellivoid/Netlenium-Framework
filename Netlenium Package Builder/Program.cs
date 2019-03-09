@@ -1,4 +1,5 @@
 ﻿using Ionic.Zip;
+using Mono.Options;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Specialized;
@@ -13,33 +14,72 @@ using Console = Colorful.Console;
 namespace NetleniumBuild
 {
     /// <summary>
-    /// CLI Options for Netlenium package Builder
+    /// The paramerters used for this Command Line Application
     /// </summary>
-    public class CLIOptions
+    class Paramerters
     {
-        [Option('s', "source", Required = true, HelpText = "The directory which contains the source code")]
-        public string Source { get; set; }
-
+        public string Source
+        {
+            get; set;
+        }
     }
 
+    /// <summary>
+    /// Main Program Class
+    /// </summary>
     class Program
     {
-        /// <summary>
-        /// Passes on the command line arguments to the main executing process
-        /// </summary>
-        /// <param name="args"></param>
-        static void Main(string[] args)
+        private static Paramerters UsedParameters;
+
+        private static void GetParamerters(string[] args)
         {
-            var Opotions = Parser.Default.ParseArguments<CLIOptions>(args).WithParsed(
-                options => {
-                    MainCLI(options);
-                });
+            UsedParameters = new Paramerters();
+
+            var p = new OptionSet()
+            {
+                {
+                    "s|source=", "The source directory which contains the main python script and package metadata",
+                    v => {
+                        UsedParameters.Source = v;
+                    }
+                }
+            };
+
+            try
+            {
+                p.Parse(args);
+
+                if (UsedParameters.Source == null)
+                {
+                    Console.WriteLine($"Error: Missing paramerter \"source\"{Environment.NewLine}", System.Drawing.Color.Red);
+                    ShowHelp();
+                    Environment.Exit(1);
+                }
+
+            }
+            catch (Exception)
+            {
+                ShowHelp();
+                Environment.Exit(1);
+            }
+        }
+
+        private static void ShowHelp()
+        {
+            Version ApplicationVersion = Assembly.GetExecutingAssembly().GetName().Version;
+
+            Console.WriteLine("Netlenium Package Builder");
+            Console.WriteLine($"Version {ApplicationVersion.ToString()}{Environment.NewLine}");
+
+            Console.WriteLine("usage: npbuild [options]");
+            Console.WriteLine(" options:");
+            Console.WriteLine("     -s, --source  required      The source directory which contains the main python script and package metadata");
         }
 
         /// <summary>
         /// Fetches the Assembly's executing directory
         /// </summary>
-        public static string AssemblyDirectory
+        private static string AssemblyDirectory
         {
             get
             {
@@ -54,17 +94,19 @@ namespace NetleniumBuild
         /// Main Program for Building the Package
         /// </summary>
         /// <param name="Options"></param>
-        static void MainCLI(CLIOptions Options)
+        static void Main(string[] args)
         {
+            GetParamerters(args);
+
             Console.WriteLine($"Netlenium package Builder v{FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion}");
             Console.WriteLine("Written by Zi Xing Narrakas");
             Console.WriteLine();
 
-            CheckResources(Options.Source);
+            CheckResources(UsedParameters.Source);
             
             try
             {
-                ReadMetaInformation(Options.Source);
+                ReadMetaInformation(UsedParameters.Source);
             }
             catch(Exception exception)
             {
@@ -72,7 +114,7 @@ namespace NetleniumBuild
                 Environment.Exit(1);
             }
 
-            BuildPackage(Options.Source);
+            BuildPackage(UsedParameters.Source);
 
             Print(MessageType.Information, "Package built successfully");
             Environment.Exit(0);

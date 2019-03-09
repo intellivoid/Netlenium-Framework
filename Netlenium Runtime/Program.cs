@@ -16,9 +16,9 @@ using Console = Colorful.Console;
 namespace NetleniumRuntime
 {
     /// <summary>
-    /// The paramerters used for this Application
+    /// The Parameters used for this Application
     /// </summary>
-    class Paramerters
+    class Parameters
     {
         /// <summary>
         /// The Netlenium Package to execute (.np file)
@@ -39,7 +39,7 @@ namespace NetleniumRuntime
 
     class Program
     {
-        private static Paramerters UsedParamerters;
+        private static Parameters UsedParameters;
 
         /// <summary>
         /// The Runtime ID that's currently set
@@ -78,20 +78,20 @@ namespace NetleniumRuntime
         /// <returns></returns>
         private static void GetParamerters(string[] args)
         {
-            UsedParamerters = new Paramerters();
+            UsedParameters = new Parameters();
 
             var p = new OptionSet()
             {
                 {
                     "f|file=", "The Netlenium Package to execute (.np file)",
                     v => {
-                        UsedParamerters.PackageFile = v;
+                        UsedParameters.PackageFile = v;
                     }
                 },
                 {
                     "skip-dependency-check", "Skips the dependency check of the package",
                     v => {
-                        UsedParamerters.SkipDependencyCheck = Convert.ToBoolean(v);
+                        UsedParameters.SkipDependencyCheck = Convert.ToBoolean(v);
                     }
                 }
             };
@@ -100,7 +100,7 @@ namespace NetleniumRuntime
             {
                 p.Parse(args);
 
-                if (UsedParamerters.PackageFile == null)
+                if (UsedParameters.PackageFile == null)
                 {
                     Console.WriteLine($"Error: Missing paramerter \"file\"{Environment.NewLine}", System.Drawing.Color.Red);
                     ShowHelp();
@@ -122,10 +122,10 @@ namespace NetleniumRuntime
         {
             Version ApplicationVersion = Assembly.GetExecutingAssembly().GetName().Version;
 
-            Console.WriteLine("Netlenium Package Builder");
+            Console.WriteLine("Netlenium Runtime");
             Console.WriteLine($"Version {ApplicationVersion.ToString()}{Environment.NewLine}");
 
-            Console.WriteLine("usage: npbuild [options]");
+            Console.WriteLine("usage: netlenium_re [options]");
             Console.WriteLine(" options:");
             Console.WriteLine("     -f, --file  required        The Netlenium Package to execute (.np file)");
             Console.WriteLine("     --skip-dependency-check     Skips the dependency check of the package");
@@ -140,9 +140,9 @@ namespace NetleniumRuntime
             AppDomain.CurrentDomain.ProcessExit += ProcessExitHandler;
             GetParamerters(args);
 
-            if (File.Exists(UsedParamerters.PackageFile) == false)
+            if (File.Exists(UsedParameters.PackageFile) == false)
             {
-                Console.WriteLine($"Error: The file \"{UsedParamerters.PackageFile}\" does not exist!", System.Drawing.Color.Red);
+                Console.WriteLine($"Error: The file \"{UsedParameters.PackageFile}\" does not exist!", System.Drawing.Color.Red);
                 Environment.Exit(1);
             }
 
@@ -151,7 +151,7 @@ namespace NetleniumRuntime
             // Extract the package contents
             try
             {
-                ZipFile zip = ZipFile.Read(UsedParamerters.PackageFile);
+                ZipFile zip = ZipFile.Read(UsedParameters.PackageFile);
                 Directory.CreateDirectory(RuntimeEnvironment);
                 zip.ExtractAll(RuntimeEnvironment, ExtractExistingFileAction.OverwriteSilently);
             }
@@ -162,7 +162,7 @@ namespace NetleniumRuntime
             }
 
             //Check required dependencies
-            if(UsedParamerters.SkipDependencyCheck == false)
+            if(UsedParameters.SkipDependencyCheck == false)
             {
                 CheckDependencies(RuntimeEnvironment);
             }
@@ -173,6 +173,8 @@ namespace NetleniumRuntime
             string CompiledScript = $"{Properties.Resources.ImportModules}{Environment.NewLine}{File.ReadAllText(MainScript)}";
             File.WriteAllText(ImportedScript, CompiledScript);
             
+            // TODO: Define Package Variables
+
             ScriptEngine pythonEngine = IronPython.Hosting.Python.CreateEngine();
             ScriptScope scope = pythonEngine.CreateScope();
             scope.SetVariable("NetleniumRuntime", AssemblyDirectory);
