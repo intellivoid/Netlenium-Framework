@@ -46,7 +46,7 @@ namespace Netlenium.Driver.GeckoFXLib
         /// </summary>
         public Controller()
         {
-            Xpcom.Initialize($"{AssemblyDirectory}{Path.DirectorySeparatorChar}Firefox");
+            Xpcom.Initialize($"{AssemblyDirectory}{Path.DirectorySeparatorChar}xulrunner_win32");
         }
 
         /// <summary>

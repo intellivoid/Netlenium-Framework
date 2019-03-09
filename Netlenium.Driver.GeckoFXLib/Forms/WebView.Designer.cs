@@ -32,7 +32,7 @@
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ToolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
+            this.MainMenu = new System.Windows.Forms.MainMenu(this.components);
             this.FileMenuItem = new System.Windows.Forms.MenuItem();
             this.ExitMenuItem = new System.Windows.Forms.MenuItem();
             this.AboutMenuItem = new System.Windows.Forms.MenuItem();
@@ -63,9 +63,9 @@
             this.ToolStripProgressBar.Size = new System.Drawing.Size(164, 16);
             this.ToolStripProgressBar.Visible = false;
             // 
-            // mainMenu1
+            // MainMenu
             // 
-            this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.MainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.FileMenuItem,
             this.AboutMenuItem});
             // 
@@ -97,6 +97,7 @@
             // 
             // GeckoWebBrowser
             // 
+            this.GeckoWebBrowser.ConsoleMessageEventReceivesConsoleLogCalls = true;
             this.GeckoWebBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GeckoWebBrowser.FrameEventsPropagateToMainWindow = false;
             this.GeckoWebBrowser.Location = new System.Drawing.Point(0, 0);
@@ -116,7 +117,7 @@
             this.Controls.Add(this.GeckoWebBrowser);
             this.Controls.Add(this.StatusStrip);
             this.Icon = global::Netlenium.Driver.GeckoFXLib.Properties.Resources.logo;
-            this.Menu = this.mainMenu1;
+            this.Menu = this.MainMenu;
             this.MinimumSize = new System.Drawing.Size(220, 160);
             this.Name = "WebView";
             this.Text = "Netlenium";
@@ -131,7 +132,7 @@
         #endregion
 
         private System.Windows.Forms.StatusStrip StatusStrip;
-        private System.Windows.Forms.MainMenu mainMenu1;
+        private System.Windows.Forms.MainMenu MainMenu;
         private System.Windows.Forms.ToolStripStatusLabel ToolStripStatusLabel;
         private System.Windows.Forms.ToolStripProgressBar ToolStripProgressBar;
         private System.Windows.Forms.MenuItem FileMenuItem;
