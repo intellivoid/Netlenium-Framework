@@ -126,6 +126,8 @@ namespace NetleniumRuntime
 
             try
             {
+                p.Parse(args);
+
                 if(UsedParameters.Help == true)
                 {
                     ShowHelp();
