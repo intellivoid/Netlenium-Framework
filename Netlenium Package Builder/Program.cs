@@ -9,7 +9,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
-using Console = Colorful.Console;
 
 namespace NetleniumBuild
 {
@@ -76,7 +75,9 @@ namespace NetleniumBuild
 
                 if (UsedParameters.Source == null)
                 {
-                    Console.WriteLine($"Error: Missing paramerter \"source\"{Environment.NewLine}", System.Drawing.Color.Red);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Error: Missing paramerter \"source\"{Environment.NewLine}");
+                    Console.ResetColor();
                     ShowHelp();
                     Environment.Exit(1);
                 }
@@ -157,22 +158,30 @@ namespace NetleniumBuild
             switch(Type)
             {
                 case MessageType.Out:
-                    Console.Write(" > ", Color.White);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(" > ");
+                    Console.ResetColor();
                     Console.WriteLine(Output);
                     break;
 
                 case MessageType.Information:
-                    Console.Write(" [INFO] ", Color.Cyan);
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write(" [INFO] ");
+                    Console.ResetColor();
                     Console.WriteLine(Output);
                     break;
 
                 case MessageType.Warning:
-                    Console.Write(" [WARNING] ", Color.Yellow);
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(" [WARNING] ");
+                    Console.ResetColor();
                     Console.WriteLine(Output);
                     break;
 
                 case MessageType.Error:
-                    Console.Write(" [ERROR] ", Color.Red);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(" [ERROR] ");
+                    Console.ResetColor();
                     Console.WriteLine(Output);
                     break;
             }
@@ -305,9 +314,13 @@ namespace NetleniumBuild
         {
             if (Directory.Exists(Source) == false)
             {
-                Console.Write("Missing Resource Error: ", Color.Red);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Missing Resource Error: ");
+                Console.ResetColor();
                 Console.Write("The directory");
-                Console.Write($" \"{Source}\" ", Color.Gray);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write($" \"{Source}\" ");
+                Console.ResetColor();
                 Console.Write("was not found");
                 Console.WriteLine();
                 Environment.Exit(1);
@@ -315,9 +328,13 @@ namespace NetleniumBuild
 
             if (File.Exists($"{Source}{Path.DirectorySeparatorChar}package.json") == false)
             {
-                Console.Write("Missing Resource Error: ", Color.Red);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Missing Resource Error: ");
+                Console.ResetColor();
                 Console.Write("The directory");
-                Console.Write($" \"{Source}{Path.DirectorySeparatorChar}package.json\" ", Color.Gray);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write($" \"{Source}{Path.DirectorySeparatorChar}package.json\"");
+                Console.ResetColor();
                 Console.Write("was not found");
                 Console.WriteLine();
                 Environment.Exit(1);
@@ -325,9 +342,13 @@ namespace NetleniumBuild
 
             if (File.Exists($"{Source}{Path.DirectorySeparatorChar}main.py") == false)
             {
-                Console.Write("Missing Resource Error: ", Color.Red);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Missing Resource Error: ");
+                Console.ResetColor();
                 Console.Write("The directory");
-                Console.Write($" \"{Source}{Path.DirectorySeparatorChar}main.py\" ", Color.Gray);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write($" \"{Source}{Path.DirectorySeparatorChar}main.py\"");
+                Console.ResetColor();
                 Console.Write("was not found");
                 Console.WriteLine();
                 Environment.Exit(1);

@@ -2,16 +2,12 @@
 using Microsoft.Scripting.Hosting;
 using Mono.Options;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-using Console = Colorful.Console;
 
 namespace NetleniumRuntime
 {
@@ -136,7 +132,9 @@ namespace NetleniumRuntime
 
                 if (UsedParameters.PackageFile == null)
                 {
-                    Console.WriteLine($"Error: Missing paramerter \"file\"{Environment.NewLine}", System.Drawing.Color.Red);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Error: Missing paramerter \"file\"{Environment.NewLine}");
+                    Console.ResetColor();
                     ShowHelp();
                     Environment.Exit(1);
                 }
@@ -178,7 +176,9 @@ namespace NetleniumRuntime
 
             if (File.Exists(UsedParameters.PackageFile) == false)
             {
-                Console.WriteLine($"Error: The file \"{UsedParameters.PackageFile}\" does not exist!", System.Drawing.Color.Red);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error: The file \"{UsedParameters.PackageFile}\" does not exist!");
+                Console.ResetColor();
                 Environment.Exit(1);
             }
 
@@ -193,7 +193,9 @@ namespace NetleniumRuntime
             }
             catch (Exception)
             {
-                Console.WriteLine("Error: There was an issue while trying to read the Netlenium Package", System.Drawing.Color.Red);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: There was an issue while trying to read the Netlenium Package");
+                Console.ResetColor();
                 Environment.Exit(1);
             }
 
@@ -330,7 +332,7 @@ namespace NetleniumRuntime
             }
         }
 
-        /// <summary>
+        /// <summary>Color
         /// Creates a runtime environment
         /// </summary>
         /// <returns></returns>
@@ -348,7 +350,9 @@ namespace NetleniumRuntime
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Error: Duplicate Runtime", System.Drawing.Color.Red);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: Duplicate Runtime");
+                    Console.ResetColor();
                 }
             }
 
