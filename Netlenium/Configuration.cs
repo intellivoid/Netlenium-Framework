@@ -12,13 +12,18 @@ namespace Netlenium
     /// </summary>
     public class Configuration
     {
-        /// <summary>
-        /// Indicates if the Library is running in Mono
-        /// </summary>
-        /// <returns></returns>
-        public static bool IsRunningOnMono()
+        public static Types.Platform CurrentPlatform
         {
-            return Type.GetType("Mono.Runtime") != null;
+            get
+            {
+                int p = (int)Environment.OSVersion.Platform;
+                if((p == 4) || (p == 6) || (p == 128))
+                {
+                    return Types.Platform.Linux32;
+                }
+
+                return Types.Platform.Win32;
+            }
         }
 
         /// <summary>
@@ -75,6 +80,23 @@ namespace Netlenium
             }
         }
 
+        /// <summary>
+        /// Gets the temporary directory from the Netlenium Application Data directory
+        /// </summary>
+        public static string TemporaryDirectory
+        {
+            get
+            {
+                string DirectoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}tmp";
 
+                if (Directory.Exists(DirectoryPath) == false)
+                {
+                    Directory.CreateDirectory(DirectoryPath);
+                }
+
+                return DirectoryPath;
+            }
+
+        }
     }
 }

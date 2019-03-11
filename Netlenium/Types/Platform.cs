@@ -5,7 +5,9 @@
     /// </summary>
     public enum Platform
     {
-        Windows = 0,
-        Linux = 1
+        AutoDetect = 0,
+        Win32 = 1,
+        Linux32 = 2,
+        Linux64 = 3
     }
 }
