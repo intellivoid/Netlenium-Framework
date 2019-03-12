@@ -28,42 +28,42 @@ namespace Netlenium.Driver.Chrome
         private Actions _DriverAction;
 
         /// <summary>
+        /// The configuration that targets this driver
+        /// </summary>
+        private DriverConfiguration Configuration;
+
+        /// <summary>
+        /// The driver installation details
+        /// </summary>
+        private DriverInstallationDetails DriverInstallation;
+        
+        /// <summary>
         /// Constructs the chrome controller and configures the chrome driver
         /// </summary>
-        public Controller()
+        public Controller(DriverConfiguration DriverConfiguration, DriverInstallationDetails DriverInstallation)
         {
-            // Update the driver
-            if(Driver.IsInstalled == false)
-            {
-                Driver.Install();
-            }
-            else
-            {
-                if(Driver.IsOutdated == true)
-                {
-                    Driver.Update();
-                }
-            }
+            Configuration = DriverConfiguration;
+            this.DriverInstallation = DriverInstallation;
         }
 
         /// <summary>
         /// Initializes the Chrome Driver
         /// </summary>
-        /// <param name="Hide"></param>
-        public void Initialize(bool Hide = false)
+        public void Initialize()
         {
-            if(Hide == true)
+            if(Configuration.Headless == true)
             {
                 ChromeOptions options = new ChromeOptions();
                 options.AddArgument("headless");
                 options.AddArguments("window-size=1200x600");
 
-                this._Driver = new ChromeDriver(Driver.DriverDirectory, options);
+                this._Driver = new ChromeDriver(DriverInstallation.DriverExecutable, options);
             }
             else
             {
-                this._Driver = new ChromeDriver(Driver.DriverDirectory);
+                this._Driver = new ChromeDriver(DriverInstallation.DriverExecutable);
             }
+            
             this._JavascriptExecuter = (IJavaScriptExecutor)this._Driver;
             this._DriverAction = new Actions(this._Driver);
 

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Netlenium.Driver
 {
@@ -24,13 +21,15 @@ namespace Netlenium.Driver
         /// Controller Constructor
         /// </summary>
         /// <param name="DriverType"></param>
-        public Controller(Types.Driver DriverType)
+        public Controller(Types.Driver DriverType, DriverConfiguration DriverConfiguration)
         {
             Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Constructing Driver Instance");
             switch(DriverType)
             {
                 case Types.Driver.Chrome:
-                    this._ChromeController = new Chrome.Controller();
+                    Manager.Chrome.Initialize(DriverConfiguration.TargetPlatform);
+                    DriverInstallationDetails InstallationDetails = Manager.Chrome.CheckInstallation(DriverConfiguration.TargetPlatform);
+                    this._ChromeController = new Chrome.Controller(DriverConfiguration, InstallationDetails);
                     this._DriverType = DriverType;
                     break;
 
@@ -51,7 +50,7 @@ namespace Netlenium.Driver
             switch (_DriverType)
             {
                 case Types.Driver.Chrome:
-                    this._ChromeController.Initialize(Hide);
+                    this._ChromeController.Initialize();
                     break;
 
                 case Types.Driver.GeckoLib:

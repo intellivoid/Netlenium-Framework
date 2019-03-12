@@ -77,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller.cs" />
-    <Compile Include="Driver.cs" />
     <Compile Include="DriverAlreadyInstalledException.cs" />
     <Compile Include="DriverAlreadyUpToDate.cs" />
     <Compile Include="DriverNotInstalledException.cs" />

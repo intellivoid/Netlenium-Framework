@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration.cs" />
+    <Compile Include="DriverConfiguration.cs" />
     <Compile Include="DriverInstallationDetails.cs" />
     <Compile Include="Forms\AboutDialog.cs">
       <SubType>Form</SubType>
