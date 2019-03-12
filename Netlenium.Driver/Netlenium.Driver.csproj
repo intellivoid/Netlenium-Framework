@@ -82,6 +82,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="PropertyNotAvailableForSelectedDriver.cs" />
+    <Compile Include="Resources\Chrome.cs" />
+    <Compile Include="UnsupportedPlatformException.cs" />
+    <Compile Include="VersionFileNotFoundException.cs" />
     <Compile Include="WebElement.cs" />
   </ItemGroup>
   <ItemGroup>

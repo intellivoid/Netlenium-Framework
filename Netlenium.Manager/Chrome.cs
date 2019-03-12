@@ -178,6 +178,11 @@ namespace Netlenium.Manager
         /// <param name="TargetPlatform"></param>
         public static void InstallDriver(string DriverZipFile, string Version, Types.Platform TargetPlatform = Types.Platform.AutoDetect)
         {
+            if (TargetPlatform == Types.Platform.AutoDetect)
+            {
+                TargetPlatform = Configuration.CurrentPlatform;
+            }
+
             DriverInstallationDetails InstallationDetails = CheckInstallation(TargetPlatform);
             
             string TemporaryExtractedExecutable = string.Empty;
@@ -243,6 +248,11 @@ namespace Netlenium.Manager
         /// <param name="TargetPlatform"></param>
         public static void InstallLatestDriver(Types.Platform TargetPlatform = Types.Platform.AutoDetect)
         {
+            if (TargetPlatform == Types.Platform.AutoDetect)
+            {
+                TargetPlatform = Configuration.CurrentPlatform;
+            }
+
             string CurrentLatestVersion = LatestVersion;
             
             string TemporaryZipFile = string.Empty;
@@ -280,6 +290,33 @@ namespace Netlenium.Manager
             InstallDriver(TemporaryZipFile, CurrentLatestVersion, TargetPlatform);
             File.Delete(TemporaryZipFile);
         }
-        
+        /// <summary>
+        /// Initializes the driver by installing it if it's not installed, and updating it if it's outdated
+        /// </summary>
+        /// <param name="TargetPlatform"></param>
+        public static void Initialize(Types.Platform TargetPlatform = Types.Platform.AutoDetect)
+        {
+            if (TargetPlatform == Types.Platform.AutoDetect)
+            {
+                TargetPlatform = Configuration.CurrentPlatform;
+            }
+
+            DriverInstallationDetails InstallationDetails = CheckInstallation(TargetPlatform);
+
+            if(InstallationDetails.IsInstalled == false)
+            {
+                InstallLatestDriver(TargetPlatform);
+            }
+            else
+            {
+                string CurrentLatestVersion = LatestVersion;
+                if(CurrentLatestVersion != InstallationDetails.Version)
+                {
+                    UninstallDriver(TargetPlatform);
+                    InstallLatestDriver(TargetPlatform;)
+                }
+            }
+        }
     }
+
 }
