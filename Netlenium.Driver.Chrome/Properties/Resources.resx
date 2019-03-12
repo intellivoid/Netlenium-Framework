@@ -117,8 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChromeDriverUpdateURL" xml:space="preserve">
-    <value>https://chromedriver.storage.googleapis.com/LATEST_RELEASE</value>
-    <comment>The update URL for fetching the latest version of Chrome's Web Driver</comment>
-  </data>
 </root>

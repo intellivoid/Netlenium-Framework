@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Intellivoid")]
 [assembly: AssemblyProduct("Netlenium Framework")]
-[assembly: AssemblyCopyright("Copyright © Netlenium 2019")]
+[assembly: AssemblyCopyright("Copyright © Intellivoid 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
