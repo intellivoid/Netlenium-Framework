@@ -313,7 +313,7 @@ namespace Netlenium.Manager
                 if(CurrentLatestVersion != InstallationDetails.Version)
                 {
                     UninstallDriver(TargetPlatform);
-                    InstallLatestDriver(TargetPlatform;)
+                    InstallLatestDriver(TargetPlatform);
                 }
             }
         }
