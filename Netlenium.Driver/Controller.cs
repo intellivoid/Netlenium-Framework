@@ -28,13 +28,14 @@ namespace Netlenium.Driver
             {
                 case Types.Driver.Chrome:
                     Manager.Chrome.Initialize(DriverConfiguration.TargetPlatform);
-                    DriverInstallationDetails InstallationDetails = Manager.Chrome.CheckInstallation(DriverConfiguration.TargetPlatform);
-                    this._ChromeController = new Chrome.Controller(DriverConfiguration, InstallationDetails);
+                    DriverInstallationDetails ChromeInstallationDetails = Manager.Chrome.CheckInstallation(DriverConfiguration.TargetPlatform);
+                    this._ChromeController = new Chrome.Controller(DriverConfiguration, ChromeInstallationDetails);
                     this._DriverType = DriverType;
                     break;
 
                 case Types.Driver.GeckoLib:
-                    this._GeckoController = new GeckoFXLib.Controller();
+                    DriverInstallationDetails GeckoFX32InstallationDetails = Manager.Chrome.CheckInstallation(DriverConfiguration.TargetPlatform);
+                    this._GeckoController = new GeckoFXLib.Controller(DriverConfiguration, GeckoFX32InstallationDetails);
                     this._DriverType = DriverType;
                     break;
             }
@@ -54,7 +55,7 @@ namespace Netlenium.Driver
                     break;
 
                 case Types.Driver.GeckoLib:
-                    this._GeckoController.Initialize(Hide);
+                    this._GeckoController.Initialize();
                     break;
 
                 default:

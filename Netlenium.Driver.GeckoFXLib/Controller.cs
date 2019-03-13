@@ -1,8 +1,5 @@
 ﻿using Gecko;
-using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace Netlenium.Driver.GeckoFXLib
@@ -12,19 +9,6 @@ namespace Netlenium.Driver.GeckoFXLib
     /// </summary>
     public class Controller
     {
-        /// <summary>
-        /// Fetches the Assembly's executing directory
-        /// </summary>
-        private static string AssemblyDirectory
-        {
-            get
-            {
-                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                UriBuilder uri = new UriBuilder(codeBase);
-                string path = Uri.UnescapeDataString(uri.Path);
-                return Path.GetDirectoryName(path);
-            }
-        }
         
         /// <summary>
         /// The private GeckoWebBrowser Control
@@ -40,24 +24,32 @@ namespace Netlenium.Driver.GeckoFXLib
         /// Indication if the Document is ready or not
         /// </summary>
         public bool DocumentReady;
+        
+        /// <summary>
+        /// The current Driver Installation Details
+        /// </summary>
+        private DriverInstallationDetails DriverInstallation;
+
+        private DriverConfiguration DriverConfiguration;
 
         /// <summary>
         /// Constructs the controller
         /// </summary>
-        public Controller()
+        public Controller(DriverConfiguration DriverConfiguration, DriverInstallationDetails DriverInstalation)
         {
-            Xpcom.Initialize($"{AssemblyDirectory}{Path.DirectorySeparatorChar}xulrunner_win32");
+            this.DriverInstallation = DriverInstalation;
+            this.DriverConfiguration = DriverConfiguration;
         }
 
         /// <summary>
         /// Initializes the GeckoFX Web Client
         /// </summary>
-        /// <param name="Hide">Hides the WebView window</param>
-        public void Initialize(bool Hide = true)
+        public void Initialize()
         {
+            Xpcom.Initialize(DriverInstallation.DriverPath);
             this._WebView = new Forms.WebView();
             this._GeckoWebBrowser = this._WebView.GeckoWebBrowser;
-            if (Hide == false)
+            if(DriverConfiguration.Headless == false)
             {
                 this._WebView.Show();
             }
