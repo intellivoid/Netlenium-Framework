@@ -34,7 +34,7 @@ namespace Netlenium.Driver
                     break;
 
                 case Types.Driver.GeckoLib:
-                    DriverInstallationDetails GeckoFX32InstallationDetails = Manager.Chrome.CheckInstallation(DriverConfiguration.TargetPlatform);
+                    DriverInstallationDetails GeckoFX32InstallationDetails = Manager.GeckoFX32.CheckInstallation(DriverConfiguration.TargetPlatform);
                     this._GeckoController = new GeckoFXLib.Controller(DriverConfiguration, GeckoFX32InstallationDetails);
                     this._DriverType = DriverType;
                     break;
