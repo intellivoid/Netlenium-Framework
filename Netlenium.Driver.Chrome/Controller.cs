@@ -57,11 +57,11 @@ namespace Netlenium.Driver.Chrome
                 options.AddArgument("headless");
                 options.AddArguments("window-size=1200x600");
 
-                this._Driver = new ChromeDriver(DriverInstallation.DriverExecutable, options);
+                this._Driver = new ChromeDriver(DriverInstallation.DriverPath, options);
             }
             else
             {
-                this._Driver = new ChromeDriver(DriverInstallation.DriverExecutable);
+                this._Driver = new ChromeDriver(DriverInstallation.DriverPath);
             }
             
             this._JavascriptExecuter = (IJavaScriptExecutor)this._Driver;

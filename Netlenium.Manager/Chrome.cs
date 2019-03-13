@@ -215,16 +215,19 @@ namespace Netlenium.Manager
             }
              
             ZipFile Zip = ZipFile.Read(DriverZipFile);
-
+            
             foreach (ZipEntry Entry in Zip)
             {
                 if (Entry.FileName == TemporaryExecutableName)
                 {
-                    Entry.Extract(DriverZipFile, ExtractExistingFileAction.OverwriteSilently);
-                    break;
+                    if(Entry.IsDirectory == false)
+                    {
+                        Entry.Extract(Configuration.TemporaryDirectory, ExtractExistingFileAction.OverwriteSilently);
+                        break;
+                    }
                 }
             }
-
+            
             Zip.Dispose();
 
             if (InstallationDetails.IsInstalled == true)
@@ -236,7 +239,7 @@ namespace Netlenium.Manager
             {
                 Directory.CreateDirectory(InstallationDetails.DriverPath);
             }
-
+            
             File.Move(TemporaryExtractedExecutable, InstallationDetails.DriverExecutable);
             File.WriteAllText($"{InstallationDetails.DriverPath}{Path.DirectorySeparatorChar}current_version", Version);
             File.Delete(TemporaryExtractedExecutable);
