@@ -29,7 +29,7 @@ namespace Netlenium
         {
             get
             {
-                string DirectoryPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)}{Path.DirectorySeparatorChar}Netlenium";
+                string DirectoryPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}{Path.DirectorySeparatorChar}Netlenium";
 
                 if (Directory.Exists(DirectoryPath) == false)
                 {
