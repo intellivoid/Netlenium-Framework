@@ -209,5 +209,10 @@ namespace Netlenium.Driver.Chrome
                     throw new SearchTypeNotSupportedException();
             }
         }
+        
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
     }
 }

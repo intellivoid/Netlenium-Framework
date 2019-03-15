@@ -187,5 +187,10 @@ namespace Netlenium.Driver.GeckoFXLib
                     throw new SearchTypeNotSupportedException();
             }
         }
+        
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
     }
 }

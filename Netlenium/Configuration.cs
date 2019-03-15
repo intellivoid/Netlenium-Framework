@@ -12,10 +12,11 @@ namespace Netlenium
         {
             get
             {
-                int p = (int)Environment.OSVersion.Platform;
+                var p = (int)Environment.OSVersion.Platform;
+                
                 if((p == 4) || (p == 6) || (p == 128))
                 {
-                    return Types.Platform.Linux32;
+                    return Environment.Is64BitOperatingSystem ? Types.Platform.Linux64 : Types.Platform.Linux32;
                 }
 
                 return Types.Platform.Win32;

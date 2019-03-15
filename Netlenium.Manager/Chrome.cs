@@ -1,7 +1,9 @@
 ﻿using Ionic.Zip;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
+using Netlenium.Types;
 
 namespace Netlenium.Manager
 {
@@ -17,93 +19,93 @@ namespace Netlenium.Manager
         {
             get
             {
-                WebClient HTTPWebClient = new WebClient();
-                return HTTPWebClient.DownloadString(Properties.Resources.Chrome_LatestReleaseAPI);
+                WebClient httpWebClient = new WebClient();
+                return httpWebClient.DownloadString(Properties.Resources.Chrome_LatestReleaseAPI);
             }
         }
 
         /// <summary>
         /// Checks the installation details of the Driver
         /// </summary>
-        /// <param name="TargetPlatform"></param>
+        /// <param name="targetPlatform"></param>
         /// <returns></returns>
-        public static DriverInstallationDetails CheckInstallation(Types.Platform TargetPlatform = Types.Platform.AutoDetect)
+        public static DriverInstallationDetails CheckInstallation(Platform targetPlatform = Platform.AutoDetect)
         {
-            DriverInstallationDetails Results = new DriverInstallationDetails();
+            DriverInstallationDetails results = new DriverInstallationDetails();
 
-            if(TargetPlatform == Types.Platform.AutoDetect)
+            if(targetPlatform == Platform.AutoDetect)
             {
-                TargetPlatform = Configuration.CurrentPlatform;
+                targetPlatform = Configuration.CurrentPlatform;
             }
 
-            Results.IsInstalled = true;
-            Results.TargetPlatform = TargetPlatform;
-            Results.DriverType = Types.Driver.Chrome;
+            results.IsInstalled = true;
+            results.TargetPlatform = targetPlatform;
+            results.DriverType = Driver.Chrome;
 
-            switch(TargetPlatform)
+            switch(targetPlatform)
             {
-                case Types.Platform.Win32:
-                    Results.DriverPath = $"{Configuration.DriverDirectory}{Path.DirectorySeparatorChar}chrome_win32";
-                    Results.DriverExecutableName = "chromedriver.exe";
-                    Results.DriverExecutable = $"{Results.DriverPath}{Path.DirectorySeparatorChar}{Results.DriverExecutableName}";
+                case Platform.Win32:
+                    results.DriverPath = $"{Configuration.DriverDirectory}{Path.DirectorySeparatorChar}chrome_win32";
+                    results.DriverExecutableName = "chromedriver.exe";
+                    results.DriverExecutable = $"{results.DriverPath}{Path.DirectorySeparatorChar}{results.DriverExecutableName}";
 
-                    if (Directory.Exists(Results.DriverPath) == false)
+                    if (Directory.Exists(results.DriverPath) == false)
                     {
-                        Results.IsInstalled = false;
+                        results.IsInstalled = false;
                     }
 
-                    if (File.Exists(Results.DriverExecutable) == false)
+                    if (File.Exists(results.DriverExecutable) == false)
                     {
-                        Results.IsInstalled = false;
+                        results.IsInstalled = false;
                     }
 
-                    if (File.Exists($"{Results.DriverPath}{Path.DirectorySeparatorChar}current_version") == false)
+                    if (File.Exists($"{results.DriverPath}{Path.DirectorySeparatorChar}current_version") == false)
                     {
-                        Results.IsInstalled = false;
-                    }
-
-                    break;
-
-                case Types.Platform.Linux32:
-                    Results.DriverPath = $"{Configuration.DriverDirectory}{Path.DirectorySeparatorChar}chrome_linux32";
-                    Results.DriverExecutableName = "chromedriver";
-                    Results.DriverExecutable = $"{Results.DriverPath}{Path.DirectorySeparatorChar}{Results.DriverExecutableName}";
-
-                    if (Directory.Exists(Results.DriverPath) == false)
-                    {
-                        Results.IsInstalled = false;
-                    }
-
-                    if (File.Exists(Results.DriverExecutable) == false)
-                    {
-                        Results.IsInstalled = false;
-                    }
-
-                    if (File.Exists($"{Results.DriverPath}{Path.DirectorySeparatorChar}current_version") == false)
-                    {
-                        Results.IsInstalled = false;
+                        results.IsInstalled = false;
                     }
 
                     break;
 
-                case Types.Platform.Linux64:
-                    Results.DriverPath = $"{Configuration.DriverDirectory}{Path.DirectorySeparatorChar}chrome_linux64";
-                    Results.DriverExecutableName = "chromedriver";
-                    Results.DriverExecutable = $"{Results.DriverPath}{Path.DirectorySeparatorChar}{Results.DriverExecutableName}";
+                case Platform.Linux32:
+                    results.DriverPath = $"{Configuration.DriverDirectory}{Path.DirectorySeparatorChar}chrome_linux32";
+                    results.DriverExecutableName = "chromedriver";
+                    results.DriverExecutable = $"{results.DriverPath}{Path.DirectorySeparatorChar}{results.DriverExecutableName}";
 
-                    if (Directory.Exists(Results.DriverPath) == false)
+                    if (Directory.Exists(results.DriverPath) == false)
                     {
-                        Results.IsInstalled = false;
+                        results.IsInstalled = false;
                     }
 
-                    if (File.Exists(Results.DriverExecutable) == false)
+                    if (File.Exists(results.DriverExecutable) == false)
                     {
-                        Results.IsInstalled = false;
+                        results.IsInstalled = false;
                     }
 
-                    if (File.Exists($"{Results.DriverPath}{Path.DirectorySeparatorChar}current_version") == false)
+                    if (File.Exists($"{results.DriverPath}{Path.DirectorySeparatorChar}current_version") == false)
                     {
-                        Results.IsInstalled = false;
+                        results.IsInstalled = false;
+                    }
+
+                    break;
+
+                case Platform.Linux64:
+                    results.DriverPath = $"{Configuration.DriverDirectory}{Path.DirectorySeparatorChar}chrome_linux64";
+                    results.DriverExecutableName = "chromedriver";
+                    results.DriverExecutable = $"{results.DriverPath}{Path.DirectorySeparatorChar}{results.DriverExecutableName}";
+
+                    if (Directory.Exists(results.DriverPath) == false)
+                    {
+                        results.IsInstalled = false;
+                    }
+
+                    if (File.Exists(results.DriverExecutable) == false)
+                    {
+                        results.IsInstalled = false;
+                    }
+
+                    if (File.Exists($"{results.DriverPath}{Path.DirectorySeparatorChar}current_version") == false)
+                    {
+                        results.IsInstalled = false;
                     }
 
                     break;
@@ -112,40 +114,33 @@ namespace Netlenium.Manager
                     throw new PlatformNotSupportedException();
             }
 
-            if (File.Exists($"{Results.DriverPath}{Path.DirectorySeparatorChar}current_version") == false)
-            {
-                Results.Version = null;
-            }
-            else
-            {
-                Results.Version = File.ReadAllText($"{Results.DriverPath}{Path.DirectorySeparatorChar}current_version");
-            }
-            
+            results.Version = File.Exists($"{results.DriverPath}{Path.DirectorySeparatorChar}current_version") == false 
+                ? null : File.ReadAllText($"{results.DriverPath}{Path.DirectorySeparatorChar}current_version");
 
-            return Results;
+            return results;
         }
 
         /// <summary>
         /// Uninstalls the driver from the system
         /// </summary>
-        /// <param name="TargetPlatform"></param>
-        public static void UninstallDriver(Types.Platform TargetPlatform = Types.Platform.AutoDetect)
+        /// <param name="targetPlatform"></param>
+        public static void UninstallDriver(Platform targetPlatform = Platform.AutoDetect)
         {
-            if (TargetPlatform == Types.Platform.AutoDetect)
+            if (targetPlatform == Platform.AutoDetect)
             {
-                TargetPlatform = Configuration.CurrentPlatform;
+                targetPlatform = Configuration.CurrentPlatform;
             }
 
-            DriverInstallationDetails InstallationDetails = CheckInstallation(TargetPlatform);
+            DriverInstallationDetails installationDetails = CheckInstallation(targetPlatform);
 
-            if(InstallationDetails.IsInstalled == false)
+            if(installationDetails.IsInstalled == false)
             {
                 throw new DriverUninstallationException("No installed driver was detected therefore the uninstallation process could not be completed.");
             }
 
             try
             {
-                File.Delete(InstallationDetails.DriverExecutable);
+                File.Delete(installationDetails.DriverExecutable);
             }
             catch(Exception exception)
             {
@@ -154,7 +149,7 @@ namespace Netlenium.Manager
 
             try
             {
-                File.Delete($"{InstallationDetails.DriverPath}{Path.DirectorySeparatorChar}current_version");
+                File.Delete($"{installationDetails.DriverPath}{Path.DirectorySeparatorChar}current_version");
             }
             catch(Exception exception)
             {
@@ -163,7 +158,7 @@ namespace Netlenium.Manager
 
             try
             {
-                Directory.Delete(InstallationDetails.DriverPath, true);
+                Directory.Delete(installationDetails.DriverPath, true);
             }
             catch(Exception exception)
             {
@@ -174,150 +169,164 @@ namespace Netlenium.Manager
         /// <summary>
         /// Installs the driver from a .zip file
         /// </summary>
-        /// <param name="DriverZipFile"></param>
-        /// <param name="TargetPlatform"></param>
-        public static void InstallDriver(string DriverZipFile, string Version, Types.Platform TargetPlatform = Types.Platform.AutoDetect)
+        /// <param name="driverZipFile"></param>
+        /// <param name="version"></param>
+        /// <param name="targetPlatform"></param>
+        public static void InstallDriver(string driverZipFile, string version, Platform targetPlatform = Platform.AutoDetect)
         {
-            if (TargetPlatform == Types.Platform.AutoDetect)
+            if (targetPlatform == Platform.AutoDetect)
             {
-                TargetPlatform = Configuration.CurrentPlatform;
+                targetPlatform = Configuration.CurrentPlatform;
             }
 
-            DriverInstallationDetails InstallationDetails = CheckInstallation(TargetPlatform);
+            var installationDetails = CheckInstallation(targetPlatform);
             
-            string TemporaryExtractedExecutable = string.Empty;
-            string TemporaryExecutableName = string.Empty;
+            var temporaryExtractedExecutable = string.Empty;
+            var temporaryExecutableName = string.Empty;
 
-            switch(TargetPlatform)
+            switch(targetPlatform)
             {
-                case Types.Platform.Win32:
-                    TemporaryExtractedExecutable = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver.exe";
-                    TemporaryExecutableName = "chromedriver.exe";
+                case Platform.Win32:
+                    temporaryExtractedExecutable = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver.exe";
+                    temporaryExecutableName = "chromedriver.exe";
                     break;
 
-                case Types.Platform.Linux32:
-                    TemporaryExtractedExecutable = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver";
-                    TemporaryExecutableName = "chromedriver";
+                case Platform.Linux32:
+                    temporaryExtractedExecutable = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver";
+                    temporaryExecutableName = "chromedriver";
                     break;
 
-                case Types.Platform.Linux64:
-                    TemporaryExtractedExecutable = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver";
-                    TemporaryExecutableName = "chromedriver";
+                case Platform.Linux64:
+                    temporaryExtractedExecutable = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver";
+                    temporaryExecutableName = "chromedriver";
                     break;
 
+                case Platform.AutoDetect:
+                    break;
+                    
                 default:
                     throw new PlatformNotSupportedException();
             }
 
-            if (File.Exists(TemporaryExtractedExecutable) == true)
+            if (File.Exists(temporaryExtractedExecutable))
             {
-                File.Delete(TemporaryExtractedExecutable);
+                File.Delete(temporaryExtractedExecutable);
             }
              
-            ZipFile Zip = ZipFile.Read(DriverZipFile);
+            var zip = ZipFile.Read(driverZipFile);
             
-            foreach (ZipEntry Entry in Zip)
+            foreach (var entry in zip)
             {
-                if (Entry.FileName == TemporaryExecutableName)
-                {
-                    if(Entry.IsDirectory == false)
-                    {
-                        Entry.Extract(Configuration.TemporaryDirectory, ExtractExistingFileAction.OverwriteSilently);
-                        break;
-                    }
-                }
+                if (entry.FileName != temporaryExecutableName) continue;
+                if (entry.IsDirectory) continue;
+                entry.Extract(Configuration.TemporaryDirectory, ExtractExistingFileAction.OverwriteSilently);
+                break;
             }
             
-            Zip.Dispose();
+            zip.Dispose();
 
-            if (InstallationDetails.IsInstalled == true)
+            if (installationDetails.IsInstalled)
             {
-                UninstallDriver(TargetPlatform);
+                UninstallDriver(targetPlatform);
             }
 
-            if (Directory.Exists(InstallationDetails.DriverPath) == false)
+            if (Directory.Exists(installationDetails.DriverPath) == false)
             {
-                Directory.CreateDirectory(InstallationDetails.DriverPath);
+                Directory.CreateDirectory(installationDetails.DriverPath);
             }
             
-            File.Move(TemporaryExtractedExecutable, InstallationDetails.DriverExecutable);
-            File.WriteAllText($"{InstallationDetails.DriverPath}{Path.DirectorySeparatorChar}current_version", Version);
-            File.Delete(TemporaryExtractedExecutable);
+            File.Move(temporaryExtractedExecutable, installationDetails.DriverExecutable);
+            File.WriteAllText($"{installationDetails.DriverPath}{Path.DirectorySeparatorChar}current_version", version);
+            File.Delete(temporaryExtractedExecutable);
+
+            if (!(targetPlatform == Platform.Linux32 || targetPlatform == Platform.Linux64)) return;
+            
+            try
+            {
+                Process.Start("chmod", $"+x \"{installationDetails.DriverExecutable}\"");
+            }
+            catch (Exception exception)
+            {
+                throw new PermissionsErrorException(exception.Message);
+            }
         }
 
         /// <summary>
         /// Downloads and installs the latest driver form the internet
         /// </summary>
-        /// <param name="TargetPlatform"></param>
-        public static void InstallLatestDriver(Types.Platform TargetPlatform = Types.Platform.AutoDetect)
+        /// <param name="targetPlatform"></param>
+        public static void InstallLatestDriver(Platform targetPlatform = Platform.AutoDetect)
         {
-            if (TargetPlatform == Types.Platform.AutoDetect)
+            if (targetPlatform == Platform.AutoDetect)
             {
-                TargetPlatform = Configuration.CurrentPlatform;
+                targetPlatform = Configuration.CurrentPlatform;
             }
 
-            string CurrentLatestVersion = LatestVersion;
-            
-            string TemporaryZipFile = string.Empty;
-            string DownloadURL = string.Empty;
+            var currentLatestVersion = LatestVersion;
 
-            switch (TargetPlatform)
+            var temporaryZipFile = string.Empty;
+            var downloadUrl = string.Empty;
+
+            switch (targetPlatform)
             {
-                case Types.Platform.Win32:
-                    TemporaryZipFile = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_win32.zip";
-                    DownloadURL = Properties.Resources.Chrome_Win32API.Replace("%VERSION%", CurrentLatestVersion);
+                case Platform.Win32:
+                    temporaryZipFile = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_win32.zip";
+                    downloadUrl = Properties.Resources.Chrome_Win32API.Replace("%VERSION%", currentLatestVersion);
                     break;
 
-                case Types.Platform.Linux32:
-                    TemporaryZipFile = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_linux32.zip";
-                    DownloadURL = Properties.Resources.Chrome_Linux32API.Replace("%VERSION%", CurrentLatestVersion);
+                case Platform.Linux32:
+                    temporaryZipFile = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_linux32.zip";
+                    downloadUrl = Properties.Resources.Chrome_Linux32API.Replace("%VERSION%", currentLatestVersion);
                     break;
 
-                case Types.Platform.Linux64:
-                    TemporaryZipFile = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_linux64.zip";
-                    DownloadURL = Properties.Resources.Chrome_Linux64API.Replace("%VERSION%", CurrentLatestVersion);
+                case Platform.Linux64:
+                    temporaryZipFile = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_linux64.zip";
+                    downloadUrl = Properties.Resources.Chrome_Linux64API.Replace("%VERSION%", currentLatestVersion);
                     break;
 
+                case Platform.AutoDetect:
+                    break;
+                    
                 default:
                     throw new PlatformNotSupportedException();
             }
 
-            if(File.Exists(TemporaryZipFile) == true)
+            if(File.Exists(temporaryZipFile))
             {
-                File.Delete(TemporaryZipFile);
+                File.Delete(temporaryZipFile);
             }
 
-            WebClient WebClient = new WebClient();
-            WebClient.DownloadFile(DownloadURL, TemporaryZipFile);
+            var webClient = new WebClient();
+            webClient.DownloadFile(downloadUrl, temporaryZipFile);
 
-            InstallDriver(TemporaryZipFile, CurrentLatestVersion, TargetPlatform);
-            File.Delete(TemporaryZipFile);
+            InstallDriver(temporaryZipFile, currentLatestVersion, targetPlatform);
+            File.Delete(temporaryZipFile);
         }
         /// <summary>
         /// Initializes the driver by installing it if it's not installed, and updating it if it's outdated
         /// </summary>
-        /// <param name="TargetPlatform"></param>
-        public static void Initialize(Types.Platform TargetPlatform = Types.Platform.AutoDetect)
+        /// <param name="targetPlatform"></param>
+        public static void Initialize(Platform targetPlatform = Platform.AutoDetect)
         {
-            if (TargetPlatform == Types.Platform.AutoDetect)
+            if (targetPlatform == Platform.AutoDetect)
             {
-                TargetPlatform = Configuration.CurrentPlatform;
+                targetPlatform = Configuration.CurrentPlatform;
             }
 
-            DriverInstallationDetails InstallationDetails = CheckInstallation(TargetPlatform);
+            var installationDetails = CheckInstallation(targetPlatform);
 
-            if(InstallationDetails.IsInstalled == false)
+            if(installationDetails.IsInstalled == false)
             {
-                InstallLatestDriver(TargetPlatform);
+                InstallLatestDriver(targetPlatform);
             }
             else
             {
-                string CurrentLatestVersion = LatestVersion;
-                if(CurrentLatestVersion != InstallationDetails.Version)
-                {
-                    UninstallDriver(TargetPlatform);
-                    InstallLatestDriver(TargetPlatform);
-                }
+                var currentLatestVersion = LatestVersion;
+                
+                if (currentLatestVersion == installationDetails.Version) return;
+                
+                UninstallDriver(targetPlatform);
+                InstallLatestDriver(targetPlatform);
             }
         }
     }

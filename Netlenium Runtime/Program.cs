@@ -222,7 +222,6 @@ namespace NetleniumRuntime
             ScriptSource pythonScript = pythonEngine.CreateScriptSourceFromFile(ImportedScript);
             pythonScript.Execute(scope);
 
-            Application.Run();
             Environment.Exit(0);
             
         }

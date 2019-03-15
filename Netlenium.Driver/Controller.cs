@@ -74,11 +74,15 @@ namespace Netlenium.Driver
             {
                 case Types.Driver.Chrome:
                     _ChromeController.Quit();
+                    _ChromeController.Dispose();
+                    _ChromeController = null;
                     Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Success");
                     break;
 
                 case Types.Driver.GeckoLib:
                     _GeckoController.Quit();
+                    _GeckoController.Dispose();
+                    _GeckoController = null;
                     Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Success");
                     break;
 
