@@ -10,6 +10,9 @@
         /// </summary>
         Chrome = 0,
 
+        /// <summary>
+        /// GeckoLib Driver
+        /// </summary>
         GeckoLib = 1
     }
 }
