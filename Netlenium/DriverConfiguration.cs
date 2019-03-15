@@ -17,10 +17,12 @@
         /// The target platform that the Framework will try
         /// to execute the drivers for
         /// </summary>
-        public Types.Platform TargetPlatform
-        {
-            get; set;
-        }
+        public Types.Platform TargetPlatform { get; set; }
+
+        /// <summary>
+        /// The target driver that will be initialized
+        /// </summary>
+        public Types.Driver TargetDriver { get; set; }
 
         /// <summary>
         /// If set to True, general logging messages will be displayed in the CLI

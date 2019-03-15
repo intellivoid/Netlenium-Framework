@@ -16,27 +16,27 @@ namespace Netlenium.Driver
         private Chrome.Controller _ChromeController;
 
         private GeckoFXLib.Controller _GeckoController;
-        
+
         /// <summary>
         /// Controller Constructor
         /// </summary>
-        /// <param name="DriverType"></param>
-        public Controller(Types.Driver DriverType, DriverConfiguration DriverConfiguration)
+        /// <param name="driverConfiguration"></param>
+        public Controller(DriverConfiguration driverConfiguration)
         {
             Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Constructing Driver Instance");
-            switch(DriverType)
+            switch(driverConfiguration.TargetDriver)
             {
                 case Types.Driver.Chrome:
-                    Manager.Chrome.Initialize(DriverConfiguration.TargetPlatform);
-                    DriverInstallationDetails ChromeInstallationDetails = Manager.Chrome.CheckInstallation(DriverConfiguration.TargetPlatform);
-                    this._ChromeController = new Chrome.Controller(DriverConfiguration, ChromeInstallationDetails);
-                    this._DriverType = DriverType;
+                    Manager.Chrome.Initialize(driverConfiguration.TargetPlatform);
+                    DriverInstallationDetails ChromeInstallationDetails = Manager.Chrome.CheckInstallation(driverConfiguration.TargetPlatform);
+                    this._ChromeController = new Chrome.Controller(driverConfiguration, ChromeInstallationDetails);
+                    this._DriverType = driverConfiguration.TargetDriver;
                     break;
 
                 case Types.Driver.GeckoLib:
-                    DriverInstallationDetails GeckoFX32InstallationDetails = Manager.GeckoFX32.CheckInstallation(DriverConfiguration.TargetPlatform);
-                    this._GeckoController = new GeckoFXLib.Controller(DriverConfiguration, GeckoFX32InstallationDetails);
-                    this._DriverType = DriverType;
+                    DriverInstallationDetails GeckoFX32InstallationDetails = Manager.GeckoFX32.CheckInstallation(driverConfiguration.TargetPlatform);
+                    this._GeckoController = new GeckoFXLib.Controller(driverConfiguration, GeckoFX32InstallationDetails);
+                    this._DriverType = driverConfiguration.TargetDriver;
                     break;
             }
         }
