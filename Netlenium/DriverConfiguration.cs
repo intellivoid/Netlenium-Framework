@@ -1,5 +1,8 @@
 ﻿namespace Netlenium
 {
+    /// <summary>
+    /// Driver Configuration Class
+    /// </summary>
     public class DriverConfiguration
     {
         /// <summary>
@@ -17,6 +20,15 @@
         public Types.Platform TargetPlatform
         {
             get; set;
+        }
+
+        /// <summary>
+        /// If set to True, general logging messages will be displayed in the CLI
+        /// </summary>
+        public bool GeneralLogging
+        {
+            get => Logging.GeneralLogging;
+            set => Logging.GeneralLogging = value;
         }
 
         /// <summary>

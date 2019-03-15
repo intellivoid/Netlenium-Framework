@@ -10,9 +10,9 @@ namespace Netlenium
     public class Logging
     {
         /// <summary>
-        /// Static Property, if set to true then all Logging Outputs will be displayed in the CLI
+        /// If set to True, general logging messages will be displayed in the CLI
         /// </summary>
-        public static bool AllowLogging { get; set; } = false;
+        public static bool GeneralLogging { get; set; } = false;
 
         /// <summary>
         /// The output file to output all the data to (AllowLogging doesn't need to be set to True for this to work)
@@ -28,7 +28,7 @@ namespace Netlenium
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static void WriteEntry(Types.LogType loggingType, string moduleName, string entryText)
         {
-            if(AllowLogging == false)
+            if(GeneralLogging == false)
             {
                 return;
             }
