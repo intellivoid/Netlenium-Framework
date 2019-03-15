@@ -30,7 +30,7 @@ namespace Netlenium
         {
             get
             {
-                string directoryPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}{Path.DirectorySeparatorChar}Netlenium";
+                var directoryPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}{Path.DirectorySeparatorChar}Netlenium";
 
                 if (Directory.Exists(directoryPath) == false)
                 {
@@ -48,7 +48,7 @@ namespace Netlenium
         {
             get
             {
-                string directoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}Drivers";
+                var directoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}Drivers";
 
                 if (Directory.Exists(directoryPath) == false)
                 {
@@ -66,7 +66,7 @@ namespace Netlenium
         {
             get
             {
-                string directoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}Runtime";
+                var directoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}Runtime";
 
                 if (Directory.Exists(directoryPath) == false)
                 {
@@ -84,7 +84,7 @@ namespace Netlenium
         {
             get
             {
-                string directoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}tmp";
+                var directoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}tmp";
 
                 if (Directory.Exists(directoryPath) == false)
                 {
