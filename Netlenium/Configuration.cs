@@ -29,14 +29,14 @@ namespace Netlenium
         {
             get
             {
-                string DirectoryPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}{Path.DirectorySeparatorChar}Netlenium";
+                string directoryPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}{Path.DirectorySeparatorChar}Netlenium";
 
-                if (Directory.Exists(DirectoryPath) == false)
+                if (Directory.Exists(directoryPath) == false)
                 {
-                    Directory.CreateDirectory(DirectoryPath);
+                    Directory.CreateDirectory(directoryPath);
                 }
 
-                return DirectoryPath;
+                return directoryPath;
             }
         }
 
@@ -47,14 +47,14 @@ namespace Netlenium
         {
             get
             {
-                string DirectoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}Drivers";
+                string directoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}Drivers";
 
-                if (Directory.Exists(DirectoryPath) == false)
+                if (Directory.Exists(directoryPath) == false)
                 {
-                    Directory.CreateDirectory(DirectoryPath);
+                    Directory.CreateDirectory(directoryPath);
                 }
 
-                return DirectoryPath;
+                return directoryPath;
             }
         }
 
@@ -65,14 +65,14 @@ namespace Netlenium
         {
             get
             {
-                string DirectoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}Runtime";
+                string directoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}Runtime";
 
-                if (Directory.Exists(DirectoryPath) == false)
+                if (Directory.Exists(directoryPath) == false)
                 {
-                    Directory.CreateDirectory(DirectoryPath);
+                    Directory.CreateDirectory(directoryPath);
                 }
 
-                return DirectoryPath;
+                return directoryPath;
             }
         }
 
@@ -83,14 +83,14 @@ namespace Netlenium
         {
             get
             {
-                string DirectoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}tmp";
+                string directoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}tmp";
 
-                if (Directory.Exists(DirectoryPath) == false)
+                if (Directory.Exists(directoryPath) == false)
                 {
-                    Directory.CreateDirectory(DirectoryPath);
+                    Directory.CreateDirectory(directoryPath);
                 }
 
-                return DirectoryPath;
+                return directoryPath;
             }
 
         }
