@@ -1,63 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Netlenium
 {
+    /// <summary>
+    /// Logging Class
+    /// </summary>
     public class Logging
     {
-        private static bool _AllowLogging = false;
+        /// <summary>
+        /// Static Property, if set to true then all Logging Outputs will be displayed in the CLI
+        /// </summary>
+        public static bool AllowLogging { get; set; } = false;
 
-        private static string _OutputFile = string.Empty;
+        /// <summary>
+        /// The output file to output all the data to (AllowLogging doesn't need to be set to True for this to work)
+        /// </summary>
+        public static string OutputFile { get; set; } = string.Empty;
 
-        public static bool AllowLogging
+        /// <summary>
+        /// Writes a Log Entry
+        /// </summary>
+        /// <param name="loggingType"></param>
+        /// <param name="moduleName"></param>
+        /// <param name="entryText"></param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        public static void WriteEntry(Types.LogType loggingType, string moduleName, string entryText)
         {
-            get
-            {
-                return _AllowLogging;
-            }
-            set
-            {
-                _AllowLogging = value;
-            }
-        }
-
-        public static string OutputFile
-        {
-            get
-            {
-                return _OutputFile;
-            }
-            set
-            {
-                _OutputFile = value;
-            }
-        }
-
-        public static void WriteEntry(Types.LogType LoggingType, string ModuleName, string EntryText)
-        {
-            if(_AllowLogging == false)
+            if(AllowLogging == false)
             {
                 return;
             }
             
-            string Timestamp = DateTime.Now.ToString(@"h\:mm tt");
+            var timestamp = DateTime.Now.ToString(@"h\:mm tt");
 
-            
-
-            switch (LoggingType)
+            switch (loggingType)
             {
                 case Types.LogType.Information:
-                    if (_OutputFile != string.Empty)
+                    if (OutputFile != string.Empty)
                     {
                         try
                         {
-                            File.AppendAllText(_OutputFile, $"[INFORMATION][{Timestamp}]: {ModuleName} > {EntryText}{Environment.NewLine}");
+                            File.AppendAllText(OutputFile, $@"[INFORMATION][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
                         }
                         catch(Exception exception)
                         {
@@ -66,23 +51,23 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write("[ ~~~ ]");
+                    Console.Write(@"[  X  ]");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write($"[{Timestamp}]: ");
+                    Console.Write($@"[{timestamp}]: ");
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write($"{ModuleName} > ");
+                    Console.Write($@"{moduleName} > ");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(EntryText);
+                    Console.Write(entryText);
                     Console.WriteLine();
                     Console.ResetColor();
                     break;
 
                 case Types.LogType.Warning:
-                    if (_OutputFile != string.Empty)
+                    if (OutputFile != string.Empty)
                     {
                         try
                         {
-                            File.AppendAllText(_OutputFile, $"[WARNING][{Timestamp}]: {ModuleName} > {EntryText}{Environment.NewLine}");
+                            File.AppendAllText(OutputFile, $@"[WARNING][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
                         }
                         catch (Exception exception)
                         {
@@ -91,23 +76,23 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("[  !  ]");
+                    Console.Write(@"[  X  ]");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write($"[{Timestamp}]: ");
+                    Console.Write($@"[{timestamp}]: ");
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write($"{ModuleName} > ");
+                    Console.Write($@"{moduleName} > ");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(EntryText);
+                    Console.Write(entryText);
                     Console.WriteLine();
                     Console.ResetColor();
                     break;
 
                 case Types.LogType.Error:
-                    if (_OutputFile != string.Empty)
+                    if (OutputFile != string.Empty)
                     {
                         try
                         {
-                            File.AppendAllText(_OutputFile, $"[ERROR][{Timestamp}]: {ModuleName} > {EntryText}{Environment.NewLine}");
+                            File.AppendAllText(OutputFile, $@"[ERROR][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
                         }
                         catch (Exception exception)
                         {
@@ -116,23 +101,23 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("[  X  ]");
+                    Console.Write(@"[  X  ]");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write($"[{Timestamp}]: ");
+                    Console.Write($@"[{timestamp}]: ");
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write($"{ModuleName} > ");
+                    Console.Write($@"{moduleName} > ");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(EntryText);
+                    Console.Write(entryText);
                     Console.WriteLine();
                     Console.ResetColor();
                     break;
 
                 case Types.LogType.Debug:
-                    if (_OutputFile != string.Empty)
+                    if (OutputFile != string.Empty)
                     {
                         try
                         {
-                            File.AppendAllText(_OutputFile, $"[DEBUG][{Timestamp}]: {ModuleName} > {EntryText}{Environment.NewLine}");
+                            File.AppendAllText(OutputFile, $@"[DEBUG][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
                         }
                         catch (Exception exception)
                         {
@@ -141,17 +126,19 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.Write("[ ~~~ ]");
+                    Console.Write(@"[  X  ]");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write($"[{Timestamp}]: ");
+                    Console.Write($@"[{timestamp}]: ");
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write($"{ModuleName} > ");
+                    Console.Write($@"{moduleName} > ");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(EntryText);
+                    Console.Write(entryText);
                     Console.WriteLine();
                     Console.ResetColor();
                     break;
 
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(loggingType), loggingType, null);
             }
         }
     }

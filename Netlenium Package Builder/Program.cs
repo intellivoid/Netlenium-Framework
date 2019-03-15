@@ -159,28 +159,28 @@ namespace NetleniumBuild
             {
                 case MessageType.Out:
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(" > ");
+                    Console.Write(@"[  X  ]");
                     Console.ResetColor();
                     Console.WriteLine(Output);
                     break;
 
                 case MessageType.Information:
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write(" [INFO] ");
+                    Console.Write(@"[  X  ]");
                     Console.ResetColor();
                     Console.WriteLine(Output);
                     break;
 
                 case MessageType.Warning:
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(" [WARNING] ");
+                    Console.Write(@"[  X  ]");
                     Console.ResetColor();
                     Console.WriteLine(Output);
                     break;
 
                 case MessageType.Error:
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(" [ERROR] ");
+                    Console.Write(@"[  X  ]");
                     Console.ResetColor();
                     Console.WriteLine(Output);
                     break;
@@ -315,13 +315,13 @@ namespace NetleniumBuild
             if (Directory.Exists(Source) == false)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("Missing Resource Error: ");
+                Console.Write(@"[  X  ]");
                 Console.ResetColor();
-                Console.Write("The directory");
+                Console.Write(@"[  X  ]");
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write($" \"{Source}\" ");
+                Console.Write($@" ""{Source}"" ");
                 Console.ResetColor();
-                Console.Write("was not found");
+                Console.Write(@"[  X  ]");
                 Console.WriteLine();
                 Environment.Exit(1);
             }
@@ -329,13 +329,13 @@ namespace NetleniumBuild
             if (File.Exists($"{Source}{Path.DirectorySeparatorChar}package.json") == false)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("Missing Resource Error: ");
+                Console.Write(@"[  X  ]");
                 Console.ResetColor();
-                Console.Write("The directory");
+                Console.Write(@"[  X  ]");
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write($" \"{Source}{Path.DirectorySeparatorChar}package.json\"");
+                Console.Write($@" ""{Source}{Path.DirectorySeparatorChar}package.json""");
                 Console.ResetColor();
-                Console.Write("was not found");
+                Console.Write(@"[  X  ]");
                 Console.WriteLine();
                 Environment.Exit(1);
             }
@@ -343,13 +343,13 @@ namespace NetleniumBuild
             if (File.Exists($"{Source}{Path.DirectorySeparatorChar}main.py") == false)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("Missing Resource Error: ");
+                Console.Write(@"[  X  ]");
                 Console.ResetColor();
-                Console.Write("The directory");
+                Console.Write(@"[  X  ]");
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write($" \"{Source}{Path.DirectorySeparatorChar}main.py\"");
+                Console.Write($@" ""{Source}{Path.DirectorySeparatorChar}main.py""");
                 Console.ResetColor();
-                Console.Write("was not found");
+                Console.Write(@"[  X  ]");
                 Console.WriteLine();
                 Environment.Exit(1);
             }
