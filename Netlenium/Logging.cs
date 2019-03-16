@@ -151,7 +151,7 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.Write(@"[ DBG ]");
+                    Console.Write(@"[DEBUG]");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write($@"[{timestamp}]: ");
                     Console.ForegroundColor = ConsoleColor.Gray;
