@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Netlenium.Driver
 {
@@ -11,36 +12,36 @@ namespace Netlenium.Driver
         /// <summary>
         /// The target driver that this element uses
         /// </summary>
-        private Types.Driver TargetDriver;
+        private Types.Driver TargetDriver { get; }
 
         /// <summary>
         /// The chrome element object
         /// </summary>
-        private Chrome.Element ChromeElement;
+        private Chrome.Element ChromeElement { get; }
 
         /// <summary>
         /// The GeckoFXLib element object
         /// </summary>
-        private GeckoFXLib.Element GeckoFXLibElement;
+        private GeckoFXLib.Element GeckoFxLibElement { get; }
 
         /// <summary>
         /// Constructs the WebElement with a Chrome Element
         /// </summary>
-        /// <param name="ChromeElement"></param>
-        public WebElement(Chrome.Element ChromeElement)
+        /// <param name="chromeElement"></param>
+        public WebElement(Chrome.Element chromeElement)
         {
-            this.TargetDriver = Types.Driver.Chrome;
-            this.ChromeElement = ChromeElement;
+            TargetDriver = Types.Driver.Chrome;
+            ChromeElement = chromeElement;
         }
         
         /// <summary>
         /// Constructs the WebElement with a GeckoFXLib Element
         /// </summary>
-        /// <param name="GeckoFXLibElement"></param>
-        public WebElement(GeckoFXLib.Element GeckoFXLibElement)
+        /// <param name="geckoFxLibElement"></param>
+        public WebElement(GeckoFXLib.Element geckoFxLibElement)
         {
-            this.TargetDriver = Types.Driver.GeckoLib;
-            this.GeckoFXLibElement = GeckoFXLibElement;
+            TargetDriver = Types.Driver.GeckoLib;
+            GeckoFxLibElement = geckoFxLibElement;
         }
 
         /// <summary>
@@ -53,10 +54,10 @@ namespace Netlenium.Driver
                 switch (TargetDriver)
                 {
                     case Types.Driver.Chrome:
-                        return this.ChromeElement.Text;
+                        return ChromeElement.Text;
 
                     case Types.Driver.GeckoLib:
-                        return this.GeckoFXLibElement.Text;
+                        return GeckoFxLibElement.Text;
 
                     default:
                         throw new ElementPropertyNotSupportedForDriver();
@@ -74,10 +75,10 @@ namespace Netlenium.Driver
                 switch(TargetDriver)
                 {
                     case Types.Driver.Chrome:
-                        return this.ChromeElement.Visible;
+                        return ChromeElement.Visible;
 
                     case Types.Driver.GeckoLib:
-                        return this.GeckoFXLibElement.Visible;
+                        return GeckoFxLibElement.Visible;
 
                     default:
                         throw new ElementPropertyNotSupportedForDriver();
@@ -88,17 +89,17 @@ namespace Netlenium.Driver
         /// <summary>
         /// Returns the value of a specified attribute on the element. 
         /// </summary>
-        /// <param name="AttributeName"></param>
+        /// <param name="attributeName"></param>
         /// <returns></returns>
-        public string GetAttribute(string AttributeName)
+        public string GetAttribute(string attributeName)
         {
             switch(TargetDriver)
             {
                 case Types.Driver.Chrome:
-                    return this.ChromeElement.GetAttribute(AttributeName);
+                    return ChromeElement.GetAttribute(attributeName);
 
                 case Types.Driver.GeckoLib:
-                    return this.GeckoFXLibElement.GetAttribute(AttributeName);
+                    return GeckoFxLibElement.GetAttribute(attributeName);
 
                 default:
                     throw new ElementMethodNotSupportedForDriver();
@@ -108,18 +109,18 @@ namespace Netlenium.Driver
         /// <summary>
         /// Sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
         /// </summary>
-        /// <param name="AttributeName"></param>
-        /// <param name="Value"></param>
-        public void SetAttribute(string AttributeName, string Value)
+        /// <param name="attributeName"></param>
+        /// <param name="value"></param>
+        public void SetAttribute(string attributeName, string value)
         {
             switch(TargetDriver)
             {
                 case Types.Driver.Chrome:
-                    this.ChromeElement.SetAttribute(AttributeName, Value);
+                    ChromeElement.SetAttribute(attributeName, value);
                     break;
 
                 case Types.Driver.GeckoLib:
-                    this.GeckoFXLibElement.SetAttribute(AttributeName, Value);
+                    GeckoFxLibElement.SetAttribute(attributeName, value);
                     break;
 
                 default:
@@ -139,7 +140,7 @@ namespace Netlenium.Driver
                 case Types.Driver.Chrome:
                     try
                     {
-                        this.ChromeElement.Click();
+                        ChromeElement.Click();
                         break;
                     }
                     catch(Exception exception)
@@ -151,7 +152,7 @@ namespace Netlenium.Driver
                 case Types.Driver.GeckoLib:
                     try
                     {
-                        this.GeckoFXLibElement.Click();
+                        GeckoFxLibElement.Click();
                         break;
                     }
                     catch (Exception exception)
@@ -168,60 +169,52 @@ namespace Netlenium.Driver
         /// <summary>
         /// Simulates typing into the event
         /// </summary>
-        /// <param name="Keys"></param>
-        public void SendKeys(string Keys)
+        /// <param name="keys"></param>
+        public void SendKeys(string keys)
         {
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Simulating typing to element");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Simulating typing to element");
             switch(TargetDriver)
             {
                 case Types.Driver.Chrome:
-                    ChromeElement.SendKeys(Keys);
+                    ChromeElement.SendKeys(keys);
                     break;
 
                 case Types.Driver.GeckoLib:
-                    GeckoFXLibElement.SendKeys(Keys);
+                    GeckoFxLibElement.SendKeys(keys);
                     break;
 
                 default:
-                    Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", $"The method SendKeys() on this element is not supported for the given Driver.");
+                    Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", "The method SendKeys() on this element is not supported for the given Driver.");
                     throw new ElementMethodNotSupportedForDriver();
 
             }
 
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Success");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Success");
         }
 
         /// <summary>
         /// Returns a collection of all elements in the document with the specified search method
         /// </summary>
-        /// <param name="SearchType"></param>
-        /// <param name="Input"></param>
+        /// <param name="searchType"></param>
+        /// <param name="input"></param>
         /// <returns></returns>
-        public List<WebElement> GetElements(Types.SearchType SearchType, string Input)
+        public List<WebElement> GetElements(Types.SearchType searchType, string input)
         {
-            List<WebElement> WebElements = new List<WebElement>();
+            var webElements = new List<WebElement>();
 
             switch (TargetDriver)
             {
                 case Types.Driver.Chrome:
-                    List<Chrome.Element> ChromeResults = ChromeElement.GetElements(SearchType, Input);
+                    var chromeResults = ChromeElement.GetElements(searchType, input);
+                    webElements.AddRange(chromeResults.Select(chromeElement => new WebElement(chromeElement)));
 
-                    foreach (Chrome.Element ChromeElement in ChromeResults)
-                    {
-                        WebElements.Add(new WebElement(ChromeElement));
-                    }
-
-                    return WebElements;
+                    return webElements;
 
                 case Types.Driver.GeckoLib:
-                    List<GeckoFXLib.Element> GeckoFXLibResults = GeckoFXLibElement.GetElements(SearchType, Input);
+                    var geckoFxLibResults = GeckoFxLibElement.GetElements(searchType, input);
+                    webElements.AddRange(geckoFxLibResults.Select(geckoFxLibElement => new WebElement(geckoFxLibElement)));
 
-                    foreach (GeckoFXLib.Element GeckoFXLibElement in GeckoFXLibResults)
-                    {
-                        WebElements.Add(new WebElement(GeckoFXLibElement));
-                    }
-
-                    return WebElements;
+                    return webElements;
 
                 default:
                     throw new MethodNotSupportedForDriver();
@@ -232,28 +225,28 @@ namespace Netlenium.Driver
         /// <returns></returns>
         /// Returns the first element of all elements in the document with the specified search method
         /// </summary>
-        /// <param name="SearchType"></param>
-        /// <param name="Input"></param>
-        public WebElement GetElement(Types.SearchType SearchType, string Input)
+        /// <param name="searchType"></param>
+        /// <param name="input"></param>
+        public WebElement GetElement(Types.SearchType searchType, string input)
         {
             switch(TargetDriver)
             {
                 case Types.Driver.Chrome:
-                    List<Chrome.Element> ChromeResults = ChromeElement.GetElements(SearchType, Input);
+                    var chromeResults = ChromeElement.GetElements(searchType, input);
 
-                    if(ChromeResults.Count > 1)
+                    if(chromeResults.Count > 1)
                     {
-                        return new WebElement(ChromeResults[0]);
+                        return new WebElement(chromeResults[0]);
                     }
 
                     throw new NoElementsFoundException();
 
                 case Types.Driver.GeckoLib:
-                    List<GeckoFXLib.Element> GeckoFXLibResults = GeckoFXLibElement.GetElements(SearchType, Input);
+                    var geckoFxLibResults = GeckoFxLibElement.GetElements(searchType, input);
 
-                    if(GeckoFXLibResults.Count > 1)
+                    if(geckoFxLibResults.Count > 1)
                     {
-                        return new WebElement(GeckoFXLibResults[0]);
+                        return new WebElement(geckoFxLibResults[0]);
                     }
 
                     throw new NoElementsFoundException();

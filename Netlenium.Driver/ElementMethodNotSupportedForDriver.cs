@@ -34,7 +34,7 @@ namespace Netlenium.Driver
         }
 
         /// <summary>
-        /// Public Cos tructor for Serialized Objects
+        /// Public Constructor for Serialized Objects
         /// </summary>
         /// <param name="info"></param>
         /// <param name="context"></param>

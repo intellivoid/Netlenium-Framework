@@ -10,7 +10,7 @@ namespace Netlenium.Driver
         /// <summary>
         /// Initializes a new instance of the MethodNotSupportedForDriver class.
         /// </summary>
-        public MethodNotSupportedForDriver(): base()
+        public MethodNotSupportedForDriver()
         {
         }
 
