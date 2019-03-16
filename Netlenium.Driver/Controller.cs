@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Netlenium.Driver
 {
@@ -261,34 +262,31 @@ namespace Netlenium.Driver
         /// <returns></returns>
         public List<WebElement> GetElements(Types.SearchType searchType, string input)
         {
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Getting Elements by {searchType.ToString()} ({input})");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Getting Elements by {searchType} ({input})");
             var webElements = new List<WebElement>();
 
             switch (DriverType)
             {
                 case Types.Driver.Chrome:
+                    
                     var chromeResults = ChromeController.GetElements(searchType, input);
 
-                    foreach (var chromeElement in chromeResults)
-                    {
-                        webElements.Add(new WebElement(chromeElement));
-                    }
+                    webElements.AddRange(chromeResults.Select(chromeElement => new WebElement(chromeElement)));
 
                     Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Returned {webElements.Count} element(s)");
                     return webElements;
 
                 case Types.Driver.GeckoLib:
+                    
                     var geckoFxLibResults = GeckoController.GetElements(searchType, input);
 
-                    foreach(var geckoFxLibElement in geckoFxLibResults)
-                    {
-                        webElements.Add(new WebElement(geckoFxLibElement));
-                    }
+                    webElements.AddRange(geckoFxLibResults.Select(geckoFxLibElement => new WebElement(geckoFxLibElement)));
 
                     Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Returned {webElements.Count} element(s)");
                     return webElements;
 
                 default:
+
                     Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", "The method GetElements() is not supported for the selected driver");
                     throw new MethodNotSupportedForDriver();
             }
