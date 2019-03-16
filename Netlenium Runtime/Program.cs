@@ -1,12 +1,11 @@
 ﻿using Ionic.Zip;
-using Microsoft.Scripting.Hosting;
 using Mono.Options;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Windows.Forms;
 using System.Xml;
 
 namespace NetleniumRuntime
@@ -14,48 +13,42 @@ namespace NetleniumRuntime
     /// <summary>
     /// The Parameters used for this Application
     /// </summary>
-    class Parameters
+    internal class Parameters
     {
         /// <summary>
         /// The Netlenium Package to execute (.np file)
         /// </summary>
-        public string PackageFile
-        {
-            get; set;
-        }
+        public string PackageFile { get; set; }
 
         /// <summary>
         /// Skips the dependency check of the package
         /// </summary>
-        public bool SkipDependencyCheck
-        {
-            get; set;
-        }
+        public bool SkipDependencyCheck { get; set; }
 
         /// <summary>
-        /// Displays the help menu
+        /// Indiciates if the Help menu should only be displayed
         /// </summary>
-        public bool Help
-        {
-            get; set;
-        }
+        public bool Help { get; set; }
     }
 
-    class Program
+    internal class Program
     {
-        private static Parameters UsedParameters;
+        /// <summary>
+        /// The paramerters used for this CLI
+        /// </summary>
+        private static Parameters _usedParameters;
 
         /// <summary>
         /// The Runtime ID that's currently set
         /// </summary>
-        private static string RuntimeID;
+        private static string _runtimeId;
 
         /// <summary>
         /// Handler for when the process is about to be terminated
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        static void ProcessExitHandler(object sender, EventArgs e)
+        private static void ProcessExitHandler(object sender, EventArgs e)
         {
             ClearRuntime();
             Environment.Exit(0);
@@ -68,9 +61,9 @@ namespace NetleniumRuntime
         {
             get
             {
-                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                UriBuilder uri = new UriBuilder(codeBase);
-                string path = Uri.UnescapeDataString(uri.Path);
+                var codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                var uri = new UriBuilder(codeBase);
+                var path = Uri.UnescapeDataString(uri.Path);
                 return Path.GetDirectoryName(path);
             }
         }
@@ -80,43 +73,25 @@ namespace NetleniumRuntime
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        private static void GetParamerters(string[] args)
+        private static void GetParamerters(IEnumerable<string> args)
         {
-            UsedParameters = new Parameters();
+            _usedParameters = new Parameters();
 
-            var p = new OptionSet()
+            var p = new OptionSet
             {
                 {
                     "h|help=", "Displays the help menu",
-                    v => {
-                        if(v == null)
-                        {
-                            UsedParameters.Help = false;
-                        }
-                        else
-                        {
-                            UsedParameters.Help = true;
-                        }
-                    }
+                    v => { _usedParameters.Help = v != null; }
                 },
                 {
                     "f|file=", "The Netlenium Package to execute (.np file)",
                     v => {
-                        UsedParameters.PackageFile = v;
+                        _usedParameters.PackageFile = v;
                     }
                 },
                 {
                     "skip-dependency-check", "Skips the dependency check of the package",
-                    v => {
-                        if(v == null)
-                        {
-                            UsedParameters.SkipDependencyCheck = false;
-                        }
-                        else
-                        {
-                            UsedParameters.SkipDependencyCheck = true;
-                        }
-                    }
+                    v => { _usedParameters.SkipDependencyCheck = v != null; }
                 }
             };
 
@@ -124,21 +99,19 @@ namespace NetleniumRuntime
             {
                 p.Parse(args);
 
-                if(UsedParameters.Help == true)
+                if(_usedParameters.Help)
                 {
                     ShowHelp();
                     Environment.Exit(0);
                 }
 
-                if (UsedParameters.PackageFile == null)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"Error: Missing paramerter \"file\"{Environment.NewLine}");
-                    Console.ResetColor();
-                    ShowHelp();
-                    Environment.Exit(1);
-                }
-
+                if (_usedParameters.PackageFile != null) return;
+                
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error: Missing paramerter \"file\"{Environment.NewLine}");
+                Console.ResetColor();
+                ShowHelp();
+                Environment.Exit(1);
             }
             catch (Exception exception)
             {
@@ -153,75 +126,77 @@ namespace NetleniumRuntime
         /// </summary>
         private static void ShowHelp()
         {
-            Version ApplicationVersion = Assembly.GetExecutingAssembly().GetName().Version;
+            var applicationVersion = Assembly.GetExecutingAssembly().GetName().Version;
 
-            Console.WriteLine("Netlenium Runtime");
-            Console.WriteLine($"Version {ApplicationVersion.ToString()}{Environment.NewLine}");
+            Console.WriteLine(@"Netlenium Runtime");
+            Console.WriteLine($@"Version {applicationVersion}{Environment.NewLine}");
 
-            Console.WriteLine("usage: netlenium_re [options]");
-            Console.WriteLine(" options:");
-            Console.WriteLine("     -h, --help                  Displays the help menu");
-            Console.WriteLine("     -f, --file  required        The Netlenium Package to execute (.np file)");
-            Console.WriteLine("     --skip-dependency-check     Skips the dependency check of the package");
+            Console.WriteLine(@"usage: netlenium_re [options]");
+            Console.WriteLine(@" options:");
+            Console.WriteLine(@"     -h, --help                  Displays the help menu");
+            Console.WriteLine(@"     -f, --file  required        The Netlenium Package to execute (.np file)");
+            Console.WriteLine(@"     --skip-dependency-check     Skips the dependency check of the package");
         }
 
         /// <summary>
         /// Main Method of Execution for Netlenium Runtime
         /// </summary>
         /// <param name="Options"></param>
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             AppDomain.CurrentDomain.ProcessExit += ProcessExitHandler;
             GetParamerters(args);
 
-            if (File.Exists(UsedParameters.PackageFile) == false)
+            if (File.Exists(_usedParameters.PackageFile) == false)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Error: The file \"{UsedParameters.PackageFile}\" does not exist!");
+                Console.WriteLine($"Error: The file \"{_usedParameters.PackageFile}\" does not exist!");
                 Console.ResetColor();
                 Environment.Exit(1);
             }
 
-            string RuntimeEnvironment = CreateEnvironment();
+            var runtimeEnvironment = CreateEnvironment();
 
             // Extract the package contents
             try
             {
-                ZipFile zip = ZipFile.Read(UsedParameters.PackageFile);
-                Directory.CreateDirectory(RuntimeEnvironment);
-                zip.ExtractAll(RuntimeEnvironment, ExtractExistingFileAction.OverwriteSilently);
+                var zip = ZipFile.Read(_usedParameters.PackageFile);
+                Directory.CreateDirectory(runtimeEnvironment);
+                zip.ExtractAll(runtimeEnvironment, ExtractExistingFileAction.OverwriteSilently);
             }
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error: There was an issue while trying to read the Netlenium Package");
+                Console.WriteLine(@"Error: There was an issue while trying to read the Netlenium Package");
                 Console.ResetColor();
                 Environment.Exit(1);
             }
 
             //Check required dependencies
-            if(UsedParameters.SkipDependencyCheck == false)
+            if(_usedParameters.SkipDependencyCheck == false)
             {
-                CheckDependencies(RuntimeEnvironment);
+                CheckDependencies(runtimeEnvironment);
             }
 
             // Build from source
-            string MainScript = $"{RuntimeEnvironment}{Path.DirectorySeparatorChar}source{Path.DirectorySeparatorChar}main.py";
-            string ImportedScript = $"{RuntimeEnvironment}{Path.DirectorySeparatorChar}source{Path.DirectorySeparatorChar}c_main.py";
-            string CompiledScript = $"{Properties.Resources.ImportModules}{Environment.NewLine}{File.ReadAllText(MainScript)}";
-            File.WriteAllText(ImportedScript, CompiledScript);
+            var mainScript = $"{runtimeEnvironment}{Path.DirectorySeparatorChar}source{Path.DirectorySeparatorChar}main.py";
+            var importedScript = $"{runtimeEnvironment}{Path.DirectorySeparatorChar}source{Path.DirectorySeparatorChar}c_main.py";
+            var compiledScript = $"{Properties.Resources.ImportModules}{Environment.NewLine}{File.ReadAllText(mainScript)}";
+            File.WriteAllText(importedScript, compiledScript);
             
             // TODO: Define Package Variables
 
-            ScriptEngine pythonEngine = IronPython.Hosting.Python.CreateEngine();
-            ScriptScope scope = pythonEngine.CreateScope();
+            // Execute the python code
+            var pythonEngine = IronPython.Hosting.Python.CreateEngine();
+            var scope = pythonEngine.CreateScope();
             scope.SetVariable("NetleniumRuntime", AssemblyDirectory);
-            scope.SetVariable("RuntimeDirectory", $"{RuntimeEnvironment}{Path.DirectorySeparatorChar}source");
+            scope.SetVariable("RuntimeDirectory", $"{runtimeEnvironment}{Path.DirectorySeparatorChar}source");
             scope.SetVariable("LIB_Netlenium", "Netlenium.dll");
             scope.SetVariable("LIB_NetleniumDriver", "Netlenium.Driver.dll");
-            ScriptSource pythonScript = pythonEngine.CreateScriptSourceFromFile(ImportedScript);
+            var pythonScript = pythonEngine.CreateScriptSourceFromFile(importedScript);
             pythonScript.Execute(scope);
-
+            
+            // Once done, terminate the process
             Environment.Exit(0);
             
         }
@@ -229,29 +204,29 @@ namespace NetleniumRuntime
         /// <summary>
         /// Checks the dependencies if they match the requirements for the package
         /// </summary>
-        /// <param name="RuntimeEnvironment"></param>
-        private static void CheckDependencies(string RuntimeEnvironment)
+        /// <param name="runtimeEnvironment"></param>
+        private static void CheckDependencies(string runtimeEnvironment)
         {
             try
             {
-                LibraryDependency DependencyNetlenium = ParseDependency($"{RuntimeEnvironment}{Path.DirectorySeparatorChar}c_netlenium.xml");
-                LibraryDependency DependencyNetleniumDriver = ParseDependency($"{RuntimeEnvironment}{Path.DirectorySeparatorChar}c_netlenium.driver.xml");
-                LibraryDependency DependencyChromeDriver = ParseDependency($"{RuntimeEnvironment}{Path.DirectorySeparatorChar}c_netlenium.driver.chrome.xml");
-                LibraryDependency DependencyGeckoFXLib = ParseDependency($"{RuntimeEnvironment}{Path.DirectorySeparatorChar}c_netlenium.driver.geckofxlib.xml");
+                var dependencyNetlenium = ParseDependency($"{runtimeEnvironment}{Path.DirectorySeparatorChar}c_netlenium.xml");
+                var dependencyNetleniumDriver = ParseDependency($"{runtimeEnvironment}{Path.DirectorySeparatorChar}c_netlenium.driver.xml");
+                var dependencyChromeDriver = ParseDependency($"{runtimeEnvironment}{Path.DirectorySeparatorChar}c_netlenium.driver.chrome.xml");
+                var dependencyGeckoFxLib = ParseDependency($"{runtimeEnvironment}{Path.DirectorySeparatorChar}c_netlenium.driver.geckofxlib.xml");
 
-                Version InstalledNetlenium = CheckDependency("Netlenium");
-                Version InstalledNetleniumDriver = CheckDependency("Netlenium.Driver");
-                Version InstalledChromeDriver = CheckDependency("Netlenium.Driver.Chrome");
-                Version InstalledGeckoFXLibDriver = CheckDependency("Netlenium.Driver.GeckoFXLib");
+                var installedNetlenium = CheckDependency("Netlenium");
+                var installedNetleniumDriver = CheckDependency("Netlenium.Driver");
+                var installedChromeDriver = CheckDependency("Netlenium.Driver.Chrome");
+                var installedGeckoFxLibDriver = CheckDependency("Netlenium.Driver.GeckoFXLib");
 
-                CompareVersion(DependencyNetlenium.Version, InstalledNetlenium, "Netlenium");
-                CompareVersion(DependencyNetleniumDriver.Version, InstalledNetleniumDriver, "Netlenium.Driver");
-                CompareVersion(DependencyChromeDriver.Version, InstalledChromeDriver, "Netlenium.Driver.Chrome");
-                CompareVersion(DependencyGeckoFXLib.Version, InstalledGeckoFXLibDriver, "Netlenium.Driver.GeckoFXLib");
+                CompareVersion(dependencyNetlenium.Version, installedNetlenium, "Netlenium");
+                CompareVersion(dependencyNetleniumDriver.Version, installedNetleniumDriver, "Netlenium.Driver");
+                CompareVersion(dependencyChromeDriver.Version, installedChromeDriver, "Netlenium.Driver.Chrome");
+                CompareVersion(dependencyGeckoFxLib.Version, installedGeckoFxLibDriver, "Netlenium.Driver.GeckoFXLib");
             }
             catch(Exception)
             {
-                Console.WriteLine("There was an error while trying to check the installed & required dependencies");
+                Console.WriteLine(@"There was an error while trying to check the installed & required dependencies");
                 Environment.Exit(1);
             }
         }
@@ -259,34 +234,34 @@ namespace NetleniumRuntime
         /// <summary>
         /// Parses and returns the dependency information given by the package
         /// </summary>
-        /// <param name="ConfigurationFile"></param>
+        /// <param name="configurationFile"></param>
         /// <returns></returns>
-        private static LibraryDependency ParseDependency(string ConfigurationFile)
+        private static LibraryDependency ParseDependency(string configurationFile)
         {
             try
             {
-                XmlDocument xmlDoc = new XmlDocument(); // Create an XML document object
-                xmlDoc.Load(ConfigurationFile); // Load the XML document from the specified file
+                var xmlDoc = new XmlDocument(); // Create an XML document object
+                xmlDoc.Load(configurationFile); // Load the XML document from the specified file
 
                 // Get elements
-                LibraryDependency Dependency = new LibraryDependency();
+                var dependency = new LibraryDependency();
                 
-                string Major = xmlDoc.GetElementsByTagName("major")[0].InnerText;
-                string Minor = xmlDoc.GetElementsByTagName("minor")[0].InnerText;
-                string Build = xmlDoc.GetElementsByTagName("build")[0].InnerText;
-                string Revision = xmlDoc.GetElementsByTagName("revision")[0].InnerText;
+                var major = xmlDoc.GetElementsByTagName("major")[0].InnerText;
+                var minor = xmlDoc.GetElementsByTagName("minor")[0].InnerText;
+                var build = xmlDoc.GetElementsByTagName("build")[0].InnerText;
+                var revision = xmlDoc.GetElementsByTagName("revision")[0].InnerText;
 
-                Dependency.Dependency = xmlDoc.GetElementsByTagName("dependency")[0].InnerText;
-                Dependency.Version = new Version($"{Major}.{Minor}.{Build}.{Revision}");
-                Dependency.FileName = xmlDoc.GetElementsByTagName("file_name")[0].InnerText;
-                Dependency.Internal = xmlDoc.GetElementsByTagName("internal")[0].InnerText;
-                Dependency.Publisher = xmlDoc.GetElementsByTagName("publisher")[0].InnerText;
+                dependency.Dependency = xmlDoc.GetElementsByTagName("dependency")[0].InnerText;
+                dependency.Version = new Version($"{major}.{minor}.{build}.{revision}");
+                dependency.FileName = xmlDoc.GetElementsByTagName("file_name")[0].InnerText;
+                dependency.Internal = xmlDoc.GetElementsByTagName("internal")[0].InnerText;
+                dependency.Publisher = xmlDoc.GetElementsByTagName("publisher")[0].InnerText;
 
-                return Dependency;
+                return dependency;
             }
             catch(Exception)
             {
-                Console.WriteLine("The Netlenium Package does not contain a valid dependency file");
+                Console.WriteLine(@"The Netlenium Package does not contain a valid dependency file");
                 Environment.Exit(1);
                 return null;
             }
@@ -295,39 +270,39 @@ namespace NetleniumRuntime
         /// <summary>
         /// Checks and returns the version of the installed dependency
         /// </summary>
-        /// <param name="Dependency"></param>
+        /// <param name="dependency"></param>
         /// <returns></returns>
-        private static Version CheckDependency(string Dependency)
+        private static Version CheckDependency(string dependency)
         {
-            string DependencyFile = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}{Dependency}.dll";
+            var dependencyFile = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}{dependency}.dll";
 
-            if (File.Exists(DependencyFile) == false)
+            if (File.Exists(dependencyFile) == false)
             {
-                Console.WriteLine($"The required dependency for the framework cannot be found \"{DependencyFile}\"");
+                Console.WriteLine($"The required dependency for the framework cannot be found \"{dependencyFile}\"");
                 Environment.Exit(1);
                 return null;
             }
 
-            FileVersionInfo VersionInformation = FileVersionInfo.GetVersionInfo($"{AssemblyDirectory}{Path.DirectorySeparatorChar}{Dependency}.dll");
-            return new Version($"{VersionInformation.FileMajorPart}.{VersionInformation.FileMinorPart}.{VersionInformation.FileBuildPart}.{VersionInformation.FilePrivatePart}");
+            var versionInformation = FileVersionInfo.GetVersionInfo($"{AssemblyDirectory}{Path.DirectorySeparatorChar}{dependency}.dll");
+            return new Version($"{versionInformation.FileMajorPart}.{versionInformation.FileMinorPart}.{versionInformation.FileBuildPart}.{versionInformation.FilePrivatePart}");
         }
 
         /// <summary>
         /// Compares the version of two dependencies and throws a warning if they differ
         /// </summary>
-        /// <param name="RequiredVersion"></param>
-        /// <param name="InstalledVersion"></param>
-        /// <param name="DependencyName"></param>
-        private static void CompareVersion(Version RequiredVersion, Version InstalledVersion, string DependencyName)
+        /// <param name="requiredVersion"></param>
+        /// <param name="installedVersion"></param>
+        /// <param name="dependencyName"></param>
+        private static void CompareVersion(Version requiredVersion, Version installedVersion, string dependencyName)
         {
-            var Results = RequiredVersion.CompareTo(InstalledVersion);
-            if(Results > 0)
+            var results = requiredVersion.CompareTo(installedVersion);
+            if(results > 0)
             {
-                Console.WriteLine($"Warning: The installed version of \"{DependencyName}\" is newer than the required version for this package.");
+                Console.WriteLine($"Warning: The installed version of \"{dependencyName}\" is newer than the required version for this package.");
             }
-            else if(Results < 0)
+            else if(results < 0)
             {
-                Console.WriteLine($"Warning: The installed version of \"{DependencyName}\" is older than the required version for this package.");
+                Console.WriteLine($"Warning: The installed version of \"{dependencyName}\" is older than the required version for this package.");
             }
         }
 
@@ -337,27 +312,27 @@ namespace NetleniumRuntime
         /// <returns></returns>
         private static string CreateEnvironment()
         {
-            Random RandomObject = new Random();
+            var randomObject = new Random();
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            RuntimeID = new string(Enumerable.Repeat(chars, 12).Select(s => s[RandomObject.Next(s.Length)]).ToArray());
+            _runtimeId = new string(Enumerable.Repeat(chars, 12).Select(s => s[randomObject.Next(s.Length)]).ToArray());
 
-            if (Directory.Exists($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}"))
+            if (Directory.Exists($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{_runtimeId}"))
             {
                 try
                 {
-                    Directory.Delete($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}");
+                    Directory.Delete($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{_runtimeId}");
                 }
                 catch (Exception)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Error: Duplicate Runtime");
+                    Console.WriteLine(@"Error: Duplicate Runtime");
                     Console.ResetColor();
                 }
             }
 
-            Directory.CreateDirectory($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}");
+            Directory.CreateDirectory($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{_runtimeId}");
 
-            return $"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}";
+            return $"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{_runtimeId}";
         }
 
        
@@ -366,16 +341,16 @@ namespace NetleniumRuntime
         /// </summary>
         private static void ClearRuntime()
         {
-            if (Directory.Exists($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}"))
+            if (!Directory.Exists(
+                $"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{_runtimeId}")) return;
+            
+            try
             {
-                try
-                {
-                    //Directory.Delete($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{RuntimeID}", true);
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Warning: The runtime cannot be closed properly");
-                }
+                Directory.Delete($"{Netlenium.Configuration.RuntimeDirectory}{Path.DirectorySeparatorChar}{_runtimeId}", true);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(@"Warning: The runtime cannot be closed properly");
             }
         }
         

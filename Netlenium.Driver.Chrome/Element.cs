@@ -74,7 +74,7 @@ namespace Netlenium.Driver.Chrome
         /// <param name="Value"></param>
         public void SetAttribute(string AttributeName, string Value)
         {
-            _DriverController._Driver.ExecuteScript("arguments[0].setAttribute(arguments[1], arguments[2]);", this._Element, AttributeName, Value);
+            _DriverController.RemoteDriver.ExecuteScript("arguments[0].setAttribute(arguments[1], arguments[2]);", this._Element, AttributeName, Value);
         }
 
         /// <summary>

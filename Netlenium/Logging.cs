@@ -12,12 +12,12 @@ namespace Netlenium
         /// <summary>
         /// If set to True, general logging messages will be displayed in the CLI
         /// </summary>
-        public static bool GeneralLogging { get; set; } = false;
+        public static bool Enabled { get; set; } = false;
 
         /// <summary>
         /// If set to True, alongside general logging messages; debugging messages will be shown on the CLI
         /// </summary>
-        public static bool DebugLogging { get; set; } = false;
+        public static bool VerboseLogging { get; set; } = false;
 
         /// <summary>
         /// The output file to output all the data to (AllowLogging doesn't need to be set to True for this to work)
@@ -25,19 +25,19 @@ namespace Netlenium
         public static string OutputFile { get; set; } = string.Empty;
 
         /// <summary>
-        /// Writes a debugging Log Entry
+        /// Writes a vebrose Log Entry
         /// </summary>
         /// <param name="loggingType"></param>
         /// <param name="moduleName"></param>
         /// <param name="entryText"></param>
         public static void WriteDebugEntry(Types.LogType loggingType, string moduleName, string entryText)
         {
-            if (DebugLogging == false)
+            if (VerboseLogging == false)
             {
                 return;
             }
             
-            WriteEntry(loggingType, $"{entryText} (DEBUG)", moduleName);
+            WriteEntry(loggingType, $"{entryText} (VERBO)", moduleName);
         }
         
         /// <summary>
@@ -49,7 +49,7 @@ namespace Netlenium
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static void WriteEntry(Types.LogType loggingType, string moduleName, string entryText)
         {
-            if(GeneralLogging == false)
+            if(Enabled == false)
             {
                 return;
             }

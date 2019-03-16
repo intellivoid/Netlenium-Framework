@@ -123,7 +123,7 @@ namespace Netlenium.Driver
                 switch(_DriverType)
                 {
                     case Types.Driver.Chrome:
-                        return _ChromeController.URL;
+                        return _ChromeController.Url;
 
                     case Types.Driver.GeckoLib:
                         return _GeckoController.URL;
@@ -147,7 +147,7 @@ namespace Netlenium.Driver
                     try
                     {
 
-                        return this._ChromeController.ExecuterJS(Code);
+                        return this._ChromeController.ExecuterJs(Code);
                     }
                     catch(Exception exception)
                     {

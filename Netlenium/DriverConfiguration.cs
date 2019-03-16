@@ -25,23 +25,33 @@
         public Types.Driver TargetDriver { get; set; }
 
         /// <summary>
-        /// If set to True, general logging messages will be displayed in the CLI
+        /// If set to True, general logging messages from the Framework will be displayed in the CLI
         /// </summary>
-        public bool GeneralLogging
+        public bool FrameworkLogging
         {
-            get => Logging.GeneralLogging;
-            set => Logging.GeneralLogging = value;
+            get => Logging.Enabled;
+            set => Logging.Enabled = value;
         }
 
         /// <summary>
-        /// If set to True, alongside general logging messages; debugging messages will also be displayed in the CLI
+        /// If set to True, alongside general framework logging messages; verbose messages will also be displayed in the CLI
         /// </summary>
-        public bool DebugLogging
+        public bool FrameworkVerboseLogging
         {
-            get => Logging.DebugLogging;
-            set => Logging.DebugLogging = value;
+            get => Logging.VerboseLogging;
+            set => Logging.VerboseLogging = value;
         }
 
+        /// <summary>
+        /// If set to true, driver logs will be displayed in the CLI
+        /// </summary>
+        public bool DriverLogging { get; set; }
+        
+        /// <summary>
+        /// If set to true, verbose messages will also be displayed if DriverLogging is set to True
+        /// </summary>
+        public bool DriverVerboseLogging { get; set; }
+        
         /// <summary>
         /// Public Consturctor
         /// </summary>

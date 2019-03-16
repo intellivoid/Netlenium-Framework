@@ -2,8 +2,8 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using OpenQA.Selenium.Remote;
 
 namespace Netlenium.Driver.Chrome
 {
@@ -13,37 +13,42 @@ namespace Netlenium.Driver.Chrome
     public class Controller
     {
         /// <summary>
-        /// Primary Driver Controller
+        /// Primary Remote Driver Controller
         /// </summary>
-        public ChromeDriver _Driver;
+        public RemoteWebDriver RemoteDriver;
 
         /// <summary>
         /// Container for executing Javascript Calls
         /// </summary>
-        private IJavaScriptExecutor _JavascriptExecuter;
+        private IJavaScriptExecutor _javascriptExecuter;
 
         /// <summary>
         /// Handles Selenium interactions
         /// </summary>
-        private Actions _DriverAction;
+        private Actions _driverAction;
 
         /// <summary>
         /// The configuration that targets this driver
         /// </summary>
-        private DriverConfiguration Configuration;
+        private readonly DriverConfiguration _configuration;
 
         /// <summary>
         /// The driver installation details
         /// </summary>
-        private DriverInstallationDetails DriverInstallation;
+        private readonly DriverInstallationDetails _driverInstallation;
+
+        /// <summary>
+        /// Chrome driver service
+        /// </summary>
+        public ChromeDriverService DriverService { get; set; }
         
         /// <summary>
         /// Constructs the chrome controller and configures the chrome driver
         /// </summary>
-        public Controller(DriverConfiguration DriverConfiguration, DriverInstallationDetails DriverInstallation)
+        public Controller(DriverConfiguration driverConfiguration, DriverInstallationDetails driverInstallation)
         {
-            Configuration = DriverConfiguration;
-            this.DriverInstallation = DriverInstallation;
+            _configuration = driverConfiguration;
+            _driverInstallation = driverInstallation;
         }
 
         /// <summary>
@@ -51,21 +56,41 @@ namespace Netlenium.Driver.Chrome
         /// </summary>
         public void Initialize()
         {
-            if(Configuration.Headless == true)
+            var driverOptions = new ChromeOptions();
+            DriverService = ChromeDriverService.CreateDefaultService(_driverInstallation.DriverPath, _driverInstallation.DriverExecutableName);
+            
+            if (_configuration.Headless)
             {
-                ChromeOptions options = new ChromeOptions();
-                options.AddArgument("headless");
-                options.AddArguments("window-size=1200x600");
+                driverOptions.AddArgument("headless");
+                driverOptions.AddArguments("window-size=1200x600");
+            }
 
-                this._Driver = new ChromeDriver(DriverInstallation.DriverPath, options);
+            if (_configuration.DriverLogging)
+            {
+                if (_configuration.DriverVerboseLogging)
+                {
+                    driverOptions.AddArgument("log-level=1");
+                    DriverService.EnableVerboseLogging = true;
+                }
+                else
+                {
+                    driverOptions.AddArgument("log-level=2");
+                    DriverService.EnableVerboseLogging = false;
+                }
+                
+                DriverService.SuppressInitialDiagnosticInformation = false;
             }
             else
             {
-                this._Driver = new ChromeDriver(DriverInstallation.DriverPath);
+                driverOptions.AddArgument("log-level=0");
+                driverOptions.AddArgument("silent");
+                DriverService.SuppressInitialDiagnosticInformation = true;
             }
             
-            this._JavascriptExecuter = (IJavaScriptExecutor)this._Driver;
-            this._DriverAction = new Actions(this._Driver);
+            DriverService.Start();
+            RemoteDriver = new RemoteWebDriver(DriverService.ServiceUrl, driverOptions);
+            _javascriptExecuter = RemoteDriver;
+            _driverAction = new Actions(RemoteDriver);
 
         }
 
@@ -74,48 +99,36 @@ namespace Netlenium.Driver.Chrome
         /// </summary>
         public void Quit()
         {
-            _Driver.Quit();
+            RemoteDriver.Quit();
         }
 
         /// <summary>
         /// the current title of the document
         /// </summary>
-        public string DocumentTitle
-        {
-            get
-            {
-                return _Driver.Title;
-            }
-        }
+        public string DocumentTitle => RemoteDriver.Title;
 
         /// <summary>
         /// The current URL
         /// </summary>
-        public string URL
-        {
-            get
-            {
-                return _Driver.Url;
-            }
-        }
+        public string Url => RemoteDriver.Url;
 
         /// <summary>
         /// Executes Javascript Code
         /// </summary>
-        /// <param name="Code"></param>
+        /// <param name="code"></param>
         /// <returns></returns>
-        public string ExecuterJS(string Code)
+        public string ExecuterJs(string code)
         {
-            return Convert.ToString(this._JavascriptExecuter.ExecuteScript(Code));
+            return Convert.ToString(_javascriptExecuter.ExecuteScript(code));
         }
 
         /// <summary>
         /// Navigates the given URL (Blocks until the navigation has been completed)
         /// </summary>
-        /// <param name="URL"></param>
-        public void Naviagte(string URL)
+        /// <param name="url"></param>
+        public void Naviagte(string url)
         {
-            this._Driver.Navigate().GoToUrl(URL);
+            RemoteDriver.Navigate().GoToUrl(url);
         }
 
         /// <summary>
@@ -123,7 +136,7 @@ namespace Netlenium.Driver.Chrome
         /// </summary>
         public void GoBack()
         {
-            this._Driver.Navigate().Back();
+            RemoteDriver.Navigate().Back();
         }
 
         /// <summary>
@@ -131,19 +144,19 @@ namespace Netlenium.Driver.Chrome
         /// </summary>
         public void GoForward()
         {
-            this._Driver.Navigate().Forward();
+            RemoteDriver.Navigate().Forward();
         }
 
         /// <summary>
         /// Moves to the given IWebElement
         /// </summary>
-        /// <param name="Element"></param>
-        public void MoveTo(IWebElement Element)
+        /// <param name="element"></param>
+        public void MoveTo(IWebElement element)
         {
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver.Chrome", $"Moving to element \"{Element.ToString()}\"");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver.Chrome", $"Moving to element \"{element}\"");
             try
             {
-                _DriverAction.MoveToElement(Element);
+                _driverAction.MoveToElement(element);
             }
             catch (Exception exception)
             {
@@ -154,56 +167,56 @@ namespace Netlenium.Driver.Chrome
         /// <summary>
         /// Returns a live ElementCollection of elements with the given search type name and input
         /// </summary>
-        /// <param name="SearchType"></param>
-        /// <param name="Input"></param>
+        /// <param name="searchType"></param>
+        /// <param name="input"></param>
         /// <returns></returns>
-        public List<Element> GetElements(Types.SearchType SearchType, string Input)
+        public List<Element> GetElements(Types.SearchType searchType, string input)
         {
-            List<Element> Elements = new List<Element>();
+            List<Element> elements = new List<Element>();
 
-            switch (SearchType)
+            switch (searchType)
             {
                 case Types.SearchType.ClassName:
 
-                    foreach(IWebElement FoundElement in this._Driver.FindElements(By.ClassName(Input)))
+                    foreach(IWebElement foundElement in RemoteDriver.FindElements(By.ClassName(input)))
                     {
-                        Elements.Add(new Element(FoundElement, this));
+                        elements.Add(new Element(foundElement, this));
                     }
 
-                    return Elements;
+                    return elements;
 
                 case Types.SearchType.CssSelector:
 
-                    foreach (IWebElement FoundElement in this._Driver.FindElements(By.CssSelector(Input)))
+                    foreach (IWebElement foundElement in RemoteDriver.FindElements(By.CssSelector(input)))
                     {
-                        Elements.Add(new Element(FoundElement, this));
+                        elements.Add(new Element(foundElement, this));
                     }
 
-                    return Elements;
+                    return elements;
 
                 case Types.SearchType.Id:
-                    foreach (IWebElement FoundElement in this._Driver.FindElements(By.Id(Input)))
+                    foreach (IWebElement foundElement in RemoteDriver.FindElements(By.Id(input)))
                     {
-                        Elements.Add(new Element(FoundElement, this));
+                        elements.Add(new Element(foundElement, this));
                     }
 
-                    return Elements;
+                    return elements;
 
                 case Types.SearchType.TagName:
-                    foreach (IWebElement FoundElement in this._Driver.FindElements(By.TagName(Input)))
+                    foreach (IWebElement foundElement in RemoteDriver.FindElements(By.TagName(input)))
                     {
-                        Elements.Add(new Element(FoundElement, this));
+                        elements.Add(new Element(foundElement, this));
                     }
 
-                    return Elements;
+                    return elements;
 
                 case Types.SearchType.Name:
-                    foreach (IWebElement FoundElement in this._Driver.FindElements(By.Name(Input)))
+                    foreach (IWebElement foundElement in RemoteDriver.FindElements(By.Name(input)))
                     {
-                        Elements.Add(new Element(FoundElement, this));
+                        elements.Add(new Element(foundElement, this));
                     }
 
-                    return Elements;
+                    return elements;
 
                 default:
                     throw new SearchTypeNotSupportedException();
