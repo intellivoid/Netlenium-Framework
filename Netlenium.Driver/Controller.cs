@@ -15,6 +15,9 @@ namespace Netlenium.Driver
         /// </summary>
         private Chrome.Controller ChromeController { get; set; }
 
+        /// <summary>
+        /// The GeckoFX Core Lib Controller
+        /// </summary>
         private GeckoFXLib.Controller GeckoController { get; set; }
 
         /// <summary>
