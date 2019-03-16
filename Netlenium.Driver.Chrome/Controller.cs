@@ -100,6 +100,7 @@ namespace Netlenium.Driver.Chrome
         public void Quit()
         {
             RemoteDriver.Quit();
+            DriverService.Dispose();
         }
 
         /// <summary>
