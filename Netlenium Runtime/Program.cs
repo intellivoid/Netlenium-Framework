@@ -33,6 +33,8 @@ namespace NetleniumRuntime
 
     internal class Program
     {
+        private const string ApplicationVersion = "1.0.0.0";
+        
         /// <summary>
         /// The paramerters used for this CLI
         /// </summary>
@@ -126,10 +128,8 @@ namespace NetleniumRuntime
         /// </summary>
         private static void ShowHelp()
         {
-            var applicationVersion = Assembly.GetExecutingAssembly().GetName().Version;
-
             Console.WriteLine(@"Netlenium Runtime");
-            Console.WriteLine($@"Version {applicationVersion}{Environment.NewLine}");
+            Console.WriteLine($@"Version {ApplicationVersion}{Environment.NewLine}");
 
             Console.WriteLine(@"usage: netlenium_re [options]");
             Console.WriteLine(@" options:");
@@ -141,7 +141,7 @@ namespace NetleniumRuntime
         /// <summary>
         /// Main Method of Execution for Netlenium Runtime
         /// </summary>
-        /// <param name="Options"></param>
+        /// <param name="args"></param>
         private static void Main(string[] args)
         {
             AppDomain.CurrentDomain.ProcessExit += ProcessExitHandler;

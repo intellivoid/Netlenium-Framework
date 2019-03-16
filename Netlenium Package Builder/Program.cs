@@ -35,6 +35,8 @@ namespace NetleniumBuild
     {
         private static Paramerters _usedParameters;
 
+        private const string ApplicationVersion = "1.0.0.2";
+
         private static void GetParamerters(IEnumerable<string> args)
         {
             _usedParameters = new Paramerters();
@@ -80,10 +82,8 @@ namespace NetleniumBuild
 
         private static void ShowHelp()
         {
-            var applicationVersion = Assembly.GetExecutingAssembly().GetName().Version;
-
             Console.WriteLine(@"Netlenium Package Builder");
-            Console.WriteLine($@"Version {applicationVersion}{Environment.NewLine}");
+            Console.WriteLine($@"Version {ApplicationVersion}{Environment.NewLine}");
 
             Console.WriteLine(@"usage: npbuild [options]");
             Console.WriteLine(@" options:");
@@ -113,7 +113,7 @@ namespace NetleniumBuild
         {
             GetParamerters(args);
 
-            Console.WriteLine($@"Netlenium package Builder v{FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion}");
+            Console.WriteLine($@"Netlenium package Builder v{ApplicationVersion}");
             Console.WriteLine(@"Written by Zi Xing Narrakas");
             Console.WriteLine();
 

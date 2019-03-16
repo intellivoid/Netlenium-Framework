@@ -93,7 +93,21 @@ namespace Netlenium
 
                 return directoryPath;
             }
+        }
 
+        public static string LoggingDirectory
+        {
+            get
+            {
+                var directoryPath = $"{ApplicationDataDirectory}{Path.DirectorySeparatorChar}logs";
+
+                if (Directory.Exists(directoryPath) == false)
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                return directoryPath;
+            }
         }
     }
 }

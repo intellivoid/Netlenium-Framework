@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using OpenQA.Selenium.Remote;
 
@@ -92,8 +93,10 @@ namespace Netlenium.Driver.Chrome
                 DriverOptions.AddArgument("silent");
                 DriverService.SuppressInitialDiagnosticInformation = true;
             }
-            
+
+            DriverService.LogPath = $"{Netlenium.Configuration.LoggingDirectory}{Path.DirectorySeparatorChar}chrome_debugging.log";
             DriverService.Start();
+            
             RemoteDriver = new RemoteWebDriver(DriverService.ServiceUrl, DriverOptions);
             JavascriptExecuter = RemoteDriver;
             _driverAction = new Actions(RemoteDriver);

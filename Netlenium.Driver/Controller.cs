@@ -291,5 +291,24 @@ namespace Netlenium.Driver
                     throw new MethodNotSupportedForDriver();
             }
         }
+
+        /// <summary>
+        /// Returns a live Element object with the given search type namd and input
+        /// </summary>
+        /// <param name="searchType"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        /// <exception cref="NoElementsFoundException"></exception>
+        public WebElement GetElement(Types.SearchType searchType, string input)
+        {
+            var results = GetElements(searchType, input);
+            
+            if (results.Count > 0)
+            {
+                return results[0];
+            }
+            
+            throw new NoElementsFoundException();
+        }
     }
 }
