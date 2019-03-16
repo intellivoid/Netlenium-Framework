@@ -8,14 +8,14 @@ namespace Netlenium.Driver
         /// <summary>
         /// The driver type that this controller is currently operating as
         /// </summary>
-        private Types.Driver _DriverType;
+        private Types.Driver DriverType { get; }
 
         /// <summary>
         /// The chrome driver controller
         /// </summary>
-        private Chrome.Controller _ChromeController;
+        private Chrome.Controller ChromeController { get; set; }
 
-        private GeckoFXLib.Controller _GeckoController;
+        private GeckoFXLib.Controller GeckoController { get; set; }
 
         /// <summary>
         /// Controller Constructor
@@ -27,35 +27,40 @@ namespace Netlenium.Driver
             switch(driverConfiguration.TargetDriver)
             {
                 case Types.Driver.Chrome:
+                    
                     Manager.Chrome.Initialize(driverConfiguration.TargetPlatform);
-                    DriverInstallationDetails ChromeInstallationDetails = Manager.Chrome.CheckInstallation(driverConfiguration.TargetPlatform);
-                    this._ChromeController = new Chrome.Controller(driverConfiguration, ChromeInstallationDetails);
-                    this._DriverType = driverConfiguration.TargetDriver;
+                    var chromeInstallationDetails = Manager.Chrome.CheckInstallation(driverConfiguration.TargetPlatform);
+                    ChromeController = new Chrome.Controller(driverConfiguration, chromeInstallationDetails);
+                    DriverType = driverConfiguration.TargetDriver;
                     break;
 
                 case Types.Driver.GeckoLib:
-                    DriverInstallationDetails GeckoFX32InstallationDetails = Manager.GeckoFX32.CheckInstallation(driverConfiguration.TargetPlatform);
-                    this._GeckoController = new GeckoFXLib.Controller(driverConfiguration, GeckoFX32InstallationDetails);
-                    this._DriverType = driverConfiguration.TargetDriver;
+                    
+                    var geckoFx32InstallationDetails = Manager.GeckoFX32.CheckInstallation(driverConfiguration.TargetPlatform);
+                    GeckoController = new GeckoFXLib.Controller(driverConfiguration, geckoFx32InstallationDetails);
+                    DriverType = driverConfiguration.TargetDriver;
                     break;
+                    
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
         /// <summary>
         /// Initializes the driver
         /// </summary>
-        /// <param name="Hide">Hides the WebView, throws a warning if it's not available for the driver</param>
-        public void Initialize(bool Hide = false)
+        /// <param name="hide">Hides the WebView, throws a warning if it's not available for the driver</param>
+        public void Initialize(bool hide = false)
         {
             Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Initializing Driver");
-            switch (_DriverType)
+            switch (DriverType)
             {
                 case Types.Driver.Chrome:
-                    this._ChromeController.Initialize();
+                    ChromeController.Initialize();
                     break;
 
                 case Types.Driver.GeckoLib:
-                    this._GeckoController.Initialize();
+                    GeckoController.Initialize();
                     break;
 
                 default:
@@ -70,19 +75,19 @@ namespace Netlenium.Driver
         public void Quit()
         {
             Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Quitting Driver, unreleasing used resources");
-            switch(_DriverType)
+            switch(DriverType)
             {
                 case Types.Driver.Chrome:
-                    _ChromeController.Quit();
-                    _ChromeController.Dispose();
-                    _ChromeController = null;
+                    ChromeController.Quit();
+                    ChromeController.Dispose();
+                    ChromeController = null;
                     Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Success");
                     break;
 
                 case Types.Driver.GeckoLib:
-                    _GeckoController.Quit();
-                    _GeckoController.Dispose();
-                    _GeckoController = null;
+                    GeckoController.Quit();
+                    GeckoController.Dispose();
+                    GeckoController = null;
                     Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Success");
                     break;
 
@@ -99,13 +104,13 @@ namespace Netlenium.Driver
         {
             get
             {
-                switch(_DriverType)
+                switch(DriverType)
                 {
                     case Types.Driver.Chrome:
-                        return _ChromeController.DocumentTitle;
+                        return ChromeController.DocumentTitle;
 
                     case Types.Driver.GeckoLib:
-                        return _GeckoController.DocumentTitle;
+                        return GeckoController.DocumentTitle;
 
                     default:
                         throw new PropertyNotAvailableForSelectedDriver();
@@ -116,17 +121,17 @@ namespace Netlenium.Driver
         /// <summary>
         /// The current URL
         /// </summary>
-        public string URL
+        public string Url
         {
             get
             {
-                switch(_DriverType)
+                switch(DriverType)
                 {
                     case Types.Driver.Chrome:
-                        return _ChromeController.Url;
+                        return ChromeController.Url;
 
                     case Types.Driver.GeckoLib:
-                        return _GeckoController.URL;
+                        return GeckoController.URL;
 
                     default:
                         throw new PropertyNotAvailableForSelectedDriver();
@@ -137,17 +142,17 @@ namespace Netlenium.Driver
         /// <summary>
         /// Executes Javascript Code
         /// </summary>
-        /// <param name="Code"></param>
+        /// <param name="code"></param>
         /// <returns>Execution Results</returns>
-        public string ExecuteJS(string Code)
+        public string ExecuteJs(string code)
         {
-            switch (_DriverType)
+            switch (DriverType)
             {
                 case Types.Driver.Chrome:
                     try
                     {
 
-                        return this._ChromeController.ExecuterJs(Code);
+                        return ChromeController.ExecuterJs(code);
                     }
                     catch(Exception exception)
                     {
@@ -157,7 +162,7 @@ namespace Netlenium.Driver
                 case Types.Driver.GeckoLib:
                     try
                     {
-                        return this._GeckoController.ExecuteJS(Code);
+                        return GeckoController.ExecuteJS(code);
                     }
                     catch(Exception exception)
                     {
@@ -172,19 +177,19 @@ namespace Netlenium.Driver
         /// <summary>
         /// Navigates to the request URL (Blocks until the request has been completed)
         /// </summary>
-        /// <param name="URL"></param>
-        public void Navigate(string URL)
+        /// <param name="url"></param>
+        public void Navigate(string url)
         {
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Navigating to {URL}");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Navigating to {url}");
 
-            switch (_DriverType)
+            switch (DriverType)
             {
                 case Types.Driver.Chrome:
-                    this._ChromeController.Naviagte(URL);
+                    ChromeController.Naviagte(url);
                     break;
 
                 case Types.Driver.GeckoLib:
-                    this._GeckoController.Navigate(URL);
+                    GeckoController.Navigate(url);
                     break;
 
                 default:
@@ -192,7 +197,7 @@ namespace Netlenium.Driver
                     throw new MethodNotSupportedForDriver();
             }
 
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Navigated");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Navigated");
         }
 
         /// <summary>
@@ -200,16 +205,16 @@ namespace Netlenium.Driver
         /// </summary>
         public void GoBack()
         {
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Navigating Back");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Navigating Back");
 
-            switch (_DriverType)
+            switch (DriverType)
             {
                 case Types.Driver.Chrome:
-                    this._ChromeController.GoBack();
+                    ChromeController.GoBack();
                     break;
 
                 case Types.Driver.GeckoLib:
-                    this._GeckoController.GoBack();
+                    GeckoController.GoBack();
                     break;
 
                 default:
@@ -217,7 +222,7 @@ namespace Netlenium.Driver
                     throw new MethodNotSupportedForDriver();
             }
             
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Navigated");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Navigated");
         }
 
         /// <summary>
@@ -225,16 +230,16 @@ namespace Netlenium.Driver
         /// </summary>
         public void GoForward()
         {
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Navigating Forward");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Navigating Forward");
 
-            switch (_DriverType)
+            switch (DriverType)
             {
                 case Types.Driver.Chrome:
-                    this._ChromeController.GoForward();
+                    ChromeController.GoForward();
                     break;
 
                 case Types.Driver.GeckoLib:
-                    this._GeckoController.GoForward();
+                    GeckoController.GoForward();
                     break;
 
                 default:
@@ -242,43 +247,43 @@ namespace Netlenium.Driver
                     throw new MethodNotSupportedForDriver();
             }
 
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Navigated");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Navigated");
         }
 
         /// <summary>
         /// Returns a live ElementCollection of elements with the given search type name and input
         /// </summary>
-        /// <param name="SearchType"></param>
-        /// <param name="Input"></param>
+        /// <param name="searchType"></param>
+        /// <param name="input"></param>
         /// <returns></returns>
-        public List<WebElement> GetElements(Types.SearchType SearchType, string Input)
+        public List<WebElement> GetElements(Types.SearchType searchType, string input)
         {
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Getting Elements by {SearchType.ToString()} ({Input})");
-            List<WebElement> WebElements = new List<WebElement>();
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Getting Elements by {searchType.ToString()} ({input})");
+            var webElements = new List<WebElement>();
 
-            switch (_DriverType)
+            switch (DriverType)
             {
                 case Types.Driver.Chrome:
-                    List<Chrome.Element> ChromeResults = _ChromeController.GetElements(SearchType, Input);
+                    var chromeResults = ChromeController.GetElements(searchType, input);
 
-                    foreach (Chrome.Element ChromeElement in ChromeResults)
+                    foreach (var chromeElement in chromeResults)
                     {
-                        WebElements.Add(new WebElement(ChromeElement));
+                        webElements.Add(new WebElement(chromeElement));
                     }
 
-                    Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Returned {WebElements.Count} element(s)");
-                    return WebElements;
+                    Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Returned {webElements.Count} element(s)");
+                    return webElements;
 
                 case Types.Driver.GeckoLib:
-                    List<GeckoFXLib.Element> GeckoFXLibResults = _GeckoController.GetElements(SearchType, Input);
+                    var geckoFxLibResults = GeckoController.GetElements(searchType, input);
 
-                    foreach(GeckoFXLib.Element GeckoFXLibElement in GeckoFXLibResults)
+                    foreach(var geckoFxLibElement in geckoFxLibResults)
                     {
-                        WebElements.Add(new WebElement(GeckoFXLibElement));
+                        webElements.Add(new WebElement(geckoFxLibElement));
                     }
 
-                    Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Returned {WebElements.Count} element(s)");
-                    return WebElements;
+                    Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Returned {webElements.Count} element(s)");
+                    return webElements;
 
                 default:
                     Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", "The method GetElements() is not supported for the selected driver");
