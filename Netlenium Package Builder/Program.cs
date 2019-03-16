@@ -2,9 +2,9 @@
 using Mono.Options;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -15,51 +15,41 @@ namespace NetleniumBuild
     /// <summary>
     /// The paramerters used for this Command Line Application
     /// </summary>
-    class Paramerters
+    internal class Paramerters
     {
-        public string Source
-        {
-            get; set;
-        }
+        /// <summary>
+        /// The Source Code Directory Location
+        /// </summary>
+        public string Source { get; set; }
 
-        public bool Help
-        {
-            get; set;
-        }
+        /// <summary>
+        /// Indicates if the help paramerter was used
+        /// </summary>
+        public bool Help { get; set; }
     }
 
     /// <summary>
     /// Main Program Class
     /// </summary>
-    class Program
+    internal class Program
     {
-        private static Paramerters UsedParameters;
+        private static Paramerters _usedParameters;
 
-        private static void GetParamerters(string[] args)
+        private static void GetParamerters(IEnumerable<string> args)
         {
-            UsedParameters = new Paramerters();
+            _usedParameters = new Paramerters();
 
-            var p = new OptionSet()
+            var p = new OptionSet
             {
                 {
                     "s|source=", "The source directory which contains the main python script and package metadata",
                     v => {
-                        UsedParameters.Source = v;
+                        _usedParameters.Source = v;
                     }
                 },
                 {
                     "h|help=", "Displays the help menu",
-                    v =>
-                    {
-                        if(v == null)
-                        {
-                            UsedParameters.Help = false;
-                        }
-                        else
-                        {
-                            UsedParameters.Help = true;
-                        }
-                    }
+                    v => { _usedParameters.Help = v != null; }
                 }
             };
 
@@ -67,21 +57,19 @@ namespace NetleniumBuild
             {
                 p.Parse(args);
 
-                if(UsedParameters.Help == true)
+                if(_usedParameters.Help)
                 {
                     ShowHelp();
                     Environment.Exit(1);
                 }
 
-                if (UsedParameters.Source == null)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"Error: Missing paramerter \"source\"{Environment.NewLine}");
-                    Console.ResetColor();
-                    ShowHelp();
-                    Environment.Exit(1);
-                }
-
+                if (_usedParameters.Source != null) return;
+                
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error: Missing paramerter \"source\"{Environment.NewLine}");
+                Console.ResetColor();
+                ShowHelp();
+                Environment.Exit(1);
             }
             catch (Exception)
             {
@@ -92,15 +80,15 @@ namespace NetleniumBuild
 
         private static void ShowHelp()
         {
-            Version ApplicationVersion = Assembly.GetExecutingAssembly().GetName().Version;
+            var applicationVersion = Assembly.GetExecutingAssembly().GetName().Version;
 
-            Console.WriteLine("Netlenium Package Builder");
-            Console.WriteLine($"Version {ApplicationVersion.ToString()}{Environment.NewLine}");
+            Console.WriteLine(@"Netlenium Package Builder");
+            Console.WriteLine($@"Version {applicationVersion}{Environment.NewLine}");
 
-            Console.WriteLine("usage: npbuild [options]");
-            Console.WriteLine(" options:");
-            Console.WriteLine("     -h, --help                  Displays the help menu");
-            Console.WriteLine("     -s, --source  required      The source directory which contains the main python script and package metadata");
+            Console.WriteLine(@"usage: npbuild [options]");
+            Console.WriteLine(@" options:");
+            Console.WriteLine(@"     -h, --help                  Displays the help menu");
+            Console.WriteLine(@"     -s, --source  required      The source directory which contains the main python script and package metadata");
         }
 
         /// <summary>
@@ -110,9 +98,9 @@ namespace NetleniumBuild
         {
             get
             {
-                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                UriBuilder uri = new UriBuilder(codeBase);
-                string path = Uri.UnescapeDataString(uri.Path);
+                var codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                var uri = new UriBuilder(codeBase);
+                var path = Uri.UnescapeDataString(uri.Path);
                 return Path.GetDirectoryName(path);
             }
         }
@@ -120,20 +108,20 @@ namespace NetleniumBuild
         /// <summary>
         /// Main Program for Building the Package
         /// </summary>
-        /// <param name="Options"></param>
-        static void Main(string[] args)
+        /// <param name="args"></param>
+        private static void Main(string[] args)
         {
             GetParamerters(args);
 
-            Console.WriteLine($"Netlenium package Builder v{FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion}");
-            Console.WriteLine("Written by Zi Xing Narrakas");
+            Console.WriteLine($@"Netlenium package Builder v{FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion}");
+            Console.WriteLine(@"Written by Zi Xing Narrakas");
             Console.WriteLine();
 
-            CheckResources(UsedParameters.Source);
+            CheckResources(_usedParameters.Source);
             
             try
             {
-                ReadMetaInformation(UsedParameters.Source);
+                ReadMetaInformation(_usedParameters.Source);
             }
             catch(Exception exception)
             {
@@ -141,9 +129,9 @@ namespace NetleniumBuild
                 Environment.Exit(1);
             }
 
-            BuildPackage(UsedParameters.Source);
+            BuildPackage(_usedParameters.Source);
 
-            Print(MessageType.Information, "Package built successfully");
+            Print(MessageType.Success, "Package built successfully");
             Environment.Exit(0);
 
         }
@@ -151,54 +139,74 @@ namespace NetleniumBuild
         /// <summary>
         /// Prints to the console
         /// </summary>
-        /// <param name="Type"></param>
-        /// <param name="Output"></param>
-        private static void Print(MessageType Type, string Output)
+        /// <param name="type"></param>
+        /// <param name="output"></param>
+        private static void Print(MessageType type, string output)
         {
-            switch(Type)
+            switch(type)
             {
                 case MessageType.Out:
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(@"[  X  ]");
+                    Console.Write(@"[ ~~~ ]");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(@": ");
                     Console.ResetColor();
-                    Console.WriteLine(Output);
+                    Console.WriteLine(output);
                     break;
 
                 case MessageType.Information:
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write(@"[  X  ]");
+                    Console.Write(@"[ --- ]");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(@": ");
                     Console.ResetColor();
-                    Console.WriteLine(Output);
+                    Console.WriteLine(output);
                     break;
 
                 case MessageType.Warning:
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(@"[  X  ]");
+                    Console.Write(@"[  !  ]");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(@": ");
                     Console.ResetColor();
-                    Console.WriteLine(Output);
+                    Console.WriteLine(output);
                     break;
+                    
+                case MessageType.Success:
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(@"[  !  ]");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(@": ");
+                    Console.ResetColor();
+                    Console.WriteLine(output);
+                    break; 
 
                 case MessageType.Error:
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write(@"[  X  ]");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(@": ");
                     Console.ResetColor();
-                    Console.WriteLine(Output);
+                    Console.WriteLine(output);
                     break;
+                    
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
         }
 
         /// <summary>
         /// Builds the pacakge assuming all previous checks has passed
         /// </summary>
-        /// <param name="Source"></param>
-        private static void BuildPackage(string Source)
+        /// <param name="source"></param>
+        private static void BuildPackage(string source)
         {
-            if (File.Exists($"{Source}.np") == true)
+            if (File.Exists($"{source}.np"))
             {
-                Print(MessageType.Out, $"Deleting old {Source}.np file");
+                Print(MessageType.Out, $"Deleting old {source}.np file");
                 try
                 {
-                    File.Delete($"{Source}.np");
+                    File.Delete($"{source}.np");
                 }
                 catch (Exception exception)
                 {
@@ -209,17 +217,17 @@ namespace NetleniumBuild
 
             try
             {
-                Print(MessageType.Out, $"Building package {Source}.np");
-                using (ZipFile Zip = new ZipFile())
+                Print(MessageType.Out, $"Building package {source}.np");
+                using (var zip = new ZipFile())
                 {
                     Print(MessageType.Out, "Adding Source Directory");
-                    Zip.AddDirectory($"{Source}", "source");
-                    Zip.AddEntry("c_netlenium.xml", ConstructDependency("Netlenium"));
-                    Zip.AddEntry("c_netlenium.driver.xml", ConstructDependency("Netlenium.Driver"));
-                    Zip.AddEntry("c_netlenium.driver.chrome.xml", ConstructDependency("Netlenium.Driver.Chrome"));
-                    Zip.AddEntry("c_netlenium.driver.geckofxlib.xml", ConstructDependency("Netlenium.Driver.GeckoFXLib"));
+                    zip.AddDirectory($"{source}", "source");
+                    zip.AddEntry("c_netlenium.xml", ConstructDependency("Netlenium"));
+                    zip.AddEntry("c_netlenium.driver.xml", ConstructDependency("Netlenium.Driver"));
+                    zip.AddEntry("c_netlenium.driver.chrome.xml", ConstructDependency("Netlenium.Driver.Chrome"));
+                    zip.AddEntry("c_netlenium.driver.geckofxlib.xml", ConstructDependency("Netlenium.Driver.GeckoFXLib"));
                     Print(MessageType.Out, "Writing package to disk");
-                    Zip.Save($"{Source}.np");
+                    zip.Save($"{source}.np");
                 }
             }
             catch (Exception exception)
@@ -232,125 +240,93 @@ namespace NetleniumBuild
         /// <summary>
         /// Reads the packages meta information
         /// </summary>
-        /// <param name="Source"></param>
-        private static void ReadMetaInformation(string Source)
+        /// <param name="source"></param>
+        private static void ReadMetaInformation(string source)
         {
             Print(MessageType.Out, "Reading package.json");
-            JObject JsonPackageMetaInformation = JObject.Parse(File.ReadAllText($"{Source}{Path.DirectorySeparatorChar}package.json"));
+            var jsonPackageMetaInformation = JObject.Parse(File.ReadAllText($"{source}{Path.DirectorySeparatorChar}package.json"));
 
-            if ((string)JsonPackageMetaInformation["name"] == null)
+            if ((string)jsonPackageMetaInformation["name"] == null)
             {
-                Print(MessageType.Error, $"package.json is missing \"name\"");
+                Print(MessageType.Error, "package.json is missing \"name\"");
                 Environment.Exit(1);
             }
 
-            if ((string)JsonPackageMetaInformation["version"] == null)
+            if ((string)jsonPackageMetaInformation["version"] == null)
             {
-                Print(MessageType.Error, $"package.json is missing \"version\"");
+                Print(MessageType.Error, "package.json is missing \"version\"");
                 Environment.Exit(1);
             }
 
-            Print(MessageType.Information, $"Name: {(string)JsonPackageMetaInformation["name"]}");
-            Print(MessageType.Information, $"Version: {(string)JsonPackageMetaInformation["version"]}");
+            Print(MessageType.Information, $"Name: {(string)jsonPackageMetaInformation["name"]}");
+            Print(MessageType.Information, $"Version: {(string)jsonPackageMetaInformation["version"]}");
 
-            if ((string)JsonPackageMetaInformation["author"] != null)
-            {
-                Print(MessageType.Information, $"Author: {(string)JsonPackageMetaInformation["author"]}");
-            }
-            else
-            {
-                Print(MessageType.Information, $"Author: None");
-            }
+            Print(MessageType.Information,
+                (string) jsonPackageMetaInformation["author"] != null
+                    ? $"Author: {(string) jsonPackageMetaInformation["author"]}"
+                    : "Author: None");
 
-            if ((string)JsonPackageMetaInformation["company"] != null)
-            {
-                Print(MessageType.Information, $"Company: {(string)JsonPackageMetaInformation["company"]}");
-            }
-            else
-            {
-                Print(MessageType.Information, $"Company: None");
-            }
+            Print(MessageType.Information,
+                (string) jsonPackageMetaInformation["company"] != null
+                    ? $"Company: {(string) jsonPackageMetaInformation["company"]}"
+                    : "Company: None");
         }
 
         /// <summary>
         /// Constructs the dependency information (XML Format)
         /// </summary>
-        /// <param name="Dependency"></param>
+        /// <param name="dependency"></param>
         /// <returns></returns>
-        private static string ConstructDependency(string Dependency)
+        private static string ConstructDependency(string dependency)
         {
-            string DependencyFile = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}{Dependency}.dll";
+            var dependencyFile = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}{dependency}.dll";
 
-            if(File.Exists(DependencyFile) == false)
+            if(File.Exists(dependencyFile) == false)
             {
-                Print(MessageType.Error, $"The required dependency for the framework cannot be found \"{DependencyFile}\"");
+                Print(MessageType.Error, $"The required dependency for the framework cannot be found \"{dependencyFile}\"");
             }
 
-            Print(MessageType.Out, $"Constructing Dependency Information for \"{Dependency}\"");
+            Print(MessageType.Out, $"Constructing Dependency Information for \"{dependency}\"");
 
-            NameValueCollection Data = new NameValueCollection();
+            var data = new NameValueCollection();
 
-            FileVersionInfo VersionInformation = FileVersionInfo.GetVersionInfo($"{AssemblyDirectory}{Path.DirectorySeparatorChar}{Dependency}.dll");
+            var versionInformation = FileVersionInfo.GetVersionInfo($"{AssemblyDirectory}{Path.DirectorySeparatorChar}{dependency}.dll");
 
-            Data.Add("dependency", Dependency);
-            Data.Add("major", Convert.ToString(VersionInformation.FileMajorPart));
-            Data.Add("minor", Convert.ToString(VersionInformation.FileMinorPart));
-            Data.Add("build", Convert.ToString(VersionInformation.FileBuildPart));
-            Data.Add("revision", Convert.ToString(VersionInformation.FilePrivatePart));
-            Data.Add("file_name", Convert.ToString(VersionInformation.OriginalFilename));
-            Data.Add("internal", Convert.ToString(VersionInformation.InternalName));
-            Data.Add("publisher", Convert.ToString(VersionInformation.CompanyName));
+            data.Add("dependency", dependency);
+            data.Add("major", Convert.ToString(versionInformation.FileMajorPart));
+            data.Add("minor", Convert.ToString(versionInformation.FileMinorPart));
+            data.Add("build", Convert.ToString(versionInformation.FileBuildPart));
+            data.Add("revision", Convert.ToString(versionInformation.FilePrivatePart));
+            data.Add("file_name", Convert.ToString(versionInformation.OriginalFilename));
+            data.Add("internal", Convert.ToString(versionInformation.InternalName));
+            data.Add("publisher", Convert.ToString(versionInformation.CompanyName));
 
-            var Results = new XElement("Netlenium_Framework", Data.AllKeys.Select(o => new XElement(o, Data[o])));
-            return Results.ToString();
+            var results = new XElement("Netlenium_Framework", data.AllKeys.Select(o => new XElement(o, data[o])));
+            return results.ToString();
 
         }
 
         /// <summary>
         /// Checks the package resources and determines if anything is missing
         /// </summary>
-        /// <param name="Source"></param>
-        private static void CheckResources(string Source)
+        /// <param name="source"></param>
+        private static void CheckResources(string source)
         {
-            if (Directory.Exists(Source) == false)
+            if (Directory.Exists(source) == false)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(@"[  X  ]");
-                Console.ResetColor();
-                Console.Write(@"[  X  ]");
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write($@" ""{Source}"" ");
-                Console.ResetColor();
-                Console.Write(@"[  X  ]");
-                Console.WriteLine();
+                Print(MessageType.Error, $"The source directory \"{source}\" does not exist");
                 Environment.Exit(1);
             }
 
-            if (File.Exists($"{Source}{Path.DirectorySeparatorChar}package.json") == false)
+            if (File.Exists($"{source}{Path.DirectorySeparatorChar}package.json") == false)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(@"[  X  ]");
-                Console.ResetColor();
-                Console.Write(@"[  X  ]");
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write($@" ""{Source}{Path.DirectorySeparatorChar}package.json""");
-                Console.ResetColor();
-                Console.Write(@"[  X  ]");
-                Console.WriteLine();
+                Print(MessageType.Error, "The file package.json does not exist in the source directory");
                 Environment.Exit(1);
             }
 
-            if (File.Exists($"{Source}{Path.DirectorySeparatorChar}main.py") == false)
+            if (File.Exists($"{source}{Path.DirectorySeparatorChar}main.py") == false)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(@"[  X  ]");
-                Console.ResetColor();
-                Console.Write(@"[  X  ]");
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write($@" ""{Source}{Path.DirectorySeparatorChar}main.py""");
-                Console.ResetColor();
-                Console.Write(@"[  X  ]");
-                Console.WriteLine();
+                Print(MessageType.Error, "The main python source does not exist (main.py)");
                 Environment.Exit(1);
             }
         }
