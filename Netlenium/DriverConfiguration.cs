@@ -34,6 +34,15 @@
         }
 
         /// <summary>
+        /// If set to True, alongside general logging messages; debugging messages will also be displayed in the CLI
+        /// </summary>
+        public bool DebugLogging
+        {
+            get => Logging.DebugLogging;
+            set => Logging.DebugLogging = value;
+        }
+
+        /// <summary>
         /// Public Consturctor
         /// </summary>
         public DriverConfiguration()

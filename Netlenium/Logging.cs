@@ -15,10 +15,31 @@ namespace Netlenium
         public static bool GeneralLogging { get; set; } = false;
 
         /// <summary>
+        /// If set to True, alongside general logging messages; debugging messages will be shown on the CLI
+        /// </summary>
+        public static bool DebugLogging { get; set; } = false;
+
+        /// <summary>
         /// The output file to output all the data to (AllowLogging doesn't need to be set to True for this to work)
         /// </summary>
         public static string OutputFile { get; set; } = string.Empty;
 
+        /// <summary>
+        /// Writes a debugging Log Entry
+        /// </summary>
+        /// <param name="loggingType"></param>
+        /// <param name="moduleName"></param>
+        /// <param name="entryText"></param>
+        public static void WriteDebugEntry(Types.LogType loggingType, string moduleName, string entryText)
+        {
+            if (DebugLogging == false)
+            {
+                return;
+            }
+            
+            WriteEntry(loggingType, $"{entryText} (DEBUG)", moduleName);
+        }
+        
         /// <summary>
         /// Writes a Log Entry
         /// </summary>

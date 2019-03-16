@@ -14,7 +14,7 @@ namespace Netlenium
             {
                 var p = (int)Environment.OSVersion.Platform;
                 
-                if((p == 4) || (p == 6) || (p == 128))
+                if(p == 4 || p == 6 || p == 128)
                 {
                     return Environment.Is64BitOperatingSystem ? Types.Platform.Linux64 : Types.Platform.Linux32;
                 }
