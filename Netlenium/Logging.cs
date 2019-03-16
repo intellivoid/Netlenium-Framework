@@ -37,6 +37,31 @@ namespace Netlenium
 
             switch (loggingType)
             {
+                case Types.LogType.Success:
+                    if (OutputFile != string.Empty)
+                    {
+                        try
+                        {
+                            File.AppendAllText(OutputFile, $@"[SUCCESS][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
+                        }
+                        catch(Exception exception)
+                        {
+                            Debug.Print(exception.Message);
+                        }
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(@"[  !  ]");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write($@"[{timestamp}]: ");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write($@"{moduleName} > ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(entryText);
+                    Console.WriteLine();
+                    Console.ResetColor();
+                    break;
+                
                 case Types.LogType.Information:
                     if (OutputFile != string.Empty)
                     {
@@ -51,7 +76,7 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write(@"[  X  ]");
+                    Console.Write(@"[ ~~~ ]");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write($@"[{timestamp}]: ");
                     Console.ForegroundColor = ConsoleColor.Gray;
@@ -76,7 +101,7 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(@"[  X  ]");
+                    Console.Write(@"[  !  ]");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write($@"[{timestamp}]: ");
                     Console.ForegroundColor = ConsoleColor.Gray;
@@ -126,7 +151,7 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.Write(@"[  X  ]");
+                    Console.Write(@"[ DBG ]");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write($@"[{timestamp}]: ");
                     Console.ForegroundColor = ConsoleColor.Gray;

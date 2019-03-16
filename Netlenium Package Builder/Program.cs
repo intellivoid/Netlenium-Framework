@@ -156,7 +156,7 @@ namespace NetleniumBuild
 
                 case MessageType.Information:
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write(@"[ --- ]");
+                    Console.Write(@"[  !  ]");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write(@": ");
                     Console.ResetColor();
