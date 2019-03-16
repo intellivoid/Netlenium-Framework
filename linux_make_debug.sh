@@ -17,7 +17,7 @@ echo "running mkbundle on Netlenium Package Builder"
 mkbundle --simple --static --deps -v -o npbuild --config /etc/mono/config --machine-config /etc/mono/4.5/machine.config npbuild.exe
 
 echo "deleting win32 compiled binaries"
-#rm netlenium_re.exe
-#rm npbuild.exe
+rm netlenium_re.exe
+rm npbuild.exe
 
 echo "done"
