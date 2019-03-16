@@ -66,10 +66,10 @@ namespace NetleniumRuntime
                 var codeBase = Assembly.GetExecutingAssembly().CodeBase;
                 var uri = new UriBuilder(codeBase);
                 var path = Uri.UnescapeDataString(uri.Path);
-                return Path.GetDirectoryName(path);
+                return Path.GetDirectoryName(File.Exists($"{Path.GetDirectoryName(path)}{Path.DirectorySeparatorChar}Netlenium.dll") ? path : Process.GetCurrentProcess().MainModule.FileName);
             }
         }
-
+        
         /// <summary>
         /// Parses the arguments and returns the paramerters given
         /// </summary>
@@ -275,7 +275,7 @@ namespace NetleniumRuntime
         private static Version CheckDependency(string dependency)
         {
             var dependencyFile = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}{dependency}.dll";
-
+            
             if (File.Exists(dependencyFile) == false)
             {
                 Console.WriteLine($"The required dependency for the framework cannot be found \"{dependencyFile}\"");
@@ -283,7 +283,7 @@ namespace NetleniumRuntime
                 return null;
             }
 
-            var versionInformation = FileVersionInfo.GetVersionInfo($"{AssemblyDirectory}{Path.DirectorySeparatorChar}{dependency}.dll");
+            var versionInformation = FileVersionInfo.GetVersionInfo(dependencyFile);
             return new Version($"{versionInformation.FileMajorPart}.{versionInformation.FileMinorPart}.{versionInformation.FileBuildPart}.{versionInformation.FilePrivatePart}");
         }
 

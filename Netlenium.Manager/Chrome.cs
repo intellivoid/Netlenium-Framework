@@ -19,8 +19,15 @@ namespace Netlenium.Manager
         {
             get
             {
-                WebClient httpWebClient = new WebClient();
-                return httpWebClient.DownloadString(Properties.Resources.Chrome_LatestReleaseAPI);
+                try
+                {
+                    var httpWebClient = new WebClient();
+                    return httpWebClient.DownloadString(Properties.Resources.Chrome_LatestReleaseAPI);
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
             }
         }
 
@@ -322,6 +329,11 @@ namespace Netlenium.Manager
             else
             {
                 var currentLatestVersion = LatestVersion;
+
+                if (currentLatestVersion == null)
+                {
+                    return;
+                }
                 
                 if (currentLatestVersion == installationDetails.Version) return;
                 

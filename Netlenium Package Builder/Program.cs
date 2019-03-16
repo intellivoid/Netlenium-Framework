@@ -101,7 +101,7 @@ namespace NetleniumBuild
                 var codeBase = Assembly.GetExecutingAssembly().CodeBase;
                 var uri = new UriBuilder(codeBase);
                 var path = Uri.UnescapeDataString(uri.Path);
-                return Path.GetDirectoryName(path);
+                return Path.GetDirectoryName(File.Exists($"{Path.GetDirectoryName(path)}{Path.DirectorySeparatorChar}Netlenium.dll") ? path : Process.GetCurrentProcess().MainModule.FileName);
             }
         }
 

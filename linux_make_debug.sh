@@ -1,22 +1,23 @@
-#gecko_linux="packages/Geckofx60.32.Linux.60.0.26/lib/net40"
-
 echo "restoring nuget packages"
 nuget restore "Netlenium Framework.sln"
 
+echo "deleting old build"
+rm -rf "bin/LinuxDebug/"
+
 echo "running msbuild"
-msbuild /p:Configuration=LinuxDebug "Netlenium Framework.sln"
+msbuild /p:Configuration=LinuxDebug /v:d "Netlenium Framework.sln"
 
 echo "changing current directory"
 cd "bin/LinuxDebug/"
 
 echo "running mkbundle on Netlenium Runtime"
-mkbundle -o netlenium_re --simple netlenium_re.exe --config ../../mkbundle.config
+mkbundle --simple --static --deps -v -o netlenium_re --config /etc/mono/config --machine-config /etc/mono/4.5/machine.config netlenium_re.exe
 
 echo "running mkbundle on Netlenium Package Builder"
-mkbundle -o npbuild --simple npbuild.exe --config ../../mkbundle.config
+mkbundle --simple --static --deps -v -o npbuild --config /etc/mono/config --machine-config /etc/mono/4.5/machine.config npbuild.exe
 
 echo "deleting win32 compiled binaries"
-rm netlenium_re.exe
-rm npbuild.exe
+#rm netlenium_re.exe
+#rm npbuild.exe
 
 echo "done"
