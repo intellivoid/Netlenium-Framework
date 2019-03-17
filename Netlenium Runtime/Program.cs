@@ -3,10 +3,12 @@ using Mono.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
+using Microsoft.Scripting.Hosting;
 
 namespace NetleniumRuntime
 {
@@ -31,11 +33,27 @@ namespace NetleniumRuntime
         public bool Help { get; set; }
     }
 
+    internal class ConsoleColorOption
+    {
+        public ConsoleColorOption(bool useColor, ConsoleColor selectedColor = ConsoleColor.White)
+        {
+            UseColor = useColor;
+            SelectedColor = selectedColor;
+        }
+        
+        public ConsoleColor SelectedColor { get; set; }
+        
+        public bool UseColor { get; set; }
+    }
+    
     /// <summary>
     /// Main Program
     /// </summary>
     internal class Program
     {
+        /// <summary>
+        /// Application Version
+        /// </summary>
         private const string ApplicationVersion = "1.0.0.0";
         
         /// <summary>
@@ -141,10 +159,28 @@ namespace NetleniumRuntime
             Console.WriteLine(@"     --skip-dependency-check     Skips the dependency check of the package");
         }
 
+        
+        private static void Print(string value, ConsoleColorOption foregroundColor, ConsoleColorOption backgroundColor)
+        {
+            if (foregroundColor.UseColor)
+            {
+                Console.ForegroundColor = foregroundColor.SelectedColor;
+            }
+
+            if (backgroundColor.UseColor)
+            {
+                Console.BackgroundColor = backgroundColor.SelectedColor;
+            }
+            
+            Console.Write(value);
+            Console.ResetColor();
+        }
+
         /// <summary>
         /// Main Method of Execution for Netlenium Runtime
         /// </summary>
         /// <param name="args"></param>
+        [SuppressMessage("ReSharper", "RedundantArgumentDefaultValue")]
         private static void Main(string[] args)
         {
             AppDomain.CurrentDomain.ProcessExit += ProcessExitHandler;
@@ -189,7 +225,7 @@ namespace NetleniumRuntime
             
             // TODO: Define Package Variables
 
-            // Execute the python code
+            // Prepare the Script Runtime Host
             var pythonEngine = IronPython.Hosting.Python.CreateEngine();
             var scope = pythonEngine.CreateScope();
             scope.SetVariable("NetleniumRuntime", AssemblyDirectory);
@@ -197,7 +233,64 @@ namespace NetleniumRuntime
             scope.SetVariable("LIB_Netlenium", "Netlenium.dll");
             scope.SetVariable("LIB_NetleniumDriver", "Netlenium.Driver.dll");
             var pythonScript = pythonEngine.CreateScriptSourceFromFile(importedScript);
-            pythonScript.Execute(scope);
+            
+            // Execute the python code
+            try
+            {
+                pythonScript.Execute(scope);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine();
+
+                string errorOperations;
+                
+                try
+                {
+                    errorOperations = pythonEngine.GetService<ExceptionOperations>().FormatException(exception);
+                }
+                catch (Exception)
+                {
+                    errorOperations = "No Data";
+                }
+                
+                Print("There was an unexcepted error while trying to run the package in Netlenium Runtime",
+                    new ConsoleColorOption(true, ConsoleColor.White), new ConsoleColorOption(true, ConsoleColor.Red)
+                );
+                Console.WriteLine();
+                
+                Print("Exception Message: ", 
+                    new ConsoleColorOption(true, ConsoleColor.White), new ConsoleColorOption(false)
+                );
+                Print($"{exception.Message}{Environment.NewLine}", 
+                    new ConsoleColorOption(true, ConsoleColor.Gray), new ConsoleColorOption(false)
+                );
+                Print("Exception Source: ", 
+                    new ConsoleColorOption(true, ConsoleColor.White), new ConsoleColorOption(false)
+                );
+                Print($"{exception.Source}{Environment.NewLine}", 
+                    new ConsoleColorOption(true, ConsoleColor.Gray), new ConsoleColorOption(false)
+                );
+                Console.WriteLine();
+                
+                Print($"======== FRAMEWORK STACKTRACE ========{Environment.NewLine}", 
+                    new ConsoleColorOption(true, ConsoleColor.White), new ConsoleColorOption(false)
+                );
+                Print(exception.StackTrace, 
+                    new ConsoleColorOption(true, ConsoleColor.Red), new ConsoleColorOption(false)
+                );
+                Console.WriteLine(Environment.NewLine);
+                
+                Print($"======== EXCEPTION OPERATIONS ========{Environment.NewLine}", 
+                    new ConsoleColorOption(true, ConsoleColor.White), new ConsoleColorOption(false)
+                );
+                Print(errorOperations, 
+                    new ConsoleColorOption(true, ConsoleColor.Red), new ConsoleColorOption(false)
+                );
+                
+                Console.WriteLine(Environment.NewLine);
+                Environment.Exit(1);
+            }
             
             // Once done, terminate the process
             Environment.Exit(0);
