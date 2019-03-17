@@ -58,47 +58,66 @@ namespace Netlenium.Driver.Chrome
             DriverInstallation = driverInstallation;
         }
 
+        private void AddArgument(string paramerter)
+        {
+            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", $"Adding Argument to Chrome \"{paramerter}\"");
+            DriverOptions.AddArgument(paramerter);
+        }
+        
         /// <summary>
         /// Initializes the Chrome Driver
         /// </summary>
         public void Initialize()
         {
+            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Creating ChromeOptions Object");
             DriverOptions = new ChromeOptions();
+            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", $"Creating Chrome Driver Service using {DriverInstallation.DriverExecutableName} from {DriverInstallation.DriverPath}");
             DriverService = ChromeDriverService.CreateDefaultService(DriverInstallation.DriverPath, DriverInstallation.DriverExecutableName);
             
             if (Configuration.Headless)
             {
-                DriverOptions.AddArgument("headless");
-                DriverOptions.AddArguments("window-size=1200x600");
+                AddArgument("headless");
+                AddArgument("window-size=1200x600");
             }
 
             if (Configuration.DriverLogging)
             {
                 if (Configuration.DriverVerboseLogging)
                 {
-                    DriverOptions.AddArgument("log-level=1");
+                    AddArgument("log-level=1");
+                    Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Enabling Verbose Logging from Driver Service");
                     DriverService.EnableVerboseLogging = true;
                 }
                 else
                 {
-                    DriverOptions.AddArgument("log-level=2");
+                    AddArgument("log-level=2");
+                    Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Disabling Verbose Logging from Driver Service");
                     DriverService.EnableVerboseLogging = false;
                 }
                 
+                Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Initial Diagnostic Information will be suppressed");
                 DriverService.SuppressInitialDiagnosticInformation = false;
             }
             else
             {
-                DriverOptions.AddArgument("log-level=0");
-                DriverOptions.AddArgument("silent");
+                AddArgument("log-level=0");
+                AddArgument("silent");
+                Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Initial Diagnostic Information will be not be suppressed");
                 DriverService.SuppressInitialDiagnosticInformation = true;
             }
 
             DriverService.LogPath = $"{Netlenium.Configuration.LoggingDirectory}{Path.DirectorySeparatorChar}chrome_debugging.log";
+            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", $"Chrome Driver Service log path has been set to \"{DriverService.LogPath}\"");
+            
+            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Starting DriverService");
             DriverService.Start();
             
+            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", $"Creating new Remote WebDriver client to connect to \"{DriverService.ServiceUrl}\"");
             RemoteDriver = new RemoteWebDriver(DriverService.ServiceUrl, DriverOptions);
+            
+            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Attaching Driver Javascript Execution");
             JavascriptExecuter = RemoteDriver;
+            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Attaching Driver Actions");
             _driverAction = new Actions(RemoteDriver);
 
         }
