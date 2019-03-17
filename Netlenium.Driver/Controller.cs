@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace Netlenium.Driver
 {
+    /// <summary>
+    /// Netlenium Controller Class
+    /// </summary>
     public class Controller
     {
         /// <summary>
@@ -40,7 +43,7 @@ namespace Netlenium.Driver
 
                 case Types.Driver.GeckoLib:
                     
-                    var geckoFx32InstallationDetails = Manager.GeckoFX32.CheckInstallation(driverConfiguration.TargetPlatform);
+                    var geckoFx32InstallationDetails = Manager.GeckoFx32.CheckInstallation(driverConfiguration.TargetPlatform);
                     GeckoController = new GeckoFXLib.Controller(driverConfiguration, geckoFx32InstallationDetails);
                     DriverType = driverConfiguration.TargetDriver;
                     break;
@@ -135,7 +138,7 @@ namespace Netlenium.Driver
                         return ChromeController.Url;
 
                     case Types.Driver.GeckoLib:
-                        return GeckoController.URL;
+                        return GeckoController.Url;
 
                     default:
                         throw new PropertyNotAvailableForSelectedDriver();
@@ -166,7 +169,7 @@ namespace Netlenium.Driver
                 case Types.Driver.GeckoLib:
                     try
                     {
-                        return GeckoController.ExecuteJS(code);
+                        return GeckoController.ExecuteJs(code);
                     }
                     catch(Exception exception)
                     {

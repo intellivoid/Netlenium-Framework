@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using System.Reflection;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Netlenium.Forms
 {
@@ -15,7 +13,7 @@ namespace Netlenium.Forms
         public AboutDialog()
         {
             InitializeComponent();
-            VersionLabel.Text = $"Version: {FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion}";
+            VersionLabel.Text = @"Version: 1.0.0.1";
             AboutTextBox.Text = Properties.Resources.AboutDialogText;
         }
     }

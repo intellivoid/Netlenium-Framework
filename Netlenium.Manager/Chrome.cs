@@ -38,7 +38,7 @@ namespace Netlenium.Manager
         /// <returns></returns>
         public static DriverInstallationDetails CheckInstallation(Platform targetPlatform = Platform.AutoDetect)
         {
-            DriverInstallationDetails results = new DriverInstallationDetails();
+            var results = new DriverInstallationDetails();
 
             if(targetPlatform == Platform.AutoDetect)
             {
@@ -117,6 +117,9 @@ namespace Netlenium.Manager
 
                     break;
 
+                case Platform.AutoDetect:
+                    throw new PlatformNotSupportedException();
+                    
                 default:
                     throw new PlatformNotSupportedException();
             }
@@ -138,7 +141,7 @@ namespace Netlenium.Manager
                 targetPlatform = Configuration.CurrentPlatform;
             }
 
-            DriverInstallationDetails installationDetails = CheckInstallation(targetPlatform);
+            var installationDetails = CheckInstallation(targetPlatform);
 
             if(installationDetails.IsInstalled == false)
             {

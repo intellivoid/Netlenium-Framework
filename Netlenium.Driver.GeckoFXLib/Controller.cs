@@ -1,7 +1,9 @@
 ﻿using Gecko;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using Netlenium.Types;
 
 namespace Netlenium.Driver.GeckoFXLib
 {
@@ -14,12 +16,12 @@ namespace Netlenium.Driver.GeckoFXLib
         /// <summary>
         /// The private GeckoWebBrowser Control
         /// </summary>
-        public GeckoWebBrowser _GeckoWebBrowser;
+        public GeckoWebBrowser GeckoWebBrowser;
 
         /// <summary>
         /// The web view UI, if Hide Paramerter is set to false in Initialize() this won't be shown.
         /// </summary>
-        private Forms.WebView _WebView;
+        private Forms.WebView _webView;
 
         /// <summary>
         /// Indication if the Document is ready or not
@@ -29,17 +31,20 @@ namespace Netlenium.Driver.GeckoFXLib
         /// <summary>
         /// The current Driver Installation Details
         /// </summary>
-        private DriverInstallationDetails DriverInstallation;
+        private readonly DriverInstallationDetails _driverInstallation;
 
-        private DriverConfiguration DriverConfiguration;
+        /// <summary>
+        /// The Driver Configuration Details
+        /// </summary>
+        private readonly DriverConfiguration _driverConfiguration;
 
         /// <summary>
         /// Constructs the controller
         /// </summary>
-        public Controller(DriverConfiguration DriverConfiguration, DriverInstallationDetails DriverInstalation)
+        public Controller(DriverConfiguration driverConfiguration, DriverInstallationDetails driverInstalation)
         {
-            this.DriverInstallation = DriverInstalation;
-            this.DriverConfiguration = DriverConfiguration;
+            _driverInstallation = driverInstalation;
+            _driverConfiguration = driverConfiguration;
         }
 
         /// <summary>
@@ -47,12 +52,12 @@ namespace Netlenium.Driver.GeckoFXLib
         /// </summary>
         public void Initialize()
         {
-            Xpcom.Initialize(DriverInstallation.DriverPath);
-            this._WebView = new Forms.WebView();
-            this._GeckoWebBrowser = this._WebView.GeckoWebBrowser;
-            if(DriverConfiguration.Headless == false)
+            Xpcom.Initialize(_driverInstallation.DriverPath);
+            _webView = new Forms.WebView();
+            GeckoWebBrowser = _webView.GeckoWebBrowser;
+            if(_driverConfiguration.Headless == false)
             {
-                this._WebView.Show();
+                _webView.Show();
             }
         }
 
@@ -61,64 +66,51 @@ namespace Netlenium.Driver.GeckoFXLib
         /// </summary>
         public void Quit()
         {
-            _WebView.Close();
-            _GeckoWebBrowser.Dispose();
+            _webView.Close();
+            GeckoWebBrowser.Dispose();
         }
 
         /// <summary>
         /// the current title of the document
         /// </summary>
-        public string DocumentTitle
-        {
-            get
-            {
-                return _GeckoWebBrowser.DocumentTitle;
-            }
-        }
+        public string DocumentTitle => GeckoWebBrowser.DocumentTitle;
 
         /// <summary>
         /// The current URL
         /// </summary>
-        public string URL
-        {
-            get
-            {
-                return _GeckoWebBrowser.Url.ToString();
-            }
-        }
+        public string Url => GeckoWebBrowser.Url.ToString();
 
         /// <summary>
         /// Executes Javascript Code, throws an exception if the code failed to be executed
         /// </summary>
-        /// <param name="Code"></param>
+        /// <param name="code"></param>
         /// <returns></returns>
-        public string ExecuteJS(string Code)
+        public string ExecuteJs(string code)
         {
-            string result = string.Empty;
-            AutoJSContext context;
-            context = new AutoJSContext(_GeckoWebBrowser.Window);
-            context.EvaluateScript(Code, (nsISupports)_GeckoWebBrowser.Window.DomWindow, out result);
+            string result;
+            var context = new AutoJSContext(GeckoWebBrowser.Window);
+            context.EvaluateScript(code, GeckoWebBrowser.Window.DomWindow, out result);
             return result;
         }
         
         /// <summary>
         /// Navigates to the given URL
         /// </summary>
-        /// <param name="URL"></param>
-        public void Navigate(string URL)
+        /// <param name="url"></param>
+        public void Navigate(string url)
         {
-            this._WebView.DocumentReady = false;
-            this._GeckoWebBrowser.Navigate(URL);
+            _webView.DocumentReady = false;
+            GeckoWebBrowser.Navigate(url);
 
             while (true)
             {
                 Application.DoEvents();
-                if(this._WebView.DocumentReady == true)
+                
+                if (_webView.DocumentReady != true) continue;
+                
+                if (GeckoWebBrowser.IsBusy == false)
                 {
-                    if (this._GeckoWebBrowser.IsBusy == false)
-                    {
-                        break;
-                    }
+                    break;
                 }
             }
         }
@@ -128,7 +120,7 @@ namespace Netlenium.Driver.GeckoFXLib
         /// </summary>
         public void GoBack()
         {
-            this._GeckoWebBrowser.GoBack();
+            GeckoWebBrowser.GoBack();
         }
 
         /// <summary>
@@ -136,58 +128,58 @@ namespace Netlenium.Driver.GeckoFXLib
         /// </summary>
         public void GoForward()
         {
-            this._GeckoWebBrowser.GoForward();
+            GeckoWebBrowser.GoForward();
         }
 
         /// <summary>
         /// Fetches elements in the current loaded document
         /// </summary>
-        /// <param name="SearchType">ClassName/Name/TagName/Id</param>
-        /// <param name="Input"></param>
+        /// <param name="searchType">ClassName/Name/TagName/Id</param>
+        /// <param name="input"></param>
         /// <returns></returns>
-        public List<Element> GetElements(Types.SearchType SearchType, string Input)
+        public List<Element> GetElements(SearchType searchType, string input)
         {
-            List<Element> Elements = new List<Element>();
+            var elements = new List<Element>();
 
-            switch(SearchType)
+            switch(searchType)
             {
-                case Types.SearchType.ClassName:
+                case SearchType.ClassName:
 
-                    foreach (GeckoElement FoundElement in _GeckoWebBrowser.Document.GetElementsByClassName(Input))
-                    {
-                        Elements.Add(new Element(FoundElement, this));
-                    }
+                    elements.AddRange(from GeckoElement foundElement in 
+                        GeckoWebBrowser.Document.GetElementsByClassName(input) select new Element(foundElement, this));
 
-                    return Elements;
+                    return elements;
 
-                case Types.SearchType.Name:
+                case SearchType.Name:
 
-                    foreach (GeckoElement FoundElement in _GeckoWebBrowser.Document.GetElementsByName(Input))
-                    {
-                        Elements.Add(new Element(FoundElement, this));
-                    }
+                    elements.AddRange(from GeckoElement foundElement in 
+                        GeckoWebBrowser.Document.GetElementsByName(input) select new Element(foundElement, this));
 
-                    return Elements;
+                    return elements;
 
-                case Types.SearchType.TagName:
+                case SearchType.TagName:
 
-                    foreach (GeckoElement FoundElement in _GeckoWebBrowser.Document.GetElementsByTagName(Input))
-                    {
-                        Elements.Add(new Element(FoundElement, this));
-                    }
+                    elements.AddRange(from GeckoElement foundElement in 
+                        GeckoWebBrowser.Document.GetElementsByTagName(input) select new Element(foundElement, this));
 
-                    return Elements;
+                    return elements;
 
-                case Types.SearchType.Id:
+                case SearchType.Id:
 
-                    Elements.Add(new Element(_GeckoWebBrowser.Document.GetElementById(Input), this));
-                    return Elements;
+                    elements.Add(new Element(GeckoWebBrowser.Document.GetElementById(input), this));
+                    return elements;
 
+                case SearchType.CssSelector:
+                    throw new SearchTypeNotSupportedException();
+                    
                 default:
                     throw new SearchTypeNotSupportedException();
             }
         }
         
+        /// <summary>
+        /// Disposes the controller
+        /// </summary>
         public void Dispose()
         {
             GC.SuppressFinalize(this);

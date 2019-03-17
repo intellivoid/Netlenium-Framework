@@ -3,9 +3,15 @@ using System.Windows.Forms;
 
 namespace Netlenium.Driver.GeckoFXLib.Forms
 {
+    /// <summary>
+    /// The main WebView form
+    /// </summary>
     public partial class WebView : Form
     {
 
+        /// <summary>
+        /// Indicates if the Document is ready or not
+        /// </summary>
         public bool DocumentReady;
 
         /// <summary>
@@ -48,14 +54,15 @@ namespace Netlenium.Driver.GeckoFXLib.Forms
             }
         }
 
+        ///// <param name="sender"></param>
         /// <summary>
         /// Sets the document ready variable to true
         /// </summary>
-        ///// <param name="sender"></param>
+        /// <param name="sender"></param>
         /// <param name="e"></param>
         private void GeckoWebBrowser_DocumentCompleted(object sender, Gecko.Events.GeckoDocumentCompletedEventArgs e)
         {
-            this.DocumentReady = true;
+            DocumentReady = true;
             Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver.GeckoFXLib", "Document Loaded");
         }
 
@@ -76,8 +83,8 @@ namespace Netlenium.Driver.GeckoFXLib.Forms
         /// <param name="e"></param>
         private void AboutNetleniumMenuItem_Click(object sender, EventArgs e)
         {
-            Netlenium.Forms.AboutDialog AboutDialog = new Netlenium.Forms.AboutDialog();
-            AboutDialog.ShowDialog();
+            var aboutDialog = new Netlenium.Forms.AboutDialog();
+            aboutDialog.ShowDialog();
         }
 
         /// <summary>

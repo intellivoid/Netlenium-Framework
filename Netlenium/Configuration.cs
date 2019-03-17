@@ -8,6 +8,9 @@ namespace Netlenium
     /// </summary>
     public class Configuration
     {
+        /// <summary>
+        /// The current platform that this OS is running on
+        /// </summary>
         public static Types.Platform CurrentPlatform
         {
             get
@@ -95,6 +98,9 @@ namespace Netlenium
             }
         }
 
+        /// <summary>
+        /// The location of the logging directory
+        /// </summary>
         public static string LoggingDirectory
         {
             get

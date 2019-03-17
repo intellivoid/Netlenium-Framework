@@ -33,10 +33,20 @@ namespace NetleniumBuild
     /// </summary>
     internal class Program
     {
+        /// <summary>
+        /// The used paramerters for this command line interface
+        /// </summary>
         private static Paramerters _usedParameters;
 
+        /// <summary>
+        /// The hard-coded Application Version
+        /// </summary>
         private const string ApplicationVersion = "1.0.0.2";
 
+        /// <summary>
+        /// Reads the arguments given via the command-line and parses into objective paramerters
+        /// </summary>
+        /// <param name="args"></param>
         private static void GetParamerters(IEnumerable<string> args)
         {
             _usedParameters = new Paramerters();
@@ -68,7 +78,7 @@ namespace NetleniumBuild
                 if (_usedParameters.Source != null) return;
                 
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Error: Missing paramerter \"source\"{Environment.NewLine}");
+                Console.WriteLine($@"Error: Missing paramerter ""source""{Environment.NewLine}");
                 Console.ResetColor();
                 ShowHelp();
                 Environment.Exit(1);
@@ -80,6 +90,9 @@ namespace NetleniumBuild
             }
         }
 
+        /// <summary>
+        /// Displays the help menu
+        /// </summary>
         private static void ShowHelp()
         {
             Console.WriteLine(@"Netlenium Package Builder");
@@ -324,11 +337,10 @@ namespace NetleniumBuild
                 Environment.Exit(1);
             }
 
-            if (File.Exists($"{source}{Path.DirectorySeparatorChar}main.py") == false)
-            {
-                Print(MessageType.Error, "The main python source does not exist (main.py)");
-                Environment.Exit(1);
-            }
+            if (File.Exists($"{source}{Path.DirectorySeparatorChar}main.py")) return;
+            
+            Print(MessageType.Error, "The main python source does not exist (main.py)");
+            Environment.Exit(1);
         }
     }
 }

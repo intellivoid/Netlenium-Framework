@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using Netlenium.Types;
 
 namespace Netlenium.Manager
 {
-    public class GeckoFX32
+    /// <summary>
+    /// GeckoFX Driver Manager
+    /// </summary>
+    public class GeckoFx32
     {
         /// <summary>
         /// Fetches the Assembly's executing directory
@@ -17,9 +17,9 @@ namespace Netlenium.Manager
         {
             get
             {
-                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                UriBuilder uri = new UriBuilder(codeBase);
-                string path = Uri.UnescapeDataString(uri.Path);
+                var codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                var uri = new UriBuilder(codeBase);
+                var path = Uri.UnescapeDataString(uri.Path);
                 return Path.GetDirectoryName(path);
             }
         }
@@ -27,47 +27,56 @@ namespace Netlenium.Manager
         /// <summary>
         /// Checks the current installation state of the driver
         /// </summary>
-        /// <param name="TargetPlatform"></param>
+        /// <param name="targetPlatform"></param>
         /// <returns></returns>
-        public static DriverInstallationDetails CheckInstallation(Types.Platform TargetPlatform = Types.Platform.AutoDetect)
+        public static DriverInstallationDetails CheckInstallation(Platform targetPlatform = Platform.AutoDetect)
         {
-            DriverInstallationDetails Results = new DriverInstallationDetails();
+            var results = new DriverInstallationDetails();
 
-            if (TargetPlatform == Types.Platform.AutoDetect)
+            if (targetPlatform == Platform.AutoDetect)
             {
-                TargetPlatform = Configuration.CurrentPlatform;
+                targetPlatform = Configuration.CurrentPlatform;
             }
 
-            Results.IsInstalled = true;
-            Results.TargetPlatform = TargetPlatform;
-            Results.DriverType = Types.Driver.Chrome;
+            results.IsInstalled = true;
+            results.TargetPlatform = targetPlatform;
+            results.DriverType = Driver.Chrome;
 
-            switch (TargetPlatform)
+            switch (targetPlatform)
             {
-                case Types.Platform.Win32:
-                    Results.DriverPath = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}xulrunner_win32";
-                    Results.DriverExecutableName = "xul.dll";
-                    Results.DriverExecutable = $"{Results.DriverPath}{Path.DirectorySeparatorChar}{Results.DriverExecutableName}";
+                case Platform.Win32:
+                    results.DriverPath = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}xulrunner_win32";
+                    results.DriverExecutableName = "xul.dll";
+                    results.DriverExecutable = $"{results.DriverPath}{Path.DirectorySeparatorChar}{results.DriverExecutableName}";
 
-                    if (Directory.Exists(Results.DriverPath) == false)
+                    if (Directory.Exists(results.DriverPath) == false)
                     {
-                        Results.IsInstalled = false;
+                        results.IsInstalled = false;
                     }
 
-                    if (File.Exists(Results.DriverExecutable) == false)
+                    if (File.Exists(results.DriverExecutable) == false)
                     {
-                        Results.IsInstalled = false;
+                        results.IsInstalled = false;
                     }
 
-                    Results.Version = "60.0.26";
+                    results.Version = "60.0.26";
 
                     break;
 
+                case Platform.AutoDetect:
+                    throw new PlatformNotSupportedException();
+                    
+                case Platform.Linux32:
+                    throw new PlatformNotSupportedException();
+                    
+                case Platform.Linux64:
+                    throw new PlatformNotSupportedException();
+                    
                 default:
                     throw new PlatformNotSupportedException();
             }
 
-            return Results;
+            return results;
         }
     }
 }

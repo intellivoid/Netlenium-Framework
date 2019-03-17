@@ -31,6 +31,9 @@ namespace NetleniumRuntime
         public bool Help { get; set; }
     }
 
+    /// <summary>
+    /// Main Program
+    /// </summary>
     internal class Program
     {
         private const string ApplicationVersion = "1.0.0.0";
@@ -110,7 +113,7 @@ namespace NetleniumRuntime
                 if (_usedParameters.PackageFile != null) return;
                 
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Error: Missing paramerter \"file\"{Environment.NewLine}");
+                Console.WriteLine($@"Error: Missing paramerter ""file""{Environment.NewLine}");
                 Console.ResetColor();
                 ShowHelp();
                 Environment.Exit(1);
@@ -150,7 +153,7 @@ namespace NetleniumRuntime
             if (File.Exists(_usedParameters.PackageFile) == false)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Error: The file \"{_usedParameters.PackageFile}\" does not exist!");
+                Console.WriteLine($@"Error: The file ""{_usedParameters.PackageFile}"" does not exist!");
                 Console.ResetColor();
                 Environment.Exit(1);
             }
@@ -263,6 +266,8 @@ namespace NetleniumRuntime
             {
                 Console.WriteLine(@"The Netlenium Package does not contain a valid dependency file");
                 Environment.Exit(1);
+                
+                // ReSharper disable once HeuristicUnreachableCode
                 return null;
             }
         }
@@ -278,8 +283,10 @@ namespace NetleniumRuntime
             
             if (File.Exists(dependencyFile) == false)
             {
-                Console.WriteLine($"The required dependency for the framework cannot be found \"{dependencyFile}\"");
+                Console.WriteLine($@"The required dependency for the framework cannot be found ""{dependencyFile}""");
                 Environment.Exit(1);
+                
+                // ReSharper disable once HeuristicUnreachableCode
                 return null;
             }
 
@@ -298,11 +305,11 @@ namespace NetleniumRuntime
             var results = requiredVersion.CompareTo(installedVersion);
             if(results > 0)
             {
-                Console.WriteLine($"Warning: The installed version of \"{dependencyName}\" is newer than the required version for this package.");
+                Console.WriteLine($@"Warning: The installed version of ""{dependencyName}"" is newer than the required version for this package.");
             }
             else if(results < 0)
             {
-                Console.WriteLine($"Warning: The installed version of \"{dependencyName}\" is older than the required version for this package.");
+                Console.WriteLine($@"Warning: The installed version of ""{dependencyName}"" is older than the required version for this package.");
             }
         }
 

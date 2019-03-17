@@ -4,30 +4,35 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.Linq;
+using Netlenium.Types;
 
 namespace Netlenium.Driver.GeckoFXLib
 {
+    /// <summary>
+    /// GeckoFX (GeckoElement) Element Class
+    /// </summary>
     public class Element
     {
         /// <summary>
         /// Element Object
         /// </summary>
-        private GeckoElement _Element;
+        private readonly GeckoElement _element;
 
         /// <summary>
         /// Driver Controller
         /// </summary>
-        private Controller _DriverController;
+        private readonly Controller _driverController;
 
         /// <summary>
         /// Constructs a GeckoElement
         /// </summary>
-        /// <param name="Element"></param>
-        /// <param name="DriverController"></param>
-        public Element(GeckoElement Element, Controller DriverController)
+        /// <param name="element"></param>
+        /// <param name="driverController"></param>
+        public Element(GeckoElement element, Controller driverController)
         {
-            this._Element = Element;
-            this._DriverController = DriverController;
+            _element = element;
+            _driverController = driverController;
         }
 
         /// <summary>
@@ -35,50 +40,33 @@ namespace Netlenium.Driver.GeckoFXLib
         /// </summary>
         public string Text
         {
-            get
-            {
-                return this._Element.TextContent;
-            }
-            set
-            {
-                this._Element.TextContent = value;
-            }
+            get => _element.TextContent;
+            set => _element.TextContent = value;
         }
 
         /// <summary>
         /// Gets a value indicating whether or not this element is displayed.
         /// </summary>
-        public bool Visible
-        {
-            get
-            {
-                if(_Element != null)
-                {
-                    return true;
-                }
-
-                return false;
-            }
-        }
+        public bool Visible => _element != null;
 
         /// <summary>
         /// returns the value of a specified attribute on the element
         /// </summary>
-        /// <param name="AttributeName"></param>
+        /// <param name="attributeName"></param>
         /// <returns></returns>
-        public string GetAttribute(string AttributeName)
+        public string GetAttribute(string attributeName)
         {
-            return this._Element.GetAttribute(AttributeName);
+            return _element.GetAttribute(attributeName);
         }
 
         /// <summary>
         /// Sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
         /// </summary>
-        /// <param name="AttributeName"></param>
-        /// <param name="Value"></param>
-        public void SetAttribute(string AttributeName, string Value)
+        /// <param name="attributeName"></param>
+        /// <param name="value"></param>
+        public void SetAttribute(string attributeName, string value)
         {
-            this._Element.SetAttribute(AttributeName, Value);
+            _element.SetAttribute(attributeName, value);
         }
 
         /// <summary>
@@ -86,37 +74,38 @@ namespace Netlenium.Driver.GeckoFXLib
         /// </summary>
         public void Click()
         {
-            DomEventArgs ev = _DriverController._GeckoWebBrowser.Document.CreateEvent("MouseEvent");
-            var webEvent = new Event(_Element.Window, ev.DomEvent as nsISupports);
+            var ev = _driverController.GeckoWebBrowser.Document.CreateEvent("MouseEvent");
+            // ReSharper disable once SuspiciousTypeConversion.Global
+            var webEvent = new Event(_element.Window, (nsISupports) ev.DomEvent);
 
             webEvent.InitEvent("mousedown", true, true);
-            _Element.GetEventTarget().DispatchEvent(ev);
+            _element.GetEventTarget().DispatchEvent(ev);
 
             webEvent.InitEvent("mouseup", true, true);
-            _Element.GetEventTarget().DispatchEvent(ev);
+            _element.GetEventTarget().DispatchEvent(ev);
 
             webEvent.InitEvent("click", true, true);
-            _Element.GetEventTarget().DispatchEvent(ev);
+            _element.GetEventTarget().DispatchEvent(ev);
         }
 
         /// <summary>
         /// Simulates typing into the event
         /// </summary>
-        /// <param name="Text"></param>
-        public void SendKeys(string Text)
+        /// <param name="text"></param>
+        public void SendKeys(string text)
         {
-            GeckoHtmlElement GeckoHTMLElement = (GeckoHtmlElement)_Element;
-            GeckoHTMLElement.Focus();
+            var geckoHtmlElement = (GeckoHtmlElement)_element;
+            geckoHtmlElement.Focus();
 
-            foreach (char Key in Text)
+            foreach (var key in text)
             {
                 try
                 {
-                    SendKeyEvent("keypress", Key.ToString(), false, false, false);
+                    SendKeyEvent(key.ToString(), false, false, false);
                 }
                 catch(Exception exception)
                 {
-                    Logging.WriteEntry(Types.LogType.Warning, "Netlenium.Driver.GeckoFXLib", $"Cannot simulate keypress for \"{Key}\", {exception.Message}");
+                    Logging.WriteEntry(LogType.Warning, "Netlenium.Driver.GeckoFXLib", $"Cannot simulate keypress for \"{key}\", {exception.Message}");
                 }
             }
 
@@ -125,21 +114,21 @@ namespace Netlenium.Driver.GeckoFXLib
         /// <summary>
         /// Simulates a key press event
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="key"></param>
         /// <param name="alt"></param>
         /// <param name="ctrl"></param>
         /// <param name="shift"></param>
-        private void SendKeyEvent(string type, string key, bool alt, bool ctrl, bool shift)
+        private void SendKeyEvent(string key, bool alt, bool ctrl, bool shift)
         {
             // Escape for JS.
             key = key.Replace("\\", "\\\\");
             var instance = Xpcom.CreateInstance<nsITextInputProcessor>("@mozilla.org/text-input-processor;1");
-            using (var context = new AutoJSContext(_DriverController._GeckoWebBrowser.Window))
+            using (var context = new AutoJSContext(_driverController.GeckoWebBrowser.Window))
             {
                 var result = context.EvaluateScript(
                     $@"new KeyboardEvent('', {{ key: '{key}', code: '', keyCode: 0, ctrlKey : {(ctrl ? "true" : "false")}, shiftKey : {(shift ? "true" : "false")}, altKey : {(alt ? "true" : "false")} }});");
-                instance.BeginInputTransaction((mozIDOMWindow)((GeckoWebBrowser)_DriverController._GeckoWebBrowser).Document.DefaultView.DomWindow, new KeyEventCallback());
+                // ReSharper disable once SuspiciousTypeConversion.Global
+                instance.BeginInputTransaction((mozIDOMWindow) _driverController.GeckoWebBrowser.Document.DefaultView.DomWindow, new KeyEventCallback());
                 instance.Keydown((nsIDOMEvent)result.ToObject(), 0, 1);
                 instance.Keyup((nsIDOMEvent)result.ToObject(), 0, 1);
             }
@@ -162,27 +151,35 @@ namespace Netlenium.Driver.GeckoFXLib
         /// <summary>
         /// Returns a live ElementCollection of elements with the given search type name and input
         /// </summary>
-        /// <param name="SearchType"></param>
-        /// <param name="Input"></param>
+        /// <param name="searchType"></param>
+        /// <param name="input"></param>
         /// <returns></returns>
-        public List<Element> GetElements(Types.SearchType SearchType, string Input)
+        public List<Element> GetElements(SearchType searchType, string input)
         {
-            List<Element> Elements = new List<Element>();
+            var elements = new List<Element>();
 
-            switch (SearchType)
+            switch (searchType)
             {
-                case Types.SearchType.ClassName:
+                case SearchType.ClassName:
 
-                    foreach (GeckoElement FoundElement in _Element.GetElementsByTagName(Input))
-                    {
-                        Elements.Add(new Element(FoundElement, this._DriverController));
-                    }
-
-                    GeckoHtmlElement EMTL = (GeckoHtmlElement)_Element;
+                    elements.AddRange(_element.GetElementsByTagName(input).Select(
+                        foundElement => new Element(foundElement, _driverController))
+                    );
                     
+                    return elements;
 
-                    return Elements;
-
+                case SearchType.Id:
+                    throw new SearchTypeNotSupportedException();
+                    
+                case SearchType.CssSelector:
+                    throw new SearchTypeNotSupportedException();
+                    
+                case SearchType.TagName:
+                    throw new SearchTypeNotSupportedException();
+                    
+                case SearchType.Name:
+                    throw new SearchTypeNotSupportedException();
+                    
                 default:
                     throw new SearchTypeNotSupportedException();
             }
