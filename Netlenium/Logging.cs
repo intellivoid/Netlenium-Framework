@@ -30,7 +30,7 @@ namespace Netlenium
         /// <param name="loggingType"></param>
         /// <param name="moduleName"></param>
         /// <param name="entryText"></param>
-        public static void WriteDebugEntry(Types.LogType loggingType, string moduleName, string entryText)
+        public static void WriteVerboseEntry(Types.LogType loggingType, string moduleName, string entryText)
         {
             if (VerboseLogging == false)
             {
