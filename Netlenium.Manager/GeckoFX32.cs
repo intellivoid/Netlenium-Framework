@@ -31,11 +31,14 @@ namespace Netlenium.Manager
         /// <returns></returns>
         public static DriverInstallationDetails CheckInstallation(Platform targetPlatform = Platform.AutoDetect)
         {
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Checking Library Support (GeckoFXLib) (Platform: {targetPlatform})");
             var results = new DriverInstallationDetails();
 
-            if (targetPlatform == Platform.AutoDetect)
+            if(targetPlatform == Platform.AutoDetect)
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", "Auto Detecting Platform");
                 targetPlatform = Configuration.CurrentPlatform;
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Detected Platform: {targetPlatform}");
             }
 
             results.IsInstalled = true;
@@ -64,18 +67,30 @@ namespace Netlenium.Manager
                     break;
 
                 case Platform.AutoDetect:
+                    Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "The selected platform is not supported for GeckoFXLib");
                     throw new PlatformNotSupportedException();
                     
                 case Platform.Linux32:
+                    Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "The selected platform is not supported for GeckoFXLib");
                     throw new PlatformNotSupportedException();
                     
                 case Platform.Linux64:
+                    Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "The selected platform is not supported for GeckoFXLib");
                     throw new PlatformNotSupportedException();
                     
                 default:
+                    Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "The selected platform is not supported for GeckoFXLib");
                     throw new PlatformNotSupportedException();
             }
 
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Driver: {results.DriverType}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Installed: {results.IsInstalled}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Target Platform: {results.TargetPlatform}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Driver Path: {results.DriverPath}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Driver Executable Name: {results.DriverExecutableName}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Driver Executable: {results.DriverExecutable}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Installed Version: {results.Version}");
+            
             return results;
         }
     }
