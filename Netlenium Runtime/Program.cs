@@ -33,16 +33,30 @@ namespace NetleniumRuntime
         public bool Help { get; set; }
     }
 
+    /// <summary>
+    /// Console Color Option Interface
+    /// </summary>
     internal class ConsoleColorOption
     {
+        /// <summary>
+        /// Pulic Constructor
+        /// </summary>
+        /// <param name="useColor"></param>
+        /// <param name="selectedColor"></param>
         public ConsoleColorOption(bool useColor, ConsoleColor selectedColor = ConsoleColor.White)
         {
             UseColor = useColor;
             SelectedColor = selectedColor;
         }
         
+        /// <summary>
+        /// The selected color to be displayed
+        /// </summary>
         public ConsoleColor SelectedColor { get; set; }
         
+        /// <summary>
+        /// Indicates if the color formatting is going to be used
+        /// </summary>
         public bool UseColor { get; set; }
     }
     
@@ -158,8 +172,13 @@ namespace NetleniumRuntime
             Console.WriteLine(@"     -f, --file  required        The Netlenium Package to execute (.np file)");
             Console.WriteLine(@"     --skip-dependency-check     Skips the dependency check of the package");
         }
-
         
+        /// <summary>
+        /// Prints a formatted colored output to the command-line interface
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="foregroundColor"></param>
+        /// <param name="backgroundColor"></param>
         private static void Print(string value, ConsoleColorOption foregroundColor, ConsoleColorOption backgroundColor)
         {
             if (foregroundColor.UseColor)
