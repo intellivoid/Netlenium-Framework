@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using Netlenium.Types;
 
 namespace Netlenium
 {
@@ -27,17 +28,16 @@ namespace Netlenium
         /// <summary>
         /// Writes a vebrose Log Entry
         /// </summary>
-        /// <param name="loggingType"></param>
         /// <param name="moduleName"></param>
         /// <param name="entryText"></param>
-        public static void WriteVerboseEntry(Types.LogType loggingType, string moduleName, string entryText)
+        public static void WriteVerboseEntry(string moduleName, string entryText)
         {
             if (VerboseLogging == false)
             {
                 return;
             }
             
-            WriteEntry(loggingType, $"{entryText} (VERBO)", moduleName);
+            WriteEntry(LogType.Verbose, moduleName, entryText);
         }
         
         /// <summary>
@@ -47,7 +47,7 @@ namespace Netlenium
         /// <param name="moduleName"></param>
         /// <param name="entryText"></param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        public static void WriteEntry(Types.LogType loggingType, string moduleName, string entryText)
+        public static void WriteEntry(LogType loggingType, string moduleName, string entryText)
         {
             if(Enabled == false)
             {
@@ -58,7 +58,7 @@ namespace Netlenium
 
             switch (loggingType)
             {
-                case Types.LogType.Success:
+                case LogType.Success:
                     if (OutputFile != string.Empty)
                     {
                         try
@@ -83,7 +83,7 @@ namespace Netlenium
                     Console.ResetColor();
                     break;
                 
-                case Types.LogType.Information:
+                case LogType.Information:
                     if (OutputFile != string.Empty)
                     {
                         try
@@ -108,7 +108,7 @@ namespace Netlenium
                     Console.ResetColor();
                     break;
 
-                case Types.LogType.Warning:
+                case LogType.Warning:
                     if (OutputFile != string.Empty)
                     {
                         try
@@ -133,7 +133,7 @@ namespace Netlenium
                     Console.ResetColor();
                     break;
 
-                case Types.LogType.Error:
+                case LogType.Error:
                     if (OutputFile != string.Empty)
                     {
                         try
@@ -158,7 +158,7 @@ namespace Netlenium
                     Console.ResetColor();
                     break;
 
-                case Types.LogType.Debug:
+                case LogType.Debug:
                     if (OutputFile != string.Empty)
                     {
                         try
@@ -173,6 +173,31 @@ namespace Netlenium
 
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
                     Console.Write(@"[DEBUG]");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write($@"[{timestamp}]: ");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write($@"{moduleName} > ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(entryText);
+                    Console.WriteLine();
+                    Console.ResetColor();
+                    break;
+                    
+                case LogType.Verbose:
+                    if (OutputFile != string.Empty)
+                    {
+                        try
+                        {
+                            File.AppendAllText(OutputFile, $@"[VERBOSE][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
+                        }
+                        catch (Exception exception)
+                        {
+                            Debug.Print(exception.Message);
+                        }
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(@"[VERBO]");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write($@"[{timestamp}]: ");
                     Console.ForegroundColor = ConsoleColor.Gray;

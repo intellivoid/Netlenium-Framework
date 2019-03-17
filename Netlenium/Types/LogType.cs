@@ -28,6 +28,11 @@
         /// <summary>
         /// Debug type message
         /// </summary>
-        Debug = 4
+        Debug = 4,
+        
+        /// <summary>
+        /// Verbose type message
+        /// </summary>
+        Verbose = 5
     }
 }

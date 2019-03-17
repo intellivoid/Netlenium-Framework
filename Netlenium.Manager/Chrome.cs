@@ -21,11 +21,13 @@ namespace Netlenium.Manager
             {
                 try
                 {
+                    Logging.WriteVerboseEntry("Netlenium.Manager", $"Checking \"{Properties.Resources.Chrome_LatestReleaseAPI}\" for latest version of Chrome Driver");
                     var httpWebClient = new WebClient();
                     return httpWebClient.DownloadString(Properties.Resources.Chrome_LatestReleaseAPI);
                 }
-                catch (Exception)
+                catch (Exception exception)
                 {
+                    Logging.WriteVerboseEntry("Netlenium.Manager", $"Error while sending WebRequest: {exception.Message}");
                     return null;
                 }
             }
@@ -38,11 +40,14 @@ namespace Netlenium.Manager
         /// <returns></returns>
         public static DriverInstallationDetails CheckInstallation(Platform targetPlatform = Platform.AutoDetect)
         {
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Checking Driver Installation (ChromeDriver) (Platform: {targetPlatform})");
             var results = new DriverInstallationDetails();
 
             if(targetPlatform == Platform.AutoDetect)
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", "Auto Detecting Platform");
                 targetPlatform = Configuration.CurrentPlatform;
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Detected Platform: {targetPlatform}");
             }
 
             results.IsInstalled = true;
@@ -118,15 +123,25 @@ namespace Netlenium.Manager
                     break;
 
                 case Platform.AutoDetect:
+                    Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "The selected platform is not supported for ChromeDriver");
                     throw new PlatformNotSupportedException();
                     
                 default:
+                    Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "The selected platform is not supported for ChromeDriver");
                     throw new PlatformNotSupportedException();
             }
 
             results.Version = File.Exists($"{results.DriverPath}{Path.DirectorySeparatorChar}current_version") == false 
                 ? null : File.ReadAllText($"{results.DriverPath}{Path.DirectorySeparatorChar}current_version");
 
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Driver: {results.DriverType}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Installed: {results.IsInstalled}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Target Platform: {results.TargetPlatform}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Driver Path: {results.DriverPath}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Driver Executable Name: {results.DriverExecutableName}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Driver Executable: {results.DriverExecutable}");
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Installed Version: {results.Version}");
+            
             return results;
         }
 
@@ -136,44 +151,57 @@ namespace Netlenium.Manager
         /// <param name="targetPlatform"></param>
         public static void UninstallDriver(Platform targetPlatform = Platform.AutoDetect)
         {
-            if (targetPlatform == Platform.AutoDetect)
+            if(targetPlatform == Platform.AutoDetect)
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", "Auto Detecting Platform");
                 targetPlatform = Configuration.CurrentPlatform;
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Detected Platform: {targetPlatform}");
             }
+            
+            Logging.WriteEntry(LogType.Information, "Netlenium.Manager", $"Uninstalling ChromeDriver for {targetPlatform}");
 
             var installationDetails = CheckInstallation(targetPlatform);
 
             if(installationDetails.IsInstalled == false)
             {
+                Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "The driver ChromeDriver is not installed, therefore it cannot be uninstalled");
                 throw new DriverUninstallationException("No installed driver was detected therefore the uninstallation process could not be completed.");
             }
 
             try
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Deleting File \"{installationDetails.DriverExecutable}\"");
                 File.Delete(installationDetails.DriverExecutable);
             }
             catch(Exception exception)
             {
+                Logging.WriteEntry(LogType.Error, "Netlenium.Manager", $"Failed to uninstall the driver, {exception.Message}");
                 throw new DriverUninstallationException($"Cannot delete the Driver, {exception.Message}");
             }
 
             try
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", "Deleting Driver Version Registration from System");
                 File.Delete($"{installationDetails.DriverPath}{Path.DirectorySeparatorChar}current_version");
             }
             catch(Exception exception)
             {
+                Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "Failed to uninstall the driver, the version registration cannot be removed from the system");
                 throw new DriverUninstallationException($"Cannot delete the current version file, {exception.Message}");
             }
 
             try
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Deleting Directory \"{installationDetails.DriverPath}\"");
                 Directory.Delete(installationDetails.DriverPath, true);
             }
             catch(Exception exception)
             {
+                Logging.WriteEntry(LogType.Error, "Netlenium.Manager", $"Failed to uninstall the driver, the driver directory cannot be deleted; {exception.Message}");
                 throw new DriverUninstallationException($"Cannot delete the driver resources directory, {exception.Message}");
             }
+            
+            Logging.WriteEntry(LogType.Success, "Netlenium.Manager", "Driver (ChromeDriver) uninstalled!");
         }
 
         /// <summary>
@@ -184,11 +212,15 @@ namespace Netlenium.Manager
         /// <param name="targetPlatform"></param>
         public static void InstallDriver(string driverZipFile, string version, Platform targetPlatform = Platform.AutoDetect)
         {
-            if (targetPlatform == Platform.AutoDetect)
+            if(targetPlatform == Platform.AutoDetect)
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", "Auto Detecting Platform");
                 targetPlatform = Configuration.CurrentPlatform;
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Detected Platform: {targetPlatform}");
             }
 
+            Logging.WriteEntry(LogType.Information, "Netlenium.Manager", $"Installing ChromeDriver for {targetPlatform}");
+            
             var installationDetails = CheckInstallation(targetPlatform);
             
             var temporaryExtractedExecutable = string.Empty;
@@ -202,6 +234,7 @@ namespace Netlenium.Manager
                     break;
 
                 case Platform.Linux32:
+                    Logging.WriteEntry(LogType.Warning, "Netlenium.Manager", "Google Chrome on 32-bit Linux, Ubuntu Precise (12.04), and Debian 7 (wheezy) in early March, 2016.  Chrome will continue to function on these platforms but will no longer receive updates and security fixes.");
                     temporaryExtractedExecutable = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver";
                     temporaryExecutableName = "chromedriver";
                     break;
@@ -220,15 +253,18 @@ namespace Netlenium.Manager
 
             if (File.Exists(temporaryExtractedExecutable))
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Deleting File {temporaryExtractedExecutable}");
                 File.Delete(temporaryExtractedExecutable);
             }
              
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Reading compressed file {driverZipFile}");
             var zip = ZipFile.Read(driverZipFile);
             
             foreach (var entry in zip)
             {
                 if (entry.FileName != temporaryExecutableName) continue;
                 if (entry.IsDirectory) continue;
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Extracting {entry} to {Configuration.TemporaryDirectory}");
                 entry.Extract(Configuration.TemporaryDirectory, ExtractExistingFileAction.OverwriteSilently);
                 break;
             }
@@ -237,26 +273,35 @@ namespace Netlenium.Manager
 
             if (installationDetails.IsInstalled)
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", "Uninstalling existing driver");
                 UninstallDriver(targetPlatform);
             }
 
             if (Directory.Exists(installationDetails.DriverPath) == false)
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Creating directory {installationDetails.DriverPath}");
                 Directory.CreateDirectory(installationDetails.DriverPath);
             }
             
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Moving {temporaryExtractedExecutable} to {installationDetails.DriverExecutable}");
             File.Move(temporaryExtractedExecutable, installationDetails.DriverExecutable);
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Registering version of driver {installationDetails.DriverPath}");
             File.WriteAllText($"{installationDetails.DriverPath}{Path.DirectorySeparatorChar}current_version", version);
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Deleting File {temporaryExtractedExecutable}");
             File.Delete(temporaryExtractedExecutable);
 
+            Logging.WriteEntry(LogType.Success, "Netlenium.Manager", "ChromeDriver installed on System");
+            
             if (!(targetPlatform == Platform.Linux32 || targetPlatform == Platform.Linux64)) return;
             
             try
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Setting executable permissions to {installationDetails.DriverExecutable}");
                 Process.Start("chmod", $"+x \"{installationDetails.DriverExecutable}\"");
             }
             catch (Exception exception)
             {
+                Logging.WriteEntry(LogType.Error, "Netlenium.Manager", $"There was an issue while trying to use chmod to set executable permissions to {installationDetails.DriverExecutable}; {exception.Message}");
                 throw new PermissionsErrorException(exception.Message);
             }
         }
@@ -267,13 +312,16 @@ namespace Netlenium.Manager
         /// <param name="targetPlatform"></param>
         public static void InstallLatestDriver(Platform targetPlatform = Platform.AutoDetect)
         {
-            if (targetPlatform == Platform.AutoDetect)
+            Logging.WriteEntry(LogType.Information, "Netlenium.Manager", "Downloading Latest Drivers for ChromeDriver");
+            
+            if(targetPlatform == Platform.AutoDetect)
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", "Auto Detecting Platform");
                 targetPlatform = Configuration.CurrentPlatform;
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Detected Platform: {targetPlatform}");
             }
 
             var currentLatestVersion = LatestVersion;
-
             var temporaryZipFile = string.Empty;
             var downloadUrl = string.Empty;
 
@@ -285,6 +333,7 @@ namespace Netlenium.Manager
                     break;
 
                 case Platform.Linux32:
+                    Logging.WriteEntry(LogType.Warning, "Netlenium.Manager", "Google has ended support for Linux 32bit, the installation may fail because a 32bit Binary may not exist for Linux for later versions");
                     temporaryZipFile = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_linux32.zip";
                     downloadUrl = Properties.Resources.Chrome_Linux32API.Replace("%VERSION%", currentLatestVersion);
                     break;
@@ -303,13 +352,17 @@ namespace Netlenium.Manager
 
             if(File.Exists(temporaryZipFile))
             {
+                Logging.WriteVerboseEntry("Netlenium.Manager", $"Deleting File {temporaryZipFile}");
                 File.Delete(temporaryZipFile);
             }
 
             var webClient = new WebClient();
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Downloading compressed file from {downloadUrl} and saving to {temporaryZipFile}");
             webClient.DownloadFile(downloadUrl, temporaryZipFile);
 
+            Logging.WriteVerboseEntry("Netlenium.Manager", "Installing ChromeDriver from downloaded compressed file");
             InstallDriver(temporaryZipFile, currentLatestVersion, targetPlatform);
+            Logging.WriteVerboseEntry("Netlenium.Manager", $"Deleting File {temporaryZipFile}");
             File.Delete(temporaryZipFile);
         }
         /// <summary>
