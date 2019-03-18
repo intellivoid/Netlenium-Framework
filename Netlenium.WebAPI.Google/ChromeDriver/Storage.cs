@@ -18,11 +18,9 @@ namespace Netlenium.WebAPI.Google.ChromeDriver
         public static List<Content> FetchContents(string endPoint = "https://chromedriver.storage.googleapis.com/")
         {
             var httpClient = new WebClient();
-            var response = httpClient.DownloadString(endPoint);
-            
             var xmlDocument = new XmlDocument();
-            xmlDocument.LoadXml(response);
-
+            
+            xmlDocument.LoadXml(httpClient.DownloadString(endPoint));
             return(from XmlNode contentNode in xmlDocument.SelectNodes("ListBucketResult/Contents")
                 select new Content
                 {
