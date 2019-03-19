@@ -7,7 +7,7 @@ namespace Netlenium.WebAPI.Google
     /// Raised when the resource was not found or does not exist
     /// </summary>
     [Serializable]
-    internal class ResourceNotFoundException : Exception
+    public class ResourceNotFoundException : Exception
     {
         /// <summary>
         /// Public Constructor without context

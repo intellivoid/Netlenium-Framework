@@ -58,6 +58,10 @@ namespace Netlenium.Driver.Chrome
             DriverInstallation = driverInstallation;
         }
 
+        /// <summary>
+        /// Adds an argument
+        /// </summary>
+        /// <param name="paramerter"></param>
         private void AddArgument(string paramerter)
         {
             Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", $"Adding Argument to Chrome \"{paramerter}\"");

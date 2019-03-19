@@ -51,6 +51,11 @@
         /// If set to true, verbose messages will also be displayed if DriverLogging is set to True
         /// </summary>
         public bool DriverVerboseLogging { get; set; }
+
+        /// <summary>
+        /// Proxy configuration 
+        /// </summary>
+        public ProxyConfiguration Proxy { get; set; }
         
         /// <summary>
         /// Public Consturctor
@@ -59,6 +64,15 @@
         {
             Headless = true;
             TargetPlatform = Configuration.CurrentPlatform;
+            Proxy = new ProxyConfiguration()
+            {
+                Enabled = false,
+                UseAuthentication = false,
+                IP = "127.0.0.1",
+                Port = 8080,
+                Username = "anonymous",
+                Password = "anonymous"
+            };
         }
     }
 }

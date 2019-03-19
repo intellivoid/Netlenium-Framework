@@ -134,9 +134,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ProxyConfiguration.cs" />
     <Compile Include="Types\Driver.cs" />
     <Compile Include="Types\LogType.cs" />
     <Compile Include="Types\Platform.cs" />
+    <Compile Include="Types\Scheme.cs" />
     <Compile Include="Types\SearchType.cs" />
   </ItemGroup>
   <ItemGroup>

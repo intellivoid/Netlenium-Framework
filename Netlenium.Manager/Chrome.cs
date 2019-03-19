@@ -329,18 +329,51 @@ namespace Netlenium.Manager
             {
                 case Platform.Win32:
                     temporaryZipFile = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_win32.zip";
-                    downloadUrl = Properties.Resources.Chrome_Win32API.Replace("%VERSION%", currentLatestVersion);
+
+                    try
+                    {
+                        var Resource = WebAPI.Google.Storage.FetchResource($"{currentLatestVersion}/chromedriver_win32.zip");
+                        downloadUrl = Resource.AccessLocation.ToString();
+                    }
+                    catch(WebAPI.Google.ResourceNotFoundException)
+                    {
+                        Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "The resource was not found on the server (Driver Unavailable)");
+                        throw;
+                    }
+
                     break;
 
                 case Platform.Linux32:
                     Logging.WriteEntry(LogType.Warning, "Netlenium.Manager", "Google has ended support for Linux 32bit, the installation may fail because a 32bit Binary may not exist for Linux for later versions");
                     temporaryZipFile = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_linux32.zip";
-                    downloadUrl = Properties.Resources.Chrome_Linux32API.Replace("%VERSION%", currentLatestVersion);
+
+                    try
+                    {
+                        var Resource = WebAPI.Google.Storage.FetchResource($"{currentLatestVersion}/chromedriver_linux32.zip");
+                        downloadUrl = Resource.AccessLocation.ToString();
+                    }
+                    catch (WebAPI.Google.ResourceNotFoundException)
+                    {
+                        Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "The resource was not found on the server (Driver Unavailable)");
+                        throw;
+                    }
+
                     break;
 
                 case Platform.Linux64:
                     temporaryZipFile = $"{Configuration.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_linux64.zip";
-                    downloadUrl = Properties.Resources.Chrome_Linux64API.Replace("%VERSION%", currentLatestVersion);
+
+                    try
+                    {
+                        var Resource = WebAPI.Google.Storage.FetchResource($"{currentLatestVersion}/chromedriver_linux64.zip");
+                        downloadUrl = Resource.AccessLocation.ToString();
+                    }
+                    catch (WebAPI.Google.ResourceNotFoundException)
+                    {
+                        Logging.WriteEntry(LogType.Error, "Netlenium.Manager", "The resource was not found on the server (Driver Unavailable)");
+                        throw;
+                    }
+
                     break;
 
                 case Platform.AutoDetect:
