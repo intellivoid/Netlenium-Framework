@@ -32,6 +32,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{07C4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI Test", "WebAPI Test\WebAPI Test.csproj", "{240F278E-9343-4751-8E85-3043705FDD42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium Package Tool", "Netlenium Package Tool\Netlenium Package Tool.csproj", "{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -264,6 +266,30 @@ Global
 		{240F278E-9343-4751-8E85-3043705FDD42}.WindowsRelease|Any CPU.Build.0 = Release|Any CPU
 		{240F278E-9343-4751-8E85-3043705FDD42}.WindowsRelease|x86.ActiveCfg = Release|Any CPU
 		{240F278E-9343-4751-8E85-3043705FDD42}.WindowsRelease|x86.Build.0 = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.Debug|x86.Build.0 = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.LinuxDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.LinuxDebug|Any CPU.Build.0 = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.LinuxDebug|x86.ActiveCfg = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.LinuxDebug|x86.Build.0 = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.LinuxRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.LinuxRelease|Any CPU.Build.0 = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.LinuxRelease|x86.ActiveCfg = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.LinuxRelease|x86.Build.0 = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.Release|x86.ActiveCfg = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.Release|x86.Build.0 = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsDebug|Any CPU.Build.0 = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsDebug|x86.ActiveCfg = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsDebug|x86.Build.0 = Debug|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsRelease|Any CPU.Build.0 = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsRelease|x86.ActiveCfg = Release|Any CPU
+		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsRelease|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
