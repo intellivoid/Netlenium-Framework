@@ -30,23 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.MainMenu = new System.Windows.Forms.MainMenu(this.components);
-            this.FileMenuItem = new System.Windows.Forms.MenuItem();
-            this.CreateNewPackageMenuItem = new System.Windows.Forms.MenuItem();
-            this.LoadSourceDirectoryMenuItem = new System.Windows.Forms.MenuItem();
-            this.MenuItemSeperator1 = new System.Windows.Forms.MenuItem();
-            this.ExitMenuItem = new System.Windows.Forms.MenuItem();
-            this.EditMenuItem = new System.Windows.Forms.MenuItem();
-            this.EditPackageDetailsMenuItem = new System.Windows.Forms.MenuItem();
-            this.ViewMenuItem = new System.Windows.Forms.MenuItem();
-            this.BuildMenuItem = new System.Windows.Forms.MenuItem();
-            this.BuildPackageMenuItem = new System.Windows.Forms.MenuItem();
-            this.BuildAndRunPackageMenuItem = new System.Windows.Forms.MenuItem();
-            this.ToolsMenuItem = new System.Windows.Forms.MenuItem();
-            this.RunPackageMenuItem = new System.Windows.Forms.MenuItem();
-            this.HelpMenuItem = new System.Windows.Forms.MenuItem();
-            this.AboutNetleniumFrameworkMenuItem = new System.Windows.Forms.MenuItem();
-            this.AboutPackageToolMenuItem = new System.Windows.Forms.MenuItem();
             this.PackageDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.EditPackageDetailsButton = new System.Windows.Forms.Button();
             this.PackageCompanyPanel = new System.Windows.Forms.Panel();
@@ -83,8 +66,25 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainMenu = new System.Windows.Forms.MainMenu(this.components);
+            this.FileMenuItem = new System.Windows.Forms.MenuItem();
+            this.CreateNewPackageMenuItem = new System.Windows.Forms.MenuItem();
+            this.LoadSourceDirectoryMenuItem = new System.Windows.Forms.MenuItem();
+            this.MenuItemSeperator1 = new System.Windows.Forms.MenuItem();
+            this.ExitMenuItem = new System.Windows.Forms.MenuItem();
+            this.EditMenuItem = new System.Windows.Forms.MenuItem();
+            this.EditPackageDetailsMenuItem = new System.Windows.Forms.MenuItem();
+            this.ViewMenuItem = new System.Windows.Forms.MenuItem();
+            this.BuildMenuItem = new System.Windows.Forms.MenuItem();
+            this.BuildPackageMenuItem = new System.Windows.Forms.MenuItem();
+            this.BuildAndRunPackageMenuItem = new System.Windows.Forms.MenuItem();
+            this.ToolsMenuItem = new System.Windows.Forms.MenuItem();
+            this.RunPackageMenuItem = new System.Windows.Forms.MenuItem();
+            this.HelpMenuItem = new System.Windows.Forms.MenuItem();
+            this.AboutNetleniumFrameworkMenuItem = new System.Windows.Forms.MenuItem();
+            this.AboutPackageToolMenuItem = new System.Windows.Forms.MenuItem();
             this.PackageDetailsGroupBox.SuspendLayout();
             this.PackageCompanyPanel.SuspendLayout();
             this.PackageAuthorPanel.SuspendLayout();
@@ -97,111 +97,6 @@
             this.DirectoryContextMenuStrip.SuspendLayout();
             this.FileContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // MainMenu
-            // 
-            this.MainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.FileMenuItem,
-            this.EditMenuItem,
-            this.ViewMenuItem,
-            this.BuildMenuItem,
-            this.ToolsMenuItem,
-            this.HelpMenuItem});
-            // 
-            // FileMenuItem
-            // 
-            this.FileMenuItem.Index = 0;
-            this.FileMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.CreateNewPackageMenuItem,
-            this.LoadSourceDirectoryMenuItem,
-            this.MenuItemSeperator1,
-            this.ExitMenuItem});
-            this.FileMenuItem.Text = "&File";
-            // 
-            // CreateNewPackageMenuItem
-            // 
-            this.CreateNewPackageMenuItem.Index = 0;
-            this.CreateNewPackageMenuItem.Text = "&Create New Package";
-            // 
-            // LoadSourceDirectoryMenuItem
-            // 
-            this.LoadSourceDirectoryMenuItem.Index = 1;
-            this.LoadSourceDirectoryMenuItem.Text = "&Load Source Directory";
-            // 
-            // MenuItemSeperator1
-            // 
-            this.MenuItemSeperator1.Index = 2;
-            this.MenuItemSeperator1.Text = "-";
-            // 
-            // ExitMenuItem
-            // 
-            this.ExitMenuItem.Index = 3;
-            this.ExitMenuItem.Text = "&Exit";
-            // 
-            // EditMenuItem
-            // 
-            this.EditMenuItem.Index = 1;
-            this.EditMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.EditPackageDetailsMenuItem});
-            this.EditMenuItem.Text = "&Edit";
-            // 
-            // EditPackageDetailsMenuItem
-            // 
-            this.EditPackageDetailsMenuItem.Index = 0;
-            this.EditPackageDetailsMenuItem.Text = "&Edit Package Details";
-            // 
-            // ViewMenuItem
-            // 
-            this.ViewMenuItem.Index = 2;
-            this.ViewMenuItem.Text = "&View";
-            // 
-            // BuildMenuItem
-            // 
-            this.BuildMenuItem.Index = 3;
-            this.BuildMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.BuildPackageMenuItem,
-            this.BuildAndRunPackageMenuItem});
-            this.BuildMenuItem.Text = "&Build";
-            // 
-            // BuildPackageMenuItem
-            // 
-            this.BuildPackageMenuItem.Index = 0;
-            this.BuildPackageMenuItem.Text = "&Build Package";
-            // 
-            // BuildAndRunPackageMenuItem
-            // 
-            this.BuildAndRunPackageMenuItem.Index = 1;
-            this.BuildAndRunPackageMenuItem.Text = "&Build and Run Package";
-            // 
-            // ToolsMenuItem
-            // 
-            this.ToolsMenuItem.Index = 4;
-            this.ToolsMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.RunPackageMenuItem});
-            this.ToolsMenuItem.Text = "&Tools";
-            // 
-            // RunPackageMenuItem
-            // 
-            this.RunPackageMenuItem.Index = 0;
-            this.RunPackageMenuItem.Text = "&Run Package";
-            // 
-            // HelpMenuItem
-            // 
-            this.HelpMenuItem.Index = 5;
-            this.HelpMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.AboutNetleniumFrameworkMenuItem,
-            this.AboutPackageToolMenuItem});
-            this.HelpMenuItem.Text = "&Help";
-            // 
-            // AboutNetleniumFrameworkMenuItem
-            // 
-            this.AboutNetleniumFrameworkMenuItem.Index = 0;
-            this.AboutNetleniumFrameworkMenuItem.Text = "&About Netlenium Framework";
-            // 
-            // AboutPackageToolMenuItem
-            // 
-            this.AboutPackageToolMenuItem.Index = 1;
-            this.AboutPackageToolMenuItem.Text = "&About Package Tool";
             // 
             // PackageDetailsGroupBox
             // 
@@ -507,28 +402,28 @@
             // createDirectoryToolStripMenuItem1
             // 
             this.createDirectoryToolStripMenuItem1.Name = "createDirectoryToolStripMenuItem1";
-            this.createDirectoryToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.createDirectoryToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
             this.createDirectoryToolStripMenuItem1.Text = "Create Directory";
             this.createDirectoryToolStripMenuItem1.Click += new System.EventHandler(this.createDirectoryToolStripMenuItem1_Click);
             // 
             // newFileToolStripMenuItem1
             // 
             this.newFileToolStripMenuItem1.Name = "newFileToolStripMenuItem1";
-            this.newFileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.newFileToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
             this.newFileToolStripMenuItem1.Text = "New File";
             this.newFileToolStripMenuItem1.Click += new System.EventHandler(this.newFileToolStripMenuItem1_Click);
             // 
             // renameToolStripMenuItem1
             // 
             this.renameToolStripMenuItem1.Name = "renameToolStripMenuItem1";
-            this.renameToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.renameToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
             this.renameToolStripMenuItem1.Text = "Rename";
             this.renameToolStripMenuItem1.Click += new System.EventHandler(this.renameToolStripMenuItem1_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -545,23 +440,128 @@
             // editFileToolStripMenuItem
             // 
             this.editFileToolStripMenuItem.Name = "editFileToolStripMenuItem";
-            this.editFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editFileToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.editFileToolStripMenuItem.Text = "Edit File";
             this.editFileToolStripMenuItem.Click += new System.EventHandler(this.editFileToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem1
-            // 
-            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.deleteToolStripMenuItem1.Text = "Delete";
-            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
             // 
             // renameToolStripMenuItem
             // 
             this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.renameToolStripMenuItem.Text = "Rename";
             this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem1
+            // 
+            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.deleteToolStripMenuItem1.Text = "Delete";
+            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
+            // 
+            // MainMenu
+            // 
+            this.MainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.FileMenuItem,
+            this.EditMenuItem,
+            this.ViewMenuItem,
+            this.BuildMenuItem,
+            this.ToolsMenuItem,
+            this.HelpMenuItem});
+            // 
+            // FileMenuItem
+            // 
+            this.FileMenuItem.Index = 0;
+            this.FileMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.CreateNewPackageMenuItem,
+            this.LoadSourceDirectoryMenuItem,
+            this.MenuItemSeperator1,
+            this.ExitMenuItem});
+            this.FileMenuItem.Text = "&File";
+            // 
+            // CreateNewPackageMenuItem
+            // 
+            this.CreateNewPackageMenuItem.Index = 0;
+            this.CreateNewPackageMenuItem.Text = "&Create New Package";
+            // 
+            // LoadSourceDirectoryMenuItem
+            // 
+            this.LoadSourceDirectoryMenuItem.Index = 1;
+            this.LoadSourceDirectoryMenuItem.Text = "&Load Source Directory";
+            // 
+            // MenuItemSeperator1
+            // 
+            this.MenuItemSeperator1.Index = 2;
+            this.MenuItemSeperator1.Text = "-";
+            // 
+            // ExitMenuItem
+            // 
+            this.ExitMenuItem.Index = 3;
+            this.ExitMenuItem.Text = "&Exit";
+            // 
+            // EditMenuItem
+            // 
+            this.EditMenuItem.Index = 1;
+            this.EditMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.EditPackageDetailsMenuItem});
+            this.EditMenuItem.Text = "&Edit";
+            // 
+            // EditPackageDetailsMenuItem
+            // 
+            this.EditPackageDetailsMenuItem.Index = 0;
+            this.EditPackageDetailsMenuItem.Text = "&Edit Package Details";
+            // 
+            // ViewMenuItem
+            // 
+            this.ViewMenuItem.Index = 2;
+            this.ViewMenuItem.Text = "&View";
+            // 
+            // BuildMenuItem
+            // 
+            this.BuildMenuItem.Index = 3;
+            this.BuildMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.BuildPackageMenuItem,
+            this.BuildAndRunPackageMenuItem});
+            this.BuildMenuItem.Text = "&Build";
+            // 
+            // BuildPackageMenuItem
+            // 
+            this.BuildPackageMenuItem.Index = 0;
+            this.BuildPackageMenuItem.Text = "&Build Package";
+            // 
+            // BuildAndRunPackageMenuItem
+            // 
+            this.BuildAndRunPackageMenuItem.Index = 1;
+            this.BuildAndRunPackageMenuItem.Text = "&Build and Run Package";
+            // 
+            // ToolsMenuItem
+            // 
+            this.ToolsMenuItem.Index = 4;
+            this.ToolsMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.RunPackageMenuItem});
+            this.ToolsMenuItem.Text = "&Tools";
+            // 
+            // RunPackageMenuItem
+            // 
+            this.RunPackageMenuItem.Index = 0;
+            this.RunPackageMenuItem.Text = "&Run Package";
+            // 
+            // HelpMenuItem
+            // 
+            this.HelpMenuItem.Index = 5;
+            this.HelpMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.AboutNetleniumFrameworkMenuItem,
+            this.AboutPackageToolMenuItem});
+            this.HelpMenuItem.Text = "&Help";
+            // 
+            // AboutNetleniumFrameworkMenuItem
+            // 
+            this.AboutNetleniumFrameworkMenuItem.Index = 0;
+            this.AboutNetleniumFrameworkMenuItem.Text = "&About Netlenium Framework";
+            // 
+            // AboutPackageToolMenuItem
+            // 
+            this.AboutPackageToolMenuItem.Index = 1;
+            this.AboutPackageToolMenuItem.Text = "&About Package Tool";
             // 
             // MainForm
             // 
@@ -577,6 +577,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = global::NetleniumPackageTool.Properties.Resources.netlenium_wizard;
             this.MaximizeBox = false;
+            this.Menu = this.MainMenu;
             this.Name = "MainForm";
             this.Text = "Netlenium Package Tool";
             this.PackageDetailsGroupBox.ResumeLayout(false);
@@ -602,14 +603,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MainMenu MainMenu;
-        private System.Windows.Forms.MenuItem FileMenuItem;
-        private System.Windows.Forms.MenuItem EditMenuItem;
-        private System.Windows.Forms.MenuItem ViewMenuItem;
-        private System.Windows.Forms.MenuItem BuildMenuItem;
-        private System.Windows.Forms.MenuItem ToolsMenuItem;
-        private System.Windows.Forms.MenuItem HelpMenuItem;
         private System.Windows.Forms.GroupBox PackageDetailsGroupBox;
         private System.Windows.Forms.Button EditPackageDetailsButton;
         private System.Windows.Forms.Panel PackageCompanyPanel;
@@ -632,18 +625,8 @@
         private System.Windows.Forms.TextBox ProjectDirectoryTextbox;
         private System.Windows.Forms.StatusStrip StatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel ToolStripStatusLabel;
-        private System.Windows.Forms.MenuItem CreateNewPackageMenuItem;
-        private System.Windows.Forms.MenuItem LoadSourceDirectoryMenuItem;
-        private System.Windows.Forms.MenuItem MenuItemSeperator1;
-        private System.Windows.Forms.MenuItem ExitMenuItem;
-        private System.Windows.Forms.MenuItem EditPackageDetailsMenuItem;
-        private System.Windows.Forms.MenuItem BuildPackageMenuItem;
-        private System.Windows.Forms.MenuItem BuildAndRunPackageMenuItem;
-        private System.Windows.Forms.MenuItem AboutNetleniumFrameworkMenuItem;
-        private System.Windows.Forms.MenuItem AboutPackageToolMenuItem;
         private System.Windows.Forms.ImageList ProjectFilesImageList;
         private System.Windows.Forms.ToolStripProgressBar ProgressBar;
-        private System.Windows.Forms.MenuItem RunPackageMenuItem;
         private System.Windows.Forms.TreeView ProjectDirectoryTreeview;
         private System.Windows.Forms.GroupBox ProjectDirectoryGroupBox;
         private System.Windows.Forms.ContextMenuStrip ProjectDirectoryContextMenuStrip;
@@ -658,5 +641,22 @@
         private System.Windows.Forms.ToolStripMenuItem editFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
+        private System.Windows.Forms.MainMenu MainMenu;
+        private System.Windows.Forms.MenuItem FileMenuItem;
+        private System.Windows.Forms.MenuItem CreateNewPackageMenuItem;
+        private System.Windows.Forms.MenuItem LoadSourceDirectoryMenuItem;
+        private System.Windows.Forms.MenuItem MenuItemSeperator1;
+        private System.Windows.Forms.MenuItem ExitMenuItem;
+        private System.Windows.Forms.MenuItem EditMenuItem;
+        private System.Windows.Forms.MenuItem EditPackageDetailsMenuItem;
+        private System.Windows.Forms.MenuItem ViewMenuItem;
+        private System.Windows.Forms.MenuItem BuildMenuItem;
+        private System.Windows.Forms.MenuItem BuildPackageMenuItem;
+        private System.Windows.Forms.MenuItem BuildAndRunPackageMenuItem;
+        private System.Windows.Forms.MenuItem ToolsMenuItem;
+        private System.Windows.Forms.MenuItem RunPackageMenuItem;
+        private System.Windows.Forms.MenuItem HelpMenuItem;
+        private System.Windows.Forms.MenuItem AboutNetleniumFrameworkMenuItem;
+        private System.Windows.Forms.MenuItem AboutPackageToolMenuItem;
     }
 }
