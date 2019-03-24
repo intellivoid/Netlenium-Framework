@@ -29,161 +29,249 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
-            this.menuItem1 = new System.Windows.Forms.MenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.scintilla1 = new ScintillaNET.Scintilla();
-            this.menuItem2 = new System.Windows.Forms.MenuItem();
-            this.menuItem3 = new System.Windows.Forms.MenuItem();
-            this.menuItem4 = new System.Windows.Forms.MenuItem();
-            this.menuItem5 = new System.Windows.Forms.MenuItem();
-            this.menuItem6 = new System.Windows.Forms.MenuItem();
-            this.menuItem7 = new System.Windows.Forms.MenuItem();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStrip1.SuspendLayout();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
+            this.MainMenu = new System.Windows.Forms.MainMenu(this.components);
+            this.FileMenuItem = new System.Windows.Forms.MenuItem();
+            this.LoadFileContentsMenuItem = new System.Windows.Forms.MenuItem();
+            this.SaveFileMenuItem = new System.Windows.Forms.MenuItem();
+            this.ReloadFileMenuItem = new System.Windows.Forms.MenuItem();
+            this.MenuItemSeperator2 = new System.Windows.Forms.MenuItem();
+            this.ExitMenuItem = new System.Windows.Forms.MenuItem();
+            this.EditMenuItem = new System.Windows.Forms.MenuItem();
+            this.UndoMenuItem = new System.Windows.Forms.MenuItem();
+            this.RedoMenuItem = new System.Windows.Forms.MenuItem();
+            this.MenuItemSeperator1 = new System.Windows.Forms.MenuItem();
+            this.TabIndentingMenuItem = new System.Windows.Forms.MenuItem();
+            this.MenuItemSeperator3 = new System.Windows.Forms.MenuItem();
+            this.SyntaxHighlightingMenuItem = new System.Windows.Forms.MenuItem();
+            this.PlainTextSyntaxMenuItem = new System.Windows.Forms.MenuItem();
+            this.PythonSyntaxMenuItem = new System.Windows.Forms.MenuItem();
+            this.JSONSyntaxMenuItem = new System.Windows.Forms.MenuItem();
+            this.ViewMenuItem = new System.Windows.Forms.MenuItem();
+            this.ZoomInMenuItem = new System.Windows.Forms.MenuItem();
+            this.ZoomOutMenuItem = new System.Windows.Forms.MenuItem();
+            this.DefaultZoomMenuItem = new System.Windows.Forms.MenuItem();
+            this.HelpMenuItem = new System.Windows.Forms.MenuItem();
+            this.AboutNetleniumMenuItem = new System.Windows.Forms.MenuItem();
+            this.AboutPackageToolMenuItem = new System.Windows.Forms.MenuItem();
+            this.TextArea = new ScintillaNET.Scintilla();
             this.SuspendLayout();
             // 
-            // mainMenu1
+            // MainMenu
             // 
-            this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem1,
-            this.menuItem2,
-            this.menuItem5});
+            this.MainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.FileMenuItem,
+            this.EditMenuItem,
+            this.ViewMenuItem,
+            this.HelpMenuItem});
             // 
-            // menuItem1
+            // FileMenuItem
             // 
-            this.menuItem1.Index = 0;
-            this.menuItem1.Text = "&File";
+            this.FileMenuItem.Index = 0;
+            this.FileMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.LoadFileContentsMenuItem,
+            this.SaveFileMenuItem,
+            this.ReloadFileMenuItem,
+            this.MenuItemSeperator2,
+            this.ExitMenuItem});
+            this.FileMenuItem.Text = "&File";
             // 
-            // statusStrip1
+            // LoadFileContentsMenuItem
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 398);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(664, 22);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
+            this.LoadFileContentsMenuItem.Index = 0;
+            this.LoadFileContentsMenuItem.Shortcut = System.Windows.Forms.Shortcut.CtrlO;
+            this.LoadFileContentsMenuItem.Text = "&Load File Contents";
             // 
-            // toolStripContainer1
+            // SaveFileMenuItem
             // 
+            this.SaveFileMenuItem.Index = 1;
+            this.SaveFileMenuItem.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
+            this.SaveFileMenuItem.Text = "&Save File";
+            this.SaveFileMenuItem.Click += new System.EventHandler(this.SaveFileMenuItem_Click);
             // 
-            // toolStripContainer1.ContentPanel
+            // ReloadFileMenuItem
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.scintilla1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(664, 373);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(664, 398);
-            this.toolStripContainer1.TabIndex = 1;
-            this.toolStripContainer1.Text = "toolStripContainer1";
+            this.ReloadFileMenuItem.Index = 2;
+            this.ReloadFileMenuItem.Text = "Reload File";
+            this.ReloadFileMenuItem.Click += new System.EventHandler(this.ReloadFileMenuItem_Click);
             // 
-            // toolStripContainer1.TopToolStripPanel
+            // MenuItemSeperator2
             // 
-            this.toolStripContainer1.TopToolStripPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
+            this.MenuItemSeperator2.Index = 3;
+            this.MenuItemSeperator2.Text = "-";
             // 
-            // toolStrip1
+            // ExitMenuItem
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(111, 25);
-            this.toolStrip1.TabIndex = 0;
+            this.ExitMenuItem.Index = 4;
+            this.ExitMenuItem.Shortcut = System.Windows.Forms.Shortcut.AltF4;
+            this.ExitMenuItem.Text = "&Exit";
             // 
-            // scintilla1
+            // EditMenuItem
             // 
-            this.scintilla1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scintilla1.Location = new System.Drawing.Point(0, 0);
-            this.scintilla1.Name = "scintilla1";
-            this.scintilla1.Size = new System.Drawing.Size(664, 373);
-            this.scintilla1.TabIndex = 0;
+            this.EditMenuItem.Index = 1;
+            this.EditMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.UndoMenuItem,
+            this.RedoMenuItem,
+            this.MenuItemSeperator1,
+            this.TabIndentingMenuItem,
+            this.MenuItemSeperator3,
+            this.SyntaxHighlightingMenuItem});
+            this.EditMenuItem.Text = "&Edit";
             // 
-            // menuItem2
+            // UndoMenuItem
             // 
-            this.menuItem2.Index = 1;
-            this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem3,
-            this.menuItem4});
-            this.menuItem2.Text = "&Edit";
+            this.UndoMenuItem.Index = 0;
+            this.UndoMenuItem.Shortcut = System.Windows.Forms.Shortcut.CtrlZ;
+            this.UndoMenuItem.Text = "&Undo";
+            this.UndoMenuItem.Click += new System.EventHandler(this.UndoMenuItem_Click);
             // 
-            // menuItem3
+            // RedoMenuItem
             // 
-            this.menuItem3.Index = 0;
-            this.menuItem3.Text = "Use tabs";
+            this.RedoMenuItem.Index = 1;
+            this.RedoMenuItem.Shortcut = System.Windows.Forms.Shortcut.CtrlY;
+            this.RedoMenuItem.Text = "&Redo";
+            this.RedoMenuItem.Click += new System.EventHandler(this.RedoMenuItem_Click);
             // 
-            // menuItem4
+            // MenuItemSeperator1
             // 
-            this.menuItem4.Index = 1;
-            this.menuItem4.Text = "Multiple Selection";
+            this.MenuItemSeperator1.Index = 2;
+            this.MenuItemSeperator1.Text = "-";
             // 
-            // menuItem5
+            // TabIndentingMenuItem
             // 
-            this.menuItem5.Index = 2;
-            this.menuItem5.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem6,
-            this.menuItem7});
-            this.menuItem5.Text = "&View";
+            this.TabIndentingMenuItem.Index = 3;
+            this.TabIndentingMenuItem.Text = "Tab Indenting";
+            this.TabIndentingMenuItem.Click += new System.EventHandler(this.TabIndentingMenuItem_Click);
             // 
-            // menuItem6
+            // MenuItemSeperator3
             // 
-            this.menuItem6.Index = 0;
-            this.menuItem6.Text = "Zoom In";
+            this.MenuItemSeperator3.Index = 4;
+            this.MenuItemSeperator3.Text = "-";
             // 
-            // menuItem7
+            // SyntaxHighlightingMenuItem
             // 
-            this.menuItem7.Index = 1;
-            this.menuItem7.Text = "Zoom Out";
+            this.SyntaxHighlightingMenuItem.Index = 5;
+            this.SyntaxHighlightingMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.PlainTextSyntaxMenuItem,
+            this.PythonSyntaxMenuItem,
+            this.JSONSyntaxMenuItem});
+            this.SyntaxHighlightingMenuItem.Text = "Syntax Highlighting";
             // 
-            // toolStripStatusLabel1
+            // PlainTextSyntaxMenuItem
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(42, 17);
-            this.toolStripStatusLabel1.Text = "Ready!";
+            this.PlainTextSyntaxMenuItem.Index = 0;
+            this.PlainTextSyntaxMenuItem.Text = "Plain Text";
+            this.PlainTextSyntaxMenuItem.Click += new System.EventHandler(this.PlainTextSyntaxMenuItem_Click);
+            // 
+            // PythonSyntaxMenuItem
+            // 
+            this.PythonSyntaxMenuItem.Index = 1;
+            this.PythonSyntaxMenuItem.Text = "Python";
+            this.PythonSyntaxMenuItem.Click += new System.EventHandler(this.PythonSyntaxMenuItem_Click);
+            // 
+            // JSONSyntaxMenuItem
+            // 
+            this.JSONSyntaxMenuItem.Index = 2;
+            this.JSONSyntaxMenuItem.Text = "JSON";
+            this.JSONSyntaxMenuItem.Click += new System.EventHandler(this.JSONSyntaxMenuItem_Click);
+            // 
+            // ViewMenuItem
+            // 
+            this.ViewMenuItem.Index = 2;
+            this.ViewMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.ZoomInMenuItem,
+            this.ZoomOutMenuItem,
+            this.DefaultZoomMenuItem});
+            this.ViewMenuItem.Text = "&View";
+            // 
+            // ZoomInMenuItem
+            // 
+            this.ZoomInMenuItem.Index = 0;
+            this.ZoomInMenuItem.Shortcut = System.Windows.Forms.Shortcut.CtrlI;
+            this.ZoomInMenuItem.Text = "Zoom In";
+            this.ZoomInMenuItem.Click += new System.EventHandler(this.ZoomInMenuItem_Click);
+            // 
+            // ZoomOutMenuItem
+            // 
+            this.ZoomOutMenuItem.Index = 1;
+            this.ZoomOutMenuItem.Shortcut = System.Windows.Forms.Shortcut.CtrlO;
+            this.ZoomOutMenuItem.Text = "Zoom Out";
+            this.ZoomOutMenuItem.Click += new System.EventHandler(this.ZoomOutMenuItem_Click);
+            // 
+            // DefaultZoomMenuItem
+            // 
+            this.DefaultZoomMenuItem.Index = 2;
+            this.DefaultZoomMenuItem.Shortcut = System.Windows.Forms.Shortcut.CtrlD;
+            this.DefaultZoomMenuItem.Text = "Default Zoom";
+            this.DefaultZoomMenuItem.Click += new System.EventHandler(this.DefaultZoomMenuItem_Click);
+            // 
+            // HelpMenuItem
+            // 
+            this.HelpMenuItem.Index = 3;
+            this.HelpMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.AboutNetleniumMenuItem,
+            this.AboutPackageToolMenuItem});
+            this.HelpMenuItem.Text = "&Help";
+            // 
+            // AboutNetleniumMenuItem
+            // 
+            this.AboutNetleniumMenuItem.Index = 0;
+            this.AboutNetleniumMenuItem.Text = "&About Netlenium";
+            // 
+            // AboutPackageToolMenuItem
+            // 
+            this.AboutPackageToolMenuItem.Index = 1;
+            this.AboutPackageToolMenuItem.Text = "&About Package Tool";
+            // 
+            // TextArea
+            // 
+            this.TextArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TextArea.Location = new System.Drawing.Point(0, 0);
+            this.TextArea.Name = "TextArea";
+            this.TextArea.Size = new System.Drawing.Size(664, 420);
+            this.TextArea.TabIndex = 1;
+            this.TextArea.TextChanged += new System.EventHandler(this.TextArea_TextChanged);
             // 
             // FileEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 420);
-            this.Controls.Add(this.toolStripContainer1);
-            this.Controls.Add(this.statusStrip1);
-            this.Menu = this.mainMenu1;
+            this.Controls.Add(this.TextArea);
+            this.Icon = global::NetleniumPackageTool.Properties.Resources.editor;
+            this.Menu = this.MainMenu;
             this.Name = "FileEditor";
             this.Text = "%FILENAME%";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileEditor_FormClosing);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MainMenu mainMenu1;
-        private System.Windows.Forms.MenuItem menuItem1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.MenuItem menuItem2;
-        private System.Windows.Forms.MenuItem menuItem3;
-        private System.Windows.Forms.MenuItem menuItem4;
-        private System.Windows.Forms.MenuItem menuItem5;
-        private System.Windows.Forms.MenuItem menuItem6;
-        private System.Windows.Forms.MenuItem menuItem7;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private ScintillaNET.Scintilla scintilla1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.MainMenu MainMenu;
+        private System.Windows.Forms.MenuItem FileMenuItem;
+        private System.Windows.Forms.MenuItem EditMenuItem;
+        private System.Windows.Forms.MenuItem ViewMenuItem;
+        private System.Windows.Forms.MenuItem ZoomInMenuItem;
+        private System.Windows.Forms.MenuItem ZoomOutMenuItem;
+        private ScintillaNET.Scintilla TextArea;
+        private System.Windows.Forms.MenuItem DefaultZoomMenuItem;
+        private System.Windows.Forms.MenuItem LoadFileContentsMenuItem;
+        private System.Windows.Forms.MenuItem SaveFileMenuItem;
+        private System.Windows.Forms.MenuItem MenuItemSeperator2;
+        private System.Windows.Forms.MenuItem ExitMenuItem;
+        private System.Windows.Forms.MenuItem UndoMenuItem;
+        private System.Windows.Forms.MenuItem RedoMenuItem;
+        private System.Windows.Forms.MenuItem HelpMenuItem;
+        private System.Windows.Forms.MenuItem AboutNetleniumMenuItem;
+        private System.Windows.Forms.MenuItem MenuItemSeperator1;
+        private System.Windows.Forms.MenuItem SyntaxHighlightingMenuItem;
+        private System.Windows.Forms.MenuItem PlainTextSyntaxMenuItem;
+        private System.Windows.Forms.MenuItem PythonSyntaxMenuItem;
+        private System.Windows.Forms.MenuItem JSONSyntaxMenuItem;
+        private System.Windows.Forms.MenuItem AboutPackageToolMenuItem;
+        private System.Windows.Forms.MenuItem TabIndentingMenuItem;
+        private System.Windows.Forms.MenuItem MenuItemSeperator3;
+        private System.Windows.Forms.MenuItem ReloadFileMenuItem;
     }
 }

@@ -215,6 +215,7 @@
             this.EditPackageDetailsButton.TabIndex = 10;
             this.EditPackageDetailsButton.Text = "Edit";
             this.EditPackageDetailsButton.UseVisualStyleBackColor = true;
+            this.EditPackageDetailsButton.Click += new System.EventHandler(this.EditPackageDetailsButton_Click);
             // 
             // PackageCompanyPanel
             // 
@@ -447,6 +448,7 @@
             this.ProjectDirectoryTreeview.SelectedImageIndex = 0;
             this.ProjectDirectoryTreeview.Size = new System.Drawing.Size(294, 144);
             this.ProjectDirectoryTreeview.TabIndex = 7;
+            this.ProjectDirectoryTreeview.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.ProjectDirectoryTreeview_NodeMouseDoubleClick);
             // 
             // ProjectDirectoryGroupBox
             // 

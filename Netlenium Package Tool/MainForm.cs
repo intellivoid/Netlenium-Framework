@@ -13,9 +13,14 @@ namespace NetleniumPackageTool
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Public Constructor
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
+            ProjectDirectoryTextbox.Text = @"C:\Users\Netkas\Desktop\netlenium_test";
+            RefreshTree();
         }
 
         /// <summary>
@@ -35,6 +40,11 @@ namespace NetleniumPackageTool
             LoadSubDirectories(ProjectDirectoryTextbox.Text, tds);
         }
 
+        /// <summary>
+        /// Load all sub directories to the tree view
+        /// </summary>
+        /// <param name="dir"></param>
+        /// <param name="td"></param>
         private void LoadSubDirectories(string dir, TreeNode td)
         {
             // Get all subdirectories  
@@ -54,6 +64,11 @@ namespace NetleniumPackageTool
             }
         }
 
+        /// <summary>
+        /// Load all files in the directory to the treeview
+        /// </summary>
+        /// <param name="dir"></param>
+        /// <param name="td"></param>
         private void LoadFiles(string dir, TreeNode td)
         {
             string[] Files = Directory.GetFiles(dir, "*.*");
@@ -90,6 +105,16 @@ namespace NetleniumPackageTool
                 
 
             }
+        }
+
+        private void EditPackageDetailsButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ProjectDirectoryTreeview_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            new FileEditor(ProjectDirectoryTreeview.SelectedNode.Tag.ToString());
         }
     }
 }
