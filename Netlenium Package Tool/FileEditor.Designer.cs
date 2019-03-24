@@ -224,6 +224,7 @@
             // 
             // TextArea
             // 
+            this.TextArea.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextArea.Location = new System.Drawing.Point(0, 0);
             this.TextArea.Name = "TextArea";

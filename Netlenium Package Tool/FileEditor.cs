@@ -164,6 +164,9 @@ namespace NetleniumPackageTool
             nums.Sensitive = true;
             nums.Mask = 0;
 
+            TextArea.ScrollWidth = 1;
+            TextArea.ScrollWidthTracking = true;
+
             TextArea.EmptyUndoBuffer();
             Changed = false;
 
