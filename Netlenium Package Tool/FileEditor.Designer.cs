@@ -241,6 +241,7 @@
             this.Icon = global::NetleniumPackageTool.Properties.Resources.editor;
             this.Menu = this.MainMenu;
             this.Name = "FileEditor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "%FILENAME%";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileEditor_FormClosing);
             this.ResumeLayout(false);

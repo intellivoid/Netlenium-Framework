@@ -1,18 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NetleniumPackageTool
 {
+    /// <summary>
+    /// Main Form of the Netlenium Package Tool
+    /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// The current selected node
+        /// </summary>
+        private TreeNode SelectedNode;
+
         /// <summary>
         /// Public Constructor
         /// </summary>
@@ -34,10 +35,12 @@ namespace NetleniumPackageTool
             //Setting ProgressBar Maximum Value  
             TreeNode tds = ProjectDirectoryTreeview.Nodes.Add(di.Name);
             tds.Tag = di.FullName;
+            tds.ContextMenuStrip = ProjectDirectoryContextMenuStrip;
             tds.ImageIndex = 0;
             tds.SelectedImageIndex = tds.ImageIndex;
             LoadFiles(ProjectDirectoryTextbox.Text, tds);
             LoadSubDirectories(ProjectDirectoryTextbox.Text, tds);
+            ProjectDirectoryTreeview.ExpandAll();
         }
 
         /// <summary>
@@ -52,15 +55,14 @@ namespace NetleniumPackageTool
             // Loop through them to see if they have any other subdirectories  
             foreach (string subdirectory in subdirectoryEntries)
             {
-
                 DirectoryInfo di = new DirectoryInfo(subdirectory);
                 TreeNode tds = td.Nodes.Add(di.Name);
                 tds.Tag = di.FullName;
+                tds.ContextMenuStrip = DirectoryContextMenuStrip;
                 tds.ImageIndex = 1;
                 tds.SelectedImageIndex = tds.ImageIndex;
                 LoadFiles(subdirectory, tds);
                 LoadSubDirectories(subdirectory, tds);
-
             }
         }
 
@@ -79,6 +81,7 @@ namespace NetleniumPackageTool
                 FileInfo fi = new FileInfo(file);
                 TreeNode tds = td.Nodes.Add(fi.Name);
                 tds.Tag = fi.FullName;
+                tds.ContextMenuStrip = FileContextMenuStrip;
                 switch(Path.GetExtension(fi.FullName))
                 {
                     case ".py":
@@ -106,15 +109,268 @@ namespace NetleniumPackageTool
 
             }
         }
-
-        private void EditPackageDetailsButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+       
+        /// <summary>
+        /// WHen double clicking on a file, open the editor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProjectDirectoryTreeview_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            new FileEditor(ProjectDirectoryTreeview.SelectedNode.Tag.ToString());
+            FileAttributes attr = File.GetAttributes(SelectedNode.Tag.ToString());
+            if((attr & FileAttributes.Directory) != FileAttributes.Directory)
+            {
+                new FileEditor(SelectedNode.Tag.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Prompts the user to create a directory
+        /// </summary>
+        /// <param name="targetDirectory"></param>
+        private void PromptCreateDirectory(string targetDirectory)
+        {
+            var Prompt = new NewDirectoryDialog();
+            if (Prompt.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Directory.CreateDirectory($"{targetDirectory}{Path.DirectorySeparatorChar}{Prompt.DirectoryName}");
+                    RefreshTree();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message, "Directory Creation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Prompts the user to rename the directory
+        /// </summary>
+        /// <param name="targetDirectory"></param>
+        private void PromptRenameDriectory(string targetDirectory)
+        {
+            var Prompt = new RenameDirectoryDialog(Path.GetFileName(targetDirectory));
+            if (Prompt.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    DirectoryInfo di = new DirectoryInfo(targetDirectory);
+                    Directory.Move(targetDirectory, $"{di.Parent.FullName}{Path.DirectorySeparatorChar}{Prompt.DirectoryName}");
+                    RefreshTree();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message, "Directory Rename Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Prompts the user to rename the file
+        /// </summary>
+        /// <param name="targetFile"></param>
+        private void PromptRenameFile(string targetFile)
+        {
+            var Prompt = new RenameFileDialog(Path.GetFileName(targetFile));
+            if (Prompt.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    FileInfo fi = new FileInfo(targetFile);
+                    File.Move(targetFile, $"{fi.Directory.FullName}{Path.DirectorySeparatorChar}{Prompt.FileName}");
+                    RefreshTree();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message, "Directory Rename Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Prompts the user to create a new file
+        /// </summary>
+        /// <param name="targetDirectory"></param>
+        private void PromptCreateFile(string targetDirectory)
+        {
+            var Prompt = new NewFileDialog();
+            if (Prompt.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists($"{targetDirectory}{Path.DirectorySeparatorChar}{Prompt.FileName}") == true)
+                {
+                    MessageBox.Show("The file already exists", "Cannot Create File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    try
+                    {
+                        File.Create($"{targetDirectory}{Path.DirectorySeparatorChar}{Prompt.FileName}");
+                        RefreshTree();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.Message, "Directory Creation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Prompts the user to confirm the action about deleting a Directory
+        /// </summary>
+        /// <param name="targetDirectory"></param>
+        private void PromptDeleteDirectory(string targetDirectory)
+        {
+            var Prompt = MessageBox.Show($"Are you sure you want to delete the directory {Path.GetFileName(targetDirectory)}?", "Delete Directory", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(Prompt == DialogResult.Yes)
+            {
+                try
+                {
+                    Directory.Delete(targetDirectory, true);
+                    RefreshTree();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message, "Directory Deletion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Prompts the user to confrim the action about deleting a File
+        /// </summary>
+        /// <param name="targetFile"></param>
+        private void PromptDeleteFile(string targetFile)
+        {
+            var Prompt = MessageBox.Show($"Are you sure you want to delete the file {Path.GetFileName(targetFile)}?", "Delete File", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Prompt == DialogResult.Yes)
+            {
+                try
+                {
+                    File.Delete(targetFile);
+                    RefreshTree();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message, "Directory Deletion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// When the user creates a directory on Project Root directory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void createDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PromptCreateDirectory(SelectedNode.Tag.ToString());
+        }
+
+        /// <summary>
+        /// When the user creates a file on the Project Root directory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PromptCreateFile(SelectedNode.Tag.ToString());
+        }
+
+        /// <summary>
+        /// When the user creates a directory in a directory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void createDirectoryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PromptCreateDirectory(SelectedNode.Tag.ToString());
+        }
+
+        /// <summary>
+        /// When the user creates a file in a directory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void newFileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PromptCreateFile(SelectedNode.Tag.ToString());
+        }
+
+        /// <summary>
+        /// Rename the selected directory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void renameToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PromptRenameDriectory(SelectedNode.Tag.ToString());
+        }
+
+        /// <summary>
+        /// Sets the selected node after it has been selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProjectDirectoryTreeview_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            SelectedNode = ProjectDirectoryTreeview.SelectedNode;
+        }
+
+        /// <summary>
+        /// When right clicking directly on the node, make sure it's selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProjectDirectoryTreeview_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) ProjectDirectoryTreeview.SelectedNode = e.Node;
+        }
+
+        /// <summary>
+        /// Delete the selected directory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PromptDeleteDirectory(SelectedNode.Tag.ToString());
+        }
+
+        /// <summary>
+        /// Deletes the selected file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PromptDeleteFile(SelectedNode.Tag.ToString());
+        }
+
+        /// <summary>
+        /// Renames the selected file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void renameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PromptRenameFile(SelectedNode.Tag.ToString());
+        }
+
+        /// <summary>
+        /// Edits the selected file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void editFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FileAttributes attr = File.GetAttributes(SelectedNode.Tag.ToString());
+            if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
+            {
+                new FileEditor(SelectedNode.Tag.ToString());
+            }
         }
     }
 }

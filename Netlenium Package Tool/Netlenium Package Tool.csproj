@@ -37,6 +37,9 @@
   <PropertyGroup>
     <StartupObject>NetleniumPackageTool.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>netlenium_wizard.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ConEmu.WinForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=00340228797aafb8, processorArchitecture=MSIL">
       <HintPath>..\packages\ConEmu.Control.WinForms.1.0.20160518.0\lib\net40\ConEmu.WinForms.dll</HintPath>
@@ -80,8 +83,32 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewDirectoryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewDirectoryDialog.Designer.cs">
+      <DependentUpon>NewDirectoryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFileDialog.Designer.cs">
+      <DependentUpon>NewFileDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenameDirectoryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenameDirectoryDialog.Designer.cs">
+      <DependentUpon>RenameDirectoryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RenameFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenameFileDialog.Designer.cs">
+      <DependentUpon>RenameFileDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchManager.cs" />
     <Compile Include="Syntax.cs" />
     <EmbeddedResource Include="ConsoleView.resx">
@@ -93,6 +120,12 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewDirectoryDialog.resx">
+      <DependentUpon>NewDirectoryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFileDialog.resx">
+      <DependentUpon>NewFileDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -103,6 +136,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RenameDirectoryDialog.resx">
+      <DependentUpon>RenameDirectoryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenameFileDialog.resx">
+      <DependentUpon>RenameFileDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -134,6 +173,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\editor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="netlenium_wizard.ico" />
+    <None Include="Resources\netlenium_wizard.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\ConEmu.Core.19.3.10\build\ConEmu.Core.Targets" Condition="Exists('..\packages\ConEmu.Core.19.3.10\build\ConEmu.Core.Targets')" />

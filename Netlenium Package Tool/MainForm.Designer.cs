@@ -71,9 +71,20 @@
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.LoggingPanel = new System.Windows.Forms.Panel();
             this.ProjectDirectoryTreeview = new System.Windows.Forms.TreeView();
             this.ProjectDirectoryGroupBox = new System.Windows.Forms.GroupBox();
+            this.ProjectDirectoryContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.createDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DirectoryContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.createDirectoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.newFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PackageDetailsGroupBox.SuspendLayout();
             this.PackageCompanyPanel.SuspendLayout();
             this.PackageAuthorPanel.SuspendLayout();
@@ -82,6 +93,9 @@
             this.ProjectDirectoryPanel.SuspendLayout();
             this.StatusStrip.SuspendLayout();
             this.ProjectDirectoryGroupBox.SuspendLayout();
+            this.ProjectDirectoryContextMenuStrip.SuspendLayout();
+            this.DirectoryContextMenuStrip.SuspendLayout();
+            this.FileContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -191,6 +205,8 @@
             // 
             // PackageDetailsGroupBox
             // 
+            this.PackageDetailsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.PackageDetailsGroupBox.Controls.Add(this.EditPackageDetailsButton);
             this.PackageDetailsGroupBox.Controls.Add(this.PackageCompanyPanel);
             this.PackageDetailsGroupBox.Controls.Add(this.PanelSeperator3);
@@ -215,7 +231,6 @@
             this.EditPackageDetailsButton.TabIndex = 10;
             this.EditPackageDetailsButton.Text = "Edit";
             this.EditPackageDetailsButton.UseVisualStyleBackColor = true;
-            this.EditPackageDetailsButton.Click += new System.EventHandler(this.EditPackageDetailsButton_Click);
             // 
             // PackageCompanyPanel
             // 
@@ -408,7 +423,7 @@
             this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripStatusLabel,
             this.ProgressBar});
-            this.StatusStrip.Location = new System.Drawing.Point(0, 418);
+            this.StatusStrip.Location = new System.Drawing.Point(0, 218);
             this.StatusStrip.Name = "StatusStrip";
             this.StatusStrip.Size = new System.Drawing.Size(584, 22);
             this.StatusStrip.TabIndex = 5;
@@ -427,16 +442,6 @@
             this.ProgressBar.Size = new System.Drawing.Size(100, 16);
             this.ProgressBar.Visible = false;
             // 
-            // LoggingPanel
-            // 
-            this.LoggingPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoggingPanel.Location = new System.Drawing.Point(12, 211);
-            this.LoggingPanel.Name = "LoggingPanel";
-            this.LoggingPanel.Size = new System.Drawing.Size(560, 194);
-            this.LoggingPanel.TabIndex = 6;
-            // 
             // ProjectDirectoryTreeview
             // 
             this.ProjectDirectoryTreeview.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -448,11 +453,14 @@
             this.ProjectDirectoryTreeview.SelectedImageIndex = 0;
             this.ProjectDirectoryTreeview.Size = new System.Drawing.Size(294, 144);
             this.ProjectDirectoryTreeview.TabIndex = 7;
+            this.ProjectDirectoryTreeview.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.ProjectDirectoryTreeview_AfterSelect);
+            this.ProjectDirectoryTreeview.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.ProjectDirectoryTreeview_NodeMouseClick);
             this.ProjectDirectoryTreeview.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.ProjectDirectoryTreeview_NodeMouseDoubleClick);
             // 
             // ProjectDirectoryGroupBox
             // 
-            this.ProjectDirectoryGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ProjectDirectoryGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProjectDirectoryGroupBox.Controls.Add(this.ProjectDirectoryTreeview);
             this.ProjectDirectoryGroupBox.Location = new System.Drawing.Point(272, 40);
@@ -462,22 +470,113 @@
             this.ProjectDirectoryGroupBox.TabStop = false;
             this.ProjectDirectoryGroupBox.Text = "Project Files";
             // 
+            // ProjectDirectoryContextMenuStrip
+            // 
+            this.ProjectDirectoryContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createDirectoryToolStripMenuItem,
+            this.newFileToolStripMenuItem});
+            this.ProjectDirectoryContextMenuStrip.Name = "ProjectDirectoryContextMenuStrip";
+            this.ProjectDirectoryContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.ProjectDirectoryContextMenuStrip.Size = new System.Drawing.Size(160, 48);
+            // 
+            // createDirectoryToolStripMenuItem
+            // 
+            this.createDirectoryToolStripMenuItem.Name = "createDirectoryToolStripMenuItem";
+            this.createDirectoryToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.createDirectoryToolStripMenuItem.Text = "Create Directory";
+            this.createDirectoryToolStripMenuItem.Click += new System.EventHandler(this.createDirectoryToolStripMenuItem_Click);
+            // 
+            // newFileToolStripMenuItem
+            // 
+            this.newFileToolStripMenuItem.Name = "newFileToolStripMenuItem";
+            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.newFileToolStripMenuItem.Text = "New File";
+            this.newFileToolStripMenuItem.Click += new System.EventHandler(this.newFileToolStripMenuItem_Click);
+            // 
+            // DirectoryContextMenuStrip
+            // 
+            this.DirectoryContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createDirectoryToolStripMenuItem1,
+            this.newFileToolStripMenuItem1,
+            this.renameToolStripMenuItem1,
+            this.deleteToolStripMenuItem});
+            this.DirectoryContextMenuStrip.Name = "DirectoryContextMenuStrip";
+            this.DirectoryContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.DirectoryContextMenuStrip.Size = new System.Drawing.Size(160, 92);
+            // 
+            // createDirectoryToolStripMenuItem1
+            // 
+            this.createDirectoryToolStripMenuItem1.Name = "createDirectoryToolStripMenuItem1";
+            this.createDirectoryToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.createDirectoryToolStripMenuItem1.Text = "Create Directory";
+            this.createDirectoryToolStripMenuItem1.Click += new System.EventHandler(this.createDirectoryToolStripMenuItem1_Click);
+            // 
+            // newFileToolStripMenuItem1
+            // 
+            this.newFileToolStripMenuItem1.Name = "newFileToolStripMenuItem1";
+            this.newFileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.newFileToolStripMenuItem1.Text = "New File";
+            this.newFileToolStripMenuItem1.Click += new System.EventHandler(this.newFileToolStripMenuItem1_Click);
+            // 
+            // renameToolStripMenuItem1
+            // 
+            this.renameToolStripMenuItem1.Name = "renameToolStripMenuItem1";
+            this.renameToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.renameToolStripMenuItem1.Text = "Rename";
+            this.renameToolStripMenuItem1.Click += new System.EventHandler(this.renameToolStripMenuItem1_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // FileContextMenuStrip
+            // 
+            this.FileContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editFileToolStripMenuItem,
+            this.renameToolStripMenuItem,
+            this.deleteToolStripMenuItem1});
+            this.FileContextMenuStrip.Name = "FileContextMenuStrip";
+            this.FileContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.FileContextMenuStrip.Size = new System.Drawing.Size(118, 70);
+            // 
+            // editFileToolStripMenuItem
+            // 
+            this.editFileToolStripMenuItem.Name = "editFileToolStripMenuItem";
+            this.editFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editFileToolStripMenuItem.Text = "Edit File";
+            this.editFileToolStripMenuItem.Click += new System.EventHandler(this.editFileToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem1
+            // 
+            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem1.Text = "Delete";
+            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
+            // 
+            // renameToolStripMenuItem
+            // 
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.renameToolStripMenuItem.Text = "Rename";
+            this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(584, 440);
+            this.ClientSize = new System.Drawing.Size(584, 240);
             this.Controls.Add(this.ProjectDirectoryGroupBox);
-            this.Controls.Add(this.LoggingPanel);
             this.Controls.Add(this.StatusStrip);
             this.Controls.Add(this.ProjectDirectoryPanel);
             this.Controls.Add(this.PackageDetailsGroupBox);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = global::NetleniumPackageTool.Properties.Resources.logo;
+            this.Icon = global::NetleniumPackageTool.Properties.Resources.netlenium_wizard;
             this.MaximizeBox = false;
-            this.Menu = this.MainMenu;
             this.Name = "MainForm";
             this.Text = "Netlenium Package Tool";
             this.PackageDetailsGroupBox.ResumeLayout(false);
@@ -494,6 +593,9 @@
             this.StatusStrip.ResumeLayout(false);
             this.StatusStrip.PerformLayout();
             this.ProjectDirectoryGroupBox.ResumeLayout(false);
+            this.ProjectDirectoryContextMenuStrip.ResumeLayout(false);
+            this.DirectoryContextMenuStrip.ResumeLayout(false);
+            this.FileContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,7 +632,6 @@
         private System.Windows.Forms.TextBox ProjectDirectoryTextbox;
         private System.Windows.Forms.StatusStrip StatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel ToolStripStatusLabel;
-        private System.Windows.Forms.Panel LoggingPanel;
         private System.Windows.Forms.MenuItem CreateNewPackageMenuItem;
         private System.Windows.Forms.MenuItem LoadSourceDirectoryMenuItem;
         private System.Windows.Forms.MenuItem MenuItemSeperator1;
@@ -545,5 +646,17 @@
         private System.Windows.Forms.MenuItem RunPackageMenuItem;
         private System.Windows.Forms.TreeView ProjectDirectoryTreeview;
         private System.Windows.Forms.GroupBox ProjectDirectoryGroupBox;
+        private System.Windows.Forms.ContextMenuStrip ProjectDirectoryContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem createDirectoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newFileToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip DirectoryContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem createDirectoryToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem newFileToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip FileContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem editFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
     }
 }
