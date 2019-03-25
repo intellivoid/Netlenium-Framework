@@ -10,6 +10,16 @@ namespace NetleniumPackageTool
     public partial class MainForm : Form
     {
         /// <summary>
+        /// Indicates if the package is currently loaded
+        /// </summary>
+        private bool PackageLoaded;
+
+        /// <summary>
+        /// The location of the loaded package
+        /// </summary>
+        private string PackageLocation;
+
+        /// <summary>
         /// The current selected node
         /// </summary>
         private TreeNode SelectedNode;
@@ -22,6 +32,25 @@ namespace NetleniumPackageTool
             InitializeComponent();
         }
 
+        private void LoadPackage(string packageDirectoryLocation)
+        {
+            if(File.Exists($"{packageDirectoryLocation}{Path.DirectorySeparatorChar}package.json") == false)
+            {
+                // TODO: Make it show a warning only
+                MessageBox.Show("This package source directory is invalid because it's missing package.json", "Invalid Package Directory Source", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            PackageLoaded = true;
+            PackageLocation = packageDirectoryLocation;
+            ProjectDirectoryTextbox.Text = packageDirectoryLocation;
+
+            PackageDetailsGroupBox.Enabled = true;
+            ProjectDirectoryGroupBox.Enabled = true;
+            NoItemsLabel.Visible = false;
+            RefreshTree();
+        }
+
         /// <summary>
         /// Loads directory contents
         /// </summary>
@@ -29,7 +58,7 @@ namespace NetleniumPackageTool
         public void RefreshTree()
         {
             ProjectDirectoryTreeview.Nodes.Clear();
-            DirectoryInfo di = new DirectoryInfo(ProjectDirectoryTextbox.Text);
+            DirectoryInfo di = new DirectoryInfo(PackageLocation);
             //Setting ProgressBar Maximum Value  
             TreeNode tds = ProjectDirectoryTreeview.Nodes.Add(di.Name);
             tds.Tag = di.FullName;
@@ -386,7 +415,7 @@ namespace NetleniumPackageTool
 
         private void LoadSourceDirectoryMenuItem_Click(object sender, EventArgs e)
         {
-
+            // TODO: Finish This
         }
     }
 }

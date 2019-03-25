@@ -85,6 +85,8 @@
             this.HelpMenuItem = new System.Windows.Forms.MenuItem();
             this.AboutNetleniumFrameworkMenuItem = new System.Windows.Forms.MenuItem();
             this.AboutPackageToolMenuItem = new System.Windows.Forms.MenuItem();
+            this.HeaderLabel = new System.Windows.Forms.Label();
+            this.NoItemsLabel = new System.Windows.Forms.Label();
             this.PackageDetailsGroupBox.SuspendLayout();
             this.PackageCompanyPanel.SuspendLayout();
             this.PackageAuthorPanel.SuspendLayout();
@@ -111,9 +113,9 @@
             this.PackageDetailsGroupBox.Controls.Add(this.PanelSeperator1);
             this.PackageDetailsGroupBox.Controls.Add(this.PackageNamePanel);
             this.PackageDetailsGroupBox.Enabled = false;
-            this.PackageDetailsGroupBox.Location = new System.Drawing.Point(12, 40);
+            this.PackageDetailsGroupBox.Location = new System.Drawing.Point(16, 89);
             this.PackageDetailsGroupBox.Name = "PackageDetailsGroupBox";
-            this.PackageDetailsGroupBox.Size = new System.Drawing.Size(254, 165);
+            this.PackageDetailsGroupBox.Size = new System.Drawing.Size(266, 171);
             this.PackageDetailsGroupBox.TabIndex = 0;
             this.PackageDetailsGroupBox.TabStop = false;
             this.PackageDetailsGroupBox.Text = "Package Details";
@@ -121,7 +123,7 @@
             // EditPackageDetailsButton
             // 
             this.EditPackageDetailsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditPackageDetailsButton.Location = new System.Drawing.Point(173, 134);
+            this.EditPackageDetailsButton.Location = new System.Drawing.Point(185, 140);
             this.EditPackageDetailsButton.Name = "EditPackageDetailsButton";
             this.EditPackageDetailsButton.Size = new System.Drawing.Size(75, 23);
             this.EditPackageDetailsButton.TabIndex = 10;
@@ -135,7 +137,7 @@
             this.PackageCompanyPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.PackageCompanyPanel.Location = new System.Drawing.Point(3, 99);
             this.PackageCompanyPanel.Name = "PackageCompanyPanel";
-            this.PackageCompanyPanel.Size = new System.Drawing.Size(248, 22);
+            this.PackageCompanyPanel.Size = new System.Drawing.Size(260, 22);
             this.PackageCompanyPanel.TabIndex = 9;
             // 
             // PackageCompanyTextbox
@@ -144,7 +146,7 @@
             this.PackageCompanyTextbox.Location = new System.Drawing.Point(69, 0);
             this.PackageCompanyTextbox.Name = "PackageCompanyTextbox";
             this.PackageCompanyTextbox.ReadOnly = true;
-            this.PackageCompanyTextbox.Size = new System.Drawing.Size(179, 22);
+            this.PackageCompanyTextbox.Size = new System.Drawing.Size(191, 22);
             this.PackageCompanyTextbox.TabIndex = 5;
             // 
             // PackageCompanyLabel
@@ -163,7 +165,7 @@
             this.PanelSeperator3.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSeperator3.Location = new System.Drawing.Point(3, 94);
             this.PanelSeperator3.Name = "PanelSeperator3";
-            this.PanelSeperator3.Size = new System.Drawing.Size(248, 5);
+            this.PanelSeperator3.Size = new System.Drawing.Size(260, 5);
             this.PanelSeperator3.TabIndex = 8;
             // 
             // PackageAuthorPanel
@@ -173,7 +175,7 @@
             this.PackageAuthorPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.PackageAuthorPanel.Location = new System.Drawing.Point(3, 72);
             this.PackageAuthorPanel.Name = "PackageAuthorPanel";
-            this.PackageAuthorPanel.Size = new System.Drawing.Size(248, 22);
+            this.PackageAuthorPanel.Size = new System.Drawing.Size(260, 22);
             this.PackageAuthorPanel.TabIndex = 7;
             // 
             // PackageAuthorTextbox
@@ -182,7 +184,7 @@
             this.PackageAuthorTextbox.Location = new System.Drawing.Point(69, 0);
             this.PackageAuthorTextbox.Name = "PackageAuthorTextbox";
             this.PackageAuthorTextbox.ReadOnly = true;
-            this.PackageAuthorTextbox.Size = new System.Drawing.Size(179, 22);
+            this.PackageAuthorTextbox.Size = new System.Drawing.Size(191, 22);
             this.PackageAuthorTextbox.TabIndex = 5;
             // 
             // PackageAuthorLabel
@@ -201,7 +203,7 @@
             this.PanelSeperator2.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSeperator2.Location = new System.Drawing.Point(3, 67);
             this.PanelSeperator2.Name = "PanelSeperator2";
-            this.PanelSeperator2.Size = new System.Drawing.Size(248, 5);
+            this.PanelSeperator2.Size = new System.Drawing.Size(260, 5);
             this.PanelSeperator2.TabIndex = 6;
             // 
             // PackageVersionPanel
@@ -211,7 +213,7 @@
             this.PackageVersionPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.PackageVersionPanel.Location = new System.Drawing.Point(3, 45);
             this.PackageVersionPanel.Name = "PackageVersionPanel";
-            this.PackageVersionPanel.Size = new System.Drawing.Size(248, 22);
+            this.PackageVersionPanel.Size = new System.Drawing.Size(260, 22);
             this.PackageVersionPanel.TabIndex = 5;
             // 
             // PackageVersionTextbox
@@ -220,7 +222,7 @@
             this.PackageVersionTextbox.Location = new System.Drawing.Point(69, 0);
             this.PackageVersionTextbox.Name = "PackageVersionTextbox";
             this.PackageVersionTextbox.ReadOnly = true;
-            this.PackageVersionTextbox.Size = new System.Drawing.Size(179, 22);
+            this.PackageVersionTextbox.Size = new System.Drawing.Size(191, 22);
             this.PackageVersionTextbox.TabIndex = 5;
             // 
             // PackageVersionLabel
@@ -239,7 +241,7 @@
             this.PanelSeperator1.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSeperator1.Location = new System.Drawing.Point(3, 40);
             this.PanelSeperator1.Name = "PanelSeperator1";
-            this.PanelSeperator1.Size = new System.Drawing.Size(248, 5);
+            this.PanelSeperator1.Size = new System.Drawing.Size(260, 5);
             this.PanelSeperator1.TabIndex = 4;
             // 
             // PackageNamePanel
@@ -249,7 +251,7 @@
             this.PackageNamePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.PackageNamePanel.Location = new System.Drawing.Point(3, 18);
             this.PackageNamePanel.Name = "PackageNamePanel";
-            this.PackageNamePanel.Size = new System.Drawing.Size(248, 22);
+            this.PackageNamePanel.Size = new System.Drawing.Size(260, 22);
             this.PackageNamePanel.TabIndex = 1;
             // 
             // PackageNameTextbox
@@ -258,7 +260,7 @@
             this.PackageNameTextbox.Location = new System.Drawing.Point(69, 0);
             this.PackageNameTextbox.Name = "PackageNameTextbox";
             this.PackageNameTextbox.ReadOnly = true;
-            this.PackageNameTextbox.Size = new System.Drawing.Size(179, 22);
+            this.PackageNameTextbox.Size = new System.Drawing.Size(191, 22);
             this.PackageNameTextbox.TabIndex = 5;
             // 
             // PackageNameLabel
@@ -289,9 +291,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProjectDirectoryPanel.Controls.Add(this.ProjectDirectoryTextbox);
             this.ProjectDirectoryPanel.Controls.Add(this.ProjectDirectoryLabel);
-            this.ProjectDirectoryPanel.Location = new System.Drawing.Point(12, 12);
+            this.ProjectDirectoryPanel.Location = new System.Drawing.Point(12, 44);
             this.ProjectDirectoryPanel.Name = "ProjectDirectoryPanel";
-            this.ProjectDirectoryPanel.Size = new System.Drawing.Size(560, 22);
+            this.ProjectDirectoryPanel.Size = new System.Drawing.Size(584, 22);
             this.ProjectDirectoryPanel.TabIndex = 3;
             // 
             // ProjectDirectoryTextbox
@@ -300,7 +302,7 @@
             this.ProjectDirectoryTextbox.Location = new System.Drawing.Point(95, 0);
             this.ProjectDirectoryTextbox.Name = "ProjectDirectoryTextbox";
             this.ProjectDirectoryTextbox.ReadOnly = true;
-            this.ProjectDirectoryTextbox.Size = new System.Drawing.Size(465, 22);
+            this.ProjectDirectoryTextbox.Size = new System.Drawing.Size(489, 22);
             this.ProjectDirectoryTextbox.TabIndex = 3;
             // 
             // ProjectFilesImageList
@@ -319,9 +321,9 @@
             this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripStatusLabel,
             this.ProgressBar});
-            this.StatusStrip.Location = new System.Drawing.Point(0, 218);
+            this.StatusStrip.Location = new System.Drawing.Point(0, 289);
             this.StatusStrip.Name = "StatusStrip";
-            this.StatusStrip.Size = new System.Drawing.Size(584, 22);
+            this.StatusStrip.Size = new System.Drawing.Size(608, 22);
             this.StatusStrip.TabIndex = 5;
             this.StatusStrip.Text = "statusStrip1";
             // 
@@ -347,7 +349,7 @@
             this.ProjectDirectoryTreeview.Location = new System.Drawing.Point(3, 18);
             this.ProjectDirectoryTreeview.Name = "ProjectDirectoryTreeview";
             this.ProjectDirectoryTreeview.SelectedImageIndex = 0;
-            this.ProjectDirectoryTreeview.Size = new System.Drawing.Size(294, 144);
+            this.ProjectDirectoryTreeview.Size = new System.Drawing.Size(277, 150);
             this.ProjectDirectoryTreeview.TabIndex = 7;
             this.ProjectDirectoryTreeview.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.ProjectDirectoryTreeview_AfterSelect);
             this.ProjectDirectoryTreeview.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.ProjectDirectoryTreeview_NodeMouseClick);
@@ -358,11 +360,12 @@
             this.ProjectDirectoryGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProjectDirectoryGroupBox.Controls.Add(this.NoItemsLabel);
             this.ProjectDirectoryGroupBox.Controls.Add(this.ProjectDirectoryTreeview);
             this.ProjectDirectoryGroupBox.Enabled = false;
-            this.ProjectDirectoryGroupBox.Location = new System.Drawing.Point(272, 40);
+            this.ProjectDirectoryGroupBox.Location = new System.Drawing.Point(303, 89);
             this.ProjectDirectoryGroupBox.Name = "ProjectDirectoryGroupBox";
-            this.ProjectDirectoryGroupBox.Size = new System.Drawing.Size(300, 165);
+            this.ProjectDirectoryGroupBox.Size = new System.Drawing.Size(283, 171);
             this.ProjectDirectoryGroupBox.TabIndex = 11;
             this.ProjectDirectoryGroupBox.TabStop = false;
             this.ProjectDirectoryGroupBox.Text = "Project Files";
@@ -567,12 +570,38 @@
             this.AboutPackageToolMenuItem.Index = 1;
             this.AboutPackageToolMenuItem.Text = "&About Package Tool";
             // 
+            // HeaderLabel
+            // 
+            this.HeaderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.HeaderLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeaderLabel.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.HeaderLabel.Location = new System.Drawing.Point(12, 9);
+            this.HeaderLabel.Name = "HeaderLabel";
+            this.HeaderLabel.Size = new System.Drawing.Size(584, 25);
+            this.HeaderLabel.TabIndex = 12;
+            this.HeaderLabel.Text = "Netlenium Package Tool";
+            this.HeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // NoItemsLabel
+            // 
+            this.NoItemsLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NoItemsLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoItemsLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.NoItemsLabel.Location = new System.Drawing.Point(63, 70);
+            this.NoItemsLabel.Name = "NoItemsLabel";
+            this.NoItemsLabel.Size = new System.Drawing.Size(154, 34);
+            this.NoItemsLabel.TabIndex = 8;
+            this.NoItemsLabel.Text = "No Items";
+            this.NoItemsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(584, 240);
+            this.ClientSize = new System.Drawing.Size(608, 311);
+            this.Controls.Add(this.HeaderLabel);
             this.Controls.Add(this.ProjectDirectoryGroupBox);
             this.Controls.Add(this.StatusStrip);
             this.Controls.Add(this.ProjectDirectoryPanel);
@@ -662,5 +691,7 @@
         private System.Windows.Forms.MenuItem HelpMenuItem;
         private System.Windows.Forms.MenuItem AboutNetleniumFrameworkMenuItem;
         private System.Windows.Forms.MenuItem AboutPackageToolMenuItem;
+        private System.Windows.Forms.Label HeaderLabel;
+        private System.Windows.Forms.Label NoItemsLabel;
     }
 }
