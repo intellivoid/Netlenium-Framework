@@ -20,8 +20,6 @@ namespace NetleniumPackageTool
         public MainForm()
         {
             InitializeComponent();
-            ProjectDirectoryTextbox.Text = @"C:\Users\Netkas\Desktop\netlenium_test";
-            RefreshTree();
         }
 
         /// <summary>
@@ -120,7 +118,8 @@ namespace NetleniumPackageTool
             FileAttributes attr = File.GetAttributes(SelectedNode.Tag.ToString());
             if((attr & FileAttributes.Directory) != FileAttributes.Directory)
             {
-                new FileEditor(SelectedNode.Tag.ToString());
+                var Editor = new FileEditor(SelectedNode.Tag.ToString());
+                Editor.Dispose();
             }
         }
 
@@ -369,8 +368,25 @@ namespace NetleniumPackageTool
             FileAttributes attr = File.GetAttributes(SelectedNode.Tag.ToString());
             if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
             {
-                new FileEditor(SelectedNode.Tag.ToString());
+                var Editor = new FileEditor(SelectedNode.Tag.ToString());
+                Editor.Dispose();
             }
+        }
+
+        /// <summary>
+        /// Shows the Create New Package dialog and loads the created package afer it has been created
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CreateNewPackageMenuItem_Click(object sender, EventArgs e)
+        {
+            var Dialog = new CreatePackageDialog();
+            Dialog.ShowDialog();
+        }
+
+        private void LoadSourceDirectoryMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

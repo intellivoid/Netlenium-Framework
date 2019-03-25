@@ -110,6 +110,7 @@
             this.PackageDetailsGroupBox.Controls.Add(this.PackageVersionPanel);
             this.PackageDetailsGroupBox.Controls.Add(this.PanelSeperator1);
             this.PackageDetailsGroupBox.Controls.Add(this.PackageNamePanel);
+            this.PackageDetailsGroupBox.Enabled = false;
             this.PackageDetailsGroupBox.Location = new System.Drawing.Point(12, 40);
             this.PackageDetailsGroupBox.Name = "PackageDetailsGroupBox";
             this.PackageDetailsGroupBox.Size = new System.Drawing.Size(254, 165);
@@ -358,6 +359,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProjectDirectoryGroupBox.Controls.Add(this.ProjectDirectoryTreeview);
+            this.ProjectDirectoryGroupBox.Enabled = false;
             this.ProjectDirectoryGroupBox.Location = new System.Drawing.Point(272, 40);
             this.ProjectDirectoryGroupBox.Name = "ProjectDirectoryGroupBox";
             this.ProjectDirectoryGroupBox.Size = new System.Drawing.Size(300, 165);
@@ -482,11 +484,13 @@
             // 
             this.CreateNewPackageMenuItem.Index = 0;
             this.CreateNewPackageMenuItem.Text = "&Create New Package";
+            this.CreateNewPackageMenuItem.Click += new System.EventHandler(this.CreateNewPackageMenuItem_Click);
             // 
             // LoadSourceDirectoryMenuItem
             // 
             this.LoadSourceDirectoryMenuItem.Index = 1;
             this.LoadSourceDirectoryMenuItem.Text = "&Load Source Directory";
+            this.LoadSourceDirectoryMenuItem.Click += new System.EventHandler(this.LoadSourceDirectoryMenuItem_Click);
             // 
             // MenuItemSeperator1
             // 
