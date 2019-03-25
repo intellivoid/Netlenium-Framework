@@ -74,7 +74,6 @@
             this.ExitMenuItem = new System.Windows.Forms.MenuItem();
             this.EditMenuItem = new System.Windows.Forms.MenuItem();
             this.EditPackageDetailsMenuItem = new System.Windows.Forms.MenuItem();
-            this.ViewMenuItem = new System.Windows.Forms.MenuItem();
             this.BuildMenuItem = new System.Windows.Forms.MenuItem();
             this.BuildPackageMenuItem = new System.Windows.Forms.MenuItem();
             this.BuildAndRunPackageMenuItem = new System.Windows.Forms.MenuItem();
@@ -454,7 +453,6 @@
             this.MainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.FileMenuItem,
             this.EditMenuItem,
-            this.ViewMenuItem,
             this.BuildMenuItem,
             this.ToolsMenuItem,
             this.HelpMenuItem});
@@ -490,6 +488,7 @@
             // 
             this.ExitMenuItem.Index = 3;
             this.ExitMenuItem.Text = "&Exit";
+            this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
             // EditMenuItem
             // 
@@ -503,14 +502,9 @@
             this.EditPackageDetailsMenuItem.Index = 0;
             this.EditPackageDetailsMenuItem.Text = "&Edit Package Details";
             // 
-            // ViewMenuItem
-            // 
-            this.ViewMenuItem.Index = 2;
-            this.ViewMenuItem.Text = "&View";
-            // 
             // BuildMenuItem
             // 
-            this.BuildMenuItem.Index = 3;
+            this.BuildMenuItem.Index = 2;
             this.BuildMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.BuildPackageMenuItem,
             this.BuildAndRunPackageMenuItem});
@@ -520,6 +514,7 @@
             // 
             this.BuildPackageMenuItem.Index = 0;
             this.BuildPackageMenuItem.Text = "&Build Package";
+            this.BuildPackageMenuItem.Click += new System.EventHandler(this.BuildPackageMenuItem_Click);
             // 
             // BuildAndRunPackageMenuItem
             // 
@@ -528,7 +523,7 @@
             // 
             // ToolsMenuItem
             // 
-            this.ToolsMenuItem.Index = 4;
+            this.ToolsMenuItem.Index = 3;
             this.ToolsMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.RunPackageMenuItem});
             this.ToolsMenuItem.Text = "&Tools";
@@ -540,7 +535,7 @@
             // 
             // HelpMenuItem
             // 
-            this.HelpMenuItem.Index = 5;
+            this.HelpMenuItem.Index = 4;
             this.HelpMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.AboutNetleniumFrameworkMenuItem,
             this.AboutPackageToolMenuItem});
@@ -653,7 +648,6 @@
         private System.Windows.Forms.MenuItem ExitMenuItem;
         private System.Windows.Forms.MenuItem EditMenuItem;
         private System.Windows.Forms.MenuItem EditPackageDetailsMenuItem;
-        private System.Windows.Forms.MenuItem ViewMenuItem;
         private System.Windows.Forms.MenuItem BuildMenuItem;
         private System.Windows.Forms.MenuItem BuildPackageMenuItem;
         private System.Windows.Forms.MenuItem BuildAndRunPackageMenuItem;

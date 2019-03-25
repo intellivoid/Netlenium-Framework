@@ -7,7 +7,7 @@
     <ProjectGuid>{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>NetleniumPackageTool</RootNamespace>
-    <AssemblyName>Netlenium Package Tool</AssemblyName>
+    <AssemblyName>np_tool</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -40,10 +40,47 @@
   <PropertyGroup>
     <ApplicationIcon>netlenium_wizard.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LinuxBuild|AnyCPU'">
+    <OutputPath>..\bin\LinuxBuild\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LinuxDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\bin\LinuxDebug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsBuild|AnyCPU'">
+    <OutputPath>..\bin\WindowsBuild\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\bin\WindowsDebug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ConEmu.WinForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=00340228797aafb8, processorArchitecture=MSIL">
-      <HintPath>..\packages\ConEmu.Control.WinForms.1.0.20160518.0\lib\net40\ConEmu.WinForms.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -64,12 +101,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConsoleView.Designer.cs">
-      <DependentUpon>ConsoleView.cs</DependentUpon>
-    </Compile>
     <Compile Include="CreatePackageDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,9 +154,6 @@
     </Compile>
     <Compile Include="SearchManager.cs" />
     <Compile Include="Syntax.cs" />
-    <EmbeddedResource Include="ConsoleView.resx">
-      <DependentUpon>ConsoleView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CreatePackageDialog.resx">
       <DependentUpon>CreatePackageDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,11 +231,4 @@
     <None Include="Resources\netlenium_wizard.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\ConEmu.Core.19.3.10\build\ConEmu.Core.Targets" Condition="Exists('..\packages\ConEmu.Core.19.3.10\build\ConEmu.Core.Targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\ConEmu.Core.19.3.10\build\ConEmu.Core.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ConEmu.Core.19.3.10\build\ConEmu.Core.Targets'))" />
-  </Target>
 </Project>

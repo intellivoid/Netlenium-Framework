@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace NetleniumPackageTool
@@ -36,6 +38,20 @@ namespace NetleniumPackageTool
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Gets the current Assembly Directory
+        /// </summary>
+        private static string AssemblyDirectory
+        {
+            get
+            {
+                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                UriBuilder uri = new UriBuilder(codeBase);
+                string path = Uri.UnescapeDataString(uri.Path);
+                return Path.GetDirectoryName(path);
+            }
         }
 
         /// <summary>
@@ -509,6 +525,58 @@ namespace NetleniumPackageTool
                 LoadPackage(Prompt.SelectedPath);
             }
         }
-        
+
+        /// <summary>
+        /// Exits the software
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExitMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        /// <summary>
+        /// Builds the package
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BuildPackageMenuItem_Click(object sender, EventArgs e)
+        {
+            if(File.Exists($"{AssemblyDirectory}{Path.DirectorySeparatorChar}npbuild.exe") == false)
+            {
+                MessageBox.Show($"The package cannot be built because {AssemblyDirectory}{Path.DirectorySeparatorChar}npbuild.exe is missing", "Missing Netlenium Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var PackageBuildProcess = new Process();
+            PackageBuildProcess.StartInfo.FileName = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}npbuild.exe";
+            PackageBuildProcess.StartInfo.Arguments = $@"--source ""{PackageLocation}""";
+            PackageBuildProcess.StartInfo.CreateNoWindow = false;
+            PackageBuildProcess.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+
+            try
+            {
+                PackageBuildProcess.Start();
+
+                while(PackageBuildProcess.HasExited == false)
+                {
+                    Application.DoEvents();
+                }
+
+                if(PackageBuildProcess.ExitCode == 0)
+                {
+                    MessageBox.Show("The package was built successfully without any errors", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("There was an error while trying to build the package", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Package Build Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
