@@ -23,6 +23,11 @@ namespace NetleniumBuild
         public string Source { get; set; }
 
         /// <summary>
+        /// Prompts the user before exiting the process
+        /// </summary>
+        public bool Prompt { get; set; }
+
+        /// <summary>
         /// Indicates if the help paramerter was used
         /// </summary>
         public bool Help { get; set; }
@@ -60,6 +65,26 @@ namespace NetleniumBuild
                     }
                 },
                 {
+                    "p|prompt=", "Prompts the user before exiting the process",
+                    v => {
+                         if(v == null)
+                         {
+                            _usedParameters.Prompt = false;
+                         }
+                         else
+                         {
+                            if((string)v.ToLower() == "true")
+                            {
+                                _usedParameters.Prompt = true;
+                            }
+                            else
+                            {
+                                _usedParameters.Prompt = false;
+                            }
+                         }
+                    }
+                },
+                {
                     "h|help=", "Displays the help menu",
                     v => { _usedParameters.Help = v != null; }
                 }
@@ -72,7 +97,7 @@ namespace NetleniumBuild
                 if(_usedParameters.Help)
                 {
                     ShowHelp();
-                    Environment.Exit(1);
+                    RequestExit(1);
                 }
 
                 if (_usedParameters.Source != null) return;
@@ -81,13 +106,30 @@ namespace NetleniumBuild
                 Console.WriteLine($@"Error: Missing paramerter ""source""{Environment.NewLine}");
                 Console.ResetColor();
                 ShowHelp();
-                Environment.Exit(1);
+                RequestExit(2);
             }
             catch (Exception)
             {
                 ShowHelp();
-                Environment.Exit(1);
+                RequestExit(11);
             }
+        }
+
+        /// <summary>
+        /// Requests the user to exit the process
+        /// </summary>
+        /// <param name="ExitCode"></param>
+        private static void RequestExit(int ExitCode)
+        {
+            if(_usedParameters.Prompt == true)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Process completed with exit code {ExitCode}");
+                Console.WriteLine("Press Return to exit ...");
+                Console.ReadLine();
+            }
+
+            Environment.Exit(ExitCode);
         }
 
         /// <summary>
@@ -101,6 +143,7 @@ namespace NetleniumBuild
             Console.WriteLine(@"usage: npbuild [options]");
             Console.WriteLine(@" options:");
             Console.WriteLine(@"     -h, --help                  Displays the help menu");
+            Console.WriteLine(@"     -p, --prompt  true/false    Prompts the user before exiting the process");
             Console.WriteLine(@"     -s, --source  required      The source directory which contains the main python script and package metadata");
         }
 
@@ -139,13 +182,13 @@ namespace NetleniumBuild
             catch(Exception exception)
             {
                 Print(MessageType.Information, $"Cannot read package.json: {exception.Message}");
-                Environment.Exit(1);
+                RequestExit(3);
             }
 
             BuildPackage(_usedParameters.Source);
 
             Print(MessageType.Success, "Package built successfully");
-            Environment.Exit(0);
+            RequestExit(0);
 
         }
 
@@ -224,7 +267,7 @@ namespace NetleniumBuild
                 catch (Exception exception)
                 {
                     Print(MessageType.Error, $"Cannot delete the old Netlenium package: {exception.Message}");
-                    Environment.Exit(1);
+                    RequestExit(5);
                 }
             }
 
@@ -246,7 +289,7 @@ namespace NetleniumBuild
             catch (Exception exception)
             {
                 Print(MessageType.Error, $"There was an error while trying to build the pacakge: {exception.Message}");
-                Environment.Exit(1);
+                RequestExit(4);
             }
         }
 
@@ -262,13 +305,13 @@ namespace NetleniumBuild
             if ((string)jsonPackageMetaInformation["name"] == null)
             {
                 Print(MessageType.Error, "package.json is missing \"name\"");
-                Environment.Exit(1);
+                RequestExit(6);
             }
 
             if ((string)jsonPackageMetaInformation["version"] == null)
             {
                 Print(MessageType.Error, "package.json is missing \"version\"");
-                Environment.Exit(1);
+                RequestExit(7);
             }
 
             Print(MessageType.Information, $"Name: {(string)jsonPackageMetaInformation["name"]}");
@@ -328,19 +371,19 @@ namespace NetleniumBuild
             if (Directory.Exists(source) == false)
             {
                 Print(MessageType.Error, $"The source directory \"{source}\" does not exist");
-                Environment.Exit(1);
+                RequestExit(8);
             }
 
             if (File.Exists($"{source}{Path.DirectorySeparatorChar}package.json") == false)
             {
                 Print(MessageType.Error, "The file package.json does not exist in the source directory");
-                Environment.Exit(1);
+                RequestExit(9);
             }
 
             if (File.Exists($"{source}{Path.DirectorySeparatorChar}main.py")) return;
             
             Print(MessageType.Error, "The main python source does not exist (main.py)");
-            Environment.Exit(1);
+            RequestExit(10);
         }
     }
 }

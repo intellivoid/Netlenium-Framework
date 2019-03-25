@@ -34,6 +34,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI Test", "WebAPI Test\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium Package Tool", "Netlenium Package Tool\Netlenium Package Tool.csproj", "{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{BFF0FD0D-2270-411A-A7BD-62E289C23740}"
+	ProjectSection(SolutionItems) = preProject
+		Netlenium Package Builder.md = Netlenium Package Builder.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

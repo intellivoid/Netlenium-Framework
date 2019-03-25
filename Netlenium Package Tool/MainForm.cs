@@ -551,7 +551,7 @@ namespace NetleniumPackageTool
 
             var PackageBuildProcess = new Process();
             PackageBuildProcess.StartInfo.FileName = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}npbuild.exe";
-            PackageBuildProcess.StartInfo.Arguments = $@"--source ""{PackageLocation}""";
+            PackageBuildProcess.StartInfo.Arguments = $@"--source ""{PackageLocation}"" --prompt false";
             PackageBuildProcess.StartInfo.CreateNoWindow = false;
             PackageBuildProcess.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
 
@@ -564,13 +564,60 @@ namespace NetleniumPackageTool
                     Application.DoEvents();
                 }
 
-                if(PackageBuildProcess.ExitCode == 0)
+                switch (PackageBuildProcess.ExitCode)
                 {
-                    MessageBox.Show("The package was built successfully without any errors", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("There was an error while trying to build the package", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // TODO: Move these strings as resources
+                    case 0:
+                        MessageBox.Show("The package was built successfully without any errors", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+
+                    case 1:
+                        MessageBox.Show("The help menu was shown instead of the package being built, please make sure the Package Tool is up to date", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+
+                    case 2:
+                        MessageBox.Show("Missing paramerter \"source\", please make sure the Package Tool is up to date", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+
+                    case 3:
+                        MessageBox.Show("Cannot read package.json, verify that the file exists and that there is no syntax errors", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+                    case 4:
+                        MessageBox.Show("There was an unknown error while trying to build the .np file", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+                    case 5:
+                        MessageBox.Show("There was an error while trying to delete the old .np file, make sure it isn't being used by another process", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+                    case 6:
+                        MessageBox.Show("The file package.json is missing \"name\"", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+                    case 7:
+                        MessageBox.Show("The file package.json is missing \"version\"", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+                    case 8:
+                        MessageBox.Show("The source directory does not exist, try reloading the Package Tool", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+                    case 9:
+                        MessageBox.Show("The file package.json was not found", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+                    case 10:
+                        MessageBox.Show("The file main.py was not found", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+                    case 11:
+                        MessageBox.Show("There was an error while trying to parse the command-line arguments, please make sure the Package Tool is up to date", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+
+                    default:
+                        MessageBox.Show("The package builder returned an unknown error, please make sure the Package Tool is up to date", "Package Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
                 }
             }
             catch(Exception exception)
