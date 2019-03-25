@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		Netlenium Package Builder.md = Netlenium Package Builder.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium.WebDriver", "Netlenium.WebDriver\Netlenium.WebDriver.csproj", "{DA54FF5D-AC62-4681-9ABB-ADD18F816456}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -291,6 +293,30 @@ Global
 		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsDebug|Any CPU.Build.0 = WindowsDebug|Any CPU
 		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsDebug|x86.ActiveCfg = WindowsDebug|Any CPU
 		{7820EB42-EC1D-48DF-AB27-B7960EDE7FED}.WindowsDebug|x86.Build.0 = WindowsDebug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.Debug|x86.Build.0 = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.LinuxBuild|Any CPU.ActiveCfg = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.LinuxBuild|Any CPU.Build.0 = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.LinuxBuild|x86.ActiveCfg = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.LinuxBuild|x86.Build.0 = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.LinuxDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.LinuxDebug|Any CPU.Build.0 = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.LinuxDebug|x86.ActiveCfg = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.LinuxDebug|x86.Build.0 = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.Release|x86.ActiveCfg = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.Release|x86.Build.0 = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.WindowsBuild|Any CPU.ActiveCfg = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.WindowsBuild|Any CPU.Build.0 = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.WindowsBuild|x86.ActiveCfg = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.WindowsBuild|x86.Build.0 = Release|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.WindowsDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.WindowsDebug|Any CPU.Build.0 = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.WindowsDebug|x86.ActiveCfg = Debug|Any CPU
+		{DA54FF5D-AC62-4681-9ABB-ADD18F816456}.WindowsDebug|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
