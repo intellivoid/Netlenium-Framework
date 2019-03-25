@@ -1,11 +1,11 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
+﻿using Netlenium.WebDriver;
+using Netlenium.WebDriver.Chrome;
+using Netlenium.WebDriver.Interactions;
+using Netlenium.WebDriver.Remote;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using OpenQA.Selenium.Remote;
 
 namespace Netlenium.Driver.Chrome
 {
