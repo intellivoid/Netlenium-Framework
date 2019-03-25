@@ -132,7 +132,7 @@ namespace Netlenium.WebDriver.Safari
                     }
                     else
                     {
-                        Console.WriteLine(ex.Message);
+                        Logging.WriteEntry(Types.LogType.Error, "Netlenium.WebDriver", ex.Message);
                     }
                 }
 

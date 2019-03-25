@@ -205,7 +205,7 @@ namespace Netlenium.WebDriver
                 }
                 catch (WebException ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Logging.WriteEntry(Types.LogType.Error, "Netlenium.WebDriver", ex.Message);
                 }
 
                 return isInitialized;

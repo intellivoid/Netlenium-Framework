@@ -68,7 +68,8 @@ namespace Netlenium.WebDriver.Chrome
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to enable verbose logging for the ChromeDriver executable.
+        /// Gets or sets a value indicating whether to enable verbose 
+        /// for the ChromeDriver executable.
         /// Defaults to <see langword="false"/>.
         /// </summary>
         public bool EnableVerboseLogging

@@ -176,6 +176,7 @@ namespace Netlenium.WebDriver.Remote
 
         private HttpResponseInfo MakeHttpRequest(HttpRequestInfo requestInfo)
         {
+            Logging.WriteVerboseEntry("Netlenium.WebDriver", $"WebDriver Request: {requestInfo.FullUri.ToString()}");
             HttpWebRequest request = HttpWebRequest.Create(requestInfo.FullUri) as HttpWebRequest;
             if (!string.IsNullOrEmpty(requestInfo.FullUri.UserInfo) && requestInfo.FullUri.UserInfo.Contains(":"))
             {

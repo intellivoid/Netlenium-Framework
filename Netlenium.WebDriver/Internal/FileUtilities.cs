@@ -81,7 +81,7 @@ namespace Netlenium.WebDriver.Internal
 
             if (Directory.Exists(directoryToDelete))
             {
-                Console.WriteLine("Unable to delete directory '{0}'", directoryToDelete);
+                Logging.WriteEntry(Types.LogType.Error, "Netlenium.WebDriver", $"Unable to delete directory '{directoryToDelete}'");
             }
         }
 
