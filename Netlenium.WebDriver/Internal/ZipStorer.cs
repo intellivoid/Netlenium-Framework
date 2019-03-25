@@ -1,21 +1,3 @@
-// <copyright file="ZipStorer.cs" company="Jaime Olivares">
-//
-// ZipStorer, by Jaime Olivares
-// Website: zipstorer.codeplex.com
-// Version: 2.35 (March 14, 2010)
-//
-// Used under the provisions of the Microsoft Public License (Ms-PL).
-// You may obtain a copy of the License at
-//
-//     https://zipstorer.codeplex.com/license
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-// </copyright>
-
 using System.Collections.Generic;
 using System.Text;
 
