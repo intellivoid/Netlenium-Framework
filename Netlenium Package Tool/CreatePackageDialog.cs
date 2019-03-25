@@ -38,22 +38,22 @@ namespace NetleniumPackageTool
             /// <summary>
             /// The name of the package
             /// </summary>
-            public string Name { get; set; }
+            public string name { get; set; }
 
             /// <summary>
             /// The version of the package
             /// </summary>
-            public string Version { get; set; }
+            public string version { get; set; }
 
             /// <summary>
             /// The author of the package
             /// </summary>
-            public string Author { get; set; }
+            public string author { get; set; }
 
             /// <summary>
             /// The company that distributes this package
             /// </summary>
-            public string Company { get; set; }
+            public string company { get; set; }
         }
 
         /// <summary>
@@ -90,10 +90,10 @@ namespace NetleniumPackageTool
 
             var PackageDetailsObj = new PackageDetails()
             {
-                Name = PackageNameTextbox.Text,
-                Version = PackageVersionTextbox.Text,
-                Author = PackageAuthorTextbox.Text,
-                Company = PackageCompanyTextbox.Text
+                name = PackageNameTextbox.Text,
+                version = PackageVersionTextbox.Text,
+                author = PackageAuthorTextbox.Text,
+                company = PackageCompanyTextbox.Text
             };
             
             File.WriteAllText($"{TargetDirectory}{Path.DirectorySeparatorChar}package.json", JsonConvert.SerializeObject(PackageDetailsObj, Formatting.Indented));

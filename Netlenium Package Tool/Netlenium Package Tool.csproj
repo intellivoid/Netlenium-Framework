@@ -194,6 +194,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="netlenium_wizard.ico" />
+    <None Include="Resources\dev_48.png" />
+    <None Include="Resources\project_48.png" />
+    <None Include="Resources\project_64.png" />
+    <None Include="Resources\dev_512.png" />
+    <None Include="Resources\project_512.png" />
     <None Include="Resources\netlenium_package_cat.ico" />
     <None Include="Resources\netlenium_wizard.ico" />
   </ItemGroup>

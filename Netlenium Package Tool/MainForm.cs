@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -25,6 +26,11 @@ namespace NetleniumPackageTool
         private TreeNode SelectedNode;
 
         /// <summary>
+        /// The JSON data for the package information
+        /// </summary>
+        private string PackageJSON;
+
+        /// <summary>
         /// Public Constructor
         /// </summary>
         public MainForm()
@@ -32,11 +38,14 @@ namespace NetleniumPackageTool
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Loads an existing project into memory
+        /// </summary>
+        /// <param name="packageDirectoryLocation"></param>
         private void LoadPackage(string packageDirectoryLocation)
         {
             if(File.Exists($"{packageDirectoryLocation}{Path.DirectorySeparatorChar}package.json") == false)
             {
-                // TODO: Make it show a warning only
                 MessageBox.Show("This package source directory is invalid because it's missing package.json", "Invalid Package Directory Source", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -49,6 +58,75 @@ namespace NetleniumPackageTool
             ProjectDirectoryGroupBox.Enabled = true;
             NoItemsLabel.Visible = false;
             RefreshTree();
+            RefreshPackageInformation();
+        }
+
+        /// <summary>
+        /// Refreshes the package information
+        /// </summary>
+        public void RefreshPackageInformation()
+        {
+            try
+            {
+                PackageJSON = File.ReadAllText($"{PackageLocation}{Path.DirectorySeparatorChar}package.json");
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show($"There was an error while trying to read package.json{Environment.NewLine}{Environment.NewLine}{exception.Message}", "package.json Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            JObject ParsedData = null;
+
+            try
+            {
+                ParsedData = JObject.Parse(PackageJSON);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"There was an error while trying to read JSON data from package.json{Environment.NewLine}{Environment.NewLine}{exception.Message}", "JSON Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            try
+            {
+                PackageNameTextbox.Text = (string)ParsedData["name"];
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"There was an error while trying to read 'name' from package.json{Environment.NewLine}{Environment.NewLine}{exception.Message}", "JSON Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                PackageVersionTextbox.Text = (string)ParsedData["version"];
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"There was an error while trying to read 'version' from package.json{Environment.NewLine}{Environment.NewLine}{exception.Message}", "JSON Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                PackageAuthorTextbox.Text = (string)ParsedData["author"];
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"There was an error while trying to read 'author' from package.json{Environment.NewLine}{Environment.NewLine}{exception.Message}", "JSON Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                PackageCompanyTextbox.Text = (string)ParsedData["company"];
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"There was an error while trying to read 'company' from package.json{Environment.NewLine}{Environment.NewLine}{exception.Message}", "JSON Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         /// <summary>
@@ -148,7 +226,6 @@ namespace NetleniumPackageTool
             if((attr & FileAttributes.Directory) != FileAttributes.Directory)
             {
                 var Editor = new FileEditor(SelectedNode.Tag.ToString());
-                Editor.Dispose();
             }
         }
 
@@ -398,7 +475,6 @@ namespace NetleniumPackageTool
             if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
             {
                 var Editor = new FileEditor(SelectedNode.Tag.ToString());
-                Editor.Dispose();
             }
         }
 
@@ -410,12 +486,29 @@ namespace NetleniumPackageTool
         private void CreateNewPackageMenuItem_Click(object sender, EventArgs e)
         {
             var Dialog = new CreatePackageDialog();
-            Dialog.ShowDialog();
+            if(Dialog.ShowDialog() == DialogResult.OK)
+            {
+                LoadPackage(Dialog.OutputDirectory);
+            }
         }
 
+        /// <summary>
+        /// Brings up the Folder Browser dialog and loads the source directory for a Netlenium Package
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadSourceDirectoryMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: Finish This
+            var Prompt = new FolderBrowserDialog()
+            {
+                Description = "Select a source directory for a Netlenium Package"
+            };
+
+            if(Prompt.ShowDialog() == DialogResult.OK)
+            {
+                LoadPackage(Prompt.SelectedPath);
+            }
         }
+        
     }
 }
