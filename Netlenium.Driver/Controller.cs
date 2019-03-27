@@ -56,8 +56,7 @@ namespace Netlenium.Driver
         /// <summary>
         /// Initializes the driver
         /// </summary>
-        /// <param name="hide">Hides the WebView, throws a warning if it's not available for the driver</param>
-        public void Initialize(bool hide = false)
+        public void Initialize()
         {
             Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Initializing Driver");
             switch (DriverType)

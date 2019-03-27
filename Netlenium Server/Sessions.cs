@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Netlenium_Server
 {
@@ -14,13 +11,36 @@ namespace Netlenium_Server
         /// </summary>
         private static Dictionary<string, Session> activeSessions;
 
-        public static Session CreateSession(SessionConfiguration configuration)
+        /// <summary>
+        /// Generates a new Session ID
+        /// </summary>
+        /// <returns></returns>
+        private static string GeneratedSessionId()
+        {
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var stringChars = new char[32];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            return new String(stringChars);
+        }
+
+        /// <summary>
+        /// Creates a new session and starts the WebDriver
+        /// </summary>
+        /// <param name="targetDriver"></param>
+        /// <returns></returns>
+        public static Session CreateSession(string targetDriver)
         {
             var SessionObject = new Session();
 
             var DriverConfiguration = new Netlenium.DriverConfiguration()
             {
-                Headless = configuration.Headless,
+                Headless = true,
                 DriverLogging = false,
                 DriverVerboseLogging = false,
                 FrameworkLogging = true,
@@ -28,7 +48,7 @@ namespace Netlenium_Server
                 TargetPlatform = Netlenium.Types.Platform.AutoDetect
             };
 
-            switch(configuration.TargetDriver.ToLower())
+            switch(targetDriver.ToLower())
             {
                 case "chrome":
                     DriverConfiguration.TargetDriver = Netlenium.Types.Driver.Chrome;
@@ -43,7 +63,14 @@ namespace Netlenium_Server
             }
 
             SessionObject.ObjectController = new Netlenium.Driver.Controller(DriverConfiguration);
-            SessionObject.Id = "session_id";
+            SessionObject.Id = GeneratedSessionId();
+
+            SessionObject.ObjectController.Initialize();
+
+            if(activeSessions == null)
+            {
+                activeSessions = new Dictionary<string, Session>();
+            }
 
             activeSessions.Add(SessionObject.Id, SessionObject);
 

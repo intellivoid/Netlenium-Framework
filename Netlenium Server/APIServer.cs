@@ -1,8 +1,10 @@
 ﻿using Netlenium.WebServer;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Reflection;
 
 namespace Netlenium_Server
 {
@@ -12,7 +14,21 @@ namespace Netlenium_Server
         /// Private Server Object
         /// </summary>
         private static HttpServer Server;
-        
+
+        /// <summary>
+        /// The directory of the executing 
+        /// </summary>
+        private static string AssemblyDirectory
+        {
+            get
+            {
+                var codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                var uri = new UriBuilder(codeBase);
+                var path = Uri.UnescapeDataString(uri.Path);
+                return Path.GetDirectoryName(File.Exists($"{Path.GetDirectoryName(path)}{Path.DirectorySeparatorChar}Netlenium.dll") ? path : Process.GetCurrentProcess().MainModule.FileName);
+            }
+        }
+
         /// <summary>
         /// Starts the Web Service on a random port, if port is set to another value other than 0
         /// it will use that port instead of a random port
@@ -35,7 +51,7 @@ namespace Netlenium_Server
         }
 
         /// <summary>
-        /// Sends a response back tot he client
+        /// Sends a response back to the client
         /// </summary>
         /// <param name="httpResponse"></param>
         /// <param name="content"></param>
@@ -45,6 +61,21 @@ namespace Netlenium_Server
             using (var writer = new StreamWriter(httpResponse.OutputStream))
             {
                 writer.Write(content);
+            }
+        }
+
+        /// <summary>
+        /// Sends a response back to the client as a file
+        /// </summary>
+        /// <param name="httpResponse"></param>
+        /// <param name="filepath"></param>
+        public static void SendFile(HttpResponse httpResponse, string filepath)
+        {
+            httpResponse.Headers.Add("X-Powered-By", "Netlenium Framework");
+            
+            using (var Stream = File.OpenRead(filepath))
+            {
+                Stream.CopyTo(httpResponse.OutputStream);
             }
         }
 
@@ -59,6 +90,15 @@ namespace Netlenium_Server
             {
                 case "/":
                     SendResponse(httpRequest.Response, "test");
+                    break;
+
+                case "/favicon.ico":
+                    var FaviconLocation = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}WebResources{Path.DirectorySeparatorChar}favicon.ico";
+                    if(File.Exists(FaviconLocation))
+                    {
+                        httpRequest.Response.Headers.Add("Content-Type", "image/ico");
+                        SendFile(httpRequest.Response, FaviconLocation);
+                    }
                     break;
 
                 case "/create_session":

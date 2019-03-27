@@ -17,20 +17,25 @@ namespace Netlenium_Server
         private static string version = "1.0.0.0";
 
         /// <summary>
+        /// Public property of the version
+        /// </summary>
+        public static string Version { get => version; set => version = value; }
+
+        /// <summary>
         /// Main Program Pointer
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.Title = "Netlenium Server";
-            Console.WriteLine($"Netlenium Server v{version}");
+            Console.WriteLine($"Netlenium Server v{Version}");
             Console.WriteLine("Written by Zi Xing Narrakas");
-            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine();
 
             Netlenium.Logging.Enabled = true;
             Netlenium.Logging.VerboseLogging = true;
 
-            Console.WriteLine(APIServer.Start());
+            APIServer.Start(8080);
 
             Console.ReadLine();
         }
