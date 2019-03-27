@@ -91,7 +91,7 @@ namespace Netlenium.WebServer
             ReadTimeout = TimeSpan.FromSeconds(90);
             WriteTimeout = TimeSpan.FromSeconds(90);
 
-            ServerBanner = String.Format("Netlenium.WebServer/{0}", GetType().Assembly.GetName().Version);
+            ServerBanner = String.Format("Netlenium Framework/{0}", GetType().Assembly.GetName().Version);
         }
 
         public void Start()
@@ -118,7 +118,7 @@ namespace Netlenium.WebServer
 
                 ServerUtility = new HttpServerUtility();
 
-                Log.Info(String.Format("HTTP server running at {0}", EndPoint));
+                Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", String.Format("HTTP server running at {0}", EndPoint));
             }
             catch (Exception ex)
             {
@@ -126,7 +126,7 @@ namespace Netlenium.WebServer
 
                 Log.Error("Failed to start HTTP server", ex);
 
-                throw new Netlenium.WebServerException("Failed to start HTTP server", ex);
+                throw new WebServerException("Failed to start HTTP server", ex);
             }
 
             State = HttpServerState.Started;
@@ -154,9 +154,8 @@ namespace Netlenium.WebServer
             }
             catch (Exception ex)
             {
-                Log.Error("Failed to stop HTTP server", ex);
-
-                throw new Netlenium.WebServerException("Failed to stop HTTP server", ex);
+                Logging.WriteEntry( Types.LogType.Error, "Netlenium.WebServer", $"Failed to stop HTTP server; {ex}");
+                throw new WebServerException("Failed to stop HTTP server", ex);
             }
             finally
             {
@@ -164,7 +163,7 @@ namespace Netlenium.WebServer
 
                 State = HttpServerState.Stopped;
 
-                Log.Info("Stopped HTTP server");
+                Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", "Stopped HTTP server");
             }
         }
 
@@ -279,7 +278,7 @@ namespace Netlenium.WebServer
             }
             catch (Exception ex)
             {
-                Log.Info("Failed to accept TCP client", ex);
+                Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", $"Failed to accept TCP client {ex}");
             }
         }
 

@@ -125,7 +125,7 @@ namespace Netlenium.WebServer
             }
             catch (Exception ex)
             {
-                Log.Info("BeginRead failed", ex);
+                Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", $"BeginRead failed {ex}");
 
                 Dispose();
             }
@@ -159,13 +159,13 @@ namespace Netlenium.WebServer
             }
             catch (ObjectDisposedException ex)
             {
-                Log.Info("Failed to read", ex);
+                Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", $"Failed to read {ex}");
 
                 Dispose();
             }
             catch (Exception ex)
             {
-                Log.Info("Failed to read from the HTTP connection", ex);
+                Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", $"Failed to read from the HTTP connection {ex}");
 
                 ProcessException(ex);
             }
@@ -411,7 +411,7 @@ namespace Netlenium.WebServer
             }
             catch (Exception ex)
             {
-                Log.Info("BeginWrite failed", ex);
+                Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", $"BeginWrite failed {ex}");
 
                 Dispose();
             }
@@ -474,7 +474,7 @@ namespace Netlenium.WebServer
             }
             catch (Exception ex)
             {
-                Log.Info("Failed to write", ex);
+                Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", $"Failed to write {ex}");
 
                 Dispose();
             }
@@ -684,7 +684,7 @@ namespace Netlenium.WebServer
             }
             catch (Exception ex)
             {
-                Log.Info("Failed to process internal server error response", ex);
+                Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", $"Failed to process internal server error response {ex}");
 
                 Dispose();
             }

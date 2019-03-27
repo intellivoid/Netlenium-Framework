@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium.WebDriver", "Netl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium.WebServer", "Netlenium.WebServer\Netlenium.WebServer.csproj", "{A86C1040-9ECC-45B1-8019-408B8A61289F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium Server", "Netlenium Server\Netlenium Server.csproj", "{76206829-C400-4C02-8719-7CB6026B930C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -343,6 +345,30 @@ Global
 		{A86C1040-9ECC-45B1-8019-408B8A61289F}.WindowsDebug|Any CPU.Build.0 = Debug|Any CPU
 		{A86C1040-9ECC-45B1-8019-408B8A61289F}.WindowsDebug|x86.ActiveCfg = Debug|Any CPU
 		{A86C1040-9ECC-45B1-8019-408B8A61289F}.WindowsDebug|x86.Build.0 = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.Debug|x86.Build.0 = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.LinuxBuild|Any CPU.ActiveCfg = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.LinuxBuild|Any CPU.Build.0 = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.LinuxBuild|x86.ActiveCfg = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.LinuxBuild|x86.Build.0 = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.LinuxDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.LinuxDebug|Any CPU.Build.0 = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.LinuxDebug|x86.ActiveCfg = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.LinuxDebug|x86.Build.0 = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.Release|x86.ActiveCfg = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.Release|x86.Build.0 = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.WindowsBuild|Any CPU.ActiveCfg = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.WindowsBuild|Any CPU.Build.0 = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.WindowsBuild|x86.ActiveCfg = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.WindowsBuild|x86.Build.0 = Release|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.WindowsDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.WindowsDebug|Any CPU.Build.0 = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.WindowsDebug|x86.ActiveCfg = Debug|Any CPU
+		{76206829-C400-4C02-8719-7CB6026B930C}.WindowsDebug|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

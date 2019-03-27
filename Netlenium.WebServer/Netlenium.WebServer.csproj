@@ -59,12 +59,18 @@
     <Compile Include="HttpUtil.cs" />
     <Compile Include="ILog.cs" />
     <Compile Include="LogManager.cs" />
-    <Compile Include="NHttpException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProtocolException.cs" />
+    <Compile Include="WebServerException.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\InternalServerError.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Netlenium\Netlenium.csproj">
+      <Project>{771c3ff1-37cb-4e3c-b86d-c8d88bb2c7a7}</Project>
+      <Name>Netlenium</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
