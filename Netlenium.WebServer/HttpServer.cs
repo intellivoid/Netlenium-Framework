@@ -10,7 +10,6 @@ namespace Netlenium.WebServer
 {
     public class HttpServer : IDisposable
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(HttpServer));
 
         private bool _disposed;
         private TcpListener _listener;
@@ -100,7 +99,7 @@ namespace Netlenium.WebServer
 
             State = HttpServerState.Starting;
 
-            Log.Debug(String.Format("Starting HTTP server at {0}", EndPoint));
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", $"Starting HTTP server at {EndPoint}");
 
             TimeoutManager = new HttpTimeoutManager(this);
 
@@ -124,7 +123,7 @@ namespace Netlenium.WebServer
             {
                 State = HttpServerState.Stopped;
 
-                Log.Error("Failed to start HTTP server", ex);
+                Logging.WriteEntry(Types.LogType.Error, "Netlenium.WebServer", $"Failed to start HTTP server {ex}");
 
                 throw new WebServerException("Failed to start HTTP server", ex);
             }
@@ -138,7 +137,7 @@ namespace Netlenium.WebServer
         {
             VerifyState(HttpServerState.Started);
 
-            Log.Debug("Stopping HTTP server");
+            Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", "Stopping HTTP Server");
 
             State = HttpServerState.Stopping;
 

@@ -10,7 +10,6 @@ namespace Netlenium.WebServer
 {
     public class HttpRequest
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(HttpRequest));
 
         private static readonly string[] EmptyStringArray = new string[0];
 
@@ -212,7 +211,7 @@ namespace Netlenium.WebServer
 
                 if (name == null)
                 {
-                    Log.Info("Received multipart item without name");
+                    Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", "Received multipart item without name");
                     continue;
                 }
 

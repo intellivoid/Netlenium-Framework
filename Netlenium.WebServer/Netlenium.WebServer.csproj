@@ -93,8 +93,6 @@
     <Compile Include="HttpUnknownRequestParser.cs" />
     <Compile Include="HttpUrlEncodedRequestParser.cs" />
     <Compile Include="HttpUtil.cs" />
-    <Compile Include="ILog.cs" />
-    <Compile Include="LogManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProtocolException.cs" />
     <Compile Include="WebServerException.cs" />

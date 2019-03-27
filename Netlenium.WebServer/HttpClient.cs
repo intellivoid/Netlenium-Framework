@@ -12,7 +12,6 @@ namespace Netlenium.WebServer
 {
     internal class HttpClient : IDisposable
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(HttpClient));
 
         private static readonly Regex PrologRegex = new Regex("^([A-Z]+) ([^ ]+) (HTTP/[^ ]+)$", RegexOptions.Compiled);
 
@@ -204,8 +203,6 @@ namespace Netlenium.WebServer
 
             if (line == null)
                 return;
-
-            // Parse the prolog.
 
             var match = PrologRegex.Match(line);
 
@@ -484,7 +481,7 @@ namespace Netlenium.WebServer
         {
             _context = new HttpContext(this);
 
-            Log.Debug(String.Format("Accepted request '{0}'", _context.Request.RawUrl));
+            Logging.WriteVerboseEntry("Netlenium.WebServer", $"Accepted request {_context.Request.RawUrl}");
 
             Server.RaiseRequest(_context);
 
