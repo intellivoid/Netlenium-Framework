@@ -1,4 +1,5 @@
 ﻿using Netlenium.WebServer;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -39,7 +40,7 @@ namespace Netlenium_Server
         {
             Server = new HttpServer();
 
-            if(port != 0)
+            if (port != 0)
             {
                 Server.EndPoint = new IPEndPoint(IPAddress.Loopback, port);
             }
@@ -48,6 +49,15 @@ namespace Netlenium_Server
             Server.Start();
 
             return $"http://{Server.EndPoint}/";
+        }
+
+        /// <summary>
+        /// Stops the server
+        /// </summary>
+        public static void Stop()
+        {
+            Server.Stop();
+            Sessions.CloseAllSessions();
         }
 
         /// <summary>
@@ -72,7 +82,7 @@ namespace Netlenium_Server
         public static void SendFile(HttpResponse httpResponse, string filepath)
         {
             httpResponse.Headers.Add("X-Powered-By", "Netlenium Framework");
-            
+
             using (var Stream = File.OpenRead(filepath))
             {
                 Stream.CopyTo(httpResponse.OutputStream);
@@ -86,15 +96,21 @@ namespace Netlenium_Server
         /// <param name="httpRequest"></param>
         public static void RequestReceived(object sender, HttpRequestEventArgs httpRequest)
         {
+            if (httpRequest.Request.RequestType.ToUpper() != "GET" && httpRequest.Request.RequestType.ToUpper() != "POST")
+            {
+                APIHandler.UnsupportedRequestMethod(httpRequest);
+                return;
+            }
+            
             switch (httpRequest.Request.Path.ToLower())
             {
                 case "/":
-                    SendResponse(httpRequest.Response, "test");
+                    APIHandler.Root(httpRequest);
                     break;
 
                 case "/favicon.ico":
                     var FaviconLocation = $"{AssemblyDirectory}{Path.DirectorySeparatorChar}WebResources{Path.DirectorySeparatorChar}favicon.ico";
-                    if(File.Exists(FaviconLocation))
+                    if (File.Exists(FaviconLocation))
                     {
                         httpRequest.Response.Headers.Add("Content-Type", "image/ico");
                         SendFile(httpRequest.Response, FaviconLocation);
@@ -104,9 +120,32 @@ namespace Netlenium_Server
                 case "/create_session":
                     APIHandler.CreateSession(httpRequest);
                     break;
+
+                default:
+                    APIHandler.NotFound(httpRequest);
+                    break;
             }
         }
-        
 
+        /// <summary>
+        /// Gets the paramerter either from a GET or POST request
+        /// </summary>
+        /// <param name="httpRequest"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        public static string GetParamerter(HttpRequest httpRequest, string parameter)
+        {
+            switch(httpRequest.RequestType.ToUpper())
+            {
+                case "GET":
+                    return httpRequest.QueryString.Get(parameter);
+
+                case "POST":
+                    return httpRequest.Form.Get(parameter);
+
+                default:
+                    throw new UnsupportedRequestMethodException();
+            }
+        }
     }
 }

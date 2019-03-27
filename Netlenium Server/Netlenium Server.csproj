@@ -99,6 +99,7 @@
     <Compile Include="Session.cs" />
     <Compile Include="Sessions.cs" />
     <Compile Include="UnsupportedDriverException.cs" />
+    <Compile Include="UnsupportedRequestMethodException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -11,13 +11,74 @@ namespace Netlenium_Server
     public class APIHandler
     {
         /// <summary>
+        /// The root request
+        /// </summary>
+        /// <param name="httpRequest"></param>
+        public static void Root(HttpRequestEventArgs httpRequest)
+        {
+            httpRequest.Response.StatusCode = 200;
+            httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+            var Response = new
+            {
+                Status = true,
+                ResponseCode = httpRequest.Response.StatusCode,
+                ServerName = "Netlenium Framework Server",
+                ServerVersion = Program.Version
+            };
+
+            APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+        }
+
+        /// <summary>
+        /// Returns when a requested method was not found or is unsupported
+        /// </summary>
+        /// <param name="httpRequest"></param>
+        public static void NotFound(HttpRequestEventArgs httpRequest)
+        {
+            httpRequest.Response.StatusCode = 404;
+            httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+            var Response = new
+            {
+                Status = false,
+                ResponseCode = httpRequest.Response.StatusCode,
+                ErrorType = "METHOD_NOT_FOUND",
+                Message = "The requested method to the server was not found or is unsupported"
+            };
+
+            APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+        }
+
+        /// <summary>
+        /// Unsupported Request Method Error
+        /// </summary>
+        /// <param name="httpRequest"></param>
+        public static void UnsupportedRequestMethod(HttpRequestEventArgs httpRequest)
+        {
+            httpRequest.Response.StatusCode = 405;
+            httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+            var Response = new
+            {
+                Status = false,
+                ResponseCode = httpRequest.Response.StatusCode,
+                ErrorType = "METHOD_NOT_ALLOWED",
+                Message = "only POST/GET request methods are allowed"
+            };
+
+            APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+            return;
+        }
+
+        /// <summary>
         /// Creates a new Session in memory
         /// </summary>
         /// <param name="httpRequest"></param>
         public static void CreateSession(HttpRequestEventArgs httpRequest)
         {
             /// Check if paramerter is set
-            if(httpRequest.Request.QueryString.Get("target_driver") == null)
+            if(APIServer.GetParamerter(httpRequest.Request, "target_driver") == null)
             {
                 httpRequest.Response.StatusCode = 401;
                 httpRequest.Response.Headers.Add("content-Type", "application/json");

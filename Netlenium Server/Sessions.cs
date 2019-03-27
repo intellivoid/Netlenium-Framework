@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Netlenium;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Netlenium_Server
 {
@@ -75,6 +77,27 @@ namespace Netlenium_Server
             activeSessions.Add(SessionObject.Id, SessionObject);
 
             return SessionObject;
+        }
+
+        public static void CloseAllSessions()
+        {
+            if(activeSessions != null)
+            {
+                foreach(var Session in activeSessions.Values.ToList())
+                {
+                    try
+                    {
+                        Logging.WriteEntry(Netlenium.Types.LogType.Information, "Netlenium Server", $"Killing session {Session.Id}");
+                        Session.ObjectController.Quit();
+                    }
+                    catch(Exception exception)
+                    {
+                        Logging.WriteEntry(Netlenium.Types.LogType.Warning, "Netlenium Server",  $"Failed to close session {Session.Id}, {exception.Message}");
+                    }
+
+                    activeSessions.Remove(Session.Id);
+                }
+            }
         }
 
     }
