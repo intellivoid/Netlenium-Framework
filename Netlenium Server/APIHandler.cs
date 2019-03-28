@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Netlenium.WebServer;
 using Newtonsoft.Json;
 
@@ -143,6 +139,115 @@ namespace Netlenium_Server
                 };
 
                 APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+                return;
+            }
+
+        }
+
+        /// <summary>
+        /// Navigates to the requested page
+        /// </summary>
+        /// <param name="httpRequest"></param>
+        public static void Navigate(HttpRequestEventArgs httpRequest)
+        {
+
+            if(httpRequest.Request.QueryString.Get("session_id") == null)
+            {
+                httpRequest.Response.StatusCode = 400;
+                httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+                var ErrorResponse = new
+                {
+                    Status = false,
+                    ResponseCode = httpRequest.Response.StatusCode,
+                    ErrorType = "MISSING_PARAMERTER",
+                    Message = "Missing parameter 'session_id'"
+                };
+
+                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                return;
+            }
+
+            if(Sessions.SessionExists(httpRequest.Request.QueryString.Get("session_id")) == false)
+            {
+                httpRequest.Response.StatusCode = 403;
+                httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+                var ErrorResponse = new
+                {
+                    Status = false,
+                    ResponseCode = httpRequest.Response.StatusCode,
+                    ErrorType = "UNAUTHORIZED_SESSION",
+                    Message = "The given session was not found or you don't have access to it"
+                };
+
+                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                return;
+            }
+
+            if(APIServer.GetParamerter(httpRequest.Request, "url") == null)
+            {
+                httpRequest.Response.StatusCode = 400;
+                httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+                var ErrorResponse = new
+                {
+                    Status = false,
+                    ResponseCode = httpRequest.Response.StatusCode,
+                    ErrorType = "MISSING_PARAMERTER",
+                    Message = "Missing parameter 'url'"
+                };
+
+                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                return;
+            }
+
+            try
+            {
+                Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ObjectController.Navigate(APIServer.GetParamerter(httpRequest.Request, "url"));
+
+                httpRequest.Response.StatusCode = 200;
+                httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+                var Response = new
+                {
+                    Status = true,
+                    ResponseCode = httpRequest.Response.StatusCode
+                };
+
+                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+                return;
+            }
+            catch(Netlenium.Driver.MethodNotSupportedForDriver)
+            {
+                httpRequest.Response.StatusCode = 400;
+                httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+                var ErrorResponse = new
+                {
+                    Status = false,
+                    ResponseCode = httpRequest.Response.StatusCode,
+                    ErrorType = "UNSUPPORTED_METHOD",
+                    Message = "The given method is not supported for the requested driver"
+                };
+
+                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                return;
+            }
+            catch(Exception exception)
+            {
+                httpRequest.Response.StatusCode = 500;
+                httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+                var ErrorResponse = new
+                {
+                    Status = false,
+                    ResponseCode = httpRequest.Response.StatusCode,
+                    ErrorType = "INTERNAL_SERVER_ERROR",
+                    Message = exception.Message
+                };
+
+                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
                 return;
             }
 

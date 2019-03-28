@@ -25,6 +25,7 @@ namespace Netlenium_Server
         /// Main Program Pointer
         /// </summary>
         /// <param name="args"></param>
+        [STAThread]
         static void Main(string[] args)
         {
             AppDomain.CurrentDomain.ProcessExit += ProcessExitHandler;
@@ -38,9 +39,10 @@ namespace Netlenium_Server
             Netlenium.Logging.VerboseLogging = true;
 
             APIServer.Start(8080);
-            
+
             Console.ReadLine();
             Environment.Exit(0);
+            
         }
 
         /// <summary>

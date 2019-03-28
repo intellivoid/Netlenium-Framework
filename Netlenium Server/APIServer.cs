@@ -121,6 +121,10 @@ namespace Netlenium_Server
                     APIHandler.CreateSession(httpRequest);
                     break;
 
+                case "/navigate":
+                    APIHandler.Navigate(httpRequest);
+                    break;
+
                 default:
                     APIHandler.NotFound(httpRequest);
                     break;
