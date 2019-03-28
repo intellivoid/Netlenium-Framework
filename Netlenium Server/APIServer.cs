@@ -125,6 +125,10 @@ namespace Netlenium_Server
                     APIHandler.Navigate(httpRequest);
                     break;
 
+                case "/get_elements":
+                    APIHandler.GetElements(httpRequest);
+                    break;
+
                 default:
                     APIHandler.NotFound(httpRequest);
                     break;
