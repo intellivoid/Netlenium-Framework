@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Netlenium_Server
+﻿namespace Netlenium_Server
 {
     /// <summary>
     /// Error Types returned by the server to simplify the exception
@@ -30,7 +24,7 @@ namespace Netlenium_Server
         /// <summary>
         /// The given method was not found
         /// </summary>
-        public string MethodNotFound
+        public static string MethodNotFound
         {
             get { return "METHOD_NOT_FOUND"; }
         }
@@ -38,7 +32,7 @@ namespace Netlenium_Server
         /// <summary>
         /// The request method used is not allowed
         /// </summary>
-        public string MethodNotAllowed
+        public static string MethodNotAllowed
         {
             get { return "METHOD_NOT_ALLOWED";  }
         }
@@ -46,15 +40,23 @@ namespace Netlenium_Server
         /// <summary>
         /// The given driver is unsupported either by Netlenium or the Netlenium Web Server
         /// </summary>
-        public string UnsupportedDriver
+        public static string UnsupportedDriver
         {
             get { return "UNSUPPORTED_DRIVER";  }
         }
 
         /// <summary>
+        /// The given method is unsupported for the selected driver
+        /// </summary>
+        public static string UnsupportedMethod
+        {
+            get { return "UNSUPPORTED_METHOD";  }
+        }
+
+        /// <summary>
         /// The given search type is invalid
         /// </summary>
-        public string InvalidSearchType
+        public static string InvalidSearchType
         {
             get { return "INVALID_SEARCH_TYPE";  }
         }
@@ -62,7 +64,7 @@ namespace Netlenium_Server
         /// <summary>
         /// Unexpected Internal Server Error
         /// </summary>
-        public string InternalServerError
+        public static string InternalServerError
         {
             get { return "INTERNAL_SERVER_ERROR";  }
         }

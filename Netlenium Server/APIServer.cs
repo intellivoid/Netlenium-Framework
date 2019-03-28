@@ -1,7 +1,6 @@
 ﻿using Netlenium.WebServer;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -75,6 +74,78 @@ namespace Netlenium_Server
         }
 
         /// <summary>
+        /// Sends a JSON Response back to the client
+        /// </summary>
+        /// <param name="httpResponse"></param>
+        /// <param name="content"></param>
+        /// <param name="statusCode"></param>
+        public static void SendJsonResponse(HttpResponse httpResponse, object content, int statusCode = 200)
+        {
+            httpResponse.StatusCode = statusCode;
+            httpResponse.Headers.Add("content-Type", "application/json");
+
+            SendResponse(httpResponse, JsonConvert.SerializeObject(content, Formatting.Indented));
+        }
+
+        /// <summary>
+        /// Sends a JSON Response back to the client saying that the paramerter is missing
+        /// </summary>
+        /// <param name="httpResponse"></param>
+        /// <param name="parameterName"></param>
+        public static void SendJsonMissingParamerterResponse(HttpResponse httpResponse, string parameterName)
+        {
+            SendJsonResponse(
+                httpResponse, new
+                {
+                    Status = true,
+                    ResponseCode = 401,
+                    ErrorType = ErrorTypes.MissingParamerter,
+                    Message = $"Missing paramerter \"{parameterName}\""
+                }, 401
+            );
+        }
+
+        /// <summary>
+        /// Sends a JSON Response back to the client explaining the internal server error
+        /// </summary>
+        /// <param name="httpResponse"></param>
+        /// <param name="message"></param>
+        /// <param name="exceptionMessage"></param>
+        public static void SendJsonInternalServerErrorResponse(HttpResponse httpResponse, string message, string exceptionMessage)
+        {
+            SendJsonResponse(
+                httpResponse, new
+                {
+                    Status = true,
+                    ResponseCode = 500,
+                    ErrorType = ErrorTypes.InternalServerError,
+                    Message = message,
+                    Exception = exceptionMessage
+                }, 500
+            );
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="httpResponse"></param>
+        /// <param name="errorType"></param>
+        /// <param name="message"></param>
+        /// <param name="responseCode"></param>
+        public static void SendJsonErrorResponse(HttpResponse httpResponse, string errorType, string message, int responseCode)
+        {
+            SendJsonResponse(
+                httpResponse, new
+                {
+                    Status = false,
+                    ResponseCode = responseCode,
+                    ErrorType = errorType,
+                    Message = message
+                }, responseCode
+            );
+        }
+
+        /// <summary>
         /// Sends a response back to the client as a file
         /// </summary>
         /// <param name="httpResponse"></param>
@@ -125,8 +196,8 @@ namespace Netlenium_Server
                     APIHandler.Navigate(httpRequest);
                     break;
 
-                case "/get_elements":
-                    APIHandler.GetElements(httpRequest);
+                case "/set_element_scope":
+                    APIHandler.SetElementScope(httpRequest);
                     break;
 
                 default:

@@ -12,5 +12,9 @@
         /// </summary>
         public Netlenium.Driver.Controller ObjectController;
 
+        /// <summary>
+        /// The current element scope
+        /// </summary>
+        public Netlenium.Driver.WebElement ElementScope;
     }
 }

@@ -48,7 +48,7 @@ namespace Netlenium_Server
                 DriverLogging = false,
                 DriverVerboseLogging = false,
                 FrameworkLogging = true,
-                FrameworkVerboseLogging = true, 
+                FrameworkVerboseLogging = false, 
                 TargetPlatform = Netlenium.Types.Platform.AutoDetect
             };
 

@@ -36,7 +36,7 @@ namespace Netlenium_Server
             Console.WriteLine();
 
             Netlenium.Logging.Enabled = true;
-            Netlenium.Logging.VerboseLogging = true;
+            Netlenium.Logging.VerboseLogging = false;
 
             APIServer.Start(8080);
 

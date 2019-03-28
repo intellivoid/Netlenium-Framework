@@ -1,9 +1,12 @@
-﻿using System;
-using Netlenium.WebServer;
+﻿using Netlenium.WebServer;
 using Newtonsoft.Json;
+using System;
 
 namespace Netlenium_Server
 {
+    /// <summary>
+    /// Handles API Requests and processes a proper reponse
+    /// </summary>
     public class APIHandler
     {
         /// <summary>
@@ -15,35 +18,18 @@ namespace Netlenium_Server
         {
             if (httpRequest.Request.QueryString.Get("session_id") == null)
             {
-                httpRequest.Response.StatusCode = 400;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-                var ErrorResponse = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "MISSING_PARAMERTER",
-                    Message = "Missing parameter 'session_id'"
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "session_id");
                 return false;
             }
 
             if (Sessions.SessionExists(httpRequest.Request.QueryString.Get("session_id")) == false)
             {
-                httpRequest.Response.StatusCode = 403;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-                var ErrorResponse = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "UNAUTHORIZED_SESSION",
-                    Message = "The given session was not found or you don't have access to it"
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                APIServer.SendJsonErrorResponse(
+                    httpRequest.Response,
+                    ErrorTypes.UnauthorizedSession,
+                    "The given session was not found or you don't have access to it",
+                    403
+                );
                 return false;
             }
 
@@ -56,18 +42,15 @@ namespace Netlenium_Server
         /// <param name="httpRequest"></param>
         public static void Root(HttpRequestEventArgs httpRequest)
         {
-            httpRequest.Response.StatusCode = 200;
-            httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-            var Response = new
-            {
-                Status = true,
-                ResponseCode = httpRequest.Response.StatusCode,
-                ServerName = "Netlenium Framework Server",
-                ServerVersion = Program.Version
-            };
-
-            APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+            APIServer.SendJsonResponse(
+                httpRequest.Response, new
+                {
+                    Status = true,
+                    ResponseCode = 200,
+                    ServerName = "Netlenium Framework Server",
+                    ServerVersion = Program.Version
+                }, 200
+             );
         }
 
         /// <summary>
@@ -76,18 +59,12 @@ namespace Netlenium_Server
         /// <param name="httpRequest"></param>
         public static void NotFound(HttpRequestEventArgs httpRequest)
         {
-            httpRequest.Response.StatusCode = 404;
-            httpRequest.Response.Headers.Add("content-Type", "application/json");
+            APIServer.SendJsonErrorResponse(
+                httpRequest.Response, ErrorTypes.MethodNotFound,
+                "The requested method to the server was not found or is unsupported", 404
+            );
 
-            var Response = new
-            {
-                Status = false,
-                ResponseCode = httpRequest.Response.StatusCode,
-                ErrorType = "METHOD_NOT_FOUND",
-                Message = "The requested method to the server was not found or is unsupported"
-            };
-
-            APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+            return;
         }
 
         /// <summary>
@@ -96,18 +73,11 @@ namespace Netlenium_Server
         /// <param name="httpRequest"></param>
         public static void UnsupportedRequestMethod(HttpRequestEventArgs httpRequest)
         {
-            httpRequest.Response.StatusCode = 405;
-            httpRequest.Response.Headers.Add("content-Type", "application/json");
+            APIServer.SendJsonErrorResponse(
+                httpRequest.Response, ErrorTypes.MethodNotFound,
+                "Only POST/GET requests are allowed", 405
+            );
 
-            var Response = new
-            {
-                Status = false,
-                ResponseCode = httpRequest.Response.StatusCode,
-                ErrorType = "METHOD_NOT_ALLOWED",
-                Message = "only POST/GET request methods are allowed"
-            };
-
-            APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
             return;
         }
 
@@ -120,69 +90,37 @@ namespace Netlenium_Server
             /// Check if paramerter is set
             if(APIServer.GetParamerter(httpRequest.Request, "target_driver") == null)
             {
-                httpRequest.Response.StatusCode = 401;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-                var Response = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "MISSING_PARAMERTER",
-                    Message = "Missing paramerter 'target_driver'"
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "target_driver");
                 return;
             }
-
-
+            
             try
             {
                 var Session = Sessions.CreateSession(httpRequest.Request.QueryString.Get("target_driver"));
 
-                httpRequest.Response.StatusCode = 200;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
+                APIServer.SendJsonResponse(
+                    httpRequest.Response, new
+                    {
+                        Status = true,
+                        ResponseCode = 200,
+                        SessionId = Session.Id
+                    }, 200
+                 );
 
-                var Response = new
-                {
-                    Status = true,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    SessionId = Session.Id
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
                 return;
             }
             catch(UnsupportedDriverException)
             {
-                httpRequest.Response.StatusCode = 401;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-                var Response = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "UNSUPPORTED_DRIVER",
-                    Message = "The given target driver is not supported"
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+                APIServer.SendJsonErrorResponse(httpRequest.Response, ErrorTypes.UnsupportedDriver,
+                    "The given target driver is not supported", 401
+                );
+                
                 return;
             }
             catch (Exception exception)
             {
-                httpRequest.Response.StatusCode = 500;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
+                APIServer.SendJsonInternalServerErrorResponse(httpRequest.Response, "Error while trying to construct driver", exception.Message);
 
-                var Response = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "INTERNAL_SERVER_ERROR",
-                    Message = exception.Message
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
                 return;
             }
 
@@ -202,18 +140,7 @@ namespace Netlenium_Server
 
             if(APIServer.GetParamerter(httpRequest.Request, "url") == null)
             {
-                httpRequest.Response.StatusCode = 400;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-                var ErrorResponse = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "MISSING_PARAMERTER",
-                    Message = "Missing parameter 'url'"
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "url");
                 return;
             }
 
@@ -235,34 +162,18 @@ namespace Netlenium_Server
             }
             catch(Netlenium.Driver.MethodNotSupportedForDriver)
             {
-                httpRequest.Response.StatusCode = 400;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-                var ErrorResponse = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "UNSUPPORTED_METHOD",
-                    Message = "The given method is not supported for the requested driver"
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                APIServer.SendJsonErrorResponse(
+                    httpRequest.Response, ErrorTypes.UnsupportedMethod,
+                    "The given method is not supported for the requested driver", 400
+                );
+                
                 return;
             }
             catch(Exception exception)
             {
-                httpRequest.Response.StatusCode = 500;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-                var ErrorResponse = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "INTERNAL_SERVER_ERROR",
-                    Message = exception.Message
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                APIServer.SendJsonInternalServerErrorResponse(
+                    httpRequest.Response, "There was an error while trying to execute the given method", exception.Message
+                );
                 return;
             }
 
@@ -272,7 +183,7 @@ namespace Netlenium_Server
         /// Gets the elements from the webpage
         /// </summary>
         /// <param name="httpRequest"></param>
-        public static void GetElements(HttpRequestEventArgs httpRequest)
+        public static void SetElementScope(HttpRequestEventArgs httpRequest)
         {
             if (CheckSession(httpRequest) == false)
             {
@@ -281,39 +192,22 @@ namespace Netlenium_Server
 
             if (APIServer.GetParamerter(httpRequest.Request, "search_type") == null)
             {
-                httpRequest.Response.StatusCode = 400;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-                var ErrorResponse = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "MISSING_PARAMERTER",
-                    Message = "Missing parameter 'search_type'"
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "search_type");
                 return;
             }
 
             if (APIServer.GetParamerter(httpRequest.Request, "value") == null)
             {
-                httpRequest.Response.StatusCode = 400;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-                var ErrorResponse = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "MISSING_PARAMERTER",
-                    Message = "Missing parameter 'value'"
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "value");
                 return;
             }
-            
-            
+
+            if (APIServer.GetParamerter(httpRequest.Request, "scope") == null)
+            {
+                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "scope");
+                return;
+            }
+
             Netlenium.Types.SearchType searchType;
 
             switch(APIServer.GetParamerter(httpRequest.Request, "search_type").ToUpper())
@@ -339,20 +233,10 @@ namespace Netlenium_Server
                     break;
 
                 default:
-                    httpRequest.Response.StatusCode = 400;
-                    httpRequest.Response.Headers.Add("content-Type", "application/json");
-
-                    var ErrorResponse = new
-                    {
-                        Status = false,
-                        ResponseCode = httpRequest.Response.StatusCode,
-                        ErrorType = "INVALID_SEARCH_TYPE",
-                        Message = "The given search type is invalid",
-                        AllowedTypes = new[] {"Id", "ClassName", "CssSelector", "TagName", "Name"}
-                    };
-                    
-
-                    APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
+                    APIServer.SendJsonErrorResponse(
+                        httpRequest.Response, ErrorTypes.InvalidSearchType,
+                        "The given search type is invalid", 400
+                    );
                     return;
             }
 
