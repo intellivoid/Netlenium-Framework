@@ -281,14 +281,14 @@ namespace Netlenium_Server
                         return;
                 }
                 
-                if (APIServer.GetParamerter(httpRequest.Request, "value") == null)
+                if (APIServer.GetParamerter(httpRequest.Request, "index") == null)
                 {
                     Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope = Elements[0];
                 }
                 else
                 {
                     Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).
-                        ElementScope = Elements[Convert.ToInt32(APIServer.GetParamerter(httpRequest.Request, "value"))];
+                        ElementScope = Elements[Int32.Parse(APIServer.GetParamerter(httpRequest.Request, "index"))];
                 }
 
                 httpRequest.Response.StatusCode = 200;
@@ -300,7 +300,7 @@ namespace Netlenium_Server
                     ResponseCode = httpRequest.Response.StatusCode
                 };
 
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Elements));
+                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
                 return;
             }
             catch (Netlenium.Driver.MethodNotSupportedForDriver)

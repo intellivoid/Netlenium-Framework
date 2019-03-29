@@ -44,7 +44,7 @@ namespace Netlenium_Server
 
             var DriverConfiguration = new Netlenium.DriverConfiguration()
             {
-                Headless = false,
+                Headless = true,
                 DriverLogging = false,
                 DriverVerboseLogging = false,
                 FrameworkLogging = true,
