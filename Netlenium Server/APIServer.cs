@@ -57,7 +57,7 @@ namespace Netlenium_Server
         public static void Stop()
         {
             Server.Stop();
-            Sessions.CloseAllSessions();
+            SessionManager.CloseAllSessions();
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Netlenium_Server
         }
 
         /// <summary>
-        /// 
+        /// Returns a error response as a JSON Payload
         /// </summary>
         /// <param name="httpResponse"></param>
         /// <param name="errorType"></param>
@@ -193,6 +193,10 @@ namespace Netlenium_Server
                     APIHandler.CreateSession(httpRequest);
                     break;
 
+                case "/close_session":
+                    APIHandler.CloseSession(httpRequest);
+                     break;
+
                 case "/navigate":
                     APIHandler.Navigate(httpRequest);
                     break;
@@ -203,6 +207,14 @@ namespace Netlenium_Server
 
                 case "/send_keys":
                     APIHandler.SendKeys(httpRequest);
+                    break;
+
+                case "/get_attribute":
+                    APIHandler.GetAttribute(httpRequest);
+                    break;
+
+                case "/set_attribute":
+                    APIHandler.SetAttribute(httpRequest);
                     break;
 
                 default:

@@ -8,7 +8,7 @@ namespace Netlenium_Server
     /// <summary>
     /// Session Manager Class
     /// </summary>
-    public class Sessions
+    public class SessionManager
     {
         /// <summary>
         /// The current list of active sessions
@@ -44,11 +44,11 @@ namespace Netlenium_Server
 
             var DriverConfiguration = new Netlenium.DriverConfiguration()
             {
-                Headless = false,
+                Headless = true,
                 DriverLogging = false,
                 DriverVerboseLogging = false,
                 FrameworkLogging = true,
-                FrameworkVerboseLogging = true, 
+                FrameworkVerboseLogging = false, 
                 TargetPlatform = Netlenium.Types.Platform.AutoDetect
             };
 

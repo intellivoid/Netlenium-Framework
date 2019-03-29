@@ -23,7 +23,7 @@ namespace Netlenium_Server
                 return false;
             }
 
-            if (Sessions.SessionExists(httpRequest.Request.QueryString.Get("session_id")) == false)
+            if (SessionManager.SessionExists(httpRequest.Request.QueryString.Get("session_id")) == false)
             {
                 APIServer.SendJsonErrorResponse(
                     httpRequest.Response,
@@ -97,7 +97,7 @@ namespace Netlenium_Server
             
             try
             {
-                var Session = Sessions.CreateSession(APIServer.GetParamerter(httpRequest.Request, "target_driver"));
+                var Session = SessionManager.CreateSession(APIServer.GetParamerter(httpRequest.Request, "target_driver"));
 
                 APIServer.SendJsonResponse(
                     httpRequest.Response, new
@@ -124,7 +124,39 @@ namespace Netlenium_Server
 
                 return;
             }
+        }
 
+        /// <summary>
+        /// Closes the current session
+        /// </summary>
+        /// <param name="httpRequest"></param>
+        public static void CloseSession(HttpRequestEventArgs httpRequest)
+        {
+            if (CheckSession(httpRequest) == false)
+            {
+                return;
+            }
+
+            try
+            {
+                SessionManager.KillSession(httpRequest.Request.QueryString.Get("session_id"));
+
+                APIServer.SendJsonResponse(
+                    httpRequest.Response, new
+                    {
+                        Status = true,
+                        ResponseCode = 200
+                    }, 200
+                 );
+
+                return;
+            }
+            catch (Exception exception)
+            {
+                APIServer.SendJsonInternalServerErrorResponse(httpRequest.Response, "Error while trying to kill session", exception.Message);
+
+                return;
+            }
         }
 
         /// <summary>
@@ -147,7 +179,7 @@ namespace Netlenium_Server
 
             try
             {
-                Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ObjectController.Navigate(APIServer.GetParamerter(httpRequest.Request, "url"));
+                SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).ObjectController.Navigate(APIServer.GetParamerter(httpRequest.Request, "url"));
 
                 httpRequest.Response.StatusCode = 200;
                 httpRequest.Response.Headers.Add("content-Type", "application/json");
@@ -253,12 +285,12 @@ namespace Netlenium_Server
                 switch (Target.ToUpper())
                 {
                     case "DOCUMENT":
-                        Elements = Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).
+                        Elements = SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).
                             ObjectController.GetElements(searchType, APIServer.GetParamerter(httpRequest.Request, "value"));
                         break;
 
                     case "ELEMENT_SCOPE":
-                        if (Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope == null)
+                        if (SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope == null)
                         {
                             APIServer.SendJsonErrorResponse(
                                 httpRequest.Response, ErrorTypes.TargetNotFound,
@@ -268,7 +300,7 @@ namespace Netlenium_Server
                             return;
                         }
 
-                        Elements = Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).
+                        Elements = SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).
                             ElementScope.GetElements(searchType, APIServer.GetParamerter(httpRequest.Request, "value"));
                         break;
 
@@ -283,11 +315,11 @@ namespace Netlenium_Server
 
                 if (APIServer.GetParamerter(httpRequest.Request, "index") == null)
                 {
-                    Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope = Elements[0];
+                    SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope = Elements[0];
                 }
                 else
                 {
-                    Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).
+                    SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).
                         ElementScope = Elements[Int32.Parse(APIServer.GetParamerter(httpRequest.Request, "index"))];
                 }
 
@@ -331,7 +363,7 @@ namespace Netlenium_Server
                 return;
             }
 
-            if(Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope == null)
+            if(SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope == null)
             {
                 APIServer.SendJsonErrorResponse(httpRequest.Response, ErrorTypes.ElementScopeNotSet, "The element scope was not set", 400);
                 return;
@@ -339,7 +371,7 @@ namespace Netlenium_Server
 
             try
             {
-                Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope.SendKeys(APIServer.GetParamerter(httpRequest.Request, "value"));
+                SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope.SendKeys(APIServer.GetParamerter(httpRequest.Request, "value"));
                 httpRequest.Response.StatusCode = 200;
                 httpRequest.Response.Headers.Add("content-Type", "application/json");
 
@@ -353,6 +385,106 @@ namespace Netlenium_Server
                 return;
             }
             catch(Exception exception)
+            {
+                APIServer.SendJsonErrorResponse(httpRequest.Response, ErrorTypes.ElementInteractionError, exception.Message, 500);
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Gets the attribute of the element
+        /// </summary>
+        /// <param name="httpRequest"></param>
+        public static void GetAttribute(HttpRequestEventArgs httpRequest)
+        {
+            if (CheckSession(httpRequest) == false)
+            {
+                return;
+            }
+
+            if (APIServer.GetParamerter(httpRequest.Request, "attribute_name") == null)
+            {
+                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "attribute_name");
+                return;
+            }
+            
+            if (SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope == null)
+            {
+                APIServer.SendJsonErrorResponse(httpRequest.Response, ErrorTypes.ElementScopeNotSet, "The element scope was not set", 400);
+                return;
+            }
+
+            try
+            {
+                var AttributeValueCallback = SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope.GetAttribute(APIServer.GetParamerter(httpRequest.Request, "attribute_name"));
+
+                httpRequest.Response.StatusCode = 200;
+                httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+                var Response = new
+                {
+                    Status = true,
+                    ResponseCode = httpRequest.Response.StatusCode,
+                    AttributeValue = AttributeValueCallback
+                };
+
+                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+                return;
+            }
+            catch (Exception exception)
+            {
+                APIServer.SendJsonErrorResponse(httpRequest.Response, ErrorTypes.ElementInteractionError, exception.Message, 500);
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Sets the attribute to the element
+        /// </summary>
+        /// <param name="httpRequest"></param>
+        public static void SetAttribute(HttpRequestEventArgs httpRequest)
+        {
+            if (CheckSession(httpRequest) == false)
+            {
+                return;
+            }
+
+            if (APIServer.GetParamerter(httpRequest.Request, "attribute_name") == null)
+            {
+                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "attribute_name");
+                return;
+            }
+
+            if (APIServer.GetParamerter(httpRequest.Request, "value") == null)
+            {
+                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "attribute_name");
+                return;
+            }
+
+            if (SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope == null)
+            {
+                APIServer.SendJsonErrorResponse(httpRequest.Response, ErrorTypes.ElementScopeNotSet, "The element scope was not set", 400);
+                return;
+            }
+
+            try
+            {
+                SessionManager.GetSession(httpRequest.Request.QueryString.Get("session_id")).
+                    ElementScope.SetAttribute(APIServer.GetParamerter(httpRequest.Request, "attribute_name"), APIServer.GetParamerter(httpRequest.Request, "value"));
+
+                httpRequest.Response.StatusCode = 200;
+                httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+                var Response = new
+                {
+                    Status = true,
+                    ResponseCode = httpRequest.Response.StatusCode
+                };
+
+                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+                return;
+            }
+            catch (Exception exception)
             {
                 APIServer.SendJsonErrorResponse(httpRequest.Response, ErrorTypes.ElementInteractionError, exception.Message, 500);
                 return;
