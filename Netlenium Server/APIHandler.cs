@@ -205,7 +205,7 @@ namespace Netlenium_Server
 
             // Determine the search type
             Netlenium.Types.SearchType searchType;
-            switch(APIServer.GetParamerter(httpRequest.Request, "search_type").ToUpper())
+            switch (APIServer.GetParamerter(httpRequest.Request, "search_type").ToUpper())
             {
                 case "ID":
                     searchType = Netlenium.Types.SearchType.Id;
@@ -250,7 +250,7 @@ namespace Netlenium_Server
             {
                 List<Netlenium.Driver.WebElement> Elements;
 
-                switch(Target.ToUpper())
+                switch (Target.ToUpper())
                 {
                     case "DOCUMENT":
                         Elements = Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).
@@ -280,7 +280,7 @@ namespace Netlenium_Server
 
                         return;
                 }
-                
+
                 if (APIServer.GetParamerter(httpRequest.Request, "index") == null)
                 {
                     Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope = Elements[0];
@@ -314,5 +314,49 @@ namespace Netlenium_Server
             }
         }
 
+        /// <summary>
+        /// Sends keys to the current element scope
+        /// </summary>
+        /// <param name="httpRequest"></param>
+        public static void SendKeys(HttpRequestEventArgs httpRequest)
+        {
+            if(CheckSession(httpRequest) == false)
+            {
+                return;
+            }
+
+            if(APIServer.GetParamerter(httpRequest.Request, "value") == null)
+            {
+                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "value");
+                return;
+            }
+
+            if(Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope == null)
+            {
+                APIServer.SendJsonErrorResponse(httpRequest.Response, ErrorTypes.ElementScopeNotSet, "The element scope was not set", 400);
+                return;
+            }
+
+            try
+            {
+                Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope.SendKeys(APIServer.GetParamerter(httpRequest.Request, "value"));
+                httpRequest.Response.StatusCode = 200;
+                httpRequest.Response.Headers.Add("content-Type", "application/json");
+
+                var Response = new
+                {
+                    Status = true,
+                    ResponseCode = httpRequest.Response.StatusCode
+                };
+
+                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(Response));
+                return;
+            }
+            catch(Exception exception)
+            {
+                APIServer.SendJsonErrorResponse(httpRequest.Response, ErrorTypes.ElementInteractionError, exception.Message, 500);
+                return;
+            }
+        }
     }
 }

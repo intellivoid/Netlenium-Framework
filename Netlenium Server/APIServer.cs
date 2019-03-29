@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace Netlenium_Server
 {
@@ -198,6 +199,10 @@ namespace Netlenium_Server
 
                 case "/set_element_scope":
                     APIHandler.SetElementScope(httpRequest);
+                    break;
+
+                case "/send_keys":
+                    APIHandler.SendKeys(httpRequest);
                     break;
 
                 default:

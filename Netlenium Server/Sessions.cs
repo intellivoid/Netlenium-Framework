@@ -44,11 +44,11 @@ namespace Netlenium_Server
 
             var DriverConfiguration = new Netlenium.DriverConfiguration()
             {
-                Headless = true,
+                Headless = false,
                 DriverLogging = false,
                 DriverVerboseLogging = false,
                 FrameworkLogging = true,
-                FrameworkVerboseLogging = false, 
+                FrameworkVerboseLogging = true, 
                 TargetPlatform = Netlenium.Types.Platform.AutoDetect
             };
 

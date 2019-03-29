@@ -78,6 +78,22 @@
         }
 
         /// <summary>
+        /// The element scope was not set
+        /// </summary>
+        public static string ElementScopeNotSet
+        {
+            get { return "ELEMENT_SCOPE_NOT_SET";  }
+        }
+
+        /// <summary>
+        /// There was an error while trying to interact with the element
+        /// </summary>
+        public static string ElementInteractionError
+        {
+            get { return "ELEMENT_INTERACTION_ERROR";  }
+        }
+
+        /// <summary>
         /// Unexpected Internal Server Error
         /// </summary>
         public static string InternalServerError
