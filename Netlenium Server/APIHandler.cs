@@ -1,6 +1,7 @@
 ﻿using Netlenium.WebServer;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace Netlenium_Server
 {
@@ -96,7 +97,7 @@ namespace Netlenium_Server
             
             try
             {
-                var Session = Sessions.CreateSession(httpRequest.Request.QueryString.Get("target_driver"));
+                var Session = Sessions.CreateSession(APIServer.GetParamerter(httpRequest.Request, "target_driver"));
 
                 APIServer.SendJsonResponse(
                     httpRequest.Response, new
@@ -202,14 +203,8 @@ namespace Netlenium_Server
                 return;
             }
 
-            if (APIServer.GetParamerter(httpRequest.Request, "scope") == null)
-            {
-                APIServer.SendJsonMissingParamerterResponse(httpRequest.Response, "scope");
-                return;
-            }
-
+            // Determine the search type
             Netlenium.Types.SearchType searchType;
-
             switch(APIServer.GetParamerter(httpRequest.Request, "search_type").ToUpper())
             {
                 case "ID":
@@ -240,14 +235,61 @@ namespace Netlenium_Server
                     return;
             }
 
+            /// Determine the target
+            string Target;
+            if (APIServer.GetParamerter(httpRequest.Request, "target") == null)
+            {
+                Target = "DOCUMENT";
+            }
+            else
+            {
+                Target = APIServer.GetParamerter(httpRequest.Request, "target");
+            }
+
             try
             {
-                var Elements = Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ObjectController.GetElements(searchType, APIServer.GetParamerter(httpRequest.Request, "value"));
+                List<Netlenium.Driver.WebElement> Elements;
 
-                //if(SelectedIndex != null)
-                //{
+                switch(Target.ToUpper())
+                {
+                    case "DOCUMENT":
+                        Elements = Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).
+                            ObjectController.GetElements(searchType, APIServer.GetParamerter(httpRequest.Request, "value"));
+                        break;
 
-                //}
+                    case "ELEMENT_SCOPE":
+                        if (Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope == null)
+                        {
+                            APIServer.SendJsonErrorResponse(
+                                httpRequest.Response, ErrorTypes.TargetNotFound,
+                                "The Element scope is not currently set or it does not exist", 400
+                            );
+
+                            return;
+                        }
+
+                        Elements = Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).
+                            ElementScope.GetElements(searchType, APIServer.GetParamerter(httpRequest.Request, "value"));
+                        break;
+
+                    default:
+                        APIServer.SendJsonErrorResponse(
+                                httpRequest.Response, ErrorTypes.InvalidTargetType,
+                                "The given target is not valid", 400
+                            );
+
+                        return;
+                }
+                
+                if (APIServer.GetParamerter(httpRequest.Request, "value") == null)
+                {
+                    Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).ElementScope = Elements[0];
+                }
+                else
+                {
+                    Sessions.GetSession(httpRequest.Request.QueryString.Get("session_id")).
+                        ElementScope = Elements[Convert.ToInt32(APIServer.GetParamerter(httpRequest.Request, "value"))];
+                }
 
                 httpRequest.Response.StatusCode = 200;
                 httpRequest.Response.Headers.Add("content-Type", "application/json");
@@ -263,18 +305,11 @@ namespace Netlenium_Server
             }
             catch (Netlenium.Driver.MethodNotSupportedForDriver)
             {
-                httpRequest.Response.StatusCode = 400;
-                httpRequest.Response.Headers.Add("content-Type", "application/json");
+                APIServer.SendJsonErrorResponse(
+                    httpRequest.Response, ErrorTypes.UnsupportedMethod,
+                    "The given method is not supported for the requested driver", 400
+                );
 
-                var ErrorResponse = new
-                {
-                    Status = false,
-                    ResponseCode = httpRequest.Response.StatusCode,
-                    ErrorType = "UNSUPPORTED_METHOD",
-                    Message = "The given method is not supported for the requested driver"
-                };
-
-                APIServer.SendResponse(httpRequest.Response, JsonConvert.SerializeObject(ErrorResponse));
                 return;
             }
         }

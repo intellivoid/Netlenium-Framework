@@ -62,6 +62,22 @@
         }
 
         /// <summary>
+        /// The given target to search in is invalid
+        /// </summary>
+        public static string InvalidTargetType
+        {
+            get { return "INVALID_TARGET_TYPE";  }
+        }
+
+        /// <summary>
+        /// The given target was not found
+        /// </summary>
+        public static string TargetNotFound
+        {
+            get { return "TARGET_NOT_FOUND";  }
+        }
+
+        /// <summary>
         /// Unexpected Internal Server Error
         /// </summary>
         public static string InternalServerError

@@ -97,7 +97,7 @@ namespace Netlenium_Server
             SendJsonResponse(
                 httpResponse, new
                 {
-                    Status = true,
+                    Status = false,
                     ResponseCode = 401,
                     ErrorType = ErrorTypes.MissingParamerter,
                     Message = $"Missing paramerter \"{parameterName}\""
@@ -116,7 +116,7 @@ namespace Netlenium_Server
             SendJsonResponse(
                 httpResponse, new
                 {
-                    Status = true,
+                    Status = false,
                     ResponseCode = 500,
                     ErrorType = ErrorTypes.InternalServerError,
                     Message = message,
