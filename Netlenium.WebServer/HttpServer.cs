@@ -296,16 +296,22 @@ namespace Netlenium.WebServer
 
         internal void UnregisterClient(HttpClient client)
         {
-            if (client == null)
-                throw new ArgumentNullException("client");
-
-            lock (_syncLock)
+            try
             {
-                Debug.Assert(_clients.ContainsKey(client));
+                if (client == null)
+                    throw new ArgumentNullException("client");
 
-                _clients.Remove(client);
+                lock (_syncLock)
+                {
 
-                _clientsChangedEvent.Set();
+                    _clients.Remove(client);
+
+                    _clientsChangedEvent.Set();
+                }
+            }
+            catch(Exception exception)
+            {
+                Logging.WriteEntry(Types.LogType.Warning, "Netlenium.WebServer", $"Cannot unregister client; {exception.Message}");
             }
         }
 

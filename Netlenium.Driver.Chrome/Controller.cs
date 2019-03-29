@@ -48,6 +48,11 @@ namespace Netlenium.Driver.Chrome
         /// Chrome Options
         /// </summary>
         private ChromeOptions DriverOptions { get; set; }
+
+        /// <summary>
+        /// The performance of the driver
+        /// </summary>
+        public PerformanceMonitor DriverPerformance { get; set; }
         
         /// <summary>
         /// Constructs the chrome controller and configures the chrome driver
@@ -123,7 +128,8 @@ namespace Netlenium.Driver.Chrome
             JavascriptExecuter = RemoteDriver;
             Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Attaching Driver Actions");
             _driverAction = new Actions(RemoteDriver);
-
+            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Attaching Performance Monitor");
+            DriverPerformance = new PerformanceMonitor(DriverService.ProcessId);
         }
 
         /// <summary>

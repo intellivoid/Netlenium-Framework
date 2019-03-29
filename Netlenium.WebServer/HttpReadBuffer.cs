@@ -220,9 +220,16 @@ namespace Netlenium.WebServer
 
         public void EndRead(Stream stream, IAsyncResult asyncResult)
         {
-            int read = stream.EndRead(asyncResult);
+            try
+            {
+                int read = stream.EndRead(asyncResult);
 
-            _available += read;
+                _available += read;
+            }
+            catch(ObjectDisposedException disposedException)
+            {
+                Logging.WriteEntry(Types.LogType.Warning, "Netlenium.WebServer", $"Cannot end buffer stream; {disposedException.Message}");
+            }
         }
     }
 }

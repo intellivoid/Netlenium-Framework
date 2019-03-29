@@ -163,6 +163,8 @@ namespace Netlenium_Server
                 throw new SessionNotFoundException();
             }
 
+            Console.WriteLine($"Ram: {activeSessions[sessionId].ObjectController.DriverPerformance.MemoryUsage} MB; CPU: {activeSessions[sessionId].ObjectController.DriverPerformance.CpuUsage}%");
+
             return activeSessions[sessionId];
         }
     }

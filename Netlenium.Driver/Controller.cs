@@ -25,6 +25,24 @@ namespace Netlenium.Driver
         private GeckoFXLib.Controller GeckoController { get; set; }
 
         /// <summary>
+        /// Returns the performance monitor of the driver
+        /// </summary>
+        public PerformanceMonitor DriverPerformance
+        {
+            get
+            {
+                switch(DriverType)
+                {
+                    case Types.Driver.Chrome:
+                        return ChromeController.DriverPerformance;
+
+                    default:
+                        throw new PropertyNotAvailableForSelectedDriver();
+                }
+            }
+        }
+
+        /// <summary>
         /// Controller Constructor
         /// </summary>
         /// <param name="driverConfiguration"></param>
