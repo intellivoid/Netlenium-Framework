@@ -13,7 +13,7 @@ namespace Netlenium_Server
         /// <summary>
         /// The current list of active sessions
         /// </summary>
-        private static Dictionary<string, Session> activeSessions;
+        public static Dictionary<string, Session> activeSessions;
 
         /// <summary>
         /// Generates a new Session ID

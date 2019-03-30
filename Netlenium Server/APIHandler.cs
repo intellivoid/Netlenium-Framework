@@ -83,6 +83,56 @@ namespace Netlenium_Server
         }
 
         /// <summary>
+        /// Returns the current active sessions
+        /// </summary>
+        /// <param name="httpRequest"></param>
+        public static void ActiveSessions(HttpRequestEventArgs httpRequest)
+        {
+            if(SessionManager.activeSessions != null)
+            {
+                if (SessionManager.activeSessions.Count > 0)
+                {
+                    List<Object> ActiveSessionsList = new List<object>();
+
+                    foreach (var ActiveSession in SessionManager.activeSessions.Values)
+                    {
+                        ActiveSessionsList.Add(new
+                        {
+                            SessionId = ActiveSession.Id,
+                            CreationDate = ActiveSession.CreationDate.ToString(),
+                            DriverType = ActiveSession.ObjectController.DriverType.ToString(),
+                            CurrentUrl = ActiveSession.ObjectController.Url
+                        });
+                    }
+
+                    APIServer.SendJsonResponse(
+                        httpRequest.Response, new
+                        {
+                            Status = true,
+                            ResponseCode = 200,
+                            ActiveSessions = ActiveSessionsList
+                        }, 200
+                     );
+
+                    return;
+
+                }
+            }
+            
+            APIServer.SendJsonResponse(
+                httpRequest.Response, new
+                {
+                    Status = true,
+                    ResponseCode = 200,
+                    ActiveSessions = new List<Object>()
+                }, 200
+            );
+
+            return;
+
+        }
+
+        /// <summary>
         /// Creates a new Session in memory
         /// </summary>
         /// <param name="httpRequest"></param>

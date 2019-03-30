@@ -12,7 +12,7 @@ namespace Netlenium.Driver
         /// <summary>
         /// The driver type that this controller is currently operating as
         /// </summary>
-        private Types.Driver DriverType { get; }
+        public Types.Driver DriverType { get; }
 
         /// <summary>
         /// The chrome driver controller

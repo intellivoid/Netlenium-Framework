@@ -189,6 +189,10 @@ namespace Netlenium_Server
                     }
                     break;
 
+                case "/rc/active_sessions":
+                    APIHandler.ActiveSessions(httpRequest);
+                    break;
+
                 case "/create_session":
                     APIHandler.CreateSession(httpRequest);
                     break;
