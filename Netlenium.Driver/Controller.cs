@@ -36,6 +36,30 @@ namespace Netlenium.Driver
                     case Types.Driver.Chrome:
                         return ChromeController.DriverPerformance;
 
+                    case Types.Driver.GeckoLib:
+                        throw new PropertyNotAvailableForSelectedDriver();
+
+                    default:
+                        throw new PropertyNotAvailableForSelectedDriver();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns the performance monitor of the instance
+        /// </summary>
+        public PerformanceMonitor InstancePerformance
+        {
+            get
+            {
+                switch(DriverType)
+                {
+                    case Types.Driver.Chrome:
+                        throw new PropertyNotAvailableForSelectedDriver();
+
+                    case Types.Driver.GeckoLib:
+                        return GeckoController.InstancePeformance;
+
                     default:
                         throw new PropertyNotAvailableForSelectedDriver();
                 }

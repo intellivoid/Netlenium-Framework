@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Netlenium.Types;
+using System.Diagnostics;
 
 namespace Netlenium.Driver.GeckoFXLib
 {
@@ -39,6 +40,11 @@ namespace Netlenium.Driver.GeckoFXLib
         private readonly DriverConfiguration _driverConfiguration;
 
         /// <summary>
+        /// The performance of the running instance
+        /// </summary>
+        public PerformanceMonitor InstancePeformance { get; set; }
+
+        /// <summary>
         /// Constructs the controller
         /// </summary>
         public Controller(DriverConfiguration driverConfiguration, DriverInstallationDetails driverInstalation)
@@ -59,6 +65,8 @@ namespace Netlenium.Driver.GeckoFXLib
             {
                 _webView.Show();
             }
+
+            this.InstancePeformance = new PerformanceMonitor(Process.GetCurrentProcess().Id);
         }
 
         /// <summary>
