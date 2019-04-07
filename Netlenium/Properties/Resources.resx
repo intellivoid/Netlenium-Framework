@@ -170,6 +170,18 @@ This EULA agreement, and any dispute arising out of or in connection with this E
         SUVORK5CYII=
 </value>
   </data>
+  <data name="Chrome_LatestReleaseAPI" xml:space="preserve">
+    <value>https://chromedriver.storage.googleapis.com/LATEST_RELEASE</value>
+  </data>
+  <data name="Chrome_Linux32API" xml:space="preserve">
+    <value>https://chromedriver.storage.googleapis.com/%VERSION%/chromedriver_linux32.zip</value>
+  </data>
+  <data name="Chrome_Linux64API" xml:space="preserve">
+    <value>https://chromedriver.storage.googleapis.com/%VERSION%/chromedriver_linux64.zip</value>
+  </data>
+  <data name="Chrome_Win32API" xml:space="preserve">
+    <value>https://chromedriver.storage.googleapis.com/%VERSION%/chromedriver_win32.zip</value>
+  </data>
   <data name="error" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m

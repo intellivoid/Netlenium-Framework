@@ -19,7 +19,7 @@ namespace Netlenium.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -84,6 +84,42 @@ namespace Netlenium.Properties {
             get {
                 object obj = ResourceManager.GetObject("bug", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://chromedriver.storage.googleapis.com/LATEST_RELEASE.
+        /// </summary>
+        internal static string Chrome_LatestReleaseAPI {
+            get {
+                return ResourceManager.GetString("Chrome_LatestReleaseAPI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://chromedriver.storage.googleapis.com/%VERSION%/chromedriver_linux32.zip.
+        /// </summary>
+        internal static string Chrome_Linux32API {
+            get {
+                return ResourceManager.GetString("Chrome_Linux32API", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://chromedriver.storage.googleapis.com/%VERSION%/chromedriver_linux64.zip.
+        /// </summary>
+        internal static string Chrome_Linux64API {
+            get {
+                return ResourceManager.GetString("Chrome_Linux64API", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://chromedriver.storage.googleapis.com/%VERSION%/chromedriver_win32.zip.
+        /// </summary>
+        internal static string Chrome_Win32API {
+            get {
+                return ResourceManager.GetString("Chrome_Win32API", resourceCulture);
             }
         }
         

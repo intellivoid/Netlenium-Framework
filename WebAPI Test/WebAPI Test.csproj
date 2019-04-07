@@ -93,9 +93,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Netlenium.WebAPI\Netlenium.WebAPI.csproj">
-      <Project>{7e96eaa4-f704-4464-a18e-f18404301753}</Project>
-      <Name>Netlenium.WebAPI</Name>
+    <ProjectReference Include="..\Netlenium\Netlenium.csproj">
+      <Project>{771c3ff1-37cb-4e3c-b86d-c8d88bb2c7a7}</Project>
+      <Name>Netlenium</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -130,10 +130,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Netlenium.Manager\Netlenium.Manager.csproj">
-      <Project>{767ca533-c037-4a58-99cf-828aa2ea0ebe}</Project>
-      <Name>Netlenium.Manager</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Netlenium.WebDriver\Netlenium.WebDriver.csproj">
       <Project>{da54ff5d-ac62-4681-9abb-add18f816456}</Project>
       <Name>Netlenium.WebDriver</Name>

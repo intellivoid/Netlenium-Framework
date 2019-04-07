@@ -134,6 +134,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.13.3.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.13.3\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -156,6 +159,10 @@
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Logging.cs" />
+    <Compile Include="Manager\Chrome.cs" />
+    <Compile Include="Manager\DriverUninstallationException.cs" />
+    <Compile Include="Manager\GeckoFX32.cs" />
+    <Compile Include="Manager\PermissionsErrorException.cs" />
     <Compile Include="PerformanceMonitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -169,6 +176,9 @@
     <Compile Include="Types\Platform.cs" />
     <Compile Include="Types\Scheme.cs" />
     <Compile Include="Types\SearchType.cs" />
+    <Compile Include="WebAPI\Google\Content.cs" />
+    <Compile Include="WebAPI\Google\ResourceNotFoundException.cs" />
+    <Compile Include="WebAPI\Google\Storage.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\AboutDialog.resx">
@@ -180,6 +190,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\logo.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="netlenium_package.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WebAPI\Github\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
