@@ -81,7 +81,7 @@ namespace Netlenium.WebServer
             CacheControl = "private";
             CharSet = "utf-8";
             ContentType = "text/html";
-            ExpiresAbsolute = DateTime.MinValue;
+            ExpiresAbsolute = DateTime.Now.AddSeconds(2);
             HeadersEncoding = Encoding.UTF8;
             Headers = new NameValueCollection();
             OutputStream = new HttpOutputStream(new MemoryStream());
