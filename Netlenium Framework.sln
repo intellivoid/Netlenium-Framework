@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium.Driver", "Netleni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium", "Netlenium\Netlenium.csproj", "{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium.Driver.Chrome", "Netlenium.Driver.Chrome\Netlenium.Driver.Chrome.csproj", "{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium Package Builder", "Netlenium Package Builder\Netlenium Package Builder.csproj", "{0CBD9069-3BD7-4EAC-A4B7-DC0765F01641}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium Runtime", "Netlenium Runtime\Netlenium Runtime.csproj", "{EAC91731-F4E8-4E4D-B7C2-A1E972DB10FE}"
@@ -107,30 +105,6 @@ Global
 		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsDebug|Any CPU.Build.0 = WindowsDebug|Any CPU
 		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsDebug|x86.ActiveCfg = WindowsDebug|x86
 		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsDebug|x86.Build.0 = WindowsDebug|x86
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Debug|x86.Build.0 = Debug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.LinuxBuild|Any CPU.ActiveCfg = LinuxBuild|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.LinuxBuild|Any CPU.Build.0 = LinuxBuild|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.LinuxBuild|x86.ActiveCfg = LinuxBuild|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.LinuxBuild|x86.Build.0 = LinuxBuild|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.LinuxDebug|Any CPU.ActiveCfg = LinuxDebug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.LinuxDebug|Any CPU.Build.0 = LinuxDebug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.LinuxDebug|x86.ActiveCfg = LinuxDebug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.LinuxDebug|x86.Build.0 = LinuxDebug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Release|x86.ActiveCfg = Release|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.Release|x86.Build.0 = Release|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.WindowsBuild|Any CPU.ActiveCfg = WindowsBuild|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.WindowsBuild|Any CPU.Build.0 = WindowsBuild|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.WindowsBuild|x86.ActiveCfg = WindowsBuild|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.WindowsBuild|x86.Build.0 = WindowsBuild|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.WindowsDebug|Any CPU.ActiveCfg = WindowsDebug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.WindowsDebug|Any CPU.Build.0 = WindowsDebug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.WindowsDebug|x86.ActiveCfg = WindowsDebug|Any CPU
-		{50C2E35B-1A36-4172-B9D8-2DD4CBE646AF}.WindowsDebug|x86.Build.0 = WindowsDebug|Any CPU
 		{0CBD9069-3BD7-4EAC-A4B7-DC0765F01641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0CBD9069-3BD7-4EAC-A4B7-DC0765F01641}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CBD9069-3BD7-4EAC-A4B7-DC0765F01641}.Debug|x86.ActiveCfg = Debug|x86

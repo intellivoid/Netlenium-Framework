@@ -104,6 +104,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chrome\Controller.cs" />
+    <Compile Include="Chrome\Element.cs" />
+    <Compile Include="Chrome\SearchTypeNotSupportedException.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="ElementMethodNotSupportedForDriver.cs" />
     <Compile Include="ElementPropertyNotSupportedForDriver.cs" />
@@ -127,13 +130,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Netlenium.Driver.Chrome\Netlenium.Driver.Chrome.csproj">
-      <Project>{50c2e35b-1a36-4172-b9d8-2dd4cbe646af}</Project>
-      <Name>Netlenium.Driver.Chrome</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Netlenium.Manager\Netlenium.Manager.csproj">
       <Project>{767ca533-c037-4a58-99cf-828aa2ea0ebe}</Project>
       <Name>Netlenium.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Netlenium.WebDriver\Netlenium.WebDriver.csproj">
+      <Project>{da54ff5d-ac62-4681-9abb-add18f816456}</Project>
+      <Name>Netlenium.WebDriver</Name>
     </ProjectReference>
     <ProjectReference Include="..\Netlenium\Netlenium.csproj">
       <Project>{771c3ff1-37cb-4e3c-b86d-c8d88bb2c7a7}</Project>
@@ -142,6 +145,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="netlenium_package.ico" />
+    <Content Include="ServiceExtensions\Chrome\background.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ServiceExtensions\Chrome\icons\netlenium_128.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ServiceExtensions\Chrome\icons\netlenium_16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ServiceExtensions\Chrome\icons\netlenium_48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ServiceExtensions\Chrome\manifest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
