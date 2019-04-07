@@ -118,10 +118,6 @@
       <Project>{0c046f1e-8a63-4722-94d9-80986978c017}</Project>
       <Name>Netlenium.Driver</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Netlenium.WebServer\Netlenium.WebServer.csproj">
-      <Project>{a86c1040-9ecc-45b1-8019-408b8a61289f}</Project>
-      <Name>Netlenium.WebServer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Netlenium\Netlenium.csproj">
       <Project>{771c3ff1-37cb-4e3c-b86d-c8d88bb2c7a7}</Project>
       <Name>Netlenium</Name>

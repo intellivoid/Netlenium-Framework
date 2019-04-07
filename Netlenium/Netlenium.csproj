@@ -179,6 +179,30 @@
     <Compile Include="WebAPI\Google\Content.cs" />
     <Compile Include="WebAPI\Google\ResourceNotFoundException.cs" />
     <Compile Include="WebAPI\Google\Storage.cs" />
+    <Compile Include="WebServer\HttpClient.cs" />
+    <Compile Include="WebServer\HttpContext.cs" />
+    <Compile Include="WebServer\HttpCookie.cs" />
+    <Compile Include="WebServer\HttpCookieCollection.cs" />
+    <Compile Include="WebServer\HttpExceptionEventHandler.cs" />
+    <Compile Include="WebServer\HttpFileCollection.cs" />
+    <Compile Include="WebServer\HttpMultiPartItem.cs" />
+    <Compile Include="WebServer\HttpMultiPartRequestParser.cs" />
+    <Compile Include="WebServer\HttpOutputStream.cs" />
+    <Compile Include="WebServer\HttpPostedFile.cs" />
+    <Compile Include="WebServer\HttpReadBuffer.cs" />
+    <Compile Include="WebServer\HttpRequest.cs" />
+    <Compile Include="WebServer\HttpRequestEventHandler.cs" />
+    <Compile Include="WebServer\HttpRequestParser.cs" />
+    <Compile Include="WebServer\HttpResponse.cs" />
+    <Compile Include="WebServer\HttpServer.cs" />
+    <Compile Include="WebServer\HttpServerState.cs" />
+    <Compile Include="WebServer\HttpServerUtility.cs" />
+    <Compile Include="WebServer\HttpTimeoutManager.cs" />
+    <Compile Include="WebServer\HttpUnknownRequestParser.cs" />
+    <Compile Include="WebServer\HttpUrlEncodedRequestParser.cs" />
+    <Compile Include="WebServer\HttpUtil.cs" />
+    <Compile Include="WebServer\ProtocolException.cs" />
+    <Compile Include="WebServer\WebServerException.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\AboutDialog.resx">
@@ -234,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="netlenium_package.ico" />
+    <Content Include="Resources\InternalServerError.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="WebAPI\Github\" />
