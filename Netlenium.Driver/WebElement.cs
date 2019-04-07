@@ -19,10 +19,6 @@ namespace Netlenium.Driver
         /// </summary>
         private Chrome.Element ChromeElement { get; }
 
-        /// <summary>
-        /// The GeckoFXLib element object
-        /// </summary>
-        private GeckoFXLib.Element GeckoFxLibElement { get; }
 
         /// <summary>
         /// Constructs the WebElement with a Chrome Element
@@ -32,16 +28,6 @@ namespace Netlenium.Driver
         {
             TargetDriver = Types.Driver.Chrome;
             ChromeElement = chromeElement;
-        }
-        
-        /// <summary>
-        /// Constructs the WebElement with a GeckoFXLib Element
-        /// </summary>
-        /// <param name="geckoFxLibElement"></param>
-        public WebElement(GeckoFXLib.Element geckoFxLibElement)
-        {
-            TargetDriver = Types.Driver.GeckoLib;
-            GeckoFxLibElement = geckoFxLibElement;
         }
 
         /// <summary>
@@ -55,10 +41,7 @@ namespace Netlenium.Driver
                 {
                     case Types.Driver.Chrome:
                         return ChromeElement.Text;
-
-                    case Types.Driver.GeckoLib:
-                        return GeckoFxLibElement.Text;
-
+                        
                     default:
                         throw new ElementPropertyNotSupportedForDriver();
                 }
@@ -76,10 +59,7 @@ namespace Netlenium.Driver
                 {
                     case Types.Driver.Chrome:
                         return ChromeElement.Visible;
-
-                    case Types.Driver.GeckoLib:
-                        return GeckoFxLibElement.Visible;
-
+                        
                     default:
                         throw new ElementPropertyNotSupportedForDriver();
                 }
@@ -98,9 +78,6 @@ namespace Netlenium.Driver
                 case Types.Driver.Chrome:
                     return ChromeElement.GetAttribute(attributeName);
 
-                case Types.Driver.GeckoLib:
-                    return GeckoFxLibElement.GetAttribute(attributeName);
-
                 default:
                     throw new ElementMethodNotSupportedForDriver();
             }
@@ -118,11 +95,7 @@ namespace Netlenium.Driver
                 case Types.Driver.Chrome:
                     ChromeElement.SetAttribute(attributeName, value);
                     break;
-
-                case Types.Driver.GeckoLib:
-                    GeckoFxLibElement.SetAttribute(attributeName, value);
-                    break;
-
+                   
                 default:
                     throw new ElementMethodNotSupportedForDriver();
             }
@@ -149,18 +122,6 @@ namespace Netlenium.Driver
                         throw new InvokeFailureException(exception.Message);
                     }
 
-                case Types.Driver.GeckoLib:
-                    try
-                    {
-                        GeckoFxLibElement.Click();
-                        break;
-                    }
-                    catch (Exception exception)
-                    {
-                        Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", $"There was an error while trying to click the element; {exception.Message}");
-                        throw new InvokeFailureException(exception.Message);
-                    }
-
                 default:
                     throw new ElementMethodNotSupportedForDriver();
             }
@@ -177,10 +138,6 @@ namespace Netlenium.Driver
             {
                 case Types.Driver.Chrome:
                     ChromeElement.SendKeys(keys);
-                    break;
-
-                case Types.Driver.GeckoLib:
-                    GeckoFxLibElement.SendKeys(keys);
                     break;
 
                 default:
@@ -210,12 +167,6 @@ namespace Netlenium.Driver
 
                     return webElements;
 
-                case Types.Driver.GeckoLib:
-                    var geckoFxLibResults = GeckoFxLibElement.GetElements(searchType, input);
-                    webElements.AddRange(geckoFxLibResults.Select(geckoFxLibElement => new WebElement(geckoFxLibElement)));
-
-                    return webElements;
-
                 default:
                     throw new MethodNotSupportedForDriver();
             }
@@ -237,16 +188,6 @@ namespace Netlenium.Driver
                     if(chromeResults.Count > 1)
                     {
                         return new WebElement(chromeResults[0]);
-                    }
-
-                    throw new NoElementsFoundException();
-
-                case Types.Driver.GeckoLib:
-                    var geckoFxLibResults = GeckoFxLibElement.GetElements(searchType, input);
-
-                    if(geckoFxLibResults.Count > 1)
-                    {
-                        return new WebElement(geckoFxLibResults[0]);
                     }
 
                     throw new NoElementsFoundException();

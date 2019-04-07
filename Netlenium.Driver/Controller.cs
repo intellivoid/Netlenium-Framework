@@ -18,11 +18,7 @@ namespace Netlenium.Driver
         /// The chrome driver controller
         /// </summary>
         private Chrome.Controller ChromeController { get; set; }
-
-        /// <summary>
-        /// The GeckoFX Core Lib Controller
-        /// </summary>
-        private GeckoFXLib.Controller GeckoController { get; set; }
+        
 
         /// <summary>
         /// Returns the performance monitor of the driver
@@ -57,9 +53,6 @@ namespace Netlenium.Driver
                     case Types.Driver.Chrome:
                         throw new PropertyNotAvailableForSelectedDriver();
 
-                    case Types.Driver.GeckoLib:
-                        return GeckoController.InstancePeformance;
-
                     default:
                         throw new PropertyNotAvailableForSelectedDriver();
                 }
@@ -82,13 +75,6 @@ namespace Netlenium.Driver
                     ChromeController = new Chrome.Controller(driverConfiguration, chromeInstallationDetails);
                     DriverType = driverConfiguration.TargetDriver;
                     break;
-
-                case Types.Driver.GeckoLib:
-                    
-                    var geckoFx32InstallationDetails = Manager.GeckoFx32.CheckInstallation(driverConfiguration.TargetPlatform);
-                    GeckoController = new GeckoFXLib.Controller(driverConfiguration, geckoFx32InstallationDetails);
-                    DriverType = driverConfiguration.TargetDriver;
-                    break;
                     
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -105,10 +91,6 @@ namespace Netlenium.Driver
             {
                 case Types.Driver.Chrome:
                     ChromeController.Initialize();
-                    break;
-
-                case Types.Driver.GeckoLib:
-                    GeckoController.Initialize();
                     break;
 
                 default:
@@ -132,13 +114,6 @@ namespace Netlenium.Driver
                     Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Success");
                     break;
 
-                case Types.Driver.GeckoLib:
-                    GeckoController.Quit();
-                    GeckoController.Dispose();
-                    GeckoController = null;
-                    Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", "Success");
-                    break;
-
                 default:
                     Logging.WriteEntry(Types.LogType.Error, "Neltneium.Driver", "The given method Quit() is not supported for the given driver");
                     throw new MethodNotSupportedForDriver();
@@ -156,10 +131,7 @@ namespace Netlenium.Driver
                 {
                     case Types.Driver.Chrome:
                         return ChromeController.DocumentTitle;
-
-                    case Types.Driver.GeckoLib:
-                        return GeckoController.DocumentTitle;
-
+                        
                     default:
                         throw new PropertyNotAvailableForSelectedDriver();
                 }
@@ -177,10 +149,7 @@ namespace Netlenium.Driver
                 {
                     case Types.Driver.Chrome:
                         return ChromeController.Url;
-
-                    case Types.Driver.GeckoLib:
-                        return GeckoController.Url;
-
+                        
                     default:
                         throw new PropertyNotAvailableForSelectedDriver();
                 }
@@ -207,16 +176,6 @@ namespace Netlenium.Driver
                         throw new JavascriptExecutionException(exception.Message);
                     }
 
-                case Types.Driver.GeckoLib:
-                    try
-                    {
-                        return GeckoController.ExecuteJs(code);
-                    }
-                    catch(Exception exception)
-                    {
-                        throw new JavascriptExecutionException(exception.Message);
-                    }
-
                 default:
                     throw new MethodNotSupportedForDriver();
             }
@@ -234,10 +193,6 @@ namespace Netlenium.Driver
             {
                 case Types.Driver.Chrome:
                     ChromeController.Naviagte(url);
-                    break;
-
-                case Types.Driver.GeckoLib:
-                    GeckoController.Navigate(url);
                     break;
 
                 default:
@@ -261,10 +216,6 @@ namespace Netlenium.Driver
                     ChromeController.GoBack();
                     break;
 
-                case Types.Driver.GeckoLib:
-                    GeckoController.GoBack();
-                    break;
-
                 default:
                     Logging.WriteEntry(Types.LogType.Error, "Netlenium.Driver", "The method GoBack() is not supported for the selected driver");
                     throw new MethodNotSupportedForDriver();
@@ -284,10 +235,6 @@ namespace Netlenium.Driver
             {
                 case Types.Driver.Chrome:
                     ChromeController.GoForward();
-                    break;
-
-                case Types.Driver.GeckoLib:
-                    GeckoController.GoForward();
                     break;
 
                 default:
@@ -316,15 +263,6 @@ namespace Netlenium.Driver
                     var chromeResults = ChromeController.GetElements(searchType, input);
 
                     webElements.AddRange(chromeResults.Select(chromeElement => new WebElement(chromeElement)));
-
-                    Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Returned {webElements.Count} element(s)");
-                    return webElements;
-
-                case Types.Driver.GeckoLib:
-                    
-                    var geckoFxLibResults = GeckoController.GetElements(searchType, input);
-
-                    webElements.AddRange(geckoFxLibResults.Select(geckoFxLibElement => new WebElement(geckoFxLibElement)));
 
                     Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver", $"Returned {webElements.Count} element(s)");
                     return webElements;

@@ -131,10 +131,6 @@
       <Project>{50c2e35b-1a36-4172-b9d8-2dd4cbe646af}</Project>
       <Name>Netlenium.Driver.Chrome</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Netlenium.Driver.GeckoFXLib\Netlenium.Driver.GeckoFXLib.csproj">
-      <Project>{8d0a4270-8ba5-4c69-9402-5a4ffbe54e21}</Project>
-      <Name>Netlenium.Driver.GeckoFXLib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Netlenium.Manager\Netlenium.Manager.csproj">
       <Project>{767ca533-c037-4a58-99cf-828aa2ea0ebe}</Project>
       <Name>Netlenium.Manager</Name>
