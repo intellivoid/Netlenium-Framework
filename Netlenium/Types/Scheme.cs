@@ -2,7 +2,7 @@
 {
     public enum Scheme
     {
-        HTTP = 0,
-        HTTPS = 1
+        Http = 0,
+        Https = 1
     }
 }

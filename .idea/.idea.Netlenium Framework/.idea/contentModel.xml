@@ -1,5 +1,509 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Netkas\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Netkas\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Netlenium Framework.-874509109.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Netkas\Documents\gits\netlenium-framework" t="IncludeFlat">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Documentation" t="Include" />
+      <e p="linux_make_debug.sh" t="Include" />
+      <e p="linux_make_release.sh" t="Include" />
+      <e p="Netlenium" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration.cs" t="Include" />
+        <e p="DriverConfiguration.cs" t="Include" />
+        <e p="DriverInstallationDetails.cs" t="Include" />
+        <e p="Forms" t="Include">
+          <e p="AboutDialog.cs" t="Include" />
+          <e p="AboutDialog.Designer.cs" t="Include" />
+          <e p="AboutDialog.resx" t="Include" />
+        </e>
+        <e p="Logging.cs" t="Include" />
+        <e p="Manager" t="Include">
+          <e p="Chrome.cs" t="Include" />
+          <e p="DriverUninstallationException.cs" t="Include" />
+          <e p="GeckoFX32.cs" t="Include" />
+          <e p="PermissionsErrorException.cs" t="Include" />
+        </e>
+        <e p="Netlenium.csproj" t="IncludeRecursive" />
+        <e p="netlenium_package.ico" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PerformanceMonitor.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+        </e>
+        <e p="ProxyConfiguration.cs" t="Include" />
+        <e p="Resources" t="Include">
+          <e p="bug.png" t="Include" />
+          <e p="error.png" t="Include" />
+          <e p="exclamation.png" t="Include" />
+          <e p="information.png" t="Include" />
+          <e p="InternalServerError.html" t="Include" />
+          <e p="logo.ico" t="Include" />
+          <e p="logo_128.png" t="Include" />
+          <e p="logo_16.png" t="Include" />
+          <e p="logo_20.png" t="Include" />
+          <e p="logo_24.png" t="Include" />
+          <e p="logo_256.png" t="Include" />
+          <e p="logo_32.png" t="Include" />
+          <e p="logo_48.png" t="Include" />
+          <e p="logo_512.png" t="Include" />
+          <e p="logo_64.png" t="Include" />
+        </e>
+        <e p="Types" t="Include">
+          <e p="Driver.cs" t="Include" />
+          <e p="LogType.cs" t="Include" />
+          <e p="Platform.cs" t="Include" />
+          <e p="Scheme.cs" t="Include" />
+          <e p="SearchType.cs" t="Include" />
+        </e>
+        <e p="WebAPI" t="Include">
+          <e p="Github" t="Include" />
+          <e p="Google" t="Include">
+            <e p="Content.cs" t="Include" />
+            <e p="ResourceNotFoundException.cs" t="Include" />
+            <e p="Storage.cs" t="Include" />
+          </e>
+        </e>
+        <e p="WebServer" t="Include">
+          <e p="HttpClient.cs" t="Include" />
+          <e p="HttpContext.cs" t="Include" />
+          <e p="HttpCookie.cs" t="Include" />
+          <e p="HttpCookieCollection.cs" t="Include" />
+          <e p="HttpExceptionEventHandler.cs" t="Include" />
+          <e p="HttpFileCollection.cs" t="Include" />
+          <e p="HttpMultiPartItem.cs" t="Include" />
+          <e p="HttpMultiPartRequestParser.cs" t="Include" />
+          <e p="HttpOutputStream.cs" t="Include" />
+          <e p="HttpPostedFile.cs" t="Include" />
+          <e p="HttpReadBuffer.cs" t="Include" />
+          <e p="HttpRequest.cs" t="Include" />
+          <e p="HttpRequestEventHandler.cs" t="Include" />
+          <e p="HttpRequestParser.cs" t="Include" />
+          <e p="HttpResponse.cs" t="Include" />
+          <e p="HttpServer.cs" t="Include" />
+          <e p="HttpServerState.cs" t="Include" />
+          <e p="HttpServerUtility.cs" t="Include" />
+          <e p="HttpTimeoutManager.cs" t="Include" />
+          <e p="HttpUnknownRequestParser.cs" t="Include" />
+          <e p="HttpUrlEncodedRequestParser.cs" t="Include" />
+          <e p="HttpUtil.cs" t="Include" />
+          <e p="ProtocolException.cs" t="Include" />
+          <e p="WebServerException.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Netlenium Framework.sln" t="IncludeFlat" />
+      <e p="Netlenium Package Builder" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MessageType.cs" t="Include" />
+        <e p="Netlenium Package Builder.csproj" t="IncludeRecursive" />
+        <e p="netlenium_package_build.ico" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Netlenium Package Builder.md" t="Include" />
+      <e p="Netlenium Package Tool" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="CreatePackageDialog.cs" t="Include" />
+        <e p="CreatePackageDialog.Designer.cs" t="Include" />
+        <e p="CreatePackageDialog.resx" t="Include" />
+        <e p="FileEditor.cs" t="Include" />
+        <e p="FileEditor.Designer.cs" t="Include" />
+        <e p="FileEditor.resx" t="Include" />
+        <e p="HotkeyManager.cs" t="Include" />
+        <e p="MainForm.cs" t="Include" />
+        <e p="MainForm.Designer.cs" t="Include" />
+        <e p="MainForm.resx" t="Include" />
+        <e p="Netlenium Package Tool.csproj" t="IncludeRecursive" />
+        <e p="netlenium_wizard.ico" t="Include" />
+        <e p="NewDirectoryDialog.cs" t="Include" />
+        <e p="NewDirectoryDialog.Designer.cs" t="Include" />
+        <e p="NewDirectoryDialog.resx" t="Include" />
+        <e p="NewFileDialog.cs" t="Include" />
+        <e p="NewFileDialog.Designer.cs" t="Include" />
+        <e p="NewFileDialog.resx" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PackageDetailsEditor.cs" t="Include" />
+        <e p="PackageDetailsEditor.Designer.cs" t="Include" />
+        <e p="PackageDetailsEditor.resx" t="Include" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="RenameDirectoryDialog.cs" t="Include" />
+        <e p="RenameDirectoryDialog.Designer.cs" t="Include" />
+        <e p="RenameDirectoryDialog.resx" t="Include" />
+        <e p="RenameFileDialog.cs" t="Include" />
+        <e p="RenameFileDialog.Designer.cs" t="Include" />
+        <e p="RenameFileDialog.resx" t="Include" />
+        <e p="Resources" t="Include">
+          <e p="arrow_redo.png" t="Include" />
+          <e p="arrow_undo.png" t="Include" />
+          <e p="dev_48.png" t="Include" />
+          <e p="dev_512.png" t="Include" />
+          <e p="disk.png" t="Include" />
+          <e p="editor.ico" t="Include" />
+          <e p="logo.ico" t="Include" />
+          <e p="netlenium_package_cat.ico" t="Include" />
+          <e p="netlenium_wizard.ico" t="Include" />
+          <e p="project_48.png" t="Include" />
+          <e p="project_512.png" t="Include" />
+          <e p="project_64.png" t="Include" />
+          <e p="terminal_icon.ico" t="Include" />
+        </e>
+        <e p="SearchManager.cs" t="Include" />
+        <e p="Syntax.cs" t="Include" />
+      </e>
+      <e p="Netlenium Runtime" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="LibraryDependency.cs" t="Include" />
+        <e p="Netlenium Runtime.csproj" t="IncludeRecursive" />
+        <e p="netlenium_package_cat.ico" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+        </e>
+      </e>
+      <e p="Netlenium Server" t="IncludeRecursive">
+        <e p="APIHandler.cs" t="Include" />
+        <e p="APIServer.cs" t="Include" />
+        <e p="App.config" t="Include" />
+        <e p="cloud.ico" t="Include" />
+        <e p="ErrorTypes.cs" t="Include" />
+        <e p="Netlenium Server.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Session.cs" t="Include" />
+        <e p="SessionManager.cs" t="Include" />
+        <e p="SessionNotFoundException.cs" t="Include" />
+        <e p="UnsupportedDriverException.cs" t="Include" />
+        <e p="UnsupportedRequestMethodException.cs" t="Include" />
+        <e p="WebResources" t="Include">
+          <e p="favicon.ico" t="Include" />
+        </e>
+      </e>
+      <e p="Netlenium.Driver" t="IncludeRecursive">
+        <e p="Chrome" t="Include">
+          <e p="Controller.cs" t="Include" />
+          <e p="Element.cs" t="Include" />
+          <e p="SearchTypeNotSupportedException.cs" t="Include" />
+        </e>
+        <e p="Controller.cs" t="Include" />
+        <e p="ElementMethodNotSupportedForDriver.cs" t="Include" />
+        <e p="ElementPropertyNotSupportedForDriver.cs" t="Include" />
+        <e p="InvokeFailureException.cs" t="Include" />
+        <e p="JavascriptExecutionException.cs" t="Include" />
+        <e p="MethodNotSupportedForDriver.cs" t="Include" />
+        <e p="Netlenium.Driver.csproj" t="IncludeRecursive" />
+        <e p="netlenium_package.ico" t="Include" />
+        <e p="NoElementsFoundException.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+        </e>
+        <e p="PropertyNotAvailableForSelectedDriver.cs" t="Include" />
+        <e p="ServiceExtensions" t="Include">
+          <e p="Chrome" t="Include">
+            <e p="background.js" t="Include" />
+            <e p="icons" t="Include">
+              <e p="netlenium_128.png" t="Include" />
+              <e p="netlenium_16.png" t="Include" />
+              <e p="netlenium_48.png" t="Include" />
+            </e>
+            <e p="manifest.json" t="Include" />
+          </e>
+        </e>
+        <e p="WebElement.cs" t="Include" />
+      </e>
+      <e p="Netlenium.WebDriver" t="IncludeRecursive">
+        <e p="By.cs" t="Include" />
+        <e p="Chrome" t="Include">
+          <e p="ChromeDriver.cs" t="Include" />
+          <e p="ChromeDriverService.cs" t="Include" />
+          <e p="ChromeMobileEmulationDeviceSettings.cs" t="Include" />
+          <e p="ChromeNetworkConditions.cs" t="Include" />
+          <e p="ChromeOptions.cs" t="Include" />
+          <e p="ChromePerformanceLoggingPreferences.cs" t="Include" />
+          <e p="ChromeWebElement.cs" t="Include" />
+        </e>
+        <e p="Cookie.cs" t="Include" />
+        <e p="DefaultFileDetector.cs" t="Include" />
+        <e p="DriverOptions.cs" t="Include" />
+        <e p="DriverOptionsMergeResult.cs" t="Include" />
+        <e p="DriverService.cs" t="Include" />
+        <e p="DriverServiceNotFoundException.cs" t="Include" />
+        <e p="Edge" t="Include">
+          <e p="EdgeDriver.cs" t="Include" />
+          <e p="EdgeDriverService.cs" t="Include" />
+          <e p="EdgeOptions.cs" t="Include" />
+          <e p="EdgeWebElement.cs" t="Include" />
+        </e>
+        <e p="ElementClickInterceptedException.cs" t="Include" />
+        <e p="ElementNotInteractableException.cs" t="Include" />
+        <e p="ElementNotSelectableException.cs" t="Include" />
+        <e p="ElementNotVisibleException.cs" t="Include" />
+        <e p="Firefox" t="Include">
+          <e p="FirefoxBinary.cs" t="Include" />
+          <e p="FirefoxDriver.cs" t="Include" />
+          <e p="FirefoxDriverCommandExecutor.cs" t="Include" />
+          <e p="FirefoxDriverLogLevel.cs" t="Include" />
+          <e p="FirefoxDriverServer.cs" t="Include" />
+          <e p="FirefoxDriverService.cs" t="Include" />
+          <e p="FirefoxExtension.cs" t="Include" />
+          <e p="FirefoxOptions.cs" t="Include" />
+          <e p="FirefoxProfile.cs" t="Include" />
+          <e p="FirefoxProfileManager.cs" t="Include" />
+          <e p="FirefoxWebElement.cs" t="Include" />
+          <e p="Internal" t="Include">
+            <e p="Executable.cs" t="Include" />
+            <e p="ILock.cs" t="Include" />
+            <e p="IniFileReader.cs" t="Include" />
+            <e p="SocketLock.cs" t="Include" />
+          </e>
+          <e p="Preferences.cs" t="Include" />
+        </e>
+        <e p="GlobalSuppressions.cs" t="Include" />
+        <e p="HTML5" t="Include">
+          <e p="AppCacheStatus.cs" t="Include" />
+          <e p="IApplicationCache.cs" t="Include" />
+          <e p="IHasApplicationCache.cs" t="Include" />
+          <e p="IHasLocationContext.cs" t="Include" />
+          <e p="IHasWebStorage.cs" t="Include" />
+          <e p="ILocalStorage.cs" t="Include" />
+          <e p="ILocationContext.cs" t="Include" />
+          <e p="ISessionStorage.cs" t="Include" />
+          <e p="IWebStorage.cs" t="Include" />
+          <e p="Location.cs" t="Include" />
+        </e>
+        <e p="IAlert.cs" t="Include" />
+        <e p="IAllowsFileDetection.cs" t="Include" />
+        <e p="ICapabilities.cs" t="Include" />
+        <e p="ICookieJar.cs" t="Include" />
+        <e p="IE" t="Include">
+          <e p="InternetExplorerDriver.cs" t="Include" />
+          <e p="InternetExplorerDriverLogLevel.cs" t="Include" />
+          <e p="InternetExplorerDriverService.cs" t="Include" />
+          <e p="InternetExplorerOptions.cs" t="Include" />
+          <e p="InternetExplorerWebElement.cs" t="Include" />
+        </e>
+        <e p="IFileDetector.cs" t="Include" />
+        <e p="IHasCapabilities.cs" t="Include" />
+        <e p="IHasInputDevices.cs" t="Include" />
+        <e p="IHasTouchScreen.cs" t="Include" />
+        <e p="IJavascriptExecutor.cs" t="Include" />
+        <e p="IKeyboard.cs" t="Include" />
+        <e p="ILocatable.cs" t="Include" />
+        <e p="ILogs.cs" t="Include" />
+        <e p="IMouse.cs" t="Include" />
+        <e p="INavigation.cs" t="Include" />
+        <e p="Interactions" t="Include">
+          <e p="ActionBuilder.cs" t="Include" />
+          <e p="Actions.cs" t="Include" />
+          <e p="ActionSequence.cs" t="Include" />
+          <e p="ButtonReleaseAction.cs" t="Include" />
+          <e p="ClickAction.cs" t="Include" />
+          <e p="ClickAndHoldAction.cs" t="Include" />
+          <e p="CompositeAction.cs" t="Include" />
+          <e p="ContextClickAction.cs" t="Include" />
+          <e p="DoubleClickAction.cs" t="Include" />
+          <e p="DoubleTapAction.cs" t="Include" />
+          <e p="FlickAction.cs" t="Include" />
+          <e p="IAction.cs" t="Include" />
+          <e p="ICoordinates.cs" t="Include" />
+          <e p="InputDevice.cs" t="Include" />
+          <e p="InputDeviceKind.cs" t="Include" />
+          <e p="Interaction.cs" t="Include" />
+          <e p="KeyboardAction.cs" t="Include" />
+          <e p="KeyDownAction.cs" t="Include" />
+          <e p="KeyInputDevice.cs" t="Include" />
+          <e p="KeyUpAction.cs" t="Include" />
+          <e p="LongPressAction.cs" t="Include" />
+          <e p="MouseAction.cs" t="Include" />
+          <e p="MoveMouseAction.cs" t="Include" />
+          <e p="MoveToOffsetAction.cs" t="Include" />
+          <e p="PauseInteraction.cs" t="Include" />
+          <e p="PointerInputDevice.cs" t="Include" />
+          <e p="ScreenMoveAction.cs" t="Include" />
+          <e p="ScreenPressAction.cs" t="Include" />
+          <e p="ScreenReleaseAction.cs" t="Include" />
+          <e p="ScrollAction.cs" t="Include" />
+          <e p="SendKeysAction.cs" t="Include" />
+          <e p="SingleKeyAction.cs" t="Include" />
+          <e p="SingleTapAction.cs" t="Include" />
+          <e p="TouchAction.cs" t="Include" />
+          <e p="TouchActions.cs" t="Include" />
+          <e p="WebDriverAction.cs" t="Include" />
+        </e>
+        <e p="Internal" t="Include">
+          <e p="AsyncJavaScriptExecutor.cs" t="Include" />
+          <e p="FileUtilities.cs" t="Include" />
+          <e p="IActionExecutor.cs" t="Include" />
+          <e p="IFindsByClassName.cs" t="Include" />
+          <e p="IFindsByCssSelector.cs" t="Include" />
+          <e p="IFindsById.cs" t="Include" />
+          <e p="IFindsByLinkText.cs" t="Include" />
+          <e p="IFindsByName.cs" t="Include" />
+          <e p="IFindsByPartialLinkText.cs" t="Include" />
+          <e p="IFindsByTagName.cs" t="Include" />
+          <e p="IFindsByXPath.cs" t="Include" />
+          <e p="IHasCapabilitiesDictionary.cs" t="Include" />
+          <e p="IWebElementReference.cs" t="Include" />
+          <e p="IWrapsDriver.cs" t="Include" />
+          <e p="IWrapsElement.cs" t="Include" />
+          <e p="NativeMethods.cs" t="Include" />
+          <e p="PortUtilities.cs" t="Include" />
+          <e p="ResourceUtilities.cs" t="Include" />
+          <e p="ReturnedCapabilities.cs" t="Include" />
+          <e p="ReturnedCookie.cs" t="Include" />
+          <e p="ZipStorer.cs" t="Include" />
+        </e>
+        <e p="InvalidCookieDomainException.cs" t="Include" />
+        <e p="InvalidElementStateException.cs" t="Include" />
+        <e p="InvalidSelectorException.cs" t="Include" />
+        <e p="IOptions.cs" t="Include" />
+        <e p="IRotatable.cs" t="Include" />
+        <e p="ISearchContext.cs" t="Include" />
+        <e p="ITakesScreenshot.cs" t="Include" />
+        <e p="ITargetLocator.cs" t="Include" />
+        <e p="ITimeouts.cs" t="Include" />
+        <e p="ITouchScreen.cs" t="Include" />
+        <e p="IWebDriver.cs" t="Include" />
+        <e p="IWebElement.cs" t="Include" />
+        <e p="IWindow.cs" t="Include" />
+        <e p="Keys.cs" t="Include" />
+        <e p="LogEntry.cs" t="Include" />
+        <e p="LogLevel.cs" t="Include" />
+        <e p="LogType.cs" t="Include" />
+        <e p="Netlenium.WebDriver.csproj" t="IncludeRecursive" />
+        <e p="NoAlertPresentException.cs" t="Include" />
+        <e p="NoSuchElementException.cs" t="Include" />
+        <e p="NoSuchFrameException.cs" t="Include" />
+        <e p="NoSuchWindowException.cs" t="Include" />
+        <e p="NotFoundException.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Opera" t="Include">
+          <e p="OperaDriver.cs" t="Include" />
+          <e p="OperaDriverService.cs" t="Include" />
+          <e p="OperaOptions.cs" t="Include" />
+          <e p="OperaWebElement.cs" t="Include" />
+        </e>
+        <e p="packages.config" t="Include" />
+        <e p="Platform.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Proxy.cs" t="Include" />
+        <e p="Remote" t="Include">
+          <e p="CapabilityType.cs" t="Include" />
+          <e p="Command.cs" t="Include" />
+          <e p="CommandInfo.cs" t="Include" />
+          <e p="CommandInfoRepository.cs" t="Include" />
+          <e p="DesiredCapabilities.cs" t="Include" />
+          <e p="DriverCommand.cs" t="Include" />
+          <e p="DriverServiceCommandExecutor.cs" t="Include" />
+          <e p="ErrorResponse.cs" t="Include" />
+          <e p="HttpCommandExecutor.cs" t="Include" />
+          <e p="ICommandExecutor.cs" t="Include" />
+          <e p="ICommandServer.cs" t="Include" />
+          <e p="IHasSessionId.cs" t="Include" />
+          <e p="JsonConverters" t="Include">
+            <e p="CharArrayJsonConverter.cs" t="Include" />
+            <e p="ResponseValueJsonConverter.cs" t="Include" />
+          </e>
+          <e p="LocalFileDetector.cs" t="Include" />
+          <e p="ReadOnlyDesiredCapabilities.cs" t="Include" />
+          <e p="RemoteAlert.cs" t="Include" />
+          <e p="RemoteApplicationCache.cs" t="Include" />
+          <e p="RemoteCookieJar.cs" t="Include" />
+          <e p="RemoteCoordinates.cs" t="Include" />
+          <e p="RemoteKeyboard.cs" t="Include" />
+          <e p="RemoteLocalStorage.cs" t="Include" />
+          <e p="RemoteLocationContext.cs" t="Include" />
+          <e p="RemoteLogs.cs" t="Include" />
+          <e p="RemoteMouse.cs" t="Include" />
+          <e p="RemoteNavigator.cs" t="Include" />
+          <e p="RemoteOptions.cs" t="Include" />
+          <e p="RemoteSessionSettings.cs" t="Include" />
+          <e p="RemoteSessionStorage.cs" t="Include" />
+          <e p="RemoteTargetLocator.cs" t="Include" />
+          <e p="RemoteTimeouts.cs" t="Include" />
+          <e p="RemoteTouchScreen.cs" t="Include" />
+          <e p="RemoteWebDriver.cs" t="Include" />
+          <e p="RemoteWebElement.cs" t="Include" />
+          <e p="RemoteWebElementFactory.cs" t="Include" />
+          <e p="RemoteWebStorage.cs" t="Include" />
+          <e p="RemoteWindow.cs" t="Include" />
+          <e p="Response.cs" t="Include" />
+          <e p="SendingRemoteHttpRequestEventArgs.cs" t="Include" />
+          <e p="SessionId.cs" t="Include" />
+          <e p="StackTraceElement.cs" t="Include" />
+          <e p="W3CWireProtocolCommandInfoRepository.cs" t="Include" />
+          <e p="WebDriverError.cs" t="Include" />
+          <e p="WebDriverWireProtocolCommandInfoRepository.cs" t="Include" />
+        </e>
+        <e p="Safari" t="Include">
+          <e p="SafariDriver.cs" t="Include" />
+          <e p="SafariDriverService.cs" t="Include" />
+          <e p="SafariOptions.cs" t="Include" />
+        </e>
+        <e p="ScreenOrientation.cs" t="Include" />
+        <e p="Screenshot.cs" t="Include" />
+        <e p="StaleElementReferenceException.cs" t="Include" />
+        <e p="Support" t="Include">
+          <e p="DefaultWait{T}.cs" t="Include" />
+          <e p="IClock.cs" t="Include" />
+          <e p="IWait{T}.cs" t="Include" />
+          <e p="SystemClock.cs" t="Include" />
+          <e p="WebDriverWait.cs" t="Include" />
+        </e>
+        <e p="UnableToSetCookieException.cs" t="Include" />
+        <e p="UnhandledAlertException.cs" t="Include" />
+        <e p="WebDriverException.cs" t="Include" />
+        <e p="WebDriverResult.cs" t="Include" />
+        <e p="WebDriverTimeoutException.cs" t="Include" />
+        <e p="XPathLookupException.cs" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="README.md" t="Include" />
+      <e p="Solution Items" t="Include" />
+      <e p="Testing" t="Include" />
+      <e p="WebAPI Test" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="WebAPI Test.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="win32_make_debug.bat" t="Include" />
+      <e p="win32_make_release.bat" t="Include" />
+    </e>
+  </component>
   <component name="RiderRiderContentModelStore">
     <excludedPaths />
   </component>

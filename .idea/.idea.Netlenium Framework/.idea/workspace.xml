@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b49503ca-0549-4ca8-bdc3-4f8c6dd5c9ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/By.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/By.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Chrome/ChromeDriver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Chrome/ChromeDriver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Chrome/ChromeDriverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Chrome/ChromeDriverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Chrome/ChromeMobileEmulationDeviceSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Chrome/ChromeMobileEmulationDeviceSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Chrome/ChromeNetworkConditions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Chrome/ChromeNetworkConditions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Chrome/ChromeOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Chrome/ChromeOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Chrome/ChromePerformanceLoggingPreferences.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Chrome/ChromePerformanceLoggingPreferences.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Chrome/ChromeWebElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Chrome/ChromeWebElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Cookie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Cookie.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/DefaultFileDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/DefaultFileDetector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/DriverOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/DriverOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/DriverOptionsMergeResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/DriverOptionsMergeResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/DriverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/DriverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/DriverServiceNotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/DriverServiceNotFoundException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Edge/EdgeDriver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Edge/EdgeDriver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Edge/EdgeDriverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Edge/EdgeDriverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Edge/EdgeOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Edge/EdgeOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Edge/EdgeWebElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Edge/EdgeWebElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ElementClickInterceptedException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ElementClickInterceptedException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ElementNotInteractableException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ElementNotInteractableException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ElementNotSelectableException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ElementNotSelectableException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ElementNotVisibleException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ElementNotVisibleException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxBinary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxBinary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxDriver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxDriver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxDriverCommandExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxDriverCommandExecutor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxDriverLogLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxDriverLogLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxDriverServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxDriverServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxDriverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxDriverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxProfileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxProfileManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/FirefoxWebElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/FirefoxWebElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/Internal/Executable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/Internal/Executable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/Internal/ILock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/Internal/ILock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/Internal/IniFileReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/Internal/IniFileReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/Internal/SocketLock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/Internal/SocketLock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Firefox/Preferences.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Firefox/Preferences.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/GlobalSuppressions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/GlobalSuppressions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/HTML5/AppCacheStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/HTML5/AppCacheStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/HTML5/IApplicationCache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/HTML5/IApplicationCache.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/HTML5/IHasApplicationCache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/HTML5/IHasApplicationCache.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/HTML5/IHasLocationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/HTML5/IHasLocationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/HTML5/IHasWebStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/HTML5/IHasWebStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/HTML5/ILocalStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/HTML5/ILocalStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/HTML5/ILocationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/HTML5/ILocationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/HTML5/ISessionStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/HTML5/ISessionStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/HTML5/IWebStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/HTML5/IWebStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/HTML5/Location.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/HTML5/Location.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IAlert.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IAlert.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IAllowsFileDetection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IAllowsFileDetection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ICapabilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ICapabilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ICookieJar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ICookieJar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IE/InternetExplorerDriver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IE/InternetExplorerDriver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IE/InternetExplorerDriverLogLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IE/InternetExplorerDriverLogLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IE/InternetExplorerDriverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IE/InternetExplorerDriverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IE/InternetExplorerOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IE/InternetExplorerOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IE/InternetExplorerWebElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IE/InternetExplorerWebElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IFileDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IFileDetector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IHasCapabilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IHasCapabilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IHasInputDevices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IHasInputDevices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IHasTouchScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IHasTouchScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IJavascriptExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IJavascriptExecutor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IKeyboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ILocatable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ILocatable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ILogs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ILogs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IMouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IMouse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/INavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/INavigation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IRotatable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IRotatable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ISearchContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ISearchContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ITakesScreenshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ITakesScreenshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ITargetLocator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ITargetLocator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ITimeouts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ITimeouts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ITouchScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ITouchScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IWebDriver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IWebDriver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IWebElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IWebElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/IWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/IWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ActionBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ActionBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ActionSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ActionSequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/Actions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ButtonReleaseAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ButtonReleaseAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ClickAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ClickAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ClickAndHoldAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ClickAndHoldAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/CompositeAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/CompositeAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ContextClickAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ContextClickAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/DoubleClickAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/DoubleClickAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/DoubleTapAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/DoubleTapAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/FlickAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/FlickAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/IAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/IAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ICoordinates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ICoordinates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/InputDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/InputDevice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/InputDeviceKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/InputDeviceKind.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/Interaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/Interaction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/KeyDownAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/KeyDownAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/KeyInputDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/KeyInputDevice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/KeyUpAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/KeyUpAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/KeyboardAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/KeyboardAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/LongPressAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/LongPressAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/MouseAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/MouseAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/MoveMouseAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/MoveMouseAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/MoveToOffsetAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/MoveToOffsetAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/PauseInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/PauseInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/PointerInputDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/PointerInputDevice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ScreenMoveAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ScreenMoveAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ScreenPressAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ScreenPressAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ScreenReleaseAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ScreenReleaseAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/ScrollAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/ScrollAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/SendKeysAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/SendKeysAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/SingleKeyAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/SingleKeyAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/SingleTapAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/SingleTapAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/TouchAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/TouchAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/TouchActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/TouchActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Interactions/WebDriverAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Interactions/WebDriverAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/AsyncJavaScriptExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/AsyncJavaScriptExecutor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/FileUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/FileUtilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IActionExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IActionExecutor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IFindsByClassName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IFindsByClassName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IFindsByCssSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IFindsByCssSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IFindsById.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IFindsById.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IFindsByLinkText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IFindsByLinkText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IFindsByName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IFindsByName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IFindsByPartialLinkText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IFindsByPartialLinkText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IFindsByTagName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IFindsByTagName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IFindsByXPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IFindsByXPath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IHasCapabilitiesDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IHasCapabilitiesDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IWebElementReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IWebElementReference.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IWrapsDriver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IWrapsDriver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/IWrapsElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/IWrapsElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/NativeMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/NativeMethods.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/PortUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/PortUtilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/ResourceUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/ResourceUtilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/ReturnedCapabilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/ReturnedCapabilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/ReturnedCookie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/ReturnedCookie.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Internal/ZipStorer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Internal/ZipStorer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/InvalidCookieDomainException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/InvalidCookieDomainException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/InvalidElementStateException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/InvalidElementStateException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/InvalidSelectorException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/InvalidSelectorException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Keys.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Keys.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/LogEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/LogEntry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/LogLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/LogLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/LogType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/LogType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Netlenium.WebDriver.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium.WebDriver/Netlenium.WebDriver.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/NoAlertPresentException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/NoAlertPresentException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/NoSuchElementException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/NoSuchElementException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/NoSuchFrameException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/NoSuchFrameException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/NoSuchWindowException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/NoSuchWindowException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/NotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/NotFoundException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Opera/OperaDriver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Opera/OperaDriver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Opera/OperaDriverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Opera/OperaDriverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Opera/OperaOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Opera/OperaOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Opera/OperaWebElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Opera/OperaWebElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Platform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Platform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Proxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Proxy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/CapabilityType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/CapabilityType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/Command.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/Command.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/CommandInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/CommandInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/CommandInfoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/CommandInfoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/DesiredCapabilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/DesiredCapabilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/DriverCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/DriverCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/DriverServiceCommandExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/DriverServiceCommandExecutor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/ErrorResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/ErrorResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/HttpCommandExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/HttpCommandExecutor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/ICommandExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/ICommandExecutor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/ICommandServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/ICommandServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/IHasSessionId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/IHasSessionId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/JsonConverters/CharArrayJsonConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/JsonConverters/CharArrayJsonConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/JsonConverters/ResponseValueJsonConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/JsonConverters/ResponseValueJsonConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/LocalFileDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/LocalFileDetector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/ReadOnlyDesiredCapabilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/ReadOnlyDesiredCapabilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteAlert.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteAlert.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteApplicationCache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteApplicationCache.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteCookieJar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteCookieJar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteCoordinates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteCoordinates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteKeyboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteLocalStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteLocalStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteLocationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteLocationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteLogs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteLogs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteMouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteMouse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteNavigator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteNavigator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteSessionSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteSessionSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteSessionStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteSessionStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteTargetLocator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteTargetLocator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteTimeouts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteTimeouts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteTouchScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteTouchScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteWebDriver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteWebDriver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteWebElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteWebElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteWebElementFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteWebElementFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteWebStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteWebStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/RemoteWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/RemoteWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/Response.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/Response.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/SendingRemoteHttpRequestEventArgs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/SendingRemoteHttpRequestEventArgs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/SessionId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/SessionId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/StackTraceElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/StackTraceElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/W3CWireProtocolCommandInfoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/W3CWireProtocolCommandInfoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/WebDriverError.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/WebDriverError.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Remote/WebDriverWireProtocolCommandInfoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Remote/WebDriverWireProtocolCommandInfoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Safari/SafariDriver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Safari/SafariDriver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Safari/SafariDriverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Safari/SafariDriverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Safari/SafariOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Safari/SafariOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/ScreenOrientation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/ScreenOrientation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Screenshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Screenshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/StaleElementReferenceException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/StaleElementReferenceException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Support/DefaultWait{T}.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Support/DefaultWait{T}.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Support/IClock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Support/IClock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Support/IWait{T}.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Support/IWait{T}.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Support/SystemClock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Support/SystemClock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/Support/WebDriverWait.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/Support/WebDriverWait.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/UnableToSetCookieException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/UnableToSetCookieException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/UnhandledAlertException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/UnhandledAlertException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/WebDriverException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/WebDriverException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/WebDriverResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/WebDriverResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/WebDriverTimeoutException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/WebDriverTimeoutException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.WebDriver/XPathLookupException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebDriver/XPathLookupException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium/Netlenium.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/Netlenium.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/Properties/Resources.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/Properties/Resources.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium/WebServer/HttpClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/WebServer/HttpClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/packages.config" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Netlenium/Properties/Resources.resx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-60031" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Netlenium/packages.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Netlenium/WebServer/HttpClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Netlenium/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Netlenium/WebServer/HttpClient.cs" />
+        <option value="$PROJECT_DIR$/Netlenium/WebDriver/Safari/SafariOptions.cs" />
+        <option value="$PROJECT_DIR$/Netlenium/WebDriver/Chrome/ChromeOptions.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="698" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Netlenium" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Netlenium" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Properties" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Netlenium.WebDriver" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b49503ca-0549-4ca8-bdc3-4f8c6dd5c9ac" name="Default Changelist" comment="" />
+      <created>1554727267551</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554727267551</updated>
+      <workItem from="1554727282775" duration="1059000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1059000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="10" y="20" width="1346" height="698" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2496112" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="NuGet" weight="0.32920355" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32920355" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info anchor="bottom" id="Build" weight="0.32920355" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Netlenium/WebDriver/StaleElementReferenceException.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/WebDriver/Cookie.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/packages.config">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/WebDriver/DriverOptions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/WebServer/HttpClient.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <marker date="1554728373839" expanded="false" signature="6:239" ph="..." />
+            <marker date="1554728373839" expanded="true" signature="270:22344" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="316:22342" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="1410:1754" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="1784:2847" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="1905:2000" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="2039:2144" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="2182:2285" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="2588:2837" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="2655:2783" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="2883:2950" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="2984:3469" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="3062:3258" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="3291:3459" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="3530:4359" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="3605:3708" ph="/* The below state matches the RequestClose state. Dispose immediately ... */" />
+            <marker date="1554728373839" expanded="true" signature="3851:3930" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="3947:4359" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="4001:4216" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="4236:4334" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="4357:4359" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="4654:4752" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="4773:4868" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="4950:5116" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="5149:5351" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="5403:6142" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="5482:6064" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="5528:6050" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="6180:6748" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="6787:7609" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="6882:7599" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="6995:7338" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="7648:8012" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="7691:7776" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="8056:8818" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="8196:8781" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="8869:11308" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="9001:11271" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="9407:9677" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="9715:9826" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="9864:11074" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="10215:10628" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="11092:11193" ph="/* We've made a parser available. Recurs back to start processing ... */" />
+            <marker date="1554728373839" expanded="true" signature="11353:11985" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="13021:13499" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="12046:12416" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="13022:13293" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="13326:13489" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="13561:15500" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="13639:15290" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="13791:13925" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="13946:15276" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="14010:14147" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="14184:15258" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="14663:15063" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="14729:14854" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="14907:15033" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="15096:15201" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="15323:15490" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="15538:15795" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="15840:16121" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="16168:18073" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="16474:16589" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="16875:17155" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="17489:17578" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="17848:17961" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="18151:18289" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="18334:18619" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="18667:19135" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="19171:19385" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="19234:19375" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="19419:19540" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="19575:19667" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="19727:21561" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="19832:20020" ph="/* If there is no request available, the error didn't occur as part ... */" />
+            <marker date="1554728373839" expanded="true" signature="20054:20133" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="20150:21318" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="20381:20500" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="20539:20595" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="20669:21263" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="20891:21245" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="21088:21223" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="21351:21551" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="21592:22124" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="21630:22114" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="21775:21886" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="21926:22039" ph="{...}" />
+            <marker date="1554728373839" expanded="true" signature="22158:22336" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/WebDriver/Safari/SafariOptions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/Properties/Resources.resx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60031" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/WebDriver/Chrome/ChromeOptions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-363">
+          <caret line="520" lean-forward="true" selection-start-line="520" selection-end-line="520" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
