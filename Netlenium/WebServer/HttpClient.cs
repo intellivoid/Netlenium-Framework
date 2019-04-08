@@ -710,7 +710,7 @@ namespace Netlenium.WebServer
                     TcpClient = null;
                 }
 
-                Reset();
+                Reset(); // Note: Any buffer or stream must be reset before/after object disposal to prevent memory leakage
 
                 _disposed = true;
             }

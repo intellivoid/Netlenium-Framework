@@ -229,7 +229,7 @@ namespace Netlenium.WebServer
             catch(ObjectDisposedException disposedException)
             {
                 Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Stream was already disposed, resetting buffer.");
-		Reset();
+		Reset();// Note: Any buffer or stream must be reset before/after object disposal to prevent memory leakage
             }
         }
     }
