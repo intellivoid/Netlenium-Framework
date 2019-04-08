@@ -166,7 +166,7 @@ namespace Netlenium.WebServer
                     /// forcefully.
                     /// 
                     /// </summary>
-                    Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer.AttackMitigation", $"This behavior looks like the one of a Slowloris attack.  Taking down the HTTP connection to the client.");
+                    //Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer.AttackMitigation", $"This behavior looks like the one of a Slowloris attack.  Taking down the HTTP connection to the client.");
 
                 }
                 
