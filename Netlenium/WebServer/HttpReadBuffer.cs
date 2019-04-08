@@ -220,8 +220,13 @@ namespace Netlenium.WebServer
 
         public void EndRead(Stream stream, IAsyncResult asyncResult)
         {
-            try
+             try
             {
+                if(stream == null)
+                {
+                    Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Stream is NULL, resetting buffer.");
+                    Reset();
+                }
                 int read = stream.EndRead(asyncResult);
 
                 _available += read;
@@ -229,7 +234,7 @@ namespace Netlenium.WebServer
             catch(ObjectDisposedException disposedException)
             {
                 Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Stream was already disposed, resetting buffer.");
-		Reset();// Note: Any buffer or stream must be reset before/after object disposal to prevent memory leakage
+                Reset();
             }
         }
     }

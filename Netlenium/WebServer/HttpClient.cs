@@ -46,13 +46,8 @@ namespace Netlenium.WebServer
 
         public HttpClient(HttpServer server, TcpClient client)
         {
-            if (server == null)
-                throw new ArgumentNullException("server");
-            if (client == null)
-                throw new ArgumentNullException("client");
-
-            Server = server;
-            TcpClient = client;
+            Server = server ?? throw new ArgumentNullException("server");
+            TcpClient = client ?? throw new ArgumentNullException("client");
 
             ReadBuffer = new HttpReadBuffer(server.ReadBufferSize);
             _writeBuffer = new byte[server.WriteBufferSize];
@@ -149,15 +144,45 @@ namespace Netlenium.WebServer
 
             try
             {
-                ReadBuffer.EndRead(_stream, asyncResult);
-
-                if (ReadBuffer.DataAvailable){
-                    ProcessReadBuffer();
-		    return;
-                }else{
-		    Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Buffer empty. Disposing client...");
+                if (ReadBuffer == null)
+                {
+                    Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Buffer is NULL. Disposing client...");
+                     
                     Dispose();
-		}
+                }
+                try
+                {
+                    ReadBuffer.EndRead(_stream, asyncResult);
+                } catch
+                {
+
+                    /// <summary>
+                    /// SLOWLORIS ATTACK PREVENTION
+                    /// 
+                    /// This behavior is quite similar to a SlowHTTP-type attack, meaning the client will open a 
+                    /// connection, and won't let the server end it due to regulations of the HTTP protocol.
+                    /// 
+                    /// Through this, we'll dispose the current Http client by terminating the current HTTP connection
+                    /// forcefully.
+                    /// 
+                    /// </summary>
+                    Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer.AttackMitigation", $"This behavior looks like the one of a Slowloris attack.  Taking down the HTTP connection to the client.");
+
+                }
+                
+
+                if (ReadBuffer.DataAvailable)
+                {
+                    ProcessReadBuffer();
+                    
+                }
+                else
+                {
+                    Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Buffer empty. Disposing client...");
+                    Dispose();
+                    return;
+                }
+                    
             }
             catch (ObjectDisposedException ex)
             {
@@ -278,9 +303,8 @@ namespace Netlenium.WebServer
         {
             // Process the Expect: 100-continue header.
 
-            string expectHeader;
 
-            if (Headers.TryGetValue("Expect", out expectHeader))
+            if (Headers.TryGetValue("Expect", out string expectHeader))
             {
                 // Remove the expect header for the next run.
 
@@ -305,20 +329,17 @@ namespace Netlenium.WebServer
         {
             // Read the content.
 
-            string contentLengthHeader;
 
-            if (Headers.TryGetValue("Content-Length", out contentLengthHeader))
+            if (Headers.TryGetValue("Content-Length", out string contentLengthHeader))
             {
-                int contentLength;
 
-                if (!int.TryParse(contentLengthHeader, out contentLength))
+                if (!int.TryParse(contentLengthHeader, out int contentLength))
                     throw new ProtocolException(String.Format("Could not parse Content-Length header '{0}'", contentLengthHeader));
 
-                string contentTypeHeader;
                 string contentType = null;
                 string contentTypeExtra = null;
 
-                if (Headers.TryGetValue("Content-Type", out contentTypeHeader))
+                if (Headers.TryGetValue("Content-Type", out string contentTypeHeader))
                 {
                     string[] parts = contentTypeHeader.Split(new[] { ';' }, 2);
 
@@ -408,10 +429,16 @@ namespace Netlenium.WebServer
                     _stream.BeginWrite(_writeBuffer, 0, read, WriteCallback, null),
                     this
                 );
+            
+            }catch(System.IO.IOException ex)
+            {
+                Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"The HTTP server wasn't able to write to the stream because the stream was terminated by the client/host machine. Priority=NORMAL");
+
+                Dispose();
             }
             catch (Exception ex)
             {
-                Logging.WriteEntry(Types.LogType.Information, "Netlenium.WebServer", $"BeginWrite failed {ex}");
+                Logging.WriteEntry(Types.LogType.Error, "Netlenium.WebServer", $"BeginWrite failed {ex}");
 
                 Dispose();
             }
@@ -588,15 +615,14 @@ namespace Netlenium.WebServer
 
         private void ProcessRequestCompleted()
         {
-            string connectionHeader;
 
             // Do not accept new requests when the server is stopping.
 
             if (
                 !_errored &&
                 Server.State == HttpServerState.Started &&
-                Headers.TryGetValue("Connection", out connectionHeader) &&
-                String.Equals(connectionHeader, "keep-alive", StringComparison.OrdinalIgnoreCase)
+                Headers.TryGetValue("Connection", out string connectionHeader) &&
+                string.Equals(connectionHeader, "keep-alive", StringComparison.OrdinalIgnoreCase)
             )
                 BeginRequest();
             else
@@ -710,7 +736,7 @@ namespace Netlenium.WebServer
                     TcpClient = null;
                 }
 
-                Reset(); // Note: Any buffer or stream must be reset before/after object disposal to prevent memory leakage
+                Reset();
 
                 _disposed = true;
             }

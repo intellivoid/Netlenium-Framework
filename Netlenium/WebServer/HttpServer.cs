@@ -82,12 +82,13 @@ namespace Netlenium.WebServer
 
         public HttpServer()
         {
+
             EndPoint = new IPEndPoint(IPAddress.Loopback, 0);
 
-            ReadBufferSize = 4096;
-            WriteBufferSize = 4096;
+            ReadBufferSize = 3092;
+            WriteBufferSize = 3092;
             ShutdownTimeout = TimeSpan.FromSeconds(30);
-            ReadTimeout = TimeSpan.FromSeconds(90);
+            ReadTimeout = TimeSpan.FromSeconds(15);
             WriteTimeout = TimeSpan.FromSeconds(90);
 
             ServerBanner = String.Format("Netlenium Framework/{0}", GetType().Assembly.GetName().Version);
