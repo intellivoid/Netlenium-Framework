@@ -228,7 +228,8 @@ namespace Netlenium.WebServer
             }
             catch(ObjectDisposedException disposedException)
             {
-                Logging.WriteEntry(Types.LogType.Warning, "Netlenium.WebServer", $"Cannot end buffer stream; {disposedException.Message}");
+                Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Stream was already disposed, resetting buffer.");
+		Reset();
             }
         }
     }

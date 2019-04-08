@@ -151,10 +151,13 @@ namespace Netlenium.WebServer
             {
                 ReadBuffer.EndRead(_stream, asyncResult);
 
-                if (ReadBuffer.DataAvailable)
+                if (ReadBuffer.DataAvailable){
                     ProcessReadBuffer();
-                else
+		    return;
+                }else{
+		    Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Buffer empty. Disposing client...");
                     Dispose();
+		}
             }
             catch (ObjectDisposedException ex)
             {
