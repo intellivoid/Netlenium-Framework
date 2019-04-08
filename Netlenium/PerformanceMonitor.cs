@@ -20,24 +20,12 @@ namespace Netlenium
         /// <summary>
         /// Returns the Memory Usage in MB
         /// </summary>
-        public double MemoryUsage
-        {
-            get
-            {
-                return (MemoryCounter.NextValue() / 1024 / 1024);
-            }
-        }
+        public double MemoryUsage => (MemoryCounter.NextValue() / 1024 / 1024);
 
         /// <summary>
         /// Returns the CPU Usage (0-100)
         /// </summary>
-        public double CpuUsage
-        {
-            get
-            {
-                return CpuCounter.NextValue();
-            }
-        }
+        public double CpuUsage => CpuCounter.NextValue();
 
         /// <summary>
         /// Public Constructor
