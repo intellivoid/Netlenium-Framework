@@ -10,12 +10,12 @@ namespace Netlenium
         /// <summary>
         /// The Memory Counter
         /// </summary>
-        private PerformanceCounter MemoryCounter { get; set; }
+        private PerformanceCounter MemoryCounter { get; }
 
         /// <summary>
         /// The CPU Counter
         /// </summary>
-        private PerformanceCounter CpuCounter { get; set; }
+        private PerformanceCounter CpuCounter { get; }
 
         /// <summary>
         /// Returns the Memory Usage in MB
@@ -44,16 +44,16 @@ namespace Netlenium
         /// <returns></returns>
         private static string GetProcessInstanceName(int pid)
         {
-            PerformanceCounterCategory cat = new PerformanceCounterCategory("Process");
+            var cat = new PerformanceCounterCategory("Process");
 
-            string[] instances = cat.GetInstanceNames();
-            foreach (string instance in instances)
+            var instances = cat.GetInstanceNames();
+            foreach (var instance in instances)
             {
 
-                using (PerformanceCounter cnt = new PerformanceCounter("Process",
-                     "ID Process", instance, true))
+                using (var cnt = new PerformanceCounter("Process", "ID Process", instance, true))
                 {
-                    int val = (int)cnt.RawValue;
+                    var val = (int)cnt.RawValue;
+                    
                     if (val == pid)
                     {
                         return instance;
