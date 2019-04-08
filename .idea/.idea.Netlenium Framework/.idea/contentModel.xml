@@ -18,6 +18,8 @@
           <e p="AboutDialog.Designer.cs" t="Include" />
           <e p="AboutDialog.resx" t="Include" />
         </e>
+        <e p="GeneralLocalStrings.Designer.cs" t="Include" />
+        <e p="GeneralLocalStrings.resx" t="Include" />
         <e p="Logging.cs" t="Include" />
         <e p="Manager" t="Include">
           <e p="Chrome.cs" t="Include" />

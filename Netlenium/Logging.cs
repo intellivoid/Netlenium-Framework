@@ -8,17 +8,17 @@ namespace Netlenium
     /// <summary>
     /// Logging Class
     /// </summary>
-    public class Logging
+    public static class Logging
     {
         /// <summary>
         /// If set to True, general logging messages will be displayed in the CLI
         /// </summary>
-        public static bool Enabled { get; set; } = false;
+        public static bool Enabled { get; set; }
 
         /// <summary>
         /// If set to True, alongside general logging messages; debugging messages will be shown on the CLI
         /// </summary>
-        public static bool VerboseLogging { get; set; } = false;
+        public static bool VerboseLogging { get; set; }
 
         /// <summary>
         /// The output file to output all the data to (AllowLogging doesn't need to be set to True for this to work)
@@ -63,7 +63,7 @@ namespace Netlenium
                     {
                         try
                         {
-                            File.AppendAllText(OutputFile, $@"[SUCCESS][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
+                            File.AppendAllText(OutputFile, string.Format(GeneralLocalStrings.Logging_WriteEntry_SUCCESS_FileFormat, timestamp, moduleName, entryText, Environment.NewLine));
                         }
                         catch(Exception exception)
                         {
@@ -72,11 +72,11 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write(@"[  !  ]");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Warning);
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write($@"[{timestamp}]: ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Timestamp, timestamp);
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write($@"{moduleName} > ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_ModuleName, moduleName);
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write(entryText);
                     Console.WriteLine();
@@ -88,7 +88,7 @@ namespace Netlenium
                     {
                         try
                         {
-                            File.AppendAllText(OutputFile, $@"[INFORMATION][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
+                            File.AppendAllText(OutputFile, string.Format(GeneralLocalStrings.Logging_WriteEntry_INFORMATION_FileFormat, timestamp, moduleName, entryText, Environment.NewLine));
                         }
                         catch(Exception exception)
                         {
@@ -97,11 +97,11 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write(@"[ ~~~ ]");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Information);
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write($@"[{timestamp}]: ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Timestamp, timestamp);
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write($@"{moduleName} > ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_ModuleName, moduleName);
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write(entryText);
                     Console.WriteLine();
@@ -113,7 +113,7 @@ namespace Netlenium
                     {
                         try
                         {
-                            File.AppendAllText(OutputFile, $@"[WARNING][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
+                            File.AppendAllText(OutputFile, string.Format(GeneralLocalStrings.Logging_WriteEntry_WARNING_FileFormat, timestamp, moduleName, entryText, Environment.NewLine));
                         }
                         catch (Exception exception)
                         {
@@ -122,11 +122,11 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(@"[  !  ]");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Warning);
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write($@"[{timestamp}]: ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Timestamp, timestamp);
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write($@"{moduleName} > ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_ModuleName, moduleName);
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write(entryText);
                     Console.WriteLine();
@@ -138,7 +138,7 @@ namespace Netlenium
                     {
                         try
                         {
-                            File.AppendAllText(OutputFile, $@"[ERROR][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
+                            File.AppendAllText(OutputFile, string.Format(GeneralLocalStrings.Logging_WriteEntry_ERROR_FileFormat, timestamp, moduleName, entryText, Environment.NewLine));
                         }
                         catch (Exception exception)
                         {
@@ -147,11 +147,11 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(@"[  X  ]");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Error);
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write($@"[{timestamp}]: ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Timestamp, timestamp);
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write($@"{moduleName} > ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_ModuleName, moduleName);
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write(entryText);
                     Console.WriteLine();
@@ -163,7 +163,7 @@ namespace Netlenium
                     {
                         try
                         {
-                            File.AppendAllText(OutputFile, $@"[DEBUG][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
+                            File.AppendAllText(OutputFile, string.Format(GeneralLocalStrings.Logging_WriteEntry_DEBUG_FileFormat, timestamp, moduleName, entryText, Environment.NewLine));
                         }
                         catch (Exception exception)
                         {
@@ -172,11 +172,11 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.Write(@"[DEBUG]");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Debug);
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write($@"[{timestamp}]: ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Timestamp, timestamp);
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write($@"{moduleName} > ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_ModuleName, moduleName);
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write(entryText);
                     Console.WriteLine();
@@ -188,7 +188,7 @@ namespace Netlenium
                     {
                         try
                         {
-                            File.AppendAllText(OutputFile, $@"[VERBOSE][{timestamp}]: {moduleName} > {entryText}{Environment.NewLine}");
+                            File.AppendAllText(OutputFile, string.Format(GeneralLocalStrings.Logging_WriteEntry_VERBOSE_FileFormat, timestamp, moduleName, entryText, Environment.NewLine));
                         }
                         catch (Exception exception)
                         {
@@ -197,11 +197,11 @@ namespace Netlenium
                     }
 
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(@"[VERBO]");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_VERBO);
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write($@"[{timestamp}]: ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_Timestamp, timestamp);
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write($@"{moduleName} > ");
+                    Console.Write(GeneralLocalStrings.Logging_WriteEntry_ModuleName, moduleName);
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write(entryText);
                     Console.WriteLine();

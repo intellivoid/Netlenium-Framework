@@ -158,6 +158,7 @@
     <Compile Include="Forms\AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneralLocalStrings.Designer.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="Manager\Chrome.cs" />
     <Compile Include="Manager\DriverUninstallationException.cs" />
@@ -208,6 +209,7 @@
     <EmbeddedResource Include="Forms\AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GeneralLocalStrings.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
