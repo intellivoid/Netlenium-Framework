@@ -178,7 +178,6 @@ namespace Netlenium.WebServer
                 }
                 else
                 {
-                    Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Buffer empty. Disposing client...");
                     Dispose();
                     return;
                 }
