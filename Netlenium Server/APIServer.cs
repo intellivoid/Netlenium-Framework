@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Netlenium_Server
@@ -30,33 +31,80 @@ namespace Netlenium_Server
             }
         }
 
-        /// <summary>
-        /// Starts the Web Service on a random port, if port is set to another value other than 0
-        /// it will use that port instead of a random port
-        /// </summary>
-        /// <param name="port"></param>
-        /// <returns></returns>
-        public static string Start(int port = 0)
+        public static Thread StartThread(string domain = "localhost", int port = 0)
         {
+            Thread HTTPThread = new Thread(new ParameterizedThreadStart(StartWSthread));
+            string[] HTTPParams = new string[2];
+            HTTPParams[0] = domain;
+            HTTPParams[1] = port.ToString();
+            HTTPThread.Start(HTTPParams);
+            return HTTPThread;
+        }
+
+        private static void StartWSthread(object parameters)
+        {
+            string[] Params = (string[])parameters;
+            string domain = Params[0];
+            int port = Convert.ToInt32(Params[1]);
             Server = new HttpServer();
 
             if (port != 0)
             {
-                Server.EndPoint = new IPEndPoint(IPAddress.Loopback, port);
+                Server.EndPoint = new IPEndPoint(IPAddress.Any, port);
             }
 
             Server.RequestReceived += (s, e) => { RequestReceived(s, e); };
             Server.Start();
+            Program.HttpController["Started"] = true;
+            Program.HttpController["Status"] = true;
+            Task.Run(async () =>
+            {
+                while (true)
+                {
+                    
+                    if((bool)Program.HttpController["ShutdownSignal"])
+                    {
+                        Program.HttpController["ShutdownSignal"] = false;
+                        Server.Stop();
+                        Program.HttpController["Started"] = false;
+                        Program.HttpController["Status"] = false;
+                        break;
 
-            return $"http://{Server.EndPoint}/";
+                    } else
+                    {
+                        // don't run again for at least 200 milliseconds
+                        await Task.Delay(200);
+                    }
+
+                    
+                }
+            });
+
         }
-
         /// <summary>
         /// Stops the server
         /// </summary>
-        public static void Stop()
+        public static void StopThread()
         {
-            Server.Stop();
+            Program.HttpController["ShutdownSignal"] = true;
+            Task.Run(async () =>
+            {
+                while (true)
+                {
+                    
+                    if (!(bool)Program.HttpController["Status"])
+                    {
+                        Program.HTTPServer.Abort();
+                        break;
+                    }
+                    else
+                    {
+                        // don't run again for at least 200 milliseconds
+                        await Task.Delay(200);
+                    }
+
+                }
+            });
             SessionManager.CloseAllSessions();
         }
 

@@ -146,8 +146,6 @@ namespace Netlenium.WebServer
             {
                 if (ReadBuffer == null)
                 {
-                    Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Buffer is NULL. Disposing client...");
-                     
                     Dispose();
                 }
                 try
@@ -165,8 +163,9 @@ namespace Netlenium.WebServer
                     /// Through this, we'll dispose the current Http client by terminating the current HTTP connection
                     /// forcefully.
                     /// 
+                    /// This catch check may be safely ignored as ReadBuffer is now directly processed and it's operation is returned to the client.
+                    /// 
                     /// </summary>
-                    //Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer.AttackMitigation", $"This behavior looks like the one of a Slowloris attack.  Taking down the HTTP connection to the client.");
 
                 }
                 
@@ -174,7 +173,7 @@ namespace Netlenium.WebServer
                 if (ReadBuffer.DataAvailable)
                 {
                     ProcessReadBuffer();
-                    
+                    return;
                 }
                 else
                 {

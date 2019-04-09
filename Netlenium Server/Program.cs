@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Netlenium_Server
@@ -21,6 +22,19 @@ namespace Netlenium_Server
         /// </summary>
         public static string Version { get => version; set => version = value; }
 
+        public static Dictionary<string, object> HttpController = new Dictionary<string, object>();
+        public static Thread HTTPServer { get; set; }
+
+        /// <summary>
+        /// Starts the HttpManager by providing values
+        /// </summary>
+        private static void _ConstructHttpManager()
+        {
+            HttpController.Add("Started", false);
+            HttpController.Add("ShutdownSignal", false);
+            HttpController.Add("Status", false);
+        }
+
         /// <summary>
         /// Main Program Pointer
         /// </summary>
@@ -28,6 +42,7 @@ namespace Netlenium_Server
         [STAThread]
         static void Main(string[] args)
         {
+            _ConstructHttpManager();
             AppDomain.CurrentDomain.ProcessExit += ProcessExitHandler;
 
             Console.Title = "Netlenium Server";
@@ -38,7 +53,11 @@ namespace Netlenium_Server
             Netlenium.Logging.Enabled = true;
             Netlenium.Logging.VerboseLogging = false;
 
-            APIServer.Start(8080);
+            HTTPServer = APIServer.StartThread("testdomain", 80);
+            while ((bool)HttpController["Status"] == false)
+            {
+                Thread.Sleep(200);
+            }
 
             Console.ReadLine();
             Environment.Exit(0);
@@ -52,7 +71,7 @@ namespace Netlenium_Server
         /// <param name="e"></param>
         private static void ProcessExitHandler(object sender, EventArgs e)
         {
-            APIServer.Stop();
+            APIServer.StopThread();
         }
 
     }

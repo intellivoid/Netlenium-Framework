@@ -220,19 +220,20 @@ namespace Netlenium.WebServer
 
         public void EndRead(Stream stream, IAsyncResult asyncResult)
         {
-             try
+            try
             {
-                if(stream == null)
+                if (stream == null)
                 {
-                    Logging.WriteEntry(Types.LogType.Verbose, "Netlenium.WebServer", $"Stream is NULL, resetting buffer.");
+
                     Reset();
                 }
                 int read = stream.EndRead(asyncResult);
 
                 _available += read;
             }
-            catch(ObjectDisposedException disposedException)
+            catch (ObjectDisposedException disposedException)
             {
+
                 Reset();
             }
         }
