@@ -64,7 +64,7 @@
         {
             Headless = true;
             TargetPlatform = Configuration.CurrentPlatform;
-            Proxy = new ProxyConfiguration()
+            Proxy = new ProxyConfiguration
             {
                 Enabled = false,
                 UseAuthentication = false,
