@@ -16,8 +16,12 @@ mkbundle --simple --static --deps -v -o netlenium_re --config /etc/mono/config -
 echo "running mkbundle on Netlenium Package Builder"
 mkbundle --simple --static --deps -v -o npbuild --config /etc/mono/config --machine-config /etc/mono/4.5/machine.config npbuild.exe
 
+echo "running mkbundle on Netlenium Server"
+mkbundle --simple --static --deps -v -o npbuild --config /etc/mono/config --machine-config /etc/mono/4.5/machine.config netlenium_server.exe
+
 echo "deleting win32 compiled binaries"
 rm netlenium_re.exe
 rm npbuild.exe
+rm netlenium_server.exe
 
 echo "done"
