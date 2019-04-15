@@ -9,16 +9,16 @@ namespace Netlenium.WebDriver
     [Serializable]
     public class XPathLookupException : WebDriverException
     {
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="XPathLookupException"/> class.
+        /// Initializes a new instance of the <see cref="T:Netlenium.WebDriver.XPathLookupException" /> class.
         /// </summary>
         public XPathLookupException()
-            : base()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="XPathLookupException"/> class with
+        /// Initializes a new instance of the <see cref="Netlenium.WebDriver.XPathLookupException"/> class with
         /// a specified error message.
         /// </summary>
         /// <param name="message">The message that describes the error.</param>

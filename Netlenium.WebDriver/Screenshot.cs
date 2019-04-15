@@ -1,10 +1,10 @@
 using System;
+using System.IO;
 #if NETCOREAPP2_0 || NETSTANDARD2_0
 #else
 using System.Drawing;
 using System.Drawing.Imaging;
 #endif
-using System.IO;
 
 namespace Netlenium.WebDriver
 {
@@ -45,8 +45,8 @@ namespace Netlenium.WebDriver
     [Serializable]
     public class Screenshot
     {
-        private string base64Encoded = string.Empty;
-        private byte[] byteArray;
+        private readonly string base64Encoded;
+        private readonly byte[] byteArray;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Screenshot"/> class.
@@ -54,25 +54,19 @@ namespace Netlenium.WebDriver
         /// <param name="base64EncodedScreenshot">The image of the page as a Base64-encoded string.</param>
         public Screenshot(string base64EncodedScreenshot)
         {
-            this.base64Encoded = base64EncodedScreenshot;
-            this.byteArray = Convert.FromBase64String(this.base64Encoded);
+            base64Encoded = base64EncodedScreenshot;
+            byteArray = Convert.FromBase64String(base64Encoded);
         }
 
         /// <summary>
         /// Gets the value of the screenshot image as a Base64-encoded string.
         /// </summary>
-        public string AsBase64EncodedString
-        {
-            get { return this.base64Encoded; }
-        }
+        public string AsBase64EncodedString => base64Encoded;
 
         /// <summary>
         /// Gets the value of the screenshot image as an array of bytes.
         /// </summary>
-        public byte[] AsByteArray
-        {
-            get { return this.byteArray; }
-        }
+        public byte[] AsByteArray => byteArray;
 
         /// <summary>
         /// Saves the screenshot to a Portable Network Graphics (PNG) file, overwriting the
@@ -81,7 +75,7 @@ namespace Netlenium.WebDriver
         /// <param name="fileName">The full path and file name to save the screenshot to.</param>
         public void SaveAsFile(string fileName)
         {
-            this.SaveAsFile(fileName, ScreenshotImageFormat.Png);
+            SaveAsFile(fileName, ScreenshotImageFormat.Png);
         }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace Netlenium.WebDriver
             }
 #endif
 
-            using (MemoryStream imageStream = new MemoryStream(this.byteArray))
+            using (MemoryStream imageStream = new MemoryStream(byteArray))
             {
                 using (FileStream fileStream = new FileStream(fileName, FileMode.Create))
                 { 
@@ -121,14 +115,14 @@ namespace Netlenium.WebDriver
         /// <returns>A <see cref="string">String</see> that represents the current <see cref="object">Object</see>.</returns>
         public override string ToString()
         {
-            return this.base64Encoded;
+            return base64Encoded;
         }
 
 #if NETCOREAPP2_0 || NETSTANDARD2_0
 #else
         private static ImageFormat ConvertScreenshotImageFormat(ScreenshotImageFormat format)
         {
-            ImageFormat returnedFormat = ImageFormat.Png;
+            ImageFormat returnedFormat;
             switch (format)
             {
                 case ScreenshotImageFormat.Jpeg:
@@ -146,6 +140,12 @@ namespace Netlenium.WebDriver
                 case ScreenshotImageFormat.Tiff:
                     returnedFormat = ImageFormat.Tiff;
                     break;
+                
+                case ScreenshotImageFormat.Png:
+                    throw new ArgumentOutOfRangeException(nameof(format), format, null);
+                
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(format), format, null);
             }
 
             return returnedFormat;

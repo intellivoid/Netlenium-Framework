@@ -53,7 +53,8 @@ namespace Netlenium_Server
             Netlenium.Logging.Enabled = true;
             Netlenium.Logging.VerboseLogging = false;
 
-            HTTPServer = APIServer.StartThread("testdomain", 80);
+            HTTPServer = APIServer.StartThread("127.0.0.1", 8080);
+            
             while ((bool)HttpController["Status"] == false)
             {
                 Thread.Sleep(200);
