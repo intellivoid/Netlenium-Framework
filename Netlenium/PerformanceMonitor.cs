@@ -10,12 +10,12 @@ namespace Netlenium
         /// <summary>
         /// The Memory Counter
         /// </summary>
-        private PerformanceCounter MemoryCounter { get; }
+        private PerformanceCounter MemoryCounter { get; set; }
 
         /// <summary>
         /// The CPU Counter
         /// </summary>
-        private PerformanceCounter CpuCounter { get; }
+        private PerformanceCounter CpuCounter { get; set; }
 
         /// <summary>
         /// Returns the Memory Usage in MB

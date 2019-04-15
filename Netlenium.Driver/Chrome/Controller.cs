@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using LogType = Netlenium.Types.LogType;
 
 namespace Netlenium.Driver.Chrome
 {
@@ -128,8 +129,16 @@ namespace Netlenium.Driver.Chrome
             JavascriptExecuter = RemoteDriver;
             Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Attaching Driver Actions");
             _driverAction = new Actions(RemoteDriver);
-            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Attaching Performance Monitor");
-            DriverPerformance = new PerformanceMonitor(DriverService.ProcessId);
+
+            try
+            {
+                Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Attaching Performance Monitor");
+                DriverPerformance = new PerformanceMonitor(DriverService.ProcessId);
+            }
+            catch (Exception exception)
+            {
+                Logging.WriteEntry(LogType.Warning, "Netlenium.Driver",$"Cannot attach Performance Monitor {exception.Message}");
+            }
         }
 
         /// <summary>

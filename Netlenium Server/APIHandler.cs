@@ -168,12 +168,7 @@ namespace Netlenium_Server
                 
                 return;
             }
-            catch (Exception exception)
-            {
-                APIServer.SendJsonInternalServerErrorResponse(httpRequest.Response, "Error while trying to construct driver", exception.Message);
-
-                return;
-            }
+            
         }
 
         /// <summary>
