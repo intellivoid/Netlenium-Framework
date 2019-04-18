@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b49503ca-0549-4ca8-bdc3-4f8c6dd5c9ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Netlenium/GeneralLocalStrings.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Netlenium/Logging.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/Logging.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Netlenium/Netlenium.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium/Netlenium.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,163 +26,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium/Types/LogType.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-63">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-              <folding>
-                <marker date="1554674216050" expanded="true" signature="25:778" ph="{...}" />
-                <marker date="1554674216050" expanded="true" signature="32:102" ph="/// Log Type Class for CLI Output ... " />
-                <marker date="1554674216050" expanded="true" signature="126:776" ph="{...}" />
-                <marker date="1554674216050" expanded="true" signature="141:210" ph="/// Success type message ... " />
-                <marker date="1554674216050" expanded="true" signature="249:322" ph="/// Information type message ... " />
-                <marker date="1554674216050" expanded="true" signature="365:434" ph="/// Warning type message ... " />
-                <marker date="1554674216050" expanded="true" signature="473:540" ph="/// Error type message ... " />
-                <marker date="1554674216050" expanded="true" signature="577:644" ph="/// Debug type message ... " />
-                <marker date="1554674216050" expanded="true" signature="681:750" ph="/// Verbose type message ... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium/Types/Platform.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-              <folding>
-                <marker date="1554674216051" expanded="true" signature="25:601" ph="{...}" />
-                <marker date="1554674216051" expanded="true" signature="32:92" ph="/// Platform Indication ... " />
-                <marker date="1554674216051" expanded="true" signature="117:599" ph="{...}" />
-                <marker date="1554674216051" expanded="true" signature="132:236" ph="/// Auto-Detects the Platform that the system is running on ... " />
-                <marker date="1554674216051" expanded="true" signature="278:349" ph="/// Windows 32bit Platform ... " />
-                <marker date="1554674216051" expanded="true" signature="386:460" ph="/// Linux/Unix 32bit Platform ... " />
-                <marker date="1554674216051" expanded="true" signature="499:573" ph="/// Linux/Unix 64bit Platform ... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium/Types/Scheme.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <marker date="1554728473792" expanded="true" signature="25:100" ph="{...}" />
-                <marker date="1554728473792" expanded="true" signature="50:98" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium/Types/SearchType.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-              <folding>
-                <marker date="1554674216054" expanded="true" signature="25:738" ph="{...}" />
-                <marker date="1554674216054" expanded="true" signature="32:125" ph="/// Search Type for Getting Elements from the active DOM ... " />
-                <marker date="1554674216054" expanded="true" signature="152:736" ph="{...}" />
-                <marker date="1554674216054" expanded="true" signature="167:235" ph="/// Gets Elements by Id ... " />
-                <marker date="1554674216054" expanded="true" signature="269:344" ph="/// Gets Elements by ClassName ... " />
-                <marker date="1554674216054" expanded="true" signature="385:481" ph="/// Gets Elements using CssSelector (Selenium Only) ... " />
-                <marker date="1554674216054" expanded="true" signature="524:604" ph="/// Gets Elements using the TagName ... " />
-                <marker date="1554674216054" expanded="true" signature="643:713" ph="/// Gets Elements by Name ... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Netlenium/Logging.cs">
+        <entry file="file://$PROJECT_DIR$/Netlenium/PerformanceMonitor.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="135">
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
               <folding>
-                <marker date="1554729466131" expanded="true" signature="6:79" ph="..." />
-                <marker date="1554729466131" expanded="true" signature="100:9659" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="107:161" ph="/// Logging Class ... " />
-                <marker date="1554729466131" expanded="true" signature="193:9657" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="208:326" ph="/// If set to True, general logging messages will be displayed in the CLI ... " />
-                <marker date="1554729466131" expanded="true" signature="385:529" ph="/// If set to True, alongside general logging messages; debugging messages will be shown on the CLI ... " />
-                <marker date="1554729466131" expanded="true" signature="595:748" ph="/// The output file to output all the data to (AllowLogging doesn't need to be set to True for this to work) ... " />
-                <marker date="1554729466131" expanded="true" signature="828:994" ph="/// Writes a vebrose Log Entry ... " />
-                <marker date="1554729466131" expanded="true" signature="1076:1266" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="1127:1179" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="1284:1560" ph="/// Writes a Log Entry ... " />
-                <marker date="1554729466131" expanded="true" signature="1656:9651" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="1699:1751" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="1862:9641" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="1966:2442" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="2016:2257" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="2308:2420" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="3250:3730" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="3300:3545" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="3596:3708" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="4521:4998" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="4571:4812" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="4864:4976" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="5785:6260" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="5835:6074" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="6126:6238" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="7042:7517" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="7092:7331" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="7383:7495" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="8329:8806" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="8379:8620" ph="{...}" />
-                <marker date="1554729466131" expanded="true" signature="8672:8784" ph="{...}" />
+                <marker date="1555357233372" expanded="true" signature="46:2020" ph="{...}" />
+                <marker date="1555357233372" expanded="true" signature="53:161" ph="/// Performance Monitor Class which monitors CPU/RAM usage of a process ... " />
+                <marker date="1555357233372" expanded="true" signature="197:2018" ph="{...}" />
+                <marker date="1555357233372" expanded="true" signature="212:279" ph="/// The Memory Counter ... " />
+                <marker date="1555357233372" expanded="true" signature="486:565" ph="/// Returns the Memory Usage in MB ... " />
+                <marker date="1555357233372" expanded="true" signature="655:733" ph="/// Returns the CPU Usage (0-100) ... " />
+                <marker date="1555357233372" expanded="true" signature="801:913" ph="/// Public Constructor ... " />
+                <marker date="1555357233372" expanded="true" signature="962:1210" ph="{...}" />
+                <marker date="1555357233372" expanded="true" signature="1220:1384" ph="/// Gets the process instance name by Process ID ... " />
+                <marker date="1555357233372" expanded="true" signature="1446:2012" ph="{...}" />
+                <marker date="1555357233372" expanded="true" signature="1622:1976" ph="{...}" />
+                <marker date="1555357233372" expanded="true" signature="1735:1962" ph="{...}" />
+                <marker date="1555357233372" expanded="true" signature="1859:1944" ph="{...}" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium/GeneralLocalStrings.resx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-228">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium/GeneralLocalStrings.Designer.cs">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium/General Local Strings.Designer.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <marker date="1554728805866" expanded="true" signature="0:395" ph="/* ------------------------------------------------------------------------------ ... */" />
-                <marker date="1554728805866" expanded="true" signature="427:3122" ph="{...}" />
-                <marker date="1554728805866" expanded="true" signature="461:575" ph="///   A strongly-typed resource class, for looking up localized strings, etc. ... " />
-                <marker date="1554728805866" expanded="true" signature="580:832" ph="/* This class was auto-generated by the StronglyTypedResourceBuilder ... */" />
-                <marker date="1554728805866" expanded="true" signature="1138:3120" ph="{...}" />
-                <marker date="1554728805866" expanded="true" signature="1501:1512" ph="{...}" />
-                <marker date="1554728805866" expanded="true" signature="1530:1644" ph="///   Returns the cached ResourceManager instance used by this class. ... " />
-                <marker date="1554728805866" expanded="true" signature="1850:2241" ph="{...}" />
-                <marker date="1554728805866" expanded="true" signature="1868:2231" ph="{...}" />
-                <marker date="1554728805866" expanded="true" signature="1933:2181" ph="{...}" />
-                <marker date="1554728805866" expanded="true" signature="2259:2447" ph="///   Overrides the current thread's CurrentUICulture property for all ... " />
-                <marker date="1554728805866" expanded="true" signature="2645:2801" ph="{...}" />
-                <marker date="1554728805866" expanded="true" signature="2663:2718" ph="{...}" />
-                <marker date="1554728805866" expanded="true" signature="2735:2791" ph="{...}" />
-                <marker date="1554728805866" expanded="true" signature="2819:2917" ph="///   Looks up a localized string similar to [  !  ]. ... " />
-                <marker date="1554728805866" expanded="true" signature="2974:3114" ph="{...}" />
-                <marker date="1554728805866" expanded="true" signature="2992:3104" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium/Resources/GeneralLocalStrings.Designer.cs">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -200,6 +62,7 @@
     <setting file="file://$PROJECT_DIR$/Netlenium/Types/Scheme.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium/packages.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium/WebServer/HttpClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Netlenium/PerformanceMonitor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium/Resources/GeneralLocalStrings.Designer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium/General Local Strings.Designer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium/GeneralLocalStrings.resx" root0="FORCE_HIGHLIGHTING" />
@@ -216,10 +79,11 @@
         <option value="$PROJECT_DIR$/Netlenium/Resources/General Local Strings.Designer.cs" />
         <option value="$PROJECT_DIR$/Netlenium/GeneralLocalStrings.Designer.cs" />
         <option value="$PROJECT_DIR$/Netlenium/Logging.cs" />
+        <option value="$PROJECT_DIR$/Netlenium/PerformanceMonitor.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -233,25 +97,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -302,11 +152,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554727267551</updated>
       <workItem from="1554727282775" duration="1059000" />
+      <workItem from="1555520761591" duration="9000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1856000" />
+    <option name="totallyTimeSpent" value="2209000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -320,7 +171,7 @@
   <component name="ToolWindowManager">
     <frame x="10" y="20" width="1346" height="698" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2534992" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25738725" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -338,7 +189,7 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Unit Tests" order="12" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" visible="true" weight="0.32920355" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" visible="true" weight="0.40530974" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="15" weight="0.32920355" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -501,13 +352,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium/General Local Strings.resx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/General Local Strings.resx" />
     <entry file="file://$PROJECT_DIR$/Netlenium/GeneralLocalStrings.Designer.cs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -520,8 +365,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Netlenium/Logging.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="162">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
             <marker date="1554729466131" expanded="true" signature="6:79" ph="..." />
             <marker date="1554729466131" expanded="true" signature="100:9659" ph="{...}" />
@@ -555,6 +400,93 @@
             <marker date="1554729466131" expanded="true" signature="8329:8806" ph="{...}" />
             <marker date="1554729466131" expanded="true" signature="8379:8620" ph="{...}" />
             <marker date="1554729466131" expanded="true" signature="8672:8784" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/Types/LogType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <marker date="1554674216050" expanded="true" signature="25:778" ph="{...}" />
+            <marker date="1554674216050" expanded="true" signature="32:102" ph="/// Log Type Class for CLI Output ... " />
+            <marker date="1554674216050" expanded="true" signature="126:776" ph="{...}" />
+            <marker date="1554674216050" expanded="true" signature="141:210" ph="/// Success type message ... " />
+            <marker date="1554674216050" expanded="true" signature="249:322" ph="/// Information type message ... " />
+            <marker date="1554674216050" expanded="true" signature="365:434" ph="/// Warning type message ... " />
+            <marker date="1554674216050" expanded="true" signature="473:540" ph="/// Error type message ... " />
+            <marker date="1554674216050" expanded="true" signature="577:644" ph="/// Debug type message ... " />
+            <marker date="1554674216050" expanded="true" signature="681:750" ph="/// Verbose type message ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/Types/Platform.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <marker date="1554674216051" expanded="true" signature="25:601" ph="{...}" />
+            <marker date="1554674216051" expanded="true" signature="32:92" ph="/// Platform Indication ... " />
+            <marker date="1554674216051" expanded="true" signature="117:599" ph="{...}" />
+            <marker date="1554674216051" expanded="true" signature="132:236" ph="/// Auto-Detects the Platform that the system is running on ... " />
+            <marker date="1554674216051" expanded="true" signature="278:349" ph="/// Windows 32bit Platform ... " />
+            <marker date="1554674216051" expanded="true" signature="386:460" ph="/// Linux/Unix 32bit Platform ... " />
+            <marker date="1554674216051" expanded="true" signature="499:573" ph="/// Linux/Unix 64bit Platform ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/Types/Scheme.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <marker date="1554728473792" expanded="true" signature="25:100" ph="{...}" />
+            <marker date="1554728473792" expanded="true" signature="50:98" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/Types/SearchType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <marker date="1554674216054" expanded="true" signature="25:738" ph="{...}" />
+            <marker date="1554674216054" expanded="true" signature="32:125" ph="/// Search Type for Getting Elements from the active DOM ... " />
+            <marker date="1554674216054" expanded="true" signature="152:736" ph="{...}" />
+            <marker date="1554674216054" expanded="true" signature="167:235" ph="/// Gets Elements by Id ... " />
+            <marker date="1554674216054" expanded="true" signature="269:344" ph="/// Gets Elements by ClassName ... " />
+            <marker date="1554674216054" expanded="true" signature="385:481" ph="/// Gets Elements using CssSelector (Selenium Only) ... " />
+            <marker date="1554674216054" expanded="true" signature="524:604" ph="/// Gets Elements using the TagName ... " />
+            <marker date="1554674216054" expanded="true" signature="643:713" ph="/// Gets Elements by Name ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/Resources/GeneralLocalStrings.Designer.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium/PerformanceMonitor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <marker date="1555357233372" expanded="true" signature="46:2020" ph="{...}" />
+            <marker date="1555357233372" expanded="true" signature="53:161" ph="/// Performance Monitor Class which monitors CPU/RAM usage of a process ... " />
+            <marker date="1555357233372" expanded="true" signature="197:2018" ph="{...}" />
+            <marker date="1555357233372" expanded="true" signature="212:279" ph="/// The Memory Counter ... " />
+            <marker date="1555357233372" expanded="true" signature="486:565" ph="/// Returns the Memory Usage in MB ... " />
+            <marker date="1555357233372" expanded="true" signature="655:733" ph="/// Returns the CPU Usage (0-100) ... " />
+            <marker date="1555357233372" expanded="true" signature="801:913" ph="/// Public Constructor ... " />
+            <marker date="1555357233372" expanded="true" signature="962:1210" ph="{...}" />
+            <marker date="1555357233372" expanded="true" signature="1220:1384" ph="/// Gets the process instance name by Process ID ... " />
+            <marker date="1555357233372" expanded="true" signature="1446:2012" ph="{...}" />
+            <marker date="1555357233372" expanded="true" signature="1622:1976" ph="{...}" />
+            <marker date="1555357233372" expanded="true" signature="1735:1962" ph="{...}" />
+            <marker date="1555357233372" expanded="true" signature="1859:1944" ph="{...}" />
           </folding>
         </state>
       </provider>
