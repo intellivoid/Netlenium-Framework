@@ -218,6 +218,7 @@ namespace Netlenium.Driver.Chrome
             File.WriteAllText($"{DriverPath}{Path.DirectorySeparatorChar}current_version", cacheLatestVersion);
             File.Copy($"{Paths.TemporaryDirectory}{Path.DirectorySeparatorChar}{DriverExecutableName}", DriverExecutablePath);
             File.Delete($"{Paths.TemporaryDirectory}{Path.DirectorySeparatorChar}{DriverExecutableName}");
+            File.Delete($"{Paths.TemporaryDirectory}{Path.DirectorySeparatorChar}chromedriver_tmp.zip");
             
             if (!(TargetPlatform == PlatformType.Linux32 || TargetPlatform == PlatformType.Linux64)) return;
 

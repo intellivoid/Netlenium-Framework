@@ -9,35 +9,7 @@
       <e p="linux_make_debug.sh" t="Include" />
       <e p="linux_make_release.sh" t="Include" />
       <e p="Netlenium" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="GeneralLocalStrings.Designer.cs" t="Include" />
-        <e p="GeneralLocalStrings.resx" t="Include" />
         <e p="Netlenium.csproj" t="IncludeRecursive" />
-        <e p="netlenium_package.ico" t="Include" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="packages.config" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-          <e p="Resources.Designer.cs" t="Include" />
-          <e p="Resources.resx" t="Include" />
-        </e>
-        <e p="Resources" t="Include">
-          <e p="bug.png" t="Include" />
-          <e p="error.png" t="Include" />
-          <e p="exclamation.png" t="Include" />
-          <e p="information.png" t="Include" />
-          <e p="InternalServerError.html" t="Include" />
-          <e p="logo.ico" t="Include" />
-          <e p="logo_128.png" t="Include" />
-          <e p="logo_16.png" t="Include" />
-          <e p="logo_20.png" t="Include" />
-          <e p="logo_24.png" t="Include" />
-          <e p="logo_256.png" t="Include" />
-          <e p="logo_32.png" t="Include" />
-          <e p="logo_48.png" t="Include" />
-          <e p="logo_512.png" t="Include" />
-          <e p="logo_64.png" t="Include" />
-        </e>
       </e>
       <e p="Netlenium Framework.sln" t="IncludeFlat" />
       <e p="Netlenium Package Builder.md" t="Include" />

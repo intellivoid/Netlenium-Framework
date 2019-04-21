@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b49503ca-0549-4ca8-bdc3-4f8c6dd5c9ac" name="Default Changelist" comment="" />
+    <list default="true" id="b49503ca-0549-4ca8-bdc3-4f8c6dd5c9ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Netlenium.Driver/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium.Driver/Client.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +25,11 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/INavigation.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-378">
+            <state relative-caret-position="105">
               <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
               <folding>
                 <marker date="1555710173180" expanded="true" signature="51:2556" ph="{...}" />
@@ -43,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Netlenium.Driver/IActions.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="42">
               <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="107" />
               <folding>
                 <marker date="1555815208660" expanded="true" signature="61:1314" ph="{...}" />
@@ -57,6 +59,364 @@
                 <marker date="1555815208660" expanded="true" signature="508:592" ph="/// Go forward one page in the history. ... " />
                 <marker date="1555815208660" expanded="true" signature="628:874" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
                 <marker date="1555815208660" expanded="true" signature="970:1234" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Client.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-72">
+              <folding>
+                <marker date="1555864999334" expanded="true" signature="26:1072" ph="{...}" />
+                <marker date="1555864999334" expanded="true" signature="33:123" ph="/// Driver Client for controlling a Browser/WebDriver ... " />
+                <marker date="1555864999334" expanded="true" signature="147:1070" ph="{...}" />
+                <marker date="1555864999334" expanded="true" signature="163:259" ph="/// The target driver that this client will control ... " />
+                <marker date="1555864999334" expanded="true" signature="320:398" ph="/// Controls the driver interface ... " />
+                <marker date="1555864999334" expanded="true" signature="464:621" ph="/// Public Constructor ... " />
+                <marker date="1555864999334" expanded="true" signature="670:1055" ph="{...}" />
+                <marker date="1555864999334" expanded="true" signature="771:1032" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Chrome/ChromeDriver.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+              <folding>
+                <marker date="1555818023456" expanded="false" signature="6:88" ph="..." />
+                <marker date="1555818023456" expanded="true" signature="133:10149" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="140:958" ph="/// Provides a mechanism to write tests against Chrome ... " />
+                <marker date="1555818023456" expanded="true" signature="1006:10147" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="1021:1103" ph="/// Accept untrusted SSL Certificates ... " />
+                <marker date="1555818023456" expanded="true" signature="1597:1705" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class. ... " />
+                <marker date="1555818023456" expanded="true" signature="1771:1791" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="1801:2054" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified options. ... " />
+                <marker date="1555818023456" expanded="true" signature="2200:2220" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="2230:2492" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified driver service. ... " />
+                <marker date="1555818023456" expanded="true" signature="2598:2618" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="2628:2942" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
+                <marker date="1555818023456" expanded="true" signature="3063:3083" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="3093:3528" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
+                <marker date="1555818023456" expanded="true" signature="3683:3703" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="3713:4268" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
+                <marker date="1555818023456" expanded="true" signature="4483:4503" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="4513:4900" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified ... " />
+                <marker date="1555818023456" expanded="true" signature="5040:5060" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="5070:5539" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified &lt;see cref=&quot;ChromeDrive ... " />
+                <marker date="1555818023456" expanded="true" signature="5761:6544" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="6554:7238" ph="/// Gets or sets the &lt;see cref=&quot;IFileDetector&quot;/&gt; responsible for detecting ... " />
+                <marker date="1555818023456" expanded="true" signature="7289:7375" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="7385:7490" ph="/// Gets or sets the network condition emulation for Chrome. ... " />
+                <marker date="1555818023456" expanded="true" signature="7547:8206" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="7573:7785" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="7802:8196" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="7851:7975" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="8216:8466" ph="/// Executes a custom Chrome command. ... " />
+                <marker date="1555818023456" expanded="true" signature="8573:8969" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="8620:8744" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="9089:9545" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="9136:9260" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="9635:9850" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="9678:9794" ph="{...}" />
+                <marker date="1555818023456" expanded="true" signature="9951:10141" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Remote/RemoteWebDriver.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6">
+              <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+              <folding>
+                <marker date="1555818030921" expanded="false" signature="6:307" ph="..." />
+                <marker date="1555818030921" expanded="true" signature="380:61469" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="387:1280" ph="/// Provides a way to use the driver through ... " />
+                <marker date="1555818030921" expanded="true" signature="1671:61467" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="1686:1811" ph="/// The default command timeout for HTTP requests in a RemoteWebDriver instance. ... " />
+                <marker date="1555818030921" expanded="true" signature="2451:2766" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class. This constructor defaults proxy to htt ... " />
+                <marker date="1555818030921" expanded="true" signature="2878:2898" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="2908:3235" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class. This constructor defaults proxy to htt ... " />
+                <marker date="1555818030921" expanded="true" signature="3374:3394" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="3404:3862" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class. This constructor defaults proxy to htt ... " />
+                <marker date="1555818030921" expanded="true" signature="4008:4028" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="4038:4443" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class ... " />
+                <marker date="1555818030921" expanded="true" signature="4606:4626" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="4636:5222" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class using the specified remote address, des ... " />
+                <marker date="1555818030921" expanded="true" signature="5428:5448" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="5458:5851" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class ... " />
+                <marker date="1555818030921" expanded="true" signature="5951:7456" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="6317:6632" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="6517:6618" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="6717:7058" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="6937:7044" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="7138:7446" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="7338:7432" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="7466:7737" ph="/// Gets or sets the URL the browser is currently displaying. ... " />
+                <marker date="1555818030921" expanded="true" signature="7763:8348" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="7789:7956" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="7973:8338" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="8022:8154" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="8358:8452" ph="/// Gets the title of the current browser window. ... " />
+                <marker date="1555818030921" expanded="true" signature="8480:8770" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="8506:8760" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="8780:8884" ph="/// Gets the source of the page last loaded by the browser. ... " />
+                <marker date="1555818030921" expanded="true" signature="8917:9208" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="8943:9198" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="9218:9408" ph="/// Gets the current window handle, which is an opaque handle to this ... " />
+                <marker date="1555818030921" expanded="true" signature="9450:9662" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="9476:9652" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="9672:9769" ph="/// Gets the window handles of open browser windows. ... " />
+                <marker date="1555818030921" expanded="true" signature="9825:10278" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="9851:10268" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="10114:10205" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="10288:10414" ph="/// Gets an &lt;see cref=&quot;IKeyboard&quot;/&gt; object for sending keystrokes to the browser. ... " />
+                <marker date="1555818030921" expanded="true" signature="10598:10655" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="10665:10792" ph="/// Gets an &lt;see cref=&quot;IMouse&quot;/&gt; object for sending mouse commands to the browser. ... " />
+                <marker date="1555818030921" expanded="true" signature="10967:11021" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="11031:11153" ph="/// Gets a value indicating whether web storage is supported for this driver. ... " />
+                <marker date="1555818030921" expanded="true" signature="11187:11251" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="11261:11376" ph="/// Gets an &lt;see cref=&quot;IWebStorage&quot;/&gt; object for managing web storage. ... " />
+                <marker date="1555818030921" expanded="true" signature="11414:11765" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="11440:11755" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="11491:11708" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="11775:11920" ph="/// Gets a value indicating whether manipulating the application cache is supported for this driver. ... " />
+                <marker date="1555818030921" expanded="true" signature="11960:12025" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="12035:12162" ph="/// Gets an &lt;see cref=&quot;IApplicationCache&quot;/&gt; object for managing application cache. ... " />
+                <marker date="1555818030921" expanded="true" signature="12212:12581" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="12238:12571" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="12290:12523" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="12591:12726" ph="/// Gets a value indicating whether manipulating geolocation is supported for this driver. ... " />
+                <marker date="1555818030921" expanded="true" signature="12765:12837" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="12847:12972" ph="/// Gets an &lt;see cref=&quot;ILocationContext&quot;/&gt; object for managing browser location. ... " />
+                <marker date="1555818030921" expanded="true" signature="13020:13399" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="13046:13389" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="13105:13334" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="13409:13532" ph="/// Gets the capabilities that the RemoteWebDriver instance is currently using ... " />
+                <marker date="1555818030921" expanded="true" signature="13574:13635" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="13645:13835" ph="/// Gets or sets the &lt;see cref=&quot;IFileDetector&quot;/&gt; responsible for detecting ... " />
+                <marker date="1555818030921" expanded="true" signature="13885:14234" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="13911:13976" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="13993:14224" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="14042:14171" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="14244:14365" ph="/// Gets the &lt;see cref=&quot;SessionId&quot;/&gt; for the current session of this driver. ... " />
+                <marker date="1555818030921" expanded="true" signature="14400:14458" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="14468:14588" ph="/// Gets a value indicating whether this object is a valid action executor. ... " />
+                <marker date="1555818030921" expanded="true" signature="14625:14698" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="14708:14857" ph="/// Gets a value indicating whether or not the driver is compliant with the W3C WebDriver specification. ... " />
+                <marker date="1555818030921" expanded="true" signature="14904:15013" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="15023:15152" ph="/// Gets the &lt;see cref=&quot;ICommandExecutor&quot;/&gt; which executes commands for this driver. ... " />
+                <marker date="1555818030921" expanded="true" signature="15203:15260" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="15270:15440" ph="/// Gets or sets the factory object used to create instances of &lt;see cref=&quot;RemoteWebElement&quot;/&gt; ... " />
+                <marker date="1555818030921" expanded="true" signature="15497:15604" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="15614:16111" ph="/// Finds the first element in the page that matches the &lt;see cref=&quot;By&quot;/&gt; object ... " />
+                <marker date="1555818030921" expanded="true" signature="16157:16351" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="16195:16299" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="16361:16988" ph="/// Finds the elements on the page by using the &lt;see cref=&quot;T:Netlenium.Driver.WebDriver.By&quot; /&gt; object and returns ... " />
+                <marker date="1555818030921" expanded="true" signature="17055:17250" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="17093:17197" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="17260:17327" ph="/// Closes the Browser ... " />
+                <marker date="1555818030921" expanded="true" signature="17355:17423" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="17433:17524" ph="/// Close the Browser and Dispose of WebDriver ... " />
+                <marker date="1555818030921" expanded="true" signature="17551:17594" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="17604:18055" ph="/// Method For getting an object to set the Speed ... " />
+                <marker date="1555818030921" expanded="true" signature="18088:18152" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="18162:18588" ph="/// Method to allow you to Navigate with WebDriver ... " />
+                <marker date="1555818030921" expanded="true" signature="18626:18692" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="18702:19095" ph="/// Method to give you access to switch frames and windows ... " />
+                <marker date="1555818030921" expanded="true" signature="19136:19206" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="19216:19547" ph="/// Executes JavaScript in the context of the currently selected frame or window ... " />
+                <marker date="1555818030921" expanded="true" signature="19620:19724" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="19734:20081" ph="/// Executes JavaScript asynchronously in the context of the currently selected frame or window. ... " />
+                <marker date="1555818030921" expanded="true" signature="20159:20268" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="20278:20766" ph="/// Finds the first element in the page that matches the ID supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="20820:21034" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="20872:20981" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="21044:21594" ph="/// Finds the first element in the page that matches the ID supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="21669:22393" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="21721:22339" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="21841:22255" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="21880:22172" ph="/* Finding multiple elements with an empty ID will return ... */" />
+                <marker date="1555818030921" expanded="true" signature="22403:22913" ph="/// Finds the first element in the page that matches the CSS Class supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="22981:24230" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="23004:23388" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+                <marker date="1555818030921" expanded="true" signature="23430:24162" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="23549:24079" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="23588:23903" ph="/* Finding elements by class name with whitespace is not allowed. ... */" />
+                <marker date="1555818030921" expanded="true" signature="24240:24813" ph="/// Finds a list of elements that match the class name supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="24902:26154" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="24925:25310" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+                <marker date="1555818030921" expanded="true" signature="25352:26085" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="25471:26001" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="25510:25825" ph="/* Finding elements by class name with whitespace is not allowed. ... */" />
+                <marker date="1555818030921" expanded="true" signature="26164:26667" ph="/// Finds the first of elements that match the link text supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="26733:26808" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="26818:27390" ph="/// Finds a list of elements that match the link text supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="27477:27553" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="27563:28094" ph="/// Finds the first of elements that match the part of the link text supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="28174:28264" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="28274:28859" ph="/// Finds a list of elements that match the class name supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="28960:29051" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="29061:29545" ph="/// Finds the first of elements that match the name supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="29603:30228" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="29626:30021" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+                <marker date="1555818030921" expanded="true" signature="30063:30171" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="30238:30767" ph="/// Finds a list of elements that match the name supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="30846:31474" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="30869:31265" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+                <marker date="1555818030921" expanded="true" signature="31307:31416" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="31484:31999" ph="/// Finds the first of elements that match the DOM Tag supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="32063:32657" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="32086:32462" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+                <marker date="1555818030921" expanded="true" signature="32504:32593" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="32667:33207" ph="/// Finds a list of elements that match the DOM Tag supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="33292:33889" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="33315:33692" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+                <marker date="1555818030921" expanded="true" signature="33734:33824" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="33899:34405" ph="/// Finds the first of elements that match the XPath supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="34465:34533" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="34543:35088" ph="/// Finds a list of elements that match the XPath supplied ... " />
+                <marker date="1555818030921" expanded="true" signature="35169:35238" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="35248:35520" ph="/// Finds the first element matching the specified CSS selector. ... " />
+                <marker date="1555818030921" expanded="true" signature="35592:35673" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="35683:36022" ph="/// Finds all elements matching the specified CSS selector. ... " />
+                <marker date="1555818030921" expanded="true" signature="36115:36197" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="36207:36431" ph="/// Gets a &lt;see cref=&quot;Screenshot&quot;/&gt; object representing the image of the page on the screen. ... " />
+                <marker date="1555818030921" expanded="true" signature="36473:36757" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="36767:36852" ph="/// Dispose the RemoteWebDriver Instance ... " />
+                <marker date="1555818030921" expanded="true" signature="36882:36968" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="36978:37186" ph="/// Performs the specified list of actions with this action executor. ... " />
+                <marker date="1555818030921" expanded="true" signature="37263:37933" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="37317:37461" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="37504:37923" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="37632:37729" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="37943:38038" ph="/// Resets the input state of the action executor. ... " />
+                <marker date="1555818030921" expanded="true" signature="38076:38226" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="38128:38216" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="38236:38474" ph="/// Escapes invalid characters in a CSS selector. ... " />
+                <marker date="1555818030921" expanded="true" signature="38540:38966" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="38723:38927" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="38976:39273" ph="/// Executes commands with the driver ... " />
+                <marker date="1555818030921" expanded="true" signature="39385:39469" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="39479:39682" ph="/// Find the element in the response ... " />
+                <marker date="1555818030921" expanded="true" signature="39753:40190" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="39797:39877" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="40048:40151" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="40200:40415" ph="/// Finds the elements that are in the response ... " />
+                <marker date="1555818030921" expanded="true" signature="40507:41149" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="40658:41096" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="40728:41082" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="40886:41064" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="41159:41316" ph="/// Stops the client from running ... " />
+                <marker date="1555818030921" expanded="true" signature="41371:41811" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="41397:41476" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="41520:41548" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="41594:41622" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="41661:41689" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="41709:41801" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="41821:41984" ph="/// Starts a session with the driver ... " />
+                <marker date="1555818030921" expanded="true" signature="42055:43728" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="42142:42493" ph="/* If the object passed into the RemoteWebDriver constructor is a ... */" />
+                <marker date="1555818030921" expanded="true" signature="42612:43250" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="43267:43374" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="43738:44181" ph="/// Gets the capabilities as a dictionary supporting legacy drivers. ... " />
+                <marker date="1555818030921" expanded="true" signature="44300:44699" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="44549:44645" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="44709:45129" ph="/// Gets the capabilities as a dictionary. ... " />
+                <marker date="1555818030921" expanded="true" signature="45245:45764" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="45497:45710" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="45588:45696" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="45774:46295" ph="/// Executes a command with this driver . ... " />
+                <marker date="1555818030921" expanded="true" signature="46408:47068" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="46581:46679" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="46725:46869" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="46937:47021" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="47078:47196" ph="/// Starts the command executor, enabling communication with the browser. ... " />
+                <marker date="1555818030921" expanded="true" signature="47241:47261" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="47271:47394" ph="/// Stops the command executor, ending further communication with the browser. ... " />
+                <marker date="1555818030921" expanded="true" signature="47438:47458" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="47468:47841" ph="/// Finds an element matching the given mechanism and value. ... " />
+                <marker date="1555818030921" expanded="true" signature="47915:48232" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="48242:48653" ph="/// Finds all elements matching the given mechanism and value. ... " />
+                <marker date="1555818030921" expanded="true" signature="48748:49067" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="49077:49516" ph="/// Executes JavaScript in the context of the currently selected frame or window using a specific command. ... " />
+                <marker date="1555818030921" expanded="true" signature="49619:50217" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="49882:49965" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="49982:50068" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="50292:52632" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="50614:50740" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="50902:50963" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="51015:51394" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="51440:52100" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="51471:51777" ph="/* Note that we must check for the argument being a dictionary before ... */" />
+                <marker date="1555818030921" expanded="true" signature="51902:52045" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="52146:52443" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="52267:52378" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="52460:52591" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="52642:52880" ph="/// Converts the arguments to JavaScript objects. ... " />
+                <marker date="1555818030921" expanded="true" signature="52963:53260" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="53003:53077" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="53128:53224" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="53335:58771" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="53493:58761" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="53645:58585" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="53865:58567" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="56193:56397" ph="/* TODO(JimEvans): Handle the case where the unexpected alert setting ... */" />
+                <marker date="1555818030921" expanded="true" signature="56527:56955" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="56772:56925" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="57031:57430" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="57254:57400" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="58606:58747" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="58861:59083" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="58904:59027" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="59156:61461" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="59392:60148" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="59487:59607" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="59628:60134" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="59914:60061" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="60192:61328" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="60363:60746" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="60578:60681" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="60816:61200" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="60952:61121" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="61221:61314" ph="{...}" />
+                <marker date="1555818030921" expanded="true" signature="61345:61418" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Paths.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7">
+              <caret line="68" column="105" selection-start-line="68" selection-start-column="105" selection-end-line="68" selection-end-column="105" />
+              <folding>
+                <marker date="1555808542065" expanded="false" signature="6:30" ph="..." />
+                <marker date="1555808542065" expanded="true" signature="58:2289" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="83:2287" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="98:187" ph="/// The Netlenium Application Data Directory ... " />
+                <marker date="1555808542065" expanded="true" signature="246:659" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="272:649" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="498:596" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="669:777" ph="/// Driver installations in the Netlenium Application Directory ... " />
+                <marker date="1555808542065" expanded="true" signature="822:1194" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="848:1184" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="1033:1131" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="1212:1330" ph="/// Gets the temporary directory from the Netlenium Application directory ... " />
+                <marker date="1555808542065" expanded="true" signature="1378:1746" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="1404:1736" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="1585:1683" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="1764:1863" ph="/// Gets the directory dedicated for storing log files ... " />
+                <marker date="1555808542065" expanded="true" signature="1909:2281" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="1935:2271" ph="{...}" />
+                <marker date="1555808542065" expanded="true" signature="2120:2218" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -91,7 +451,6 @@
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/Utilities.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/DriverManagerException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Remote/DesiredCapabilities.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Netlenium/packages.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebAPI/Google/Content.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebAPI/Google/ResourceNotFoundException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Firefox/FirefoxProfile.cs" root0="FORCE_HIGHLIGHTING" />
@@ -106,20 +465,16 @@
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/DriverService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/DriverOptions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Chrome/ChromeOptions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Chrome/ChromeDriver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/By.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/Resources/WebAPI_Resources.resx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Netlenium/Resources/GeneralLocalStrings.Designer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/PlatformType.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Netlenium/General Local Strings.Designer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Netlenium/GeneralLocalStrings.resx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/IActions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Netlenium/GeneralLocalStrings.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/Client.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Interactions/TouchActions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Interactions/TouchAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Interactions/SingleTapAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Interactions/ScrollAction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Netlenium/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/IController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/LoggingType.cs" root0="FORCE_HIGHLIGHTING" />
@@ -144,7 +499,6 @@
         <option value="$PROJECT_DIR$/Netlenium/PerformanceMonitor.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/UnsupportedDriverTypeException.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/UnsupportedBrowserTypeException.cs" />
-        <option value="$PROJECT_DIR$/Netlenium.Driver/Client.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/Logging.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/LoggingType.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/Chrome/DriverClass.cs" />
@@ -181,6 +535,7 @@
         <option value="$PROJECT_DIR$/Netlenium.Driver/WebDriver/Opera/OperaOptions.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/WebDriver/Edge/EdgeOptions.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/WebDriver/IE/InternetExplorerOptions.cs" />
+        <option value="$PROJECT_DIR$/Netlenium.Driver/Client.cs" />
       </list>
     </option>
   </component>
@@ -199,6 +554,7 @@
     </navigator>
     <panes>
       <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -209,20 +565,46 @@
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="WebAPI" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="WebAPI" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Google" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="WebDriver" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="WebDriver" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Chrome" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -272,11 +654,12 @@
       <workItem from="1555785198607" duration="880000" />
       <workItem from="1555786259423" duration="9565000" />
       <workItem from="1555804920513" duration="10273000" />
+      <workItem from="1555859778686" duration="1622000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25583000" />
+    <option name="totallyTimeSpent" value="27205000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -289,8 +672,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="20" width="1346" height="698" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49604222" visible="true" weight="0.27293935" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49604222" visible="true" weight="0.27760497" />
       <window_info id="Structure" order="1" sideWeight="0.5039578" side_tool="true" weight="0.27293935" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -310,7 +694,7 @@
       <window_info anchor="bottom" id="Unit Tests" order="12" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.40530974" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="15" weight="0.32920355" />
+      <window_info anchor="bottom" id="Build" order="15" visible="true" weight="0.32920355" />
       <window_info anchor="bottom" id="Change Signature" order="16" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -337,7 +721,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/IDriverManagerException.cs" />
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/PlatformType.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -361,35 +744,6 @@
             <marker date="1555791862549" expanded="true" signature="287:307" ph="{...}" />
             <marker date="1555791862549" expanded="true" signature="420:440" ph="{...}" />
             <marker date="1555791862549" expanded="true" signature="554:574" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Client.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
-          <folding>
-            <marker date="1555716298082" expanded="false" signature="6:115" ph="..." />
-            <marker date="1555716298082" expanded="true" signature="143:2845" ph="{...}" />
-            <marker date="1555716298082" expanded="true" signature="150:240" ph="/// Driver Client for controlling a Browser/WebDriver ... " />
-            <marker date="1555716298082" expanded="true" signature="264:2843" ph="{...}" />
-            <marker date="1555716298082" expanded="true" signature="279:420" ph="/// The platform that the driver manager will try to download the required ... " />
-            <marker date="1555716298082" expanded="true" signature="482:578" ph="/// The target driver that this client will control ... " />
-            <marker date="1555716298082" expanded="true" signature="643:774" ph="/// General Logging about the Netlenium Driver will be printed out to the command-line ... " />
-            <marker date="1555716298082" expanded="true" signature="840:971" ph="/// Verbose Logging about the Netlenium Driver will be printed out to the command-line ... " />
-            <marker date="1555716298082" expanded="true" signature="1037:1159" ph="/// Output data from the driver/browser will be displayed in the command-line ... " />
-            <marker date="1555716298082" expanded="true" signature="1224:1362" ph="/// Verbose data (if available) from the driver/browser will be displayed in the command-line ... " />
-            <marker date="1555716298082" expanded="true" signature="1442:1520" ph="/// Controls the driver interface ... " />
-            <marker date="1555716298082" expanded="true" signature="1597:1754" ph="/// Public Constructor ... " />
-            <marker date="1555716298082" expanded="true" signature="1803:2096" ph="{...}" />
-            <marker date="1555716298082" expanded="true" signature="2106:2195" ph="/// Starts the Driver/Browser Client session ... " />
-            <marker date="1555716298082" expanded="true" signature="2223:2545" ph="{...}" />
-            <marker date="1555716298082" expanded="true" signature="2268:2535" ph="{...}" />
-            <marker date="1555716298082" expanded="true" signature="2563:2652" ph="/// Stops the current Driver/Browser session ... " />
-            <marker date="1555716298082" expanded="true" signature="2679:2699" ph="{...}" />
-            <marker date="1555716298082" expanded="true" signature="2709:2786" ph="/// Restarts the current session ... " />
-            <marker date="1555716298082" expanded="true" signature="2816:2837" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -519,34 +873,6 @@
             <marker date="1555808373758" expanded="true" signature="10293:10452" ph="///  ... " />
             <marker date="1555808373758" expanded="true" signature="10485:10783" ph="{...}" />
             <marker date="1555808373758" expanded="true" signature="10533:10624" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Paths.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="68" column="105" selection-start-line="68" selection-start-column="105" selection-end-line="68" selection-end-column="105" />
-          <folding>
-            <marker date="1555808542065" expanded="false" signature="6:30" ph="..." />
-            <marker date="1555808542065" expanded="true" signature="58:2289" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="83:2287" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="98:187" ph="/// The Netlenium Application Data Directory ... " />
-            <marker date="1555808542065" expanded="true" signature="246:659" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="272:649" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="498:596" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="669:777" ph="/// Driver installations in the Netlenium Application Directory ... " />
-            <marker date="1555808542065" expanded="true" signature="822:1194" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="848:1184" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1033:1131" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1212:1330" ph="/// Gets the temporary directory from the Netlenium Application directory ... " />
-            <marker date="1555808542065" expanded="true" signature="1378:1746" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1404:1736" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1585:1683" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1764:1863" ph="///  ... " />
-            <marker date="1555808542065" expanded="true" signature="1909:2281" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1935:2271" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="2120:2218" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -878,13 +1204,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/Element.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2027">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/Element.cs" />
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebAPI/Google/Storage.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -901,267 +1221,6 @@
             <marker date="1555817445804" expanded="true" signature="1860:2189" ph="{...}" />
             <marker date="1555817445804" expanded="true" signature="1930:2127" ph="{...}" />
             <marker date="1555817445804" expanded="true" signature="2041:2113" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Remote/RemoteWebDriver.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-          <folding>
-            <marker date="1555818030921" expanded="false" signature="6:307" ph="..." />
-            <marker date="1555818030921" expanded="true" signature="380:61469" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="387:1280" ph="/// Provides a way to use the driver through ... " />
-            <marker date="1555818030921" expanded="true" signature="1671:61467" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="1686:1811" ph="/// The default command timeout for HTTP requests in a RemoteWebDriver instance. ... " />
-            <marker date="1555818030921" expanded="true" signature="2451:2766" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class. This constructor defaults proxy to htt ... " />
-            <marker date="1555818030921" expanded="true" signature="2878:2898" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="2908:3235" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class. This constructor defaults proxy to htt ... " />
-            <marker date="1555818030921" expanded="true" signature="3374:3394" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="3404:3862" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class. This constructor defaults proxy to htt ... " />
-            <marker date="1555818030921" expanded="true" signature="4008:4028" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="4038:4443" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class ... " />
-            <marker date="1555818030921" expanded="true" signature="4622:4642" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="4652:5238" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class using the specified remote address, des ... " />
-            <marker date="1555818030921" expanded="true" signature="5444:5464" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="5474:5867" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class ... " />
-            <marker date="1555818030921" expanded="true" signature="5967:6399" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="6368:6399" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="6576:6682" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="6786:7140" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="7014:7126" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="7225:7546" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="7433:7532" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="7566:7837" ph="/// Gets or sets the URL the browser is currently displaying. ... " />
-            <marker date="1555818030921" expanded="true" signature="7863:8486" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="7889:8066" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="8083:8476" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="8132:8264" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="8496:8590" ph="/// Gets the title of the current browser window. ... " />
-            <marker date="1555818030921" expanded="true" signature="8618:8921" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="8644:8911" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="8931:9035" ph="/// Gets the source of the page last loaded by the browser. ... " />
-            <marker date="1555818030921" expanded="true" signature="9068:9372" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="9094:9362" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="9382:9572" ph="/// Gets the current window handle, which is an opaque handle to this ... " />
-            <marker date="1555818030921" expanded="true" signature="9614:9836" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="9640:9826" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="9846:9943" ph="/// Gets the window handles of open browser windows. ... " />
-            <marker date="1555818030921" expanded="true" signature="9999:10479" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="10025:10469" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="10315:10406" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="10489:10615" ph="/// Gets an &lt;see cref=&quot;IKeyboard&quot;/&gt; object for sending keystrokes to the browser. ... " />
-            <marker date="1555818030921" expanded="true" signature="10799:10861" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="10871:10998" ph="/// Gets an &lt;see cref=&quot;IMouse&quot;/&gt; object for sending mouse commands to the browser. ... " />
-            <marker date="1555818030921" expanded="true" signature="11173:11232" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="11242:11364" ph="/// Gets a value indicating whether web storage is supported for this driver. ... " />
-            <marker date="1555818030921" expanded="true" signature="11398:11467" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="11477:11592" ph="/// Gets an &lt;see cref=&quot;IWebStorage&quot;/&gt; object for managing web storage. ... " />
-            <marker date="1555818030921" expanded="true" signature="11630:11991" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="11656:11981" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="11712:11929" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="12001:12146" ph="/// Gets a value indicating whether manipulating the application cache is supported for this driver. ... " />
-            <marker date="1555818030921" expanded="true" signature="12186:12256" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="12266:12393" ph="/// Gets an &lt;see cref=&quot;IApplicationCache&quot;/&gt; object for managing application cache. ... " />
-            <marker date="1555818030921" expanded="true" signature="12443:12822" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="12469:12812" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="12526:12759" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="12832:12967" ph="/// Gets a value indicating whether manipulating geolocation is supported for this driver. ... " />
-            <marker date="1555818030921" expanded="true" signature="13006:13083" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="13093:13218" ph="/// Gets an &lt;see cref=&quot;ILocationContext&quot;/&gt; object for managing browser location. ... " />
-            <marker date="1555818030921" expanded="true" signature="13266:13655" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="13292:13645" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="13356:13585" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="13665:13788" ph="/// Gets the capabilities that the RemoteWebDriver instance is currently using ... " />
-            <marker date="1555818030921" expanded="true" signature="13830:13896" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="13906:14096" ph="/// Gets or sets the &lt;see cref=&quot;IFileDetector&quot;/&gt; responsible for detecting ... " />
-            <marker date="1555818030921" expanded="true" signature="14146:14505" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="14172:14242" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="14259:14495" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="14308:14437" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="14515:14636" ph="/// Gets the &lt;see cref=&quot;SessionId&quot;/&gt; for the current session of this driver. ... " />
-            <marker date="1555818030921" expanded="true" signature="14671:14734" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="14744:14864" ph="/// Gets a value indicating whether this object is a valid action executor. ... " />
-            <marker date="1555818030921" expanded="true" signature="14901:14979" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="14989:15138" ph="/// Gets a value indicating whether or not the driver is compliant with the W3C WebDriver specification. ... " />
-            <marker date="1555818030921" expanded="true" signature="15185:15299" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="15309:15438" ph="/// Gets the &lt;see cref=&quot;ICommandExecutor&quot;/&gt; which executes commands for this driver. ... " />
-            <marker date="1555818030921" expanded="true" signature="15489:15551" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="15561:15731" ph="/// Gets or sets the factory object used to create instances of &lt;see cref=&quot;RemoteWebElement&quot;/&gt; ... " />
-            <marker date="1555818030921" expanded="true" signature="15788:15905" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="15915:16412" ph="/// Finds the first element in the page that matches the &lt;see cref=&quot;By&quot;/&gt; object ... " />
-            <marker date="1555818030921" expanded="true" signature="16458:16652" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="16496:16600" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="16662:17289" ph="/// Finds the elements on the page by using the &lt;see cref=&quot;T:Netlenium.Driver.WebDriver.By&quot; /&gt; object and returns ... " />
-            <marker date="1555818030921" expanded="true" signature="17356:17551" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="17394:17498" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="17561:17628" ph="/// Closes the Browser ... " />
-            <marker date="1555818030921" expanded="true" signature="17656:17729" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="17739:17830" ph="/// Close the Browser and Dispose of WebDriver ... " />
-            <marker date="1555818030921" expanded="true" signature="17857:17905" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="17915:18366" ph="/// Method For getting an object to set the Speed ... " />
-            <marker date="1555818030921" expanded="true" signature="18399:18463" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="18473:18899" ph="/// Method to allow you to Navigate with WebDriver ... " />
-            <marker date="1555818030921" expanded="true" signature="18937:19003" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="19013:19406" ph="/// Method to give you access to switch frames and windows ... " />
-            <marker date="1555818030921" expanded="true" signature="19447:19517" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="19527:19858" ph="/// Executes JavaScript in the context of the currently selected frame or window ... " />
-            <marker date="1555818030921" expanded="true" signature="19931:20040" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="20050:20397" ph="/// Executes JavaScript asynchronously in the context of the currently selected frame or window. ... " />
-            <marker date="1555818030921" expanded="true" signature="20475:20589" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="20599:21087" ph="/// Finds the first element in the page that matches the ID supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="21141:21370" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="21198:21312" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="21380:21930" ph="/// Finds the first element in the page that matches the ID supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="22005:22747" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="22062:22688" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="22185:22599" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="22224:22516" ph="/* Finding multiple elements with an empty ID will return ... */" />
-            <marker date="1555818030921" expanded="true" signature="22757:23267" ph="/// Finds the first element in the page that matches the CSS Class supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="23335:24602" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="23358:23742" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
-            <marker date="1555818030921" expanded="true" signature="23789:24529" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="23911:24441" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="23950:24265" ph="/* Finding elements by class name with whitespace is not allowed. ... */" />
-            <marker date="1555818030921" expanded="true" signature="24612:25185" ph="/// Finds a list of elements that match the class name supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="25274:26544" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="25297:25682" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
-            <marker date="1555818030921" expanded="true" signature="25729:26470" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="25851:26381" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="25890:26205" ph="/* Finding elements by class name with whitespace is not allowed. ... */" />
-            <marker date="1555818030921" expanded="true" signature="26554:27057" ph="/// Finds the first of elements that match the link text supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="27123:27203" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="27213:27785" ph="/// Finds a list of elements that match the link text supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="27872:27953" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="27963:28494" ph="/// Finds the first of elements that match the part of the link text supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="28574:28669" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="28679:29264" ph="/// Finds a list of elements that match the class name supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="29365:29461" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="29471:29955" ph="/// Finds the first of elements that match the name supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="30013:30653" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="30036:30431" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
-            <marker date="1555818030921" expanded="true" signature="30478:30591" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="30663:31192" ph="/// Finds a list of elements that match the name supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="31271:31914" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="31294:31690" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
-            <marker date="1555818030921" expanded="true" signature="31737:31851" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="31924:32439" ph="/// Finds the first of elements that match the DOM Tag supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="32503:33112" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="32526:32902" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
-            <marker date="1555818030921" expanded="true" signature="32949:33043" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="33122:33662" ph="/// Finds a list of elements that match the DOM Tag supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="33747:34359" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="33770:34147" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
-            <marker date="1555818030921" expanded="true" signature="34194:34289" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="34369:34875" ph="/// Finds the first of elements that match the XPath supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="34935:35008" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="35018:35563" ph="/// Finds a list of elements that match the XPath supplied ... " />
-            <marker date="1555818030921" expanded="true" signature="35644:35718" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="35728:36000" ph="/// Finds the first element matching the specified CSS selector. ... " />
-            <marker date="1555818030921" expanded="true" signature="36072:36158" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="36168:36507" ph="/// Finds all elements matching the specified CSS selector. ... " />
-            <marker date="1555818030921" expanded="true" signature="36600:36687" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="36697:36921" ph="/// Gets a &lt;see cref=&quot;Screenshot&quot;/&gt; object representing the image of the page on the screen. ... " />
-            <marker date="1555818030921" expanded="true" signature="36963:37260" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="37270:37355" ph="/// Dispose the RemoteWebDriver Instance ... " />
-            <marker date="1555818030921" expanded="true" signature="37385:37476" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="37486:37694" ph="/// Performs the specified list of actions with this action executor. ... " />
-            <marker date="1555818030921" expanded="true" signature="37771:38494" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="37825:37969" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="38017:38484" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="38165:38262" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="38504:38599" ph="/// Resets the input state of the action executor. ... " />
-            <marker date="1555818030921" expanded="true" signature="38637:38797" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="38694:38787" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="38807:39045" ph="/// Escapes invalid characters in a CSS selector. ... " />
-            <marker date="1555818030921" expanded="true" signature="39111:39540" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="39297:39501" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="39550:39847" ph="/// Executes commands with the driver ... " />
-            <marker date="1555818030921" expanded="true" signature="39959:40048" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="40058:40261" ph="/// Find the element in the response ... " />
-            <marker date="1555818030921" expanded="true" signature="40332:40797" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="40376:40456" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="40650:40758" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="40807:41022" ph="/// Finds the elements that are in the response ... " />
-            <marker date="1555818030921" expanded="true" signature="41114:41819" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="41284:41766" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="41357:41752" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="41538:41734" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="41829:41986" ph="/// Stops the client from running ... " />
-            <marker date="1555818030921" expanded="true" signature="42041:42496" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="42067:42151" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="42195:42223" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="42269:42297" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="42336:42364" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="42384:42486" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="42506:42669" ph="/// Starts a session with the driver ... " />
-            <marker date="1555818030921" expanded="true" signature="42740:44579" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="42850:43201" ph="/* If the object passed into the RemoteWebDriver constructor is a ... */" />
-            <marker date="1555818030921" expanded="true" signature="43338:44041" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="44058:44165" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="44589:45032" ph="/// Gets the capabilities as a dictionary supporting legacy drivers. ... " />
-            <marker date="1555818030921" expanded="true" signature="45151:45621" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="45471:45567" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="45631:46051" ph="/// Gets the capabilities as a dictionary. ... " />
-            <marker date="1555818030921" expanded="true" signature="46167:46757" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="46490:46703" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="46581:46689" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="46767:47288" ph="/// Executes a command with this driver . ... " />
-            <marker date="1555818030921" expanded="true" signature="47401:48080" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="47588:47691" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="47737:47881" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="47949:48033" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="48090:48208" ph="/// Starts the command executor, enabling communication with the browser. ... " />
-            <marker date="1555818030921" expanded="true" signature="48253:48273" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="48283:48406" ph="/// Stops the command executor, ending further communication with the browser. ... " />
-            <marker date="1555818030921" expanded="true" signature="48450:48470" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="48480:48853" ph="/// Finds an element matching the given mechanism and value. ... " />
-            <marker date="1555818030921" expanded="true" signature="48927:49282" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="49292:49703" ph="/// Finds all elements matching the given mechanism and value. ... " />
-            <marker date="1555818030921" expanded="true" signature="49798:50155" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="50165:50604" ph="/// Executes JavaScript in the context of the currently selected frame or window using a specific command. ... " />
-            <marker date="1555818030921" expanded="true" signature="50707:51348" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="50998:51081" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="51098:51184" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="51423:53864" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="51788:51914" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="52076:52137" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="52189:52591" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="52637:53320" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="52668:52974" ph="/* Note that we must check for the argument being a dictionary before ... */" />
-            <marker date="1555818030921" expanded="true" signature="53122:53265" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="53366:53675" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="53499:53610" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="53692:53823" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="53874:54112" ph="/// Converts the arguments to JavaScript objects. ... " />
-            <marker date="1555818030921" expanded="true" signature="54195:54492" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="54235:54309" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="54360:54456" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="54567:60088" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="54725:60078" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="54900:59902" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="55133:59884" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="57461:57665" ph="/* TODO(JimEvans): Handle the case where the unexpected alert setting ... */" />
-            <marker date="1555818030921" expanded="true" signature="57798:58249" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="58066:58219" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="58325:58747" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="58571:58717" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="59923:60064" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="60178:60400" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="60221:60344" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="61002:61461" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="60737:61516" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="60837:60962" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="60983:61502" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="61277:61429" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="61002:61328" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="61744:62143" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="61975:62078" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="61002:61200" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="61002:61121" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="61221:61314" ph="{...}" />
-            <marker date="1555818030921" expanded="true" signature="61345:61418" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2054,7 +2113,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/INavigation.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
+        <state relative-caret-position="105">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding>
             <marker date="1555710173180" expanded="true" signature="51:2556" ph="{...}" />
@@ -2071,7 +2130,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/IActions.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="42">
           <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="107" />
           <folding>
             <marker date="1555815208660" expanded="true" signature="61:1314" ph="{...}" />
@@ -2082,6 +2141,356 @@
             <marker date="1555815208660" expanded="true" signature="508:592" ph="/// Go forward one page in the history. ... " />
             <marker date="1555815208660" expanded="true" signature="628:874" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
             <marker date="1555815208660" expanded="true" signature="970:1234" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Client.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <folding>
+            <marker date="1555864999334" expanded="true" signature="26:1072" ph="{...}" />
+            <marker date="1555864999334" expanded="true" signature="33:123" ph="/// Driver Client for controlling a Browser/WebDriver ... " />
+            <marker date="1555864999334" expanded="true" signature="147:1070" ph="{...}" />
+            <marker date="1555864999334" expanded="true" signature="163:259" ph="/// The target driver that this client will control ... " />
+            <marker date="1555864999334" expanded="true" signature="320:398" ph="/// Controls the driver interface ... " />
+            <marker date="1555864999334" expanded="true" signature="464:621" ph="/// Public Constructor ... " />
+            <marker date="1555864999334" expanded="true" signature="670:1055" ph="{...}" />
+            <marker date="1555864999334" expanded="true" signature="771:1032" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Chrome/ChromeDriver.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+          <folding>
+            <marker date="1555818023456" expanded="false" signature="6:88" ph="..." />
+            <marker date="1555818023456" expanded="true" signature="133:10149" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="140:958" ph="/// Provides a mechanism to write tests against Chrome ... " />
+            <marker date="1555818023456" expanded="true" signature="1006:10147" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="1021:1103" ph="/// Accept untrusted SSL Certificates ... " />
+            <marker date="1555818023456" expanded="true" signature="1597:1705" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class. ... " />
+            <marker date="1555818023456" expanded="true" signature="1771:1791" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="1801:2054" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified options. ... " />
+            <marker date="1555818023456" expanded="true" signature="2200:2220" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="2230:2492" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified driver service. ... " />
+            <marker date="1555818023456" expanded="true" signature="2598:2618" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="2628:2942" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
+            <marker date="1555818023456" expanded="true" signature="3063:3083" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="3093:3528" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
+            <marker date="1555818023456" expanded="true" signature="3683:3703" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="3713:4268" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
+            <marker date="1555818023456" expanded="true" signature="4483:4503" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="4513:4900" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified ... " />
+            <marker date="1555818023456" expanded="true" signature="5040:5060" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="5070:5539" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified &lt;see cref=&quot;ChromeDrive ... " />
+            <marker date="1555818023456" expanded="true" signature="5761:6544" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="6554:7238" ph="/// Gets or sets the &lt;see cref=&quot;IFileDetector&quot;/&gt; responsible for detecting ... " />
+            <marker date="1555818023456" expanded="true" signature="7289:7375" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="7385:7490" ph="/// Gets or sets the network condition emulation for Chrome. ... " />
+            <marker date="1555818023456" expanded="true" signature="7547:8206" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="7573:7785" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="7802:8196" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="7851:7975" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="8216:8466" ph="/// Executes a custom Chrome command. ... " />
+            <marker date="1555818023456" expanded="true" signature="8573:8969" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="8620:8744" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="9089:9545" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="9136:9260" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="9635:9850" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="9678:9794" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="9951:10141" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Remote/RemoteWebDriver.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+          <folding>
+            <marker date="1555818030921" expanded="false" signature="6:307" ph="..." />
+            <marker date="1555818030921" expanded="true" signature="380:61469" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="387:1280" ph="/// Provides a way to use the driver through ... " />
+            <marker date="1555818030921" expanded="true" signature="1671:61467" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="1686:1811" ph="/// The default command timeout for HTTP requests in a RemoteWebDriver instance. ... " />
+            <marker date="1555818030921" expanded="true" signature="2451:2766" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class. This constructor defaults proxy to htt ... " />
+            <marker date="1555818030921" expanded="true" signature="2878:2898" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="2908:3235" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class. This constructor defaults proxy to htt ... " />
+            <marker date="1555818030921" expanded="true" signature="3374:3394" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="3404:3862" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class. This constructor defaults proxy to htt ... " />
+            <marker date="1555818030921" expanded="true" signature="4008:4028" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="4038:4443" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class ... " />
+            <marker date="1555818030921" expanded="true" signature="4606:4626" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="4636:5222" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class using the specified remote address, des ... " />
+            <marker date="1555818030921" expanded="true" signature="5428:5448" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="5458:5851" ph="/// Initializes a new instance of the &lt;see cref=&quot;RemoteWebDriver&quot;/&gt; class ... " />
+            <marker date="1555818030921" expanded="true" signature="5951:7456" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="6317:6632" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="6517:6618" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="6717:7058" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="6937:7044" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="7138:7446" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="7338:7432" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="7466:7737" ph="/// Gets or sets the URL the browser is currently displaying. ... " />
+            <marker date="1555818030921" expanded="true" signature="7763:8348" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="7789:7956" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="7973:8338" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="8022:8154" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="8358:8452" ph="/// Gets the title of the current browser window. ... " />
+            <marker date="1555818030921" expanded="true" signature="8480:8770" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="8506:8760" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="8780:8884" ph="/// Gets the source of the page last loaded by the browser. ... " />
+            <marker date="1555818030921" expanded="true" signature="8917:9208" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="8943:9198" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="9218:9408" ph="/// Gets the current window handle, which is an opaque handle to this ... " />
+            <marker date="1555818030921" expanded="true" signature="9450:9662" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="9476:9652" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="9672:9769" ph="/// Gets the window handles of open browser windows. ... " />
+            <marker date="1555818030921" expanded="true" signature="9825:10278" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="9851:10268" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="10114:10205" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="10288:10414" ph="/// Gets an &lt;see cref=&quot;IKeyboard&quot;/&gt; object for sending keystrokes to the browser. ... " />
+            <marker date="1555818030921" expanded="true" signature="10598:10655" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="10665:10792" ph="/// Gets an &lt;see cref=&quot;IMouse&quot;/&gt; object for sending mouse commands to the browser. ... " />
+            <marker date="1555818030921" expanded="true" signature="10967:11021" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="11031:11153" ph="/// Gets a value indicating whether web storage is supported for this driver. ... " />
+            <marker date="1555818030921" expanded="true" signature="11187:11251" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="11261:11376" ph="/// Gets an &lt;see cref=&quot;IWebStorage&quot;/&gt; object for managing web storage. ... " />
+            <marker date="1555818030921" expanded="true" signature="11414:11765" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="11440:11755" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="11491:11708" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="11775:11920" ph="/// Gets a value indicating whether manipulating the application cache is supported for this driver. ... " />
+            <marker date="1555818030921" expanded="true" signature="11960:12025" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="12035:12162" ph="/// Gets an &lt;see cref=&quot;IApplicationCache&quot;/&gt; object for managing application cache. ... " />
+            <marker date="1555818030921" expanded="true" signature="12212:12581" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="12238:12571" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="12290:12523" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="12591:12726" ph="/// Gets a value indicating whether manipulating geolocation is supported for this driver. ... " />
+            <marker date="1555818030921" expanded="true" signature="12765:12837" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="12847:12972" ph="/// Gets an &lt;see cref=&quot;ILocationContext&quot;/&gt; object for managing browser location. ... " />
+            <marker date="1555818030921" expanded="true" signature="13020:13399" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="13046:13389" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="13105:13334" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="13409:13532" ph="/// Gets the capabilities that the RemoteWebDriver instance is currently using ... " />
+            <marker date="1555818030921" expanded="true" signature="13574:13635" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="13645:13835" ph="/// Gets or sets the &lt;see cref=&quot;IFileDetector&quot;/&gt; responsible for detecting ... " />
+            <marker date="1555818030921" expanded="true" signature="13885:14234" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="13911:13976" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="13993:14224" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="14042:14171" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="14244:14365" ph="/// Gets the &lt;see cref=&quot;SessionId&quot;/&gt; for the current session of this driver. ... " />
+            <marker date="1555818030921" expanded="true" signature="14400:14458" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="14468:14588" ph="/// Gets a value indicating whether this object is a valid action executor. ... " />
+            <marker date="1555818030921" expanded="true" signature="14625:14698" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="14708:14857" ph="/// Gets a value indicating whether or not the driver is compliant with the W3C WebDriver specification. ... " />
+            <marker date="1555818030921" expanded="true" signature="14904:15013" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="15023:15152" ph="/// Gets the &lt;see cref=&quot;ICommandExecutor&quot;/&gt; which executes commands for this driver. ... " />
+            <marker date="1555818030921" expanded="true" signature="15203:15260" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="15270:15440" ph="/// Gets or sets the factory object used to create instances of &lt;see cref=&quot;RemoteWebElement&quot;/&gt; ... " />
+            <marker date="1555818030921" expanded="true" signature="15497:15604" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="15614:16111" ph="/// Finds the first element in the page that matches the &lt;see cref=&quot;By&quot;/&gt; object ... " />
+            <marker date="1555818030921" expanded="true" signature="16157:16351" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="16195:16299" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="16361:16988" ph="/// Finds the elements on the page by using the &lt;see cref=&quot;T:Netlenium.Driver.WebDriver.By&quot; /&gt; object and returns ... " />
+            <marker date="1555818030921" expanded="true" signature="17055:17250" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="17093:17197" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="17260:17327" ph="/// Closes the Browser ... " />
+            <marker date="1555818030921" expanded="true" signature="17355:17423" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="17433:17524" ph="/// Close the Browser and Dispose of WebDriver ... " />
+            <marker date="1555818030921" expanded="true" signature="17551:17594" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="17604:18055" ph="/// Method For getting an object to set the Speed ... " />
+            <marker date="1555818030921" expanded="true" signature="18088:18152" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="18162:18588" ph="/// Method to allow you to Navigate with WebDriver ... " />
+            <marker date="1555818030921" expanded="true" signature="18626:18692" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="18702:19095" ph="/// Method to give you access to switch frames and windows ... " />
+            <marker date="1555818030921" expanded="true" signature="19136:19206" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="19216:19547" ph="/// Executes JavaScript in the context of the currently selected frame or window ... " />
+            <marker date="1555818030921" expanded="true" signature="19620:19724" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="19734:20081" ph="/// Executes JavaScript asynchronously in the context of the currently selected frame or window. ... " />
+            <marker date="1555818030921" expanded="true" signature="20159:20268" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="20278:20766" ph="/// Finds the first element in the page that matches the ID supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="20820:21034" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="20872:20981" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="21044:21594" ph="/// Finds the first element in the page that matches the ID supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="21669:22393" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="21721:22339" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="21841:22255" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="21880:22172" ph="/* Finding multiple elements with an empty ID will return ... */" />
+            <marker date="1555818030921" expanded="true" signature="22403:22913" ph="/// Finds the first element in the page that matches the CSS Class supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="22981:24230" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="23004:23388" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+            <marker date="1555818030921" expanded="true" signature="23430:24162" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="23549:24079" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="23588:23903" ph="/* Finding elements by class name with whitespace is not allowed. ... */" />
+            <marker date="1555818030921" expanded="true" signature="24240:24813" ph="/// Finds a list of elements that match the class name supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="24902:26154" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="24925:25310" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+            <marker date="1555818030921" expanded="true" signature="25352:26085" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="25471:26001" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="25510:25825" ph="/* Finding elements by class name with whitespace is not allowed. ... */" />
+            <marker date="1555818030921" expanded="true" signature="26164:26667" ph="/// Finds the first of elements that match the link text supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="26733:26808" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="26818:27390" ph="/// Finds a list of elements that match the link text supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="27477:27553" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="27563:28094" ph="/// Finds the first of elements that match the part of the link text supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="28174:28264" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="28274:28859" ph="/// Finds a list of elements that match the class name supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="28960:29051" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="29061:29545" ph="/// Finds the first of elements that match the name supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="29603:30228" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="29626:30021" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+            <marker date="1555818030921" expanded="true" signature="30063:30171" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="30238:30767" ph="/// Finds a list of elements that match the name supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="30846:31474" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="30869:31265" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+            <marker date="1555818030921" expanded="true" signature="31307:31416" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="31484:31999" ph="/// Finds the first of elements that match the DOM Tag supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="32063:32657" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="32086:32462" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+            <marker date="1555818030921" expanded="true" signature="32504:32593" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="32667:33207" ph="/// Finds a list of elements that match the DOM Tag supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="33292:33889" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="33315:33692" ph="/* Element finding mechanism is not allowed by the W3C WebDriver ... */" />
+            <marker date="1555818030921" expanded="true" signature="33734:33824" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="33899:34405" ph="/// Finds the first of elements that match the XPath supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="34465:34533" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="34543:35088" ph="/// Finds a list of elements that match the XPath supplied ... " />
+            <marker date="1555818030921" expanded="true" signature="35169:35238" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="35248:35520" ph="/// Finds the first element matching the specified CSS selector. ... " />
+            <marker date="1555818030921" expanded="true" signature="35592:35673" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="35683:36022" ph="/// Finds all elements matching the specified CSS selector. ... " />
+            <marker date="1555818030921" expanded="true" signature="36115:36197" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="36207:36431" ph="/// Gets a &lt;see cref=&quot;Screenshot&quot;/&gt; object representing the image of the page on the screen. ... " />
+            <marker date="1555818030921" expanded="true" signature="36473:36757" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="36767:36852" ph="/// Dispose the RemoteWebDriver Instance ... " />
+            <marker date="1555818030921" expanded="true" signature="36882:36968" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="36978:37186" ph="/// Performs the specified list of actions with this action executor. ... " />
+            <marker date="1555818030921" expanded="true" signature="37263:37933" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="37317:37461" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="37504:37923" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="37632:37729" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="37943:38038" ph="/// Resets the input state of the action executor. ... " />
+            <marker date="1555818030921" expanded="true" signature="38076:38226" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="38128:38216" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="38236:38474" ph="/// Escapes invalid characters in a CSS selector. ... " />
+            <marker date="1555818030921" expanded="true" signature="38540:38966" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="38723:38927" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="38976:39273" ph="/// Executes commands with the driver ... " />
+            <marker date="1555818030921" expanded="true" signature="39385:39469" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="39479:39682" ph="/// Find the element in the response ... " />
+            <marker date="1555818030921" expanded="true" signature="39753:40190" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="39797:39877" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="40048:40151" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="40200:40415" ph="/// Finds the elements that are in the response ... " />
+            <marker date="1555818030921" expanded="true" signature="40507:41149" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="40658:41096" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="40728:41082" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="40886:41064" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="41159:41316" ph="/// Stops the client from running ... " />
+            <marker date="1555818030921" expanded="true" signature="41371:41811" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="41397:41476" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="41520:41548" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="41594:41622" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="41661:41689" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="41709:41801" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="41821:41984" ph="/// Starts a session with the driver ... " />
+            <marker date="1555818030921" expanded="true" signature="42055:43728" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="42142:42493" ph="/* If the object passed into the RemoteWebDriver constructor is a ... */" />
+            <marker date="1555818030921" expanded="true" signature="42612:43250" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="43267:43374" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="43738:44181" ph="/// Gets the capabilities as a dictionary supporting legacy drivers. ... " />
+            <marker date="1555818030921" expanded="true" signature="44300:44699" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="44549:44645" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="44709:45129" ph="/// Gets the capabilities as a dictionary. ... " />
+            <marker date="1555818030921" expanded="true" signature="45245:45764" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="45497:45710" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="45588:45696" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="45774:46295" ph="/// Executes a command with this driver . ... " />
+            <marker date="1555818030921" expanded="true" signature="46408:47068" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="46581:46679" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="46725:46869" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="46937:47021" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="47078:47196" ph="/// Starts the command executor, enabling communication with the browser. ... " />
+            <marker date="1555818030921" expanded="true" signature="47241:47261" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="47271:47394" ph="/// Stops the command executor, ending further communication with the browser. ... " />
+            <marker date="1555818030921" expanded="true" signature="47438:47458" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="47468:47841" ph="/// Finds an element matching the given mechanism and value. ... " />
+            <marker date="1555818030921" expanded="true" signature="47915:48232" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="48242:48653" ph="/// Finds all elements matching the given mechanism and value. ... " />
+            <marker date="1555818030921" expanded="true" signature="48748:49067" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="49077:49516" ph="/// Executes JavaScript in the context of the currently selected frame or window using a specific command. ... " />
+            <marker date="1555818030921" expanded="true" signature="49619:50217" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="49882:49965" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="49982:50068" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="50292:52632" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="50614:50740" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="50902:50963" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="51015:51394" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="51440:52100" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="51471:51777" ph="/* Note that we must check for the argument being a dictionary before ... */" />
+            <marker date="1555818030921" expanded="true" signature="51902:52045" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="52146:52443" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="52267:52378" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="52460:52591" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="52642:52880" ph="/// Converts the arguments to JavaScript objects. ... " />
+            <marker date="1555818030921" expanded="true" signature="52963:53260" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="53003:53077" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="53128:53224" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="53335:58771" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="53493:58761" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="53645:58585" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="53865:58567" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="56193:56397" ph="/* TODO(JimEvans): Handle the case where the unexpected alert setting ... */" />
+            <marker date="1555818030921" expanded="true" signature="56527:56955" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="56772:56925" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="57031:57430" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="57254:57400" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="58606:58747" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="58861:59083" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="58904:59027" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="59156:61461" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="59392:60148" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="59487:59607" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="59628:60134" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="59914:60061" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="60192:61328" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="60363:60746" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="60578:60681" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="60816:61200" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="60952:61121" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="61221:61314" ph="{...}" />
+            <marker date="1555818030921" expanded="true" signature="61345:61418" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Paths.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="68" column="105" selection-start-line="68" selection-start-column="105" selection-end-line="68" selection-end-column="105" />
+          <folding>
+            <marker date="1555808542065" expanded="false" signature="6:30" ph="..." />
+            <marker date="1555808542065" expanded="true" signature="58:2289" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="83:2287" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="98:187" ph="/// The Netlenium Application Data Directory ... " />
+            <marker date="1555808542065" expanded="true" signature="246:659" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="272:649" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="498:596" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="669:777" ph="/// Driver installations in the Netlenium Application Directory ... " />
+            <marker date="1555808542065" expanded="true" signature="822:1194" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="848:1184" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1033:1131" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1212:1330" ph="/// Gets the temporary directory from the Netlenium Application directory ... " />
+            <marker date="1555808542065" expanded="true" signature="1378:1746" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1404:1736" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1585:1683" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1764:1863" ph="/// Gets the directory dedicated for storing log files ... " />
+            <marker date="1555808542065" expanded="true" signature="1909:2281" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1935:2271" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="2120:2218" ph="{...}" />
           </folding>
         </state>
       </provider>
