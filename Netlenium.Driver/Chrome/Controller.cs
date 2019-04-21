@@ -1,280 +1,168 @@
-﻿using Netlenium.WebDriver;
-using Netlenium.WebDriver.Chrome;
-using Netlenium.WebDriver.Interactions;
-using Netlenium.WebDriver.Remote;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using LogType = Netlenium.Types.LogType;
+using Netlenium.Driver.WebDriver.Chrome;
+using Netlenium.Driver.WebDriver.Remote;
 
 namespace Netlenium.Driver.Chrome
 {
-    /// <summary>
-    /// Chrome Controller Class
-    /// </summary>
-    public class Controller
+    internal class Controller : IController
     {
         /// <summary>
-        /// Primary Remote Driver Controller
+        /// Actions for controlling the Web Browser
         /// </summary>
-        public RemoteWebDriver RemoteDriver;
+        private IActions actions;
 
         /// <summary>
-        /// Container for executing Javascript Calls
+        /// Manages the driver installation for the target platform
         /// </summary>
-        private IJavaScriptExecutor JavascriptExecuter { get; set; }
-
+        private IDriverManager DriverManager { get; set; }
+        
         /// <summary>
-        /// Handles Selenium interactions
-        /// </summary>
-        private Actions _driverAction;
-
-        /// <summary>
-        /// The configuration that targets this driver
-        /// </summary>
-        private DriverConfiguration Configuration { get; }
-
-        /// <summary>
-        /// The driver installation details
-        /// </summary>
-        private  DriverInstallationDetails DriverInstallation { get; }
-
-        /// <summary>
-        /// Chrome driver service
-        /// </summary>
-        public ChromeDriverService DriverService { get; set; }
-
-        /// <summary>
-        /// Chrome Options
+        /// Options that are passed on to the Chrome Driver
         /// </summary>
         private ChromeOptions DriverOptions { get; set; }
-
-        /// <summary>
-        /// The performance of the driver
-        /// </summary>
-        public PerformanceMonitor DriverPerformance { get; set; }
         
         /// <summary>
-        /// Constructs the chrome controller and configures the chrome driver
+        /// The Driver Service process manager
         /// </summary>
-        public Controller(DriverConfiguration driverConfiguration, DriverInstallationDetails driverInstallation)
-        {
-            Configuration = driverConfiguration;
-            DriverInstallation = driverInstallation;
-        }
-
-        /// <summary>
-        /// Adds an argument
-        /// </summary>
-        /// <param name="paramerter"></param>
-        private void AddArgument(string paramerter)
-        {
-            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", $"Adding Argument to Chrome \"{paramerter}\"");
-            DriverOptions.AddArgument(paramerter);
-        }
+        private ChromeDriverService DriverService { get; set; }
         
         /// <summary>
-        /// Initializes the Chrome Driver
+        /// Remote Driver Client for controlling the Driver Service
         /// </summary>
-        public void Initialize()
+        private RemoteWebDriver RemoteDriver { get; set; }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates if the Browser is intended to start Headless
+        /// (Only effective before starting the Browser)
+        /// </summary>
+        public bool Headless { get; set; }
+        
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates if General Logging regarding Netlenium is displayed onto the Command Line
+        /// </summary>
+        public bool GeneralLoggingEnabled { get; set; }
+        
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates if Verbose Logging regarding Netlenium is displayed onto the Command Line
+        /// </summary>
+        public bool VerboseLoggingEnabled { get; set; }
+        
+        /// <inheritdoc />
+        /// <summary>
+        /// Driver output to be displayed to the Command Line
+        /// (Only effective before starting the Browser)
+        /// </summary>
+        public bool DriverLoggingEnabled { get; set; }
+        
+        /// <inheritdoc />
+        /// <summary>
+        /// Driver verbose output to be displayed to the Command Line
+        /// (Only effective before starting the Browser)
+        /// </summary>
+        public bool DriverVerboseLoggingEnabled { get; set; }
+        
+        /// <inheritdoc />
+        /// <summary>
+        /// The platform that the Driver Manager will try to target
+        /// </summary>
+        public PlatformType TargetPlatform { get; set; }
+
+        /// <summary>
+        /// Sets the current options for Chrome Driver
+        /// </summary>
+        /// <param name="options"></param>
+        private void SetOptions(Dictionary<string, string> options)
         {
-            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Creating ChromeOptions Object");
             DriverOptions = new ChromeOptions();
-            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", $"Creating Chrome Driver Service using {DriverInstallation.DriverExecutableName} from {DriverInstallation.DriverPath}");
-            DriverService = ChromeDriverService.CreateDefaultService(DriverInstallation.DriverPath, DriverInstallation.DriverExecutableName);
-            
-            if (Configuration.Headless)
+
+            foreach (var option in options)
             {
-                AddArgument("headless");
-                AddArgument("window-size=1200x600");
+                DriverOptions.AddArgument(option.Value == string.Empty ? option.Key : $"{option.Key}={option.Value}");
+            }
+        }
+        
+        /// <inheritdoc />
+        /// <summary>
+        /// Actions for controlling the Browser
+        /// </summary>
+        IActions IController.Actions => actions;
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Starts the Chrome Driver and the Chrome Web Browser
+        /// </summary>
+        public void Start()
+        {
+            DriverManager = new DriverManager {TargetPlatform = TargetPlatform};
+            DriverManager.Initialize();
+            DriverService = ChromeDriverService.CreateDefaultService(DriverManager.DriverPath, DriverManager.DriverExecutableName);
+
+            var options = new Dictionary<string, string>();
+
+            if (Headless)
+            {
+                options.Add("headless", string.Empty);
+                options.Add("window-size", "1200x600");
             }
 
-            if (Configuration.DriverLogging)
+            if (DriverLoggingEnabled == false)
             {
-                if (Configuration.DriverVerboseLogging)
+                options.Add("log-level", "0");
+                options.Add("silent", string.Empty);
+                DriverService.SuppressInitialDiagnosticInformation = true;
+            }
+            else
+            {
+                if (DriverVerboseLoggingEnabled)
                 {
-                    AddArgument("log-level=1");
-                    Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Enabling Verbose Logging from Driver Service");
+                    options.Add("log-level", "1");
                     DriverService.EnableVerboseLogging = true;
                 }
                 else
                 {
-                    AddArgument("log-level=2");
-                    Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Disabling Verbose Logging from Driver Service");
+                    options.Add("log-level", "2");
                     DriverService.EnableVerboseLogging = false;
                 }
                 
-                Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Initial Diagnostic Information will be suppressed");
                 DriverService.SuppressInitialDiagnosticInformation = false;
             }
-            else
-            {
-                AddArgument("log-level=0");
-                AddArgument("silent");
-                Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Initial Diagnostic Information will be not be suppressed");
-                DriverService.SuppressInitialDiagnosticInformation = true;
-            }
-
-            DriverService.LogPath = $"{Netlenium.Configuration.LoggingDirectory}{Path.DirectorySeparatorChar}chrome_debugging.log";
-            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", $"Chrome Driver Service log path has been set to \"{DriverService.LogPath}\"");
             
-            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Starting DriverService");
+            SetOptions(options);
+            DriverService.LogPath = $"{Paths.LoggingDirectory}{Path.DirectorySeparatorChar}chrome_driver.log";
             DriverService.Start();
-            
-            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", $"Creating new Remote WebDriver client to connect to \"{DriverService.ServiceUrl}\"");
             RemoteDriver = new RemoteWebDriver(DriverService.ServiceUrl, DriverOptions);
             
-            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Attaching Driver Javascript Execution");
-            JavascriptExecuter = RemoteDriver;
-            Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Attaching Driver Actions");
-            _driverAction = new Actions(RemoteDriver);
+            actions = new Actions(RemoteDriver);
 
-            try
-            {
-                Logging.WriteVerboseEntry("Netlenium.Driver.Chrome", "Attaching Performance Monitor");
-                DriverPerformance = new PerformanceMonitor(DriverService.ProcessId);
-            }
-            catch (Exception exception)
-            {
-                Logging.WriteEntry(LogType.Warning, "Netlenium.Driver",$"Cannot attach Performance Monitor {exception.Message}");
-            }
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Quits the driver and unreleases used resources
+        /// Stops the Driver Session and kills the Web Browser
         /// </summary>
-        public void Quit()
+        public void Stop()
         {
-            RemoteDriver.Quit();
+            if (DriverService == null)
+            {
+                throw new ControllerException("This controller has not initialized any driver/service");
+            }
+            
+            RemoteDriver.Dispose();
             DriverService.Dispose();
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// the current title of the document
+        /// Restarts the Driver Session and re-opens the Browser to a new clean state
         /// </summary>
-        public string DocumentTitle => RemoteDriver.Title;
-
-        /// <summary>
-        /// The current URL
-        /// </summary>
-        public string Url => RemoteDriver.Url;
-
-        /// <summary>
-        /// Executes Javascript Code
-        /// </summary>
-        /// <param name="code"></param>
-        /// <returns></returns>
-        public string ExecuterJs(string code)
+        public void Restart()
         {
-            return Convert.ToString(JavascriptExecuter.ExecuteScript(code));
-        }
-
-        /// <summary>
-        /// Navigates the given URL (Blocks until the navigation has been completed)
-        /// </summary>
-        /// <param name="url"></param>
-        public void Naviagte(string url)
-        {
-            RemoteDriver.Navigate().GoToUrl(url);
-        }
-
-        /// <summary>
-        /// Moves back a single entry in the browser's history
-        /// </summary>
-        public void GoBack()
-        {
-            RemoteDriver.Navigate().Back();
-        }
-
-        /// <summary>
-        /// Moves a single "item" forward in the browser's history.
-        /// </summary>
-        public void GoForward()
-        {
-            RemoteDriver.Navigate().Forward();
-        }
-
-        /// <summary>
-        /// Moves to the given IWebElement
-        /// </summary>
-        /// <param name="element"></param>
-        public void MoveTo(IWebElement element)
-        {
-            Logging.WriteEntry(Types.LogType.Information, "Netlenium.Driver.Chrome", $"Moving to element \"{element}\"");
-            try
-            {
-                _driverAction.MoveToElement(element);
-            }
-            catch (Exception exception)
-            {
-                Logging.WriteEntry(Types.LogType.Warning, "Netlenium.Driver.Chrome", $"Cannot move to element; {exception.Message}");
-            }
-        }
-
-        /// <summary>
-        /// Returns a live ElementCollection of elements with the given search type name and input
-        /// </summary>
-        /// <param name="searchType"></param>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public List<Element> GetElements(Types.SearchType searchType, string input)
-        {
-            var elements = new List<Element>();
-
-            switch (searchType)
-            {
-                case Types.SearchType.ClassName:
-
-                    elements.AddRange(RemoteDriver.FindElements(By.ClassName(input)).Select(
-                        foundElement => new Element(foundElement, this))
-                    );
-                    return elements;
-
-                case Types.SearchType.CssSelector:
-
-                    elements.AddRange(RemoteDriver.FindElements(By.CssSelector(input)).Select(
-                        foundElement => new Element(foundElement, this))
-                    );
-
-                    return elements;
-
-                case Types.SearchType.Id:
-                    
-                    elements.AddRange(RemoteDriver.FindElements(By.Id(input)).Select(
-                        foundElement => new Element(foundElement, this))
-                    );
-
-                    return elements;
-
-                case Types.SearchType.TagName:
-                    
-                    elements.AddRange(RemoteDriver.FindElements(By.TagName(input)).Select(
-                        foundElement => new Element(foundElement, this))
-                    );
-
-                    return elements;
-
-                case Types.SearchType.Name:
-                    
-                    elements.AddRange(RemoteDriver.FindElements(By.Name(input)).Select(
-                        foundElement => new Element(foundElement, this))
-                    );
-
-                    return elements;
-
-                default:
-                    
-                    throw new SearchTypeNotSupportedException();
-            }
-        }
-        
-        /// <summary>
-        /// Disposes of the controller
-        /// </summary>
-        public void Dispose()
-        {
-            GC.SuppressFinalize(this);
+            Stop();
+            Start();
         }
     }
 }

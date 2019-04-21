@@ -149,66 +149,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration.cs" />
-    <Compile Include="DriverConfiguration.cs" />
-    <Compile Include="DriverInstallationDetails.cs" />
-    <Compile Include="Forms\AboutDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AboutDialog.Designer.cs">
-      <DependentUpon>AboutDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="GeneralLocalStrings.Designer.cs" />
-    <Compile Include="Logging.cs" />
-    <Compile Include="Manager\Chrome.cs" />
-    <Compile Include="Manager\DriverUninstallationException.cs" />
-    <Compile Include="Manager\GeckoFX32.cs" />
-    <Compile Include="Manager\PermissionsErrorException.cs" />
-    <Compile Include="PerformanceMonitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ProxyConfiguration.cs" />
-    <Compile Include="Types\Driver.cs" />
-    <Compile Include="Types\LogType.cs" />
-    <Compile Include="Types\Platform.cs" />
-    <Compile Include="Types\Scheme.cs" />
-    <Compile Include="Types\SearchType.cs" />
-    <Compile Include="WebAPI\Google\Content.cs" />
-    <Compile Include="WebAPI\Google\ResourceNotFoundException.cs" />
-    <Compile Include="WebAPI\Google\Storage.cs" />
-    <Compile Include="WebServer\HttpClient.cs" />
-    <Compile Include="WebServer\HttpContext.cs" />
-    <Compile Include="WebServer\HttpCookie.cs" />
-    <Compile Include="WebServer\HttpCookieCollection.cs" />
-    <Compile Include="WebServer\HttpExceptionEventHandler.cs" />
-    <Compile Include="WebServer\HttpFileCollection.cs" />
-    <Compile Include="WebServer\HttpMultiPartItem.cs" />
-    <Compile Include="WebServer\HttpMultiPartRequestParser.cs" />
-    <Compile Include="WebServer\HttpOutputStream.cs" />
-    <Compile Include="WebServer\HttpPostedFile.cs" />
-    <Compile Include="WebServer\HttpReadBuffer.cs" />
-    <Compile Include="WebServer\HttpRequest.cs" />
-    <Compile Include="WebServer\HttpRequestEventHandler.cs" />
-    <Compile Include="WebServer\HttpRequestParser.cs" />
-    <Compile Include="WebServer\HttpResponse.cs" />
-    <Compile Include="WebServer\HttpServer.cs" />
-    <Compile Include="WebServer\HttpServerState.cs" />
-    <Compile Include="WebServer\HttpServerUtility.cs" />
-    <Compile Include="WebServer\HttpTimeoutManager.cs" />
-    <Compile Include="WebServer\HttpUnknownRequestParser.cs" />
-    <Compile Include="WebServer\HttpUrlEncodedRequestParser.cs" />
-    <Compile Include="WebServer\HttpUtil.cs" />
-    <Compile Include="WebServer\ProtocolException.cs" />
-    <Compile Include="WebServer\WebServerException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\AboutDialog.resx">
-      <DependentUpon>AboutDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GeneralLocalStrings.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -261,9 +210,6 @@
   <ItemGroup>
     <Content Include="netlenium_package.ico" />
     <Content Include="Resources\InternalServerError.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WebAPI\Github\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
