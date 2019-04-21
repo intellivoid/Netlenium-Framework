@@ -298,9 +298,51 @@
           <e p="StaleElementReferenceException.cs" t="Include" />
           <e p="Support" t="Include">
             <e p="DefaultWait{T}.cs" t="Include" />
+            <e p="Events" t="Include">
+              <e p="EventFiringWebDriver.cs" t="Include" />
+              <e p="FindElementEventArgs.cs" t="Include" />
+              <e p="WebDriverExceptionEventArgs.cs" t="Include" />
+              <e p="WebDriverNavigationEventArgs.cs" t="Include" />
+              <e p="WebDriverScriptEventArgs.cs" t="Include" />
+              <e p="WebElementEventArgs.cs" t="Include" />
+              <e p="WebElementValueEventArgs.cs" t="Include" />
+            </e>
+            <e p="Extensions" t="Include">
+              <e p="WebDriverExtensions.cs" t="Include" />
+            </e>
             <e p="IClock.cs" t="Include" />
             <e p="IWait{T}.cs" t="Include" />
+            <e p="PageObjects" t="Include">
+              <e p="ByAll.cs" t="Include" />
+              <e p="ByChained.cs" t="Include" />
+              <e p="ByFactory.cs" t="Include" />
+              <e p="ByIdOrName.cs" t="Include" />
+              <e p="CacheLookupAttribute.cs" t="Include" />
+              <e p="DefaultElementLocator.cs" t="Include" />
+              <e p="DefaultPageObjectMemberDecorator.cs" t="Include" />
+              <e p="FindsByAllAttribute.cs" t="Include" />
+              <e p="FindsByAttribute.cs" t="Include" />
+              <e p="FindsBySequenceAttribute.cs" t="Include" />
+              <e p="How.cs" t="Include" />
+              <e p="IElementLocator.cs" t="Include" />
+              <e p="IPageObjectMemberDecorator.cs" t="Include" />
+              <e p="PageFactory.cs" t="Include" />
+              <e p="RetryingElementLocator.cs" t="Include" />
+              <e p="WebDriverObjectProxy.cs" t="Include" />
+              <e p="WebElementListProxy.cs" t="Include" />
+              <e p="WebElementProxy.cs" t="Include" />
+            </e>
             <e p="SystemClock.cs" t="Include" />
+            <e p="UI" t="Include">
+              <e p="ExpectedConditions.cs" t="Include" />
+              <e p="ILoadableComponent.cs" t="Include" />
+              <e p="LoadableComponentException.cs" t="Include" />
+              <e p="LoadableComponent{T}.cs" t="Include" />
+              <e p="PopupWindowFinder.cs" t="Include" />
+              <e p="SelectElement.cs" t="Include" />
+              <e p="SlowLoadableComponent{T}.cs" t="Include" />
+              <e p="UnexpectedTagNameException.cs" t="Include" />
+            </e>
             <e p="WebDriverWait.cs" t="Include" />
           </e>
           <e p="UnableToSetCookieException.cs" t="Include" />

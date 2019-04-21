@@ -27,7 +27,10 @@ namespace Netlenium.Driver
             }
         }
 
-
+        /// <summary>
+        /// Gives executable permissions to the given file using chmod
+        /// </summary>
+        /// <param name="filePath"></param>
         public static void GiveExecutablePermissions(string filePath)
         {
             Process.Start("chmod", $"+x \"{filePath}\"");

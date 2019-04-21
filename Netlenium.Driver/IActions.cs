@@ -22,6 +22,11 @@ namespace Netlenium.Driver
         /// Go forward one page in the history.
         /// </summary>
         void GoForward();
+        
+        /// <summary>
+        /// Refreshes the client page
+        /// </summary>
+        void Refresh();
 
         /// <summary>
         /// Returns a collection of live IWebElement objects from the current client page

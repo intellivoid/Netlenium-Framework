@@ -43,6 +43,11 @@ namespace Netlenium.Driver.Chrome
             RemoteWebDriver.Navigate().Forward();
         }
 
+        public void Refresh()
+        {
+            RemoteWebDriver.Navigate().Refresh();
+        }
+
         /// <inheritdoc />
         /// <summary>
         /// Returns a collection of live IWebElement objects from the current client page
