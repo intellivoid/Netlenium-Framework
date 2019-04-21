@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium.Driver", "Netlenium.Driver\Netlenium.Driver.csproj", "{0C046F1E-8A63-4722-94D9-80986978C017}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netlenium", "Netlenium\Netlenium.csproj", "{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FD98F017-090A-4FB2-8A90-9046EFCC02BC}"
 	ProjectSection(SolutionItems) = preProject
 		linux_make_debug.sh = linux_make_debug.sh
@@ -61,30 +59,6 @@ Global
 		{0C046F1E-8A63-4722-94D9-80986978C017}.WindowsDebug|Any CPU.Build.0 = WindowsDebug|Any CPU
 		{0C046F1E-8A63-4722-94D9-80986978C017}.WindowsDebug|x86.ActiveCfg = WindowsDebug|Any CPU
 		{0C046F1E-8A63-4722-94D9-80986978C017}.WindowsDebug|x86.Build.0 = WindowsDebug|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Debug|x86.ActiveCfg = Debug|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Debug|x86.Build.0 = Debug|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.LinuxBuild|Any CPU.ActiveCfg = LinuxBuild|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.LinuxBuild|Any CPU.Build.0 = LinuxBuild|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.LinuxBuild|x86.ActiveCfg = LinuxBuild|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.LinuxBuild|x86.Build.0 = LinuxBuild|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.LinuxDebug|Any CPU.ActiveCfg = LinuxDebug|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.LinuxDebug|Any CPU.Build.0 = LinuxDebug|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.LinuxDebug|x86.ActiveCfg = LinuxDebug|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.LinuxDebug|x86.Build.0 = LinuxDebug|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Release|x86.ActiveCfg = Release|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.Release|x86.Build.0 = Release|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsBuild|Any CPU.ActiveCfg = WindowsBuild|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsBuild|Any CPU.Build.0 = WindowsBuild|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsBuild|x86.ActiveCfg = WindowsBuild|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsBuild|x86.Build.0 = WindowsBuild|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsDebug|Any CPU.ActiveCfg = WindowsDebug|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsDebug|Any CPU.Build.0 = WindowsDebug|Any CPU
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsDebug|x86.ActiveCfg = WindowsDebug|x86
-		{771C3FF1-37CB-4E3C-B86D-C8D88BB2C7A7}.WindowsDebug|x86.Build.0 = WindowsDebug|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

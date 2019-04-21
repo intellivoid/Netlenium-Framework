@@ -8,9 +8,6 @@
       <e p="Documentation" t="Include" />
       <e p="linux_make_debug.sh" t="Include" />
       <e p="linux_make_release.sh" t="Include" />
-      <e p="Netlenium" t="IncludeRecursive">
-        <e p="Netlenium.csproj" t="IncludeRecursive" />
-      </e>
       <e p="Netlenium Framework.sln" t="IncludeFlat" />
       <e p="Netlenium Package Builder.md" t="Include" />
       <e p="Netlenium.Driver" t="IncludeRecursive">
@@ -45,8 +42,72 @@
           <e p="Resources.resx" t="Include" />
         </e>
         <e p="Resources" t="Include">
+          <e p="GetAllElementsWithScrollBars.js" t="Include" />
+          <e p="GetElementAbsoluteXPath.js" t="Include" />
+          <e p="GetElementCoordinates.js" t="Include" />
+          <e p="GetElementFromByStr.js" t="Include" />
+          <e p="GetElementVisibleState.js" t="Include" />
+          <e p="GetElementWithActiveScrollbar.js" t="Include" />
+          <e p="HideElementFromDOM.js" t="Include" />
+          <e p="RemoveScrollBar.js" t="Include" />
+          <e p="ScrollingElement.js" t="Include" />
+          <e p="ScrollToElement.js" t="Include" />
+          <e p="SetJQuery.js" t="Include" />
+          <e p="ShowElementInDOM.js" t="Include" />
+          <e p="ShowScrollBar.js" t="Include" />
           <e p="WebAPI_Resources.Designer.cs" t="Include" />
           <e p="WebAPI_Resources.resx" t="Include" />
+        </e>
+        <e p="ScreenshotSupport" t="Include">
+          <e p="Compare" t="Include">
+            <e p="WdseImageComparer.cs" t="Include" />
+          </e>
+          <e p="Decorators" t="Include">
+            <e p="BaseScreenshotDecorator.cs" t="Include" />
+            <e p="CutterDecorator.cs" t="Include" />
+            <e p="CuttingStrategies" t="Include">
+              <e p="CutElementHeightOnEntireWidthThenCombine.cs" t="Include" />
+            </e>
+            <e p="OnlyElementDecorator.cs" t="Include" />
+            <e p="VerticalCombineDecorator.cs" t="Include" />
+          </e>
+          <e p="ExtensionMethods.cs" t="Include" />
+          <e p="Helpers" t="Include">
+            <e p="IeDriverHelper.cs" t="Include" />
+            <e p="JQueryHelper.cs" t="Include" />
+            <e p="SizesHelper.cs" t="Include" />
+          </e>
+          <e p="Interfaces" t="Include">
+            <e p="ICuttingStrategy.cs" t="Include" />
+            <e p="IScreenshotStrategy.cs" t="Include" />
+          </e>
+          <e p="Json" t="Include">
+            <e p="ElementCoords.cs" t="Include" />
+          </e>
+          <e p="ScreenshotMaker" t="Include">
+            <e p="ScreenshotMaker.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Element" t="Include">
+              <e p="GetAllElementsWithScrollBars.js" t="Include" />
+              <e p="GetElementAbsoluteXPath.js" t="Include" />
+              <e p="GetElementCoordinates.js" t="Include" />
+              <e p="GetElementFromByStr.js" t="Include" />
+              <e p="GetElementVisibleState.js" t="Include" />
+              <e p="GetElementWithActiveScrollbar.js" t="Include" />
+              <e p="HideElementFromDOM.js" t="Include" />
+              <e p="ScrollingElement.js" t="Include" />
+              <e p="ShowElementInDOM.js" t="Include" />
+            </e>
+            <e p="JQuery" t="Include">
+              <e p="SetJQuery.js" t="Include" />
+            </e>
+            <e p="Scrolling" t="Include">
+              <e p="RemoveScrollBar.js" t="Include" />
+              <e p="ScrollToElement.js" t="Include" />
+              <e p="ShowScrollBar.js" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="ServiceExtensions" t="Include">
           <e p="Chrome" t="Include">
@@ -59,6 +120,8 @@
             <e p="manifest.json" t="Include" />
           </e>
         </e>
+        <e p="SHResources.Designer.cs" t="Include" />
+        <e p="SHResources.resx" t="Include" />
         <e p="UnsupportedBrowserTypeException.cs" t="Include" />
         <e p="UnsupportedPlatformException.cs" t="Include" />
         <e p="Utilities.cs" t="Include" />

@@ -11,6 +11,7 @@
     <AssemblyName>Netlenium.Driver</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -97,6 +98,10 @@
       <HintPath>..\packages\DotNetZip.1.13.3\lib\net40\DotNetZip.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Magick.NET-Q16-AnyCPU, Version=7.12.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec">
+      <HintPath>..\packages\Magick.NET-Q16-AnyCPU.7.12.0\lib\net40\Magick.NET-Q16-AnyCPU.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -136,11 +141,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SHResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SHResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\WebAPI_Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WebAPI_Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ScreenshotSupport\Compare\WdseImageComparer.cs" />
+    <Compile Include="ScreenshotSupport\Decorators\BaseScreenshotDecorator.cs" />
+    <Compile Include="ScreenshotSupport\Decorators\CutterDecorator.cs" />
+    <Compile Include="ScreenshotSupport\Decorators\CuttingStrategies\CutElementHeightOnEntireWidthThenCombine.cs" />
+    <Compile Include="ScreenshotSupport\Decorators\OnlyElementDecorator.cs" />
+    <Compile Include="ScreenshotSupport\Decorators\VerticalCombineDecorator.cs" />
+    <Compile Include="ScreenshotSupport\ExtensionMethods.cs" />
+    <Compile Include="ScreenshotSupport\Helpers\IeDriverHelper.cs" />
+    <Compile Include="ScreenshotSupport\Helpers\JQueryHelper.cs" />
+    <Compile Include="ScreenshotSupport\Helpers\SizesHelper.cs" />
+    <Compile Include="ScreenshotSupport\Interfaces\ICuttingStrategy.cs" />
+    <Compile Include="ScreenshotSupport\Interfaces\IScreenshotStrategy.cs" />
+    <Compile Include="ScreenshotSupport\Json\ElementCoords.cs" />
+    <Compile Include="ScreenshotSupport\ScreenshotMaker\ScreenshotMaker.cs" />
     <Compile Include="UnsupportedBrowserTypeException.cs" />
     <Compile Include="UnsupportedPlatformException.cs" />
     <Compile Include="Utilities.cs" />
@@ -400,6 +424,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SHResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SHResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\WebAPI_Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>WebAPI_Resources.Designer.cs</LastGenOutput>
@@ -413,6 +441,32 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="netlenium_package.ico" />
+    <EmbeddedResource Include="Resources\GetAllElementsWithScrollBars.js" />
+    <EmbeddedResource Include="Resources\GetElementAbsoluteXPath.js" />
+    <EmbeddedResource Include="Resources\GetElementCoordinates.js" />
+    <EmbeddedResource Include="Resources\GetElementFromByStr.js" />
+    <EmbeddedResource Include="Resources\GetElementVisibleState.js" />
+    <EmbeddedResource Include="Resources\GetElementWithActiveScrollbar.js" />
+    <EmbeddedResource Include="Resources\HideElementFromDOM.js" />
+    <EmbeddedResource Include="Resources\RemoveScrollBar.js" />
+    <EmbeddedResource Include="Resources\ScrollingElement.js" />
+    <EmbeddedResource Include="Resources\ScrollToElement.js" />
+    <EmbeddedResource Include="Resources\SetJQuery.js" />
+    <EmbeddedResource Include="Resources\ShowElementInDOM.js" />
+    <EmbeddedResource Include="Resources\ShowScrollBar.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Element\GetAllElementsWithScrollBars.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Element\GetElementAbsoluteXPath.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Element\GetElementCoordinates.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Element\GetElementFromByStr.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Element\GetElementVisibleState.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Element\GetElementWithActiveScrollbar.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Element\HideElementFromDOM.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Element\ScrollingElement.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Element\ShowElementInDOM.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\JQuery\SetJQuery.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Scrolling\RemoveScrollBar.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Scrolling\ScrollToElement.js" />
+    <EmbeddedResource Include="ScreenshotSupport\Scripts\Scrolling\ShowScrollBar.js" />
     <Content Include="ServiceExtensions\Chrome\background.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
