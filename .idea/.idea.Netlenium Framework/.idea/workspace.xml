@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b49503ca-0549-4ca8-bdc3-4f8c6dd5c9ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Netlenium.Driver/Netlenium.Driver.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium.Driver/Netlenium.Driver.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Netlenium.Driver/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium.Driver/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.Driver/Chrome/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium.Driver/Chrome/Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Netlenium.Driver/IActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium.Driver/IActions.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,152 +28,95 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Compare/WdseImageComparer.cs">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="98" column="60" lean-forward="true" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
+            <state relative-caret-position="72">
+              <caret line="59" column="12" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
               <folding>
-                <marker date="1555890165309" expanded="true" signature="6:107" ph="..." />
-                <marker date="1555890165309" expanded="true" signature="161:5106" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="168:234" ph="///     Images comparer class ... " />
-                <marker date="1555890165309" expanded="true" signature="276:5104" ph="{...}" />
-                <marker date="1555890165309" expanded="false" signature="291:1198" ph="Privates" />
-                <marker date="1555890165309" expanded="true" signature="407:1178" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="444:1168" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="489:1154" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="571:1136" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="684:842" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="1208:3416" ph="Compare and get image" />
-                <marker date="1555890165309" expanded="true" signature="1247:1529" ph="///     Compares two images and returns an image which show the difference between. ... " />
-                <marker date="1555890165309" expanded="true" signature="1607:1810" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="1820:2130" ph="///     Compares two images and returns an image which show the difference between. ... " />
-                <marker date="1555890165309" expanded="true" signature="2220:2435" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="2445:2727" ph="///     Compares two images and returns an image which show the difference between. ... " />
-                <marker date="1555890165309" expanded="true" signature="2847:3016" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="3146:3396" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="3426:5098" ph="Boolean compare" />
-                <marker date="1555890165309" expanded="true" signature="3459:3719" ph="///     Compares two images. Returns true if images are same. ... " />
-                <marker date="1555890165309" expanded="true" signature="3826:3980" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="3990:4250" ph="///     Compares two images. Returns true if images are same. ... " />
-                <marker date="1555890165309" expanded="true" signature="4315:4503" ph="{...}" />
-                <marker date="1555890165309" expanded="true" signature="4513:4801" ph="///     Compares two images. Returns true if images are same. ... " />
-                <marker date="1555890165309" expanded="true" signature="4878:5078" ph="{...}" />
+                <marker date="1555901620204" expanded="false" signature="6:166" ph="..." />
+                <marker date="1555901620204" expanded="true" signature="201:5793" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="208:286" ph="/// Chrome Actions ... " />
+                <marker date="1555901620204" expanded="true" signature="322:5791" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="337:428" ph="/// The Remote Web Driver that controls Chrome ... " />
+                <marker date="1555901620204" expanded="true" signature="500:618" ph="/// Public Constructor ... " />
+                <marker date="1555901620204" expanded="true" signature="674:741" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="751:859" ph="/// Go back one page in the history. ... " />
+                <marker date="1555901620204" expanded="true" signature="888:955" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="965:1076" ph="/// Go forward one page in the history. ... " />
+                <marker date="1555901620204" expanded="true" signature="1108:1178" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="1209:1279" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="1311:2084" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="2094:2462" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
+                <marker date="1555901620204" expanded="true" signature="2546:4060" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="2602:4050" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="4070:4430" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
+                <marker date="1555901620204" expanded="true" signature="4507:5494" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="4550:5484" ph="{...}" />
+                <marker date="1555901620204" expanded="true" signature="5504:5671" ph="///  loads a specified URL into a controlled client page ... " />
+                <marker date="1555901620204" expanded="true" signature="5712:5785" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/BaseScreenshotDecorator.cs">
+        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/IActions.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-39">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="-204">
+              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
               <folding>
-                <marker date="1555890128633" expanded="true" signature="6:119" ph="..." />
-                <marker date="1555890128633" expanded="true" signature="176:799" ph="{...}" />
-                <marker date="1555890128633" expanded="true" signature="250:797" ph="{...}" />
-                <marker date="1555890128633" expanded="false" signature="265:429" ph="Ctor" />
-                <marker date="1555890128633" expanded="true" signature="350:409" ph="{...}" />
-                <marker date="1555890128633" expanded="false" signature="440:634" ph="Props" />
-                <marker date="1555890128633" expanded="true" signature="463:555" ph="///     Nested strategy, if have. Else is null. ... " />
-                <marker date="1555890128633" expanded="true" signature="645:791" ph="Abstract member" />
+                <marker date="1555891617206" expanded="false" signature="6:55" ph="..." />
+                <marker date="1555891617206" expanded="true" signature="83:1604" ph="{...}" />
+                <marker date="1555891617206" expanded="true" signature="90:187" ph="/// Actions that can be invoked in the Browser's client page ... " />
+                <marker date="1555891617206" expanded="true" signature="217:1602" ph="{...}" />
+                <marker date="1555891617206" expanded="true" signature="232:371" ph="/// loads a specified URL into a controlled client page ... " />
+                <marker date="1555891617206" expanded="true" signature="416:497" ph="/// Go back one page in the history. ... " />
+                <marker date="1555891617206" expanded="true" signature="530:614" ph="/// Go forward one page in the history. ... " />
+                <marker date="1555891617206" expanded="true" signature="658:732" ph="/// Refreshes the client page ... " />
+                <marker date="1555891617206" expanded="true" signature="766:883" ph="/// Captures an image of the client page ... " />
+                <marker date="1555891617206" expanded="true" signature="918:1164" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
+                <marker date="1555891617206" expanded="true" signature="1260:1524" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/CutterDecorator.cs">
+        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Screenshot.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="314">
+              <caret line="108" column="78" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="78" />
               <folding>
-                <marker date="1555890139505" expanded="false" signature="6:119" ph="..." />
-                <marker date="1555890139505" expanded="true" signature="176:1657" ph="{...}" />
-                <marker date="1555890139505" expanded="true" signature="237:1655" ph="{...}" />
-                <marker date="1555890139505" expanded="false" signature="252:346" ph="Private fields" />
-                <marker date="1555890139505" expanded="false" signature="356:487" ph="Ctor" />
-                <marker date="1555890139505" expanded="true" signature="447:467" ph="{...}" />
-                <marker date="1555890139505" expanded="true" signature="497:726" ph="Override" />
-                <marker date="1555890139505" expanded="true" signature="615:706" ph="{...}" />
-                <marker date="1555890139505" expanded="false" signature="736:1191" ph="Public Methods" />
-                <marker date="1555890139505" expanded="true" signature="768:994" ph="///     Sets cutting strategy for specify how and what be cutting from screenshot. ... " />
-                <marker date="1555890139505" expanded="true" signature="1078:1171" ph="{...}" />
-                <marker date="1555890139505" expanded="false" signature="1201:1649" ph="Privates" />
-                <marker date="1555890139505" expanded="true" signature="1296:1629" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/CuttingStrategies/CutElementHeightOnEntireWidthThenCombine.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <marker date="1555890151374" expanded="true" signature="6:191" ph="..." />
-                <marker date="1555890151374" expanded="true" signature="266:2034" ph="{...}" />
-                <marker date="1555890151374" expanded="true" signature="345:2032" ph="{...}" />
-                <marker date="1555890151374" expanded="true" signature="406:500" ph="/// ... " />
-                <marker date="1555890151374" expanded="true" signature="563:617" ph="{...}" />
-                <marker date="1555890151374" expanded="true" signature="725:2026" ph="{...}" />
-                <marker date="1555890151374" expanded="true" signature="1099:1832" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/OnlyElementDecorator.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <marker date="1555890158831" expanded="false" signature="6:191" ph="..." />
-                <marker date="1555890158831" expanded="true" signature="248:1855" ph="{...}" />
-                <marker date="1555890158831" expanded="true" signature="314:1853" ph="{...}" />
-                <marker date="1555890158831" expanded="false" signature="329:396" ph="Private fields" />
-                <marker date="1555890158831" expanded="false" signature="406:542" ph="Ctor" />
-                <marker date="1555890158831" expanded="true" signature="502:522" ph="{...}" />
-                <marker date="1555890158831" expanded="true" signature="552:803" ph="Override" />
-                <marker date="1555890158831" expanded="true" signature="670:783" ph="{...}" />
-                <marker date="1555890158831" expanded="false" signature="814:1178" ph="Public Methods" />
-                <marker date="1555890158831" expanded="true" signature="846:1037" ph="///     Sets the element whose screenshot is to be made. ... " />
-                <marker date="1555890158831" expanded="true" signature="1091:1158" ph="{...}" />
-                <marker date="1555890158831" expanded="false" signature="1188:1847" ph="Privates" />
-                <marker date="1555890158831" expanded="true" signature="1305:1827" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/VerticalCombineDecorator.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-              <folding>
-                <marker date="1555890182287" expanded="false" signature="6:193" ph="..." />
-                <marker date="1555890182287" expanded="true" signature="250:3776" ph="{...}" />
-                <marker date="1555890182287" expanded="true" signature="257:338" ph="///     Maker of the entire page screenshot. ... " />
-                <marker date="1555890182287" expanded="true" signature="406:3774" ph="{...}" />
-                <marker date="1555890182287" expanded="false" signature="421:507" ph="Private fields" />
-                <marker date="1555890182287" expanded="false" signature="517:657" ph="Ctor" />
-                <marker date="1555890182287" expanded="true" signature="617:637" ph="{...}" />
-                <marker date="1555890182287" expanded="true" signature="667:872" ph="Override" />
-                <marker date="1555890182287" expanded="true" signature="785:852" ph="{...}" />
-                <marker date="1555890182287" expanded="false" signature="882:1314" ph="Public methods" />
-                <marker date="1555890182287" expanded="true" signature="914:1127" ph="///     Sets interval to wait after scrolling the page to take the screenshot. ... " />
-                <marker date="1555890182287" expanded="true" signature="1208:1294" ph="{...}" />
-                <marker date="1555890182287" expanded="false" signature="1324:3768" ph="Privates" />
-                <marker date="1555890182287" expanded="true" signature="1383:1542" ph="{...}" />
-                <marker date="1555890182287" expanded="true" signature="1610:3748" ph="{...}" />
-                <marker date="1555890182287" expanded="true" signature="2403:3738" ph="{...}" />
-                <marker date="1555890182287" expanded="true" signature="2472:2798" ph="{...}" />
-                <marker date="1555890182287" expanded="true" signature="2831:3614" ph="{...}" />
+                <marker date="1555818033773" expanded="false" signature="6:131" ph="..." />
+                <marker date="1555818033773" expanded="true" signature="169:4881" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="176:252" ph="/// File format for saving screenshots. ... " />
+                <marker date="1555818033773" expanded="true" signature="290:849" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="305:397" ph="/// W3C Portable Network Graphics image format. ... " />
+                <marker date="1555818033773" expanded="true" signature="420:514" ph="/// Joint Photgraphic Experts Group image format. ... " />
+                <marker date="1555818033773" expanded="true" signature="538:628" ph="/// Graphics Interchange Format image format. ... " />
+                <marker date="1555818033773" expanded="true" signature="651:738" ph="/// Tagged Image File Format image format. ... " />
+                <marker date="1555818033773" expanded="true" signature="762:831" ph="/// Bitmap image format. ... " />
+                <marker date="1555818033773" expanded="true" signature="855:960" ph="/// Represents an image of the page currently loaded in the browser. ... " />
+                <marker date="1555818033773" expanded="true" signature="1007:4879" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="1110:1332" ph="/// Initializes a new instance of the &lt;see cref=&quot;Screenshot&quot;/&gt; class. ... " />
+                <marker date="1555818033773" expanded="true" signature="1390:1528" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="1538:1653" ph="/// Gets the value of the screenshot image as a Base64-encoded string. ... " />
+                <marker date="1555818033773" expanded="true" signature="1697:1759" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="1769:1878" ph="/// Gets the value of the screenshot image as an array of bytes. ... " />
+                <marker date="1555818033773" expanded="true" signature="1912:1970" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="1980:2245" ph="/// Saves the screenshot to a Portable Network Graphics (PNG) file, overwriting the ... " />
+                <marker date="1555818033773" expanded="true" signature="2293:2374" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="2384:2746" ph="/// Saves the screenshot to a file, overwriting the file if it already exists. ... " />
+                <marker date="1555818033773" expanded="true" signature="2824:3661" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="3181:3651" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="3278:3637" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="3472:3612" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="3671:3948" ph="/// Returns a &lt;see cref=&quot;string&quot;&gt;String&lt;/see&gt; that represents the current &lt;see cref=&quot;object&quot;&gt;Object&lt;/see&gt;. ... " />
+                <marker date="1555818033773" expanded="true" signature="3990:4044" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="4181:4866" ph="{...}" />
+                <marker date="1555818033773" expanded="true" signature="4269:4820" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -180,10 +125,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/ExtensionMethods.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
+            <state relative-caret-position="477">
               <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
               <folding>
-                <marker date="1555890201346" expanded="true" signature="6:275" ph="..." />
+                <marker date="1555890201346" expanded="false" signature="6:275" ph="..." />
                 <marker date="1555890201346" expanded="true" signature="321:3007" ph="{...}" />
                 <marker date="1555890201346" expanded="true" signature="364:3005" ph="{...}" />
                 <marker date="1555890201346" expanded="true" signature="379:888" ph="///     Makes a screenshot of the browser and performs additional actions if decorators are used. ... " />
@@ -199,71 +144,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Interfaces/ICuttingStrategy.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-              <folding>
-                <marker date="1555890212590" expanded="true" signature="6:66" ph="..." />
-                <marker date="1555890212590" expanded="true" signature="123:278" ph="{...}" />
-                <marker date="1555890212590" expanded="true" signature="163:276" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Interfaces/IScreenshotStrategy.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="29" />
-              <folding>
-                <marker date="1555890224975" expanded="true" signature="6:66" ph="..." />
-                <marker date="1555890224975" expanded="true" signature="123:438" ph="{...}" />
-                <marker date="1555890224975" expanded="true" signature="166:436" ph="{...}" />
-                <marker date="1555890224975" expanded="true" signature="181:344" ph="///     Make a screenshot. Create or change. ... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/ScreenshotMaker/ScreenshotMaker.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-              <folding>
-                <marker date="1555890255268" expanded="true" signature="6:292" ph="..." />
-                <marker date="1555890255268" expanded="true" signature="395:5582" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="402:697" ph="///     &lt;para&gt;The default core strategy.&lt;/para&gt; ... " />
-                <marker date="1555890255268" expanded="true" signature="752:5580" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="850:1090" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="1100:1764" ph="///     &lt;para&gt;Sets which elements will be hidden from the DOM before taking the screenshot.&lt;/para&gt; ... " />
-                <marker date="1555890255268" expanded="true" signature="1834:1928" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="1938:2157" ph="///     &lt;para&gt;While taking a screenshot, the scrollbars will be hidden.&lt;/para&gt; ... " />
-                <marker date="1555890255268" expanded="true" signature="2220:2311" ph="{...}" />
-                <marker date="1555890255268" expanded="false" signature="2321:2670" ph="Private fields" />
-                <marker date="1555890255268" expanded="false" signature="2680:2716" ph="Override" />
-                <marker date="1555890255268" expanded="true" signature="2726:5574" ph="Privates" />
-                <marker date="1555890255268" expanded="true" signature="2804:2974" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="3022:3954" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="3163:3916" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="3353:3896" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="3510:3870" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="4011:4159" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="4209:4984" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="4262:4948" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="4519:4932" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="4601:4914" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="5037:5405" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="5175:5369" ph="{...}" />
-                <marker date="1555890255268" expanded="true" signature="5452:5554" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -273,6 +153,7 @@
       <find>IWEBeLEMENT</find>
       <find>IWEBELEMENT</find>
       <find>IWebElement</find>
+      <find>take</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -349,6 +230,7 @@
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/VerticalCombineDecorator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Interactions/ContextClickAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Interactions/Actions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Screenshot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/IWebElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/IWebDriver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/ITouchScreen.cs" root0="FORCE_HIGHLIGHTING" />
@@ -369,7 +251,6 @@
         <option value="$PROJECT_DIR$/Netlenium.Driver/ControllerException.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/IWebElement.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/IController.cs" />
-        <option value="$PROJECT_DIR$/Netlenium.Driver/Chrome/Controller.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/ElementTypeNotSupportedException.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/ElementType.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/Chrome/WebElement.cs" />
@@ -391,9 +272,7 @@
         <option value="$PROJECT_DIR$/Netlenium.Driver/Client.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/Utilities.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/Chrome/DriverManager.cs" />
-        <option value="$PROJECT_DIR$/Netlenium.Driver/IActions.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/WebDriver/Support/UI/LoadableComponent{T}.cs" />
-        <option value="$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Helpers/JQueryHelper.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Helpers/SizesHelper.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Helpers/IeDriverHelper.cs" />
@@ -407,6 +286,9 @@
         <option value="$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Interfaces/ICuttingStrategy.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Interfaces/IScreenshotStrategy.cs" />
         <option value="$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/ScreenshotMaker/ScreenshotMaker.cs" />
+        <option value="$PROJECT_DIR$/Netlenium.Driver/Chrome/Controller.cs" />
+        <option value="$PROJECT_DIR$/Netlenium.Driver/IActions.cs" />
+        <option value="$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs" />
       </list>
     </option>
   </component>
@@ -440,14 +322,13 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ScreenshotSupport" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Chrome" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
               <item name="ScreenshotSupport" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Compare" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
@@ -464,78 +345,13 @@
               <item name="Decorators" type="24d0babc:SolutionExplorerModelNode" />
               <item name="CuttingStrategies" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ScreenshotSupport" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Helpers" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ScreenshotSupport" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Interfaces" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ScreenshotSupport" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Json" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ScreenshotSupport" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ScreenshotMaker" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ScreenshotSupport" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ScreenshotSupport" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Element" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ScreenshotSupport" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="JQuery" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ScreenshotSupport" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scrolling" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Netlenium Framework" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Netlenium.Driver" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ServiceExtensions" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
       <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -594,12 +410,13 @@
       <workItem from="1555804920513" duration="10273000" />
       <workItem from="1555859778686" duration="1622000" />
       <workItem from="1555882933623" duration="363000" />
-      <workItem from="1555883313413" duration="4185000" />
+      <workItem from="1555883313413" duration="6451000" />
+      <workItem from="1555895422992" duration="1267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31753000" />
+    <option name="totallyTimeSpent" value="35286000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -612,9 +429,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="20" width="1346" height="698" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49604222" visible="true" weight="0.28693622" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49604222" visible="true" weight="0.29082426" />
       <window_info id="Structure" order="1" sideWeight="0.5039578" side_tool="true" weight="0.27293935" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -644,6 +460,37 @@
       <window_info anchor="right" id="Database" order="5" weight="0.32970452" />
       <window_info anchor="right" id="Unit Tests Coverage" order="6" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49604222" visible="true" weight="0.28693622" />
+      <window_info id="Structure" order="1" sideWeight="0.5039578" side_tool="true" weight="0.27293935" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32920355" />
+      <window_info anchor="bottom" id="Performance Profiler" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.40530974" />
+      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="15" weight="0.32920355" />
+      <window_info anchor="bottom" id="Change Signature" order="16" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Errors In Solution" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32970452" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="6" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -661,62 +508,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/IWebElement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <marker date="1555711176149" expanded="true" signature="59:9703" ph="{...}" />
-            <marker date="1555711176149" expanded="true" signature="66:417" ph="/// Defines the interface through which the user controls elements on the page. ... " />
-            <marker date="1555711176149" expanded="true" signature="467:9701" ph="{...}" />
-            <marker date="1555711176149" expanded="true" signature="482:1007" ph="/// Gets the tag name of this element. ... " />
-            <marker date="1555711176149" expanded="true" signature="1049:1370" ph="/// Gets the innerText of this element, without any leading or trailing whitespace, ... " />
-            <marker date="1555711176149" expanded="true" signature="1409:1846" ph="/// Gets a value indicating whether or not this element is enabled. ... " />
-            <marker date="1555711176149" expanded="true" signature="1886:2299" ph="/// Gets a value indicating whether or not this element is selected. ... " />
-            <marker date="1555711176149" expanded="true" signature="2340:2693" ph="/// Gets a &lt;see cref=&quot;Point&quot;/&gt; object containing the coordinates of the upper-left corner ... " />
-            <marker date="1555711176149" expanded="true" signature="2735:3009" ph="/// Gets a &lt;see cref=&quot;Size&quot;/&gt; object containing the height and width of this element. ... " />
-            <marker date="1555711176149" expanded="true" signature="3046:3504" ph="/// Gets a value indicating whether or not this element is displayed. ... " />
-            <marker date="1555711176149" expanded="true" signature="3546:4032" ph="/// Clears the content of this element. ... " />
-            <marker date="1555711176149" expanded="true" signature="4064:4855" ph="/// Simulates typing text into the element. ... " />
-            <marker date="1555711176149" expanded="true" signature="4901:5400" ph="/// Submits this element to the web server. ... " />
-            <marker date="1555711176149" expanded="true" signature="5433:6532" ph="/// Clicks this element. ... " />
-            <marker date="1555711176149" expanded="true" signature="6564:8218" ph="/// Gets the value of the specified attribute for this element. ... " />
-            <marker date="1555711176149" expanded="true" signature="8279:8813" ph="/// Gets the value of a JavaScript property of this element. ... " />
-            <marker date="1555711176149" expanded="true" signature="8872:9646" ph="/// Gets the value of a CSS property of this element. ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/IWebDriver.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-402">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding>
-            <marker date="1555711176164" expanded="false" signature="6:51" ph="..." />
-            <marker date="1555711176164" expanded="true" signature="89:4863" ph="{...}" />
-            <marker date="1555711176164" expanded="true" signature="96:1323" ph="/// Defines the interface through which the user controls the browser. ... " />
-            <marker date="1555711176164" expanded="true" signature="1385:4861" ph="{...}" />
-            <marker date="1555711176164" expanded="true" signature="1400:2318" ph="/// Gets or sets the URL the browser is currently displaying. ... " />
-            <marker date="1555711176164" expanded="true" signature="2361:2455" ph="/// Gets the title of the current browser window. ... " />
-            <marker date="1555711176164" expanded="true" signature="2495:3234" ph="/// Gets the source of the page last loaded by the browser. ... " />
-            <marker date="1555711176164" expanded="true" signature="3279:3469" ph="/// Gets the current window handle, which is an opaque handle to this ... " />
-            <marker date="1555711176164" expanded="true" signature="3523:3620" ph="/// Gets the window handles of open browser windows. ... " />
-            <marker date="1555711176164" expanded="true" signature="3688:3824" ph="/// Close the current window, quitting the browser if it is the last window currently open. ... " />
-            <marker date="1555711176164" expanded="true" signature="3856:3956" ph="/// Quits this driver, closing every associated window. ... " />
-            <marker date="1555711176164" expanded="true" signature="3987:4212" ph="/// Instructs the driver to change its settings. ... " />
-            <marker date="1555711176164" expanded="true" signature="4249:4524" ph="/// Instructs the driver to navigate the browser to another location. ... " />
-            <marker date="1555711176164" expanded="true" signature="4566:4820" ph="/// Instructs the driver to send future commands to a different frame or window. ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Interactions/ScrollAction.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/ITouchScreen.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1373,13 +1164,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/Microsoft.Common.CurrentVersion.targets">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="2109" column="4" selection-start-line="2109" selection-start-column="4" selection-end-line="2109" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/IE/InternetExplorerOptions.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-129">
@@ -1474,12 +1258,724 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Paths.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="68" column="105" selection-start-line="68" selection-start-column="105" selection-end-line="68" selection-end-column="105" />
+          <folding>
+            <marker date="1555808542065" expanded="false" signature="6:30" ph="..." />
+            <marker date="1555808542065" expanded="true" signature="83:2287" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="98:187" ph="/// The Netlenium Application Data Directory ... " />
+            <marker date="1555808542065" expanded="true" signature="246:659" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="272:649" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="498:596" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="669:777" ph="/// Driver installations in the Netlenium Application Directory ... " />
+            <marker date="1555808542065" expanded="true" signature="822:1194" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="848:1184" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1033:1131" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1212:1330" ph="/// Gets the temporary directory from the Netlenium Application directory ... " />
+            <marker date="1555808542065" expanded="true" signature="1378:1746" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1404:1736" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1585:1683" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1764:1863" ph="/// Gets the directory dedicated for storing log files ... " />
+            <marker date="1555808542065" expanded="true" signature="1909:2281" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="1935:2271" ph="{...}" />
+            <marker date="1555808542065" expanded="true" signature="2120:2218" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Client.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <folding>
+            <marker date="1555870490068" expanded="true" signature="26:1072" ph="{...}" />
+            <marker date="1555870490068" expanded="true" signature="33:123" ph="/// Driver Client for controlling a Browser/WebDriver ... " />
+            <marker date="1555870490068" expanded="true" signature="147:1070" ph="{...}" />
+            <marker date="1555870490068" expanded="true" signature="163:259" ph="/// The target driver that this client will control ... " />
+            <marker date="1555870490068" expanded="true" signature="320:398" ph="/// Controls the driver interface ... " />
+            <marker date="1555870490068" expanded="true" signature="464:621" ph="/// Public Constructor ... " />
+            <marker date="1555870490068" expanded="true" signature="670:1055" ph="{...}" />
+            <marker date="1555870490068" expanded="true" signature="771:1032" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Chrome/ChromeDriver.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+          <folding>
+            <marker date="1555818023456" expanded="false" signature="6:88" ph="..." />
+            <marker date="1555818023456" expanded="true" signature="133:10149" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="140:958" ph="/// Provides a mechanism to write tests against Chrome ... " />
+            <marker date="1555818023456" expanded="true" signature="1006:10147" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="1021:1103" ph="/// Accept untrusted SSL Certificates ... " />
+            <marker date="1555818023456" expanded="true" signature="1597:1705" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class. ... " />
+            <marker date="1555818023456" expanded="true" signature="1771:1791" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="1801:2054" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified options. ... " />
+            <marker date="1555818023456" expanded="true" signature="2200:2220" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="2230:2492" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified driver service. ... " />
+            <marker date="1555818023456" expanded="true" signature="2598:2618" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="2628:2942" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
+            <marker date="1555818023456" expanded="true" signature="3063:3083" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="3093:3528" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
+            <marker date="1555818023456" expanded="true" signature="3683:3703" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="3713:4268" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
+            <marker date="1555818023456" expanded="true" signature="4483:4503" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="4513:4900" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified ... " />
+            <marker date="1555818023456" expanded="true" signature="5040:5060" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="5070:5539" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified &lt;see cref=&quot;ChromeDrive ... " />
+            <marker date="1555818023456" expanded="true" signature="5761:6544" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="6554:7238" ph="/// Gets or sets the &lt;see cref=&quot;IFileDetector&quot;/&gt; responsible for detecting ... " />
+            <marker date="1555818023456" expanded="true" signature="7289:7375" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="7385:7490" ph="/// Gets or sets the network condition emulation for Chrome. ... " />
+            <marker date="1555818023456" expanded="true" signature="7547:8206" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="7573:7785" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="7802:8196" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="7851:7975" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="8216:8466" ph="/// Executes a custom Chrome command. ... " />
+            <marker date="1555818023456" expanded="true" signature="8573:8969" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="8620:8744" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="9089:9545" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="9136:9260" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="9635:9850" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="9678:9794" ph="{...}" />
+            <marker date="1555818023456" expanded="true" signature="9951:10141" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Utilities.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="30" column="70" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
+          <folding>
+            <marker date="1555883368817" expanded="false" signature="6:56" ph="..." />
+            <marker date="1555883368817" expanded="true" signature="84:1043" ph="{...}" />
+            <marker date="1555883368817" expanded="true" signature="91:149" ph="/// General Utilities ... " />
+            <marker date="1555883368817" expanded="true" signature="178:1041" ph="{...}" />
+            <marker date="1555883368817" expanded="true" signature="193:293" ph="/// Gets the current platform the machine is running on ... " />
+            <marker date="1555883368817" expanded="true" signature="344:726" ph="{...}" />
+            <marker date="1555883368817" expanded="true" signature="370:716" ph="{...}" />
+            <marker date="1555883368817" expanded="true" signature="511:656" ph="{...}" />
+            <marker date="1555883368817" expanded="true" signature="736:887" ph="///  ... " />
+            <marker date="1555883368817" expanded="true" signature="957:1035" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Support/UI/ExpectedConditions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="18" />
+          <folding>
+            <marker date="1555887499668" expanded="true" signature="0:888" ph="/* &lt;copyright file=&quot;ExpectedConditions.cs&quot; company=&quot;WebDriver Committers&quot;&gt; ... */" />
+            <marker date="1555887499668" expanded="false" signature="896:998" ph="..." />
+            <marker date="1555887499668" expanded="true" signature="1047:25154" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="1054:1418" ph="/// Supplies a set of common conditions that can be waited for using &lt;see cref=&quot;WebDriverWait&quot;/&gt;. ... " />
+            <marker date="1555887499668" expanded="true" signature="1747:25152" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="1762:1904" ph="/// Prevents a default instance of the &lt;see cref=&quot;ExpectedConditions&quot;/&gt; class from being created. ... " />
+            <marker date="1555887499668" expanded="true" signature="1941:1961" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="1971:2272" ph="/// An expectation for checking the title of a page. ... " />
+            <marker date="1555887499668" expanded="true" signature="2339:2425" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="2435:2759" ph="/// An expectation for checking that the title of a page contains a case-sensitive substring. ... " />
+            <marker date="1555887499668" expanded="true" signature="2832:2925" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="2935:3250" ph="/// An expectation for the URL of the current page to be a specific URL. ... " />
+            <marker date="1555887499668" expanded="true" signature="3315:3440" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="3450:3783" ph="/// An expectation for the URL of the current page to be a specific URL. ... " />
+            <marker date="1555887499668" expanded="true" signature="3857:3989" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="3999:4348" ph="/// An expectation for the URL of the current page to be a specific URL. ... " />
+            <marker date="1555887499668" expanded="true" signature="4418:4709" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="4459:4698" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="4719:5077" ph="/// An expectation for checking that an element is present on the DOM of a ... " />
+            <marker date="1555887499668" expanded="true" signature="5155:5247" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="5257:5703" ph="/// An expectation for checking that an element is present on the DOM of a page ... " />
+            <marker date="1555887499668" expanded="true" signature="5784:6158" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="5825:6147" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="5867:5989" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="6048:6129" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="6168:6642" ph="/// An expectation for checking that all elements present on the web page that ... " />
+            <marker date="1555887499668" expanded="true" signature="6759:7296" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="6800:7285" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="6834:7147" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="6986:7067" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="7202:7271" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="7306:7763" ph="/// An expectation for checking that all elements present on the web page that ... " />
+            <marker date="1555887499668" expanded="true" signature="7910:8382" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="7951:8371" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="7985:8233" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="8072:8153" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="8288:8357" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="8392:8715" ph="/// An expectation for checking that all elements present on the web page that ... " />
+            <marker date="1555887499668" expanded="true" signature="8830:9216" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="8871:9205" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="8905:9067" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="9122:9191" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="9226:9619" ph="/// An expectation for checking if the given text is present in the specified element. ... " />
+            <marker date="1555887499668" expanded="true" signature="9723:10091" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="9764:10080" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="9798:9941" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="9996:10066" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="10101:10538" ph="/// An expectation for checking if the given text is present in the element that matches the given locator. ... " />
+            <marker date="1555887499668" expanded="true" signature="10640:11071" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="10681:11060" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="10715:10921" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="10976:11046" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="11081:11491" ph="/// An expectation for checking if the given text is present in the specified elements value attribute. ... " />
+            <marker date="1555887499668" expanded="true" signature="11600:12188" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="11641:12177" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="11675:12038" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="11809:11913" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="11938:12020" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="12093:12163" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="12198:12631" ph="/// An expectation for checking if the given text is present in the specified elements value attribute. ... " />
+            <marker date="1555887499668" expanded="true" signature="12731:13382" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="12772:13371" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="12806:13232" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="13003:13107" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="13132:13214" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="13287:13357" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="13392:13761" ph="/// An expectation for checking whether the given frame is available to switch ... " />
+            <marker date="1555887499668" expanded="true" signature="13865:14181" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="13906:14170" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="13940:14042" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="14087:14156" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="14191:14541" ph="/// An expectation for checking whether the given frame is available to switch ... " />
+            <marker date="1555887499668" expanded="true" signature="14636:15020" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="14677:15009" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="14711:14881" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="14926:14995" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="15030:15372" ph="/// An expectation for checking that an element is either invisible or not present on the DOM. ... " />
+            <marker date="1555887499668" expanded="true" signature="15458:16245" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="15499:16234" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="15533:15679" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="15726:15962" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="15765:15911" ph="/* Returns true because the element is not present in DOM. The ... */" />
+            <marker date="1555887499668" expanded="true" signature="16017:16220" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="16056:16169" ph="/* Returns true because stale element reference implies that element ... */" />
+            <marker date="1555887499668" expanded="true" signature="16255:16666" ph="/// An expectation for checking that an element with text is either invisible or not present on the DOM. ... " />
+            <marker date="1555887499668" expanded="true" signature="16766:17763" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="16807:17752" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="16841:17187" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="17033:17114" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="17234:17480" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="17273:17429" ph="/* Returns true because the element with text is not present in DOM. The ... */" />
+            <marker date="1555887499668" expanded="true" signature="17535:17738" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="17574:17687" ph="/* Returns true because stale element reference implies that element ... */" />
+            <marker date="1555887499668" expanded="true" signature="17773:18120" ph="/// An expectation for checking an element is visible and enabled such that you ... " />
+            <marker date="1555887499668" expanded="true" signature="18205:18792" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="18246:18781" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="18357:18643" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="18435:18519" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="18544:18625" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="18698:18767" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="18802:19112" ph="/// An expectation for checking an element is visible and enabled such that you ... " />
+            <marker date="1555887499668" expanded="true" signature="19206:19737" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="19247:19726" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="19281:19588" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="19380:19464" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="19489:19570" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="19643:19712" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="19747:20041" ph="/// Wait until an element is no longer attached to the DOM. ... " />
+            <marker date="1555887499668" expanded="true" signature="20119:20510" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="20160:20499" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="20194:20361" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="20416:20485" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="20520:20803" ph="/// An expectation for checking if the given element is selected. ... " />
+            <marker date="1555887499668" expanded="true" signature="20889:20970" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="20980:21347" ph="/// An expectation for checking if the given element is in correct state. ... " />
+            <marker date="1555887499668" expanded="true" signature="21448:21581" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="21489:21570" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="21591:21958" ph="/// An expectation for checking if the given element is in correct state. ... " />
+            <marker date="1555887499668" expanded="true" signature="22065:22198" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="22106:22187" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="22208:22516" ph="/// An expectation for checking if the given element is selected. ... " />
+            <marker date="1555887499668" expanded="true" signature="22593:22674" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="22684:23076" ph="/// An expectation for checking if the given element is in correct state. ... " />
+            <marker date="1555887499668" expanded="true" signature="23174:23555" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="23215:23544" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="23249:23405" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="23460:23530" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="23565:23698" ph="/// An expectation for checking the AlterIsPresent ... " />
+            <marker date="1555887499668" expanded="true" signature="23762:24069" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="23803:24058" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="23837:23927" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="23975:24044" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="24079:24447" ph="/// An expectation for checking the Alert State ... " />
+            <marker date="1555887499668" expanded="true" signature="24515:24997" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="24556:24986" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="24630:24800" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="24848:24972" ph="{...}" />
+            <marker date="1555887499668" expanded="true" signature="25071:25146" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Support/UI/LoadableComponent{T}.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
+          <folding>
+            <marker date="1555887586915" expanded="true" signature="0:890" ph="/* &lt;copyright file=&quot;LoadableComponent{T}.cs&quot; company=&quot;WebDriver Committers&quot;&gt; ... */" />
+            <marker date="1555887586915" expanded="true" signature="974:5502" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="981:1780" ph="/// Represents any abstraction of something that can be loaded. This may be an entire web page, or ... " />
+            <marker date="1555887586915" expanded="true" signature="1887:5500" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="1902:2034" ph="/// Gets or sets the message for the exception thrown when a component cannot be loaded ... " />
+            <marker date="1555887586915" expanded="true" signature="2084:2138" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="2148:2497" ph="/// Gets a value indicating whether the component is fully loaded. ... " />
+            <marker date="1555887586915" expanded="true" signature="2529:2895" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="2555:2885" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="2628:2724" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="2767:2837" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="2905:3140" ph="/// Ensure that the component is currently loaded. ... " />
+            <marker date="1555887586915" expanded="true" signature="3172:3530" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="3213:3273" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="3290:3350" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="3383:3491" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="3540:3720" ph="/// Ensure that the component is currently loaded. ... " />
+            <marker date="1555887586915" expanded="true" signature="3773:3845" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="3855:4147" ph="/// HandleLoadError gives a subclass the opportunity to handle a &lt;see cref=&quot;WebDriverException&quot;/&gt; that occurred ... " />
+            <marker date="1555887586915" expanded="true" signature="4217:4237" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="4247:4530" ph="/// When this method returns, the component modeled by the subclass should be fully loaded. This ... " />
+            <marker date="1555887586915" expanded="true" signature="4587:4879" ph="/// Determine whether or not the component is loaded. Subclasses are expected to provide the details ... " />
+            <marker date="1555887586915" expanded="true" signature="4945:5225" ph="/// Attempts to load this component, providing an opportunity for the user to handle any errors encountered ... " />
+            <marker date="1555887586915" expanded="true" signature="5255:5494" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="5281:5345" ph="{...}" />
+            <marker date="1555887586915" expanded="true" signature="5386:5455" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Support/UI/LoadableComponentException.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding>
+            <marker date="1555887499673" expanded="true" signature="0:896" ph="/* &lt;copyright file=&quot;LoadableComponentException.cs&quot; company=&quot;WebDriver Committers&quot;&gt; ... */" />
+            <marker date="1555887499673" expanded="false" signature="904:947" ph="..." />
+            <marker date="1555887499673" expanded="true" signature="996:3166" ph="{...}" />
+            <marker date="1555887499673" expanded="true" signature="1003:1174" ph="/// This exception is thrown by &lt;see cref=&quot;LoadableComponent{T}&quot;/&gt; to indicate that ... " />
+            <marker date="1555887499673" expanded="true" signature="1258:3164" ph="{...}" />
+            <marker date="1555887499673" expanded="true" signature="1273:1403" ph="/// Initializes a new instance of the &lt;see cref=&quot;LoadableComponentException&quot;/&gt; class. ... " />
+            <marker date="1555887499673" expanded="true" signature="1447:1467" ph="{...}" />
+            <marker date="1555887499673" expanded="true" signature="1477:1721" ph="/// Initializes a new instance of the &lt;see cref=&quot;LoadableComponentException&quot;/&gt; class with ... " />
+            <marker date="1555887499673" expanded="true" signature="1807:1827" ph="{...}" />
+            <marker date="1555887499673" expanded="true" signature="1837:2382" ph="/// Initializes a new instance of the &lt;see cref=&quot;LoadableComponentException&quot;/&gt; class with ... " />
+            <marker date="1555887499673" expanded="true" signature="2510:2530" ph="{...}" />
+            <marker date="1555887499673" expanded="true" signature="2540:3009" ph="/// Initializes a new instance of the &lt;see cref=&quot;LoadableComponentException&quot;/&gt; class with serialized data. ... " />
+            <marker date="1555887499673" expanded="true" signature="3138:3158" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Edge/EdgeDriver.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1308">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <marker date="1555818023873" expanded="false" signature="6:54" ph="..." />
+            <marker date="1555818023873" expanded="true" signature="97:4645" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="104:193" ph="/// Provides a mechanism to write tests against Edge ... " />
+            <marker date="1555818023873" expanded="true" signature="239:4643" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="254:368" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class. ... " />
+            <marker date="1555818023873" expanded="true" signature="434:454" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="464:711" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified options. ... " />
+            <marker date="1555818023873" expanded="true" signature="851:871" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="881:1139" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified driver service. ... " />
+            <marker date="1555818023873" expanded="true" signature="1239:1259" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="1269:1575" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified path ... " />
+            <marker date="1555818023873" expanded="true" signature="1688:1708" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="1718:2141" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified path ... " />
+            <marker date="1555818023873" expanded="true" signature="2288:2308" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="2318:2861" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified path ... " />
+            <marker date="1555818023873" expanded="true" signature="3066:3086" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="3096:3475" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified ... " />
+            <marker date="1555818023873" expanded="true" signature="3609:3629" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="3639:4098" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified &lt;see cref=&quot;EdgeDriverSer ... " />
+            <marker date="1555818023873" expanded="true" signature="4314:4334" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="4422:4637" ph="{...}" />
+            <marker date="1555818023873" expanded="true" signature="4465:4581" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Resources.resx" />
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/ISearchContext.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <marker date="1555711176253" expanded="true" signature="75:1159" ph="{...}" />
+            <marker date="1555711176253" expanded="true" signature="82:173" ph="/// Defines the interface used to search for elements. ... " />
+            <marker date="1555711176253" expanded="true" signature="209:1157" ph="{...}" />
+            <marker date="1555711176253" expanded="true" signature="224:607" ph="/// Finds the first &lt;see cref=&quot;IWebElement&quot;/&gt; using the given method. ... " />
+            <marker date="1555711176253" expanded="true" signature="657:1090" ph="/// Finds all &lt;see cref=&quot;IWebElement&quot;&gt;IWebElements&lt;/see&gt; within the current context ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Support/Extensions/WebDriverExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+          <folding>
+            <marker date="1555887499707" expanded="true" signature="0:889" ph="/* &lt;copyright file=&quot;WebDriverExtensions.cs&quot; company=&quot;WebDriver Committers&quot;&gt; ... */" />
+            <marker date="1555887499707" expanded="false" signature="897:970" ph="..." />
+            <marker date="1555887499707" expanded="true" signature="1027:6071" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="1034:1137" ph="/// Provides extension methods for convenience in using WebDriver. ... " />
+            <marker date="1555887499707" expanded="true" signature="1181:6069" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="1196:1753" ph="/// Gets a &lt;see cref=&quot;Screenshot&quot;/&gt; object representing the image of the page on the screen. ... " />
+            <marker date="1555887499707" expanded="true" signature="1825:3279" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="1953:3215" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="2097:2249" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="2438:2581" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="2897:3064" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="3289:3802" ph="/// Executes JavaScript in the context of the currently selected frame or window ... " />
+            <marker date="1555887499707" expanded="true" signature="3908:3989" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="3999:4775" ph="/// Executes JavaScript in the context of the currently selected frame or window ... " />
+            <marker date="1555887499707" expanded="true" signature="4881:5648" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="5067:5323" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="5165:5309" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="5375:5530" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="5547:5610" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="5754:6063" ph="{...}" />
+            <marker date="1555887499707" expanded="true" signature="5872:5995" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Helpers/IeDriverHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <marker date="1555889820486" expanded="true" signature="6:167" ph="..." />
+            <marker date="1555889820486" expanded="true" signature="221:1234" ph="{...}" />
+            <marker date="1555889820486" expanded="true" signature="264:1232" ph="{...}" />
+            <marker date="1555889820486" expanded="true" signature="410:1226" ph="{...}" />
+            <marker date="1555889820486" expanded="true" signature="948:1139" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Helpers/JQueryHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="164" column="115" selection-start-line="164" selection-start-column="104" selection-end-line="164" selection-end-column="115" />
+          <folding>
+            <marker date="1555889672585" expanded="true" signature="6:189" ph="..." />
+            <marker date="1555889672585" expanded="true" signature="284:6730" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="323:6728" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="400:1317" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="474:590" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="629:1307" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="824:996" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="1044:1130" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="1158:1237" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="1398:1650" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="1772:1921" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="1998:2156" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="2291:2569" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="2317:2423" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="2466:2559" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="2718:2997" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="2744:2851" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="2894:2987" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="3116:3215" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="3336:3433" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="3561:3680" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="3810:3911" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="4034:4628" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="4190:4390" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="4486:4583" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="4744:4840" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="4959:5657" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="5773:5914" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="6041:6196" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="6321:6441" ph="{...}" />
+            <marker date="1555889672585" expanded="true" signature="6567:6722" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Helpers/SizesHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="22" column="48" lean-forward="true" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+          <folding>
+            <marker date="1555889813330" expanded="true" signature="6:209" ph="..." />
+            <marker date="1555889813330" expanded="true" signature="308:1712" ph="{...}" />
+            <marker date="1555889813330" expanded="true" signature="348:1710" ph="{...}" />
+            <marker date="1555889813330" expanded="true" signature="431:603" ph="{...}" />
+            <marker date="1555889813330" expanded="true" signature="680:851" ph="{...}" />
+            <marker date="1555889813330" expanded="true" signature="910:1250" ph="{...}" />
+            <marker date="1555889813330" expanded="true" signature="948:1240" ph="{...}" />
+            <marker date="1555889813330" expanded="true" signature="1342:1613" ph="{...}" />
+            <marker date="1555889813330" expanded="true" signature="1643:1704" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Json/ElementCoords.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <marker date="1555888087853" expanded="true" signature="64:279" ph="{...}" />
+            <marker date="1555888087853" expanded="true" signature="116:277" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Compare/WdseImageComparer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="98" column="60" lean-forward="true" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
+          <folding>
+            <marker date="1555890165309" expanded="true" signature="6:107" ph="..." />
+            <marker date="1555890165309" expanded="true" signature="161:5106" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="168:234" ph="///     Images comparer class ... " />
+            <marker date="1555890165309" expanded="true" signature="276:5104" ph="{...}" />
+            <marker date="1555890165309" expanded="false" signature="291:1198" ph="Privates" />
+            <marker date="1555890165309" expanded="true" signature="407:1178" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="444:1168" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="489:1154" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="571:1136" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="684:842" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="1208:3416" ph="Compare and get image" />
+            <marker date="1555890165309" expanded="true" signature="1247:1529" ph="///     Compares two images and returns an image which show the difference between. ... " />
+            <marker date="1555890165309" expanded="true" signature="1607:1810" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="1820:2130" ph="///     Compares two images and returns an image which show the difference between. ... " />
+            <marker date="1555890165309" expanded="true" signature="2220:2435" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="2445:2727" ph="///     Compares two images and returns an image which show the difference between. ... " />
+            <marker date="1555890165309" expanded="true" signature="2847:3016" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="3146:3396" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="3426:5098" ph="Boolean compare" />
+            <marker date="1555890165309" expanded="true" signature="3459:3719" ph="///     Compares two images. Returns true if images are same. ... " />
+            <marker date="1555890165309" expanded="true" signature="3826:3980" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="3990:4250" ph="///     Compares two images. Returns true if images are same. ... " />
+            <marker date="1555890165309" expanded="true" signature="4315:4503" ph="{...}" />
+            <marker date="1555890165309" expanded="true" signature="4513:4801" ph="///     Compares two images. Returns true if images are same. ... " />
+            <marker date="1555890165309" expanded="true" signature="4878:5078" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/CutterDecorator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <marker date="1555890139505" expanded="false" signature="6:119" ph="..." />
+            <marker date="1555890139505" expanded="true" signature="176:1657" ph="{...}" />
+            <marker date="1555890139505" expanded="true" signature="237:1655" ph="{...}" />
+            <marker date="1555890139505" expanded="false" signature="252:346" ph="Private fields" />
+            <marker date="1555890139505" expanded="false" signature="356:487" ph="Ctor" />
+            <marker date="1555890139505" expanded="true" signature="447:467" ph="{...}" />
+            <marker date="1555890139505" expanded="true" signature="497:726" ph="Override" />
+            <marker date="1555890139505" expanded="true" signature="615:706" ph="{...}" />
+            <marker date="1555890139505" expanded="false" signature="736:1191" ph="Public Methods" />
+            <marker date="1555890139505" expanded="true" signature="768:994" ph="///     Sets cutting strategy for specify how and what be cutting from screenshot. ... " />
+            <marker date="1555890139505" expanded="true" signature="1078:1171" ph="{...}" />
+            <marker date="1555890139505" expanded="false" signature="1201:1649" ph="Privates" />
+            <marker date="1555890139505" expanded="true" signature="1296:1629" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/CuttingStrategies/CutElementHeightOnEntireWidthThenCombine.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <marker date="1555890151374" expanded="true" signature="6:191" ph="..." />
+            <marker date="1555890151374" expanded="true" signature="266:2034" ph="{...}" />
+            <marker date="1555890151374" expanded="true" signature="345:2032" ph="{...}" />
+            <marker date="1555890151374" expanded="true" signature="406:500" ph="/// ... " />
+            <marker date="1555890151374" expanded="true" signature="563:617" ph="{...}" />
+            <marker date="1555890151374" expanded="true" signature="725:2026" ph="{...}" />
+            <marker date="1555890151374" expanded="true" signature="1099:1832" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/OnlyElementDecorator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <marker date="1555890158831" expanded="false" signature="6:191" ph="..." />
+            <marker date="1555890158831" expanded="true" signature="248:1855" ph="{...}" />
+            <marker date="1555890158831" expanded="true" signature="314:1853" ph="{...}" />
+            <marker date="1555890158831" expanded="false" signature="329:396" ph="Private fields" />
+            <marker date="1555890158831" expanded="false" signature="406:542" ph="Ctor" />
+            <marker date="1555890158831" expanded="true" signature="502:522" ph="{...}" />
+            <marker date="1555890158831" expanded="true" signature="552:803" ph="Override" />
+            <marker date="1555890158831" expanded="true" signature="670:783" ph="{...}" />
+            <marker date="1555890158831" expanded="false" signature="814:1178" ph="Public Methods" />
+            <marker date="1555890158831" expanded="true" signature="846:1037" ph="///     Sets the element whose screenshot is to be made. ... " />
+            <marker date="1555890158831" expanded="true" signature="1091:1158" ph="{...}" />
+            <marker date="1555890158831" expanded="false" signature="1188:1847" ph="Privates" />
+            <marker date="1555890158831" expanded="true" signature="1305:1827" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/VerticalCombineDecorator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <folding>
+            <marker date="1555890182287" expanded="false" signature="6:193" ph="..." />
+            <marker date="1555890182287" expanded="true" signature="250:3776" ph="{...}" />
+            <marker date="1555890182287" expanded="true" signature="257:338" ph="///     Maker of the entire page screenshot. ... " />
+            <marker date="1555890182287" expanded="true" signature="406:3774" ph="{...}" />
+            <marker date="1555890182287" expanded="false" signature="421:507" ph="Private fields" />
+            <marker date="1555890182287" expanded="false" signature="517:657" ph="Ctor" />
+            <marker date="1555890182287" expanded="true" signature="617:637" ph="{...}" />
+            <marker date="1555890182287" expanded="true" signature="667:872" ph="Override" />
+            <marker date="1555890182287" expanded="true" signature="785:852" ph="{...}" />
+            <marker date="1555890182287" expanded="false" signature="882:1314" ph="Public methods" />
+            <marker date="1555890182287" expanded="true" signature="914:1127" ph="///     Sets interval to wait after scrolling the page to take the screenshot. ... " />
+            <marker date="1555890182287" expanded="true" signature="1208:1294" ph="{...}" />
+            <marker date="1555890182287" expanded="false" signature="1324:3768" ph="Privates" />
+            <marker date="1555890182287" expanded="true" signature="1383:1542" ph="{...}" />
+            <marker date="1555890182287" expanded="true" signature="1610:3748" ph="{...}" />
+            <marker date="1555890182287" expanded="true" signature="2403:3738" ph="{...}" />
+            <marker date="1555890182287" expanded="true" signature="2472:2798" ph="{...}" />
+            <marker date="1555890182287" expanded="true" signature="2831:3614" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/ScreenshotMaker/ScreenshotMaker.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+          <folding>
+            <marker date="1555890255268" expanded="true" signature="6:292" ph="..." />
+            <marker date="1555890255268" expanded="true" signature="395:5582" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="402:697" ph="///     &lt;para&gt;The default core strategy.&lt;/para&gt; ... " />
+            <marker date="1555890255268" expanded="true" signature="752:5580" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="850:1090" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="1100:1764" ph="///     &lt;para&gt;Sets which elements will be hidden from the DOM before taking the screenshot.&lt;/para&gt; ... " />
+            <marker date="1555890255268" expanded="true" signature="1834:1928" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="1938:2157" ph="///     &lt;para&gt;While taking a screenshot, the scrollbars will be hidden.&lt;/para&gt; ... " />
+            <marker date="1555890255268" expanded="true" signature="2220:2311" ph="{...}" />
+            <marker date="1555890255268" expanded="false" signature="2321:2670" ph="Private fields" />
+            <marker date="1555890255268" expanded="false" signature="2680:2716" ph="Override" />
+            <marker date="1555890255268" expanded="true" signature="2726:5574" ph="Privates" />
+            <marker date="1555890255268" expanded="true" signature="2804:2974" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="3022:3954" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="3163:3916" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="3353:3896" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="3510:3870" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="4011:4159" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="4209:4984" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="4262:4948" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="4519:4932" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="4601:4914" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="5037:5405" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="5175:5369" ph="{...}" />
+            <marker date="1555890255268" expanded="true" signature="5452:5554" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Interfaces/ICuttingStrategy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <marker date="1555890212590" expanded="true" signature="6:66" ph="..." />
+            <marker date="1555890212590" expanded="true" signature="123:278" ph="{...}" />
+            <marker date="1555890212590" expanded="true" signature="163:276" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/BaseScreenshotDecorator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+          <folding>
+            <marker date="1555890128633" expanded="true" signature="6:119" ph="..." />
+            <marker date="1555890128633" expanded="true" signature="176:799" ph="{...}" />
+            <marker date="1555890128633" expanded="true" signature="250:797" ph="{...}" />
+            <marker date="1555890128633" expanded="false" signature="265:429" ph="Ctor" />
+            <marker date="1555890128633" expanded="true" signature="350:409" ph="{...}" />
+            <marker date="1555890128633" expanded="false" signature="440:634" ph="Props" />
+            <marker date="1555890128633" expanded="true" signature="463:555" ph="///     Nested strategy, if have. Else is null. ... " />
+            <marker date="1555890128633" expanded="true" signature="645:791" ph="Abstract member" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/Microsoft.Common.CurrentVersion.targets">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28005">
+          <caret line="1867" column="10" lean-forward="true" selection-start-line="1867" selection-start-column="10" selection-end-line="1867" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/Controller.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-96">
+          <caret line="105" column="25" lean-forward="true" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
+          <folding>
+            <marker date="1555890860795" expanded="false" signature="6:132" ph="..." />
+            <marker date="1555890860795" expanded="true" signature="167:5598" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="213:5596" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="228:316" ph="/// Actions for controlling the Web Browser ... " />
+            <marker date="1555890860795" expanded="true" signature="360:464" ph="/// Manages the driver installation for the target platform ... " />
+            <marker date="1555890860795" expanded="true" signature="541:637" ph="/// Options that are passed on to the Chrome Driver ... " />
+            <marker date="1555890860795" expanded="true" signature="713:796" ph="/// The Driver Service process manager ... " />
+            <marker date="1555890860795" expanded="true" signature="878:982" ph="/// Remote Driver Client for controlling the Driver Service ... " />
+            <marker date="1555890860795" expanded="true" signature="1051:1238" ph="/// Indicates if the Browser is intended to start Headless ... " />
+            <marker date="1555890860795" expanded="true" signature="1299:1458" ph="/// Indicates if General Logging regarding Netlenium is displayed onto the Command Line ... " />
+            <marker date="1555890860795" expanded="true" signature="1532:1691" ph="/// Indicates if Verbose Logging regarding Netlenium is displayed onto the Command Line ... " />
+            <marker date="1555890860795" expanded="true" signature="1765:1947" ph="/// Driver output to be displayed to the Command Line ... " />
+            <marker date="1555890860795" expanded="true" signature="2020:2210" ph="/// Driver verbose output to be displayed to the Command Line ... " />
+            <marker date="1555890860795" expanded="true" signature="2290:2421" ph="/// The platform that the Driver Manager will try to target ... " />
+            <marker date="1555890860795" expanded="true" signature="2488:2622" ph="/// Sets the current options for Chrome Driver ... " />
+            <marker date="1555890860795" expanded="true" signature="2690:2951" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="2794:2941" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="2969:3080" ph="/// Actions for controlling the Browser ... " />
+            <marker date="1555890860795" expanded="true" signature="3139:3266" ph="/// Starts the Chrome Driver and the Chrome Web Browser ... " />
+            <marker date="1555890860795" expanded="true" signature="3294:4899" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="3645:3785" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="3833:4036" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="4053:4545" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="4116:4266" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="4287:4438" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="4909:5035" ph="/// Stops the Driver Session and kills the Web Browser ... " />
+            <marker date="1555890860795" expanded="true" signature="5062:5340" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="5111:5244" ph="{...}" />
+            <marker date="1555890860795" expanded="true" signature="5350:5499" ph="/// Restarts the Driver Session and re-opens the Browser to a new clean state ... " />
+            <marker date="1555890860795" expanded="true" signature="5529:5590" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Interfaces/IScreenshotStrategy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <marker date="1555890224975" expanded="false" signature="6:66" ph="..." />
+            <marker date="1555890224975" expanded="true" signature="123:438" ph="{...}" />
+            <marker date="1555890224975" expanded="true" signature="166:436" ph="{...}" />
+            <marker date="1555890224975" expanded="true" signature="181:344" ph="///     Make a screenshot. Create or change. ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Remote/RemoteWebDriver.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+        <state relative-caret-position="155">
+          <caret line="46" column="230" selection-start-line="46" selection-start-column="226" selection-end-line="46" selection-end-column="230" />
           <folding>
-            <marker date="1555870220713" expanded="false" signature="6:307" ph="..." />
             <marker date="1555870220713" expanded="true" signature="380:61469" ph="{...}" />
             <marker date="1555870220713" expanded="true" signature="387:1280" ph="/// Provides a way to use the driver through ... " />
             <marker date="1555870220713" expanded="true" signature="1671:61467" ph="{...}" />
@@ -1735,99 +2231,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Paths.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="68" column="105" selection-start-line="68" selection-start-column="105" selection-end-line="68" selection-end-column="105" />
-          <folding>
-            <marker date="1555808542065" expanded="false" signature="6:30" ph="..." />
-            <marker date="1555808542065" expanded="true" signature="83:2287" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="98:187" ph="/// The Netlenium Application Data Directory ... " />
-            <marker date="1555808542065" expanded="true" signature="246:659" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="272:649" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="498:596" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="669:777" ph="/// Driver installations in the Netlenium Application Directory ... " />
-            <marker date="1555808542065" expanded="true" signature="822:1194" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="848:1184" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1033:1131" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1212:1330" ph="/// Gets the temporary directory from the Netlenium Application directory ... " />
-            <marker date="1555808542065" expanded="true" signature="1378:1746" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1404:1736" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1585:1683" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1764:1863" ph="/// Gets the directory dedicated for storing log files ... " />
-            <marker date="1555808542065" expanded="true" signature="1909:2281" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="1935:2271" ph="{...}" />
-            <marker date="1555808542065" expanded="true" signature="2120:2218" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Client.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <folding>
-            <marker date="1555870490068" expanded="true" signature="26:1072" ph="{...}" />
-            <marker date="1555870490068" expanded="true" signature="33:123" ph="/// Driver Client for controlling a Browser/WebDriver ... " />
-            <marker date="1555870490068" expanded="true" signature="147:1070" ph="{...}" />
-            <marker date="1555870490068" expanded="true" signature="163:259" ph="/// The target driver that this client will control ... " />
-            <marker date="1555870490068" expanded="true" signature="320:398" ph="/// Controls the driver interface ... " />
-            <marker date="1555870490068" expanded="true" signature="464:621" ph="/// Public Constructor ... " />
-            <marker date="1555870490068" expanded="true" signature="670:1055" ph="{...}" />
-            <marker date="1555870490068" expanded="true" signature="771:1032" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Chrome/ChromeDriver.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
-          <folding>
-            <marker date="1555818023456" expanded="false" signature="6:88" ph="..." />
-            <marker date="1555818023456" expanded="true" signature="133:10149" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="140:958" ph="/// Provides a mechanism to write tests against Chrome ... " />
-            <marker date="1555818023456" expanded="true" signature="1006:10147" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="1021:1103" ph="/// Accept untrusted SSL Certificates ... " />
-            <marker date="1555818023456" expanded="true" signature="1597:1705" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class. ... " />
-            <marker date="1555818023456" expanded="true" signature="1771:1791" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="1801:2054" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified options. ... " />
-            <marker date="1555818023456" expanded="true" signature="2200:2220" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="2230:2492" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified driver service. ... " />
-            <marker date="1555818023456" expanded="true" signature="2598:2618" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="2628:2942" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
-            <marker date="1555818023456" expanded="true" signature="3063:3083" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="3093:3528" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
-            <marker date="1555818023456" expanded="true" signature="3683:3703" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="3713:4268" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified path ... " />
-            <marker date="1555818023456" expanded="true" signature="4483:4503" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="4513:4900" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified ... " />
-            <marker date="1555818023456" expanded="true" signature="5040:5060" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="5070:5539" ph="/// Initializes a new instance of the &lt;see cref=&quot;ChromeDriver&quot;/&gt; class using the specified &lt;see cref=&quot;ChromeDrive ... " />
-            <marker date="1555818023456" expanded="true" signature="5761:6544" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="6554:7238" ph="/// Gets or sets the &lt;see cref=&quot;IFileDetector&quot;/&gt; responsible for detecting ... " />
-            <marker date="1555818023456" expanded="true" signature="7289:7375" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="7385:7490" ph="/// Gets or sets the network condition emulation for Chrome. ... " />
-            <marker date="1555818023456" expanded="true" signature="7547:8206" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="7573:7785" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="7802:8196" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="7851:7975" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="8216:8466" ph="/// Executes a custom Chrome command. ... " />
-            <marker date="1555818023456" expanded="true" signature="8573:8969" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="8620:8744" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="9089:9545" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="9136:9260" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="9635:9850" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="9678:9794" ph="{...}" />
-            <marker date="1555818023456" expanded="true" signature="9951:10141" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/DriverManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1368">
+        <state relative-caret-position="-612">
           <folding>
-            <marker date="1555883234064" expanded="true" signature="6:103" ph="..." />
+            <marker date="1555883234064" expanded="false" signature="6:103" ph="..." />
             <marker date="1555883234064" expanded="true" signature="138:10897" ph="{...}" />
             <marker date="1555883234064" expanded="true" signature="145:207" ph="/// Chrome Driver Manager ... " />
             <marker date="1555883234064" expanded="true" signature="255:10895" ph="{...}" />
@@ -1886,583 +2294,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Utilities.cs">
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/WebElement.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="70" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
-          <folding>
-            <marker date="1555883368817" expanded="false" signature="6:56" ph="..." />
-            <marker date="1555883368817" expanded="true" signature="84:1043" ph="{...}" />
-            <marker date="1555883368817" expanded="true" signature="91:149" ph="/// General Utilities ... " />
-            <marker date="1555883368817" expanded="true" signature="178:1041" ph="{...}" />
-            <marker date="1555883368817" expanded="true" signature="193:293" ph="/// Gets the current platform the machine is running on ... " />
-            <marker date="1555883368817" expanded="true" signature="344:726" ph="{...}" />
-            <marker date="1555883368817" expanded="true" signature="370:716" ph="{...}" />
-            <marker date="1555883368817" expanded="true" signature="511:656" ph="{...}" />
-            <marker date="1555883368817" expanded="true" signature="736:887" ph="///  ... " />
-            <marker date="1555883368817" expanded="true" signature="957:1035" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/IActions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-          <folding>
-            <marker date="1555885801728" expanded="true" signature="61:1430" ph="{...}" />
-            <marker date="1555885801728" expanded="true" signature="68:165" ph="/// Actions that can be invoked in the Browser's client page ... " />
-            <marker date="1555885801728" expanded="true" signature="195:1428" ph="{...}" />
-            <marker date="1555885801728" expanded="true" signature="210:349" ph="/// loads a specified URL into a controlled client page ... " />
-            <marker date="1555885801728" expanded="true" signature="394:475" ph="/// Go back one page in the history. ... " />
-            <marker date="1555885801728" expanded="true" signature="508:592" ph="/// Go forward one page in the history. ... " />
-            <marker date="1555885801728" expanded="true" signature="636:710" ph="///  ... " />
-            <marker date="1555885801728" expanded="true" signature="744:990" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
-            <marker date="1555885801728" expanded="true" signature="1086:1350" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Support/UI/ExpectedConditions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="18" />
-          <folding>
-            <marker date="1555887499668" expanded="true" signature="0:888" ph="/* &lt;copyright file=&quot;ExpectedConditions.cs&quot; company=&quot;WebDriver Committers&quot;&gt; ... */" />
-            <marker date="1555887499668" expanded="false" signature="896:998" ph="..." />
-            <marker date="1555887499668" expanded="true" signature="1047:25154" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="1054:1418" ph="/// Supplies a set of common conditions that can be waited for using &lt;see cref=&quot;WebDriverWait&quot;/&gt;. ... " />
-            <marker date="1555887499668" expanded="true" signature="1747:25152" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="1762:1904" ph="/// Prevents a default instance of the &lt;see cref=&quot;ExpectedConditions&quot;/&gt; class from being created. ... " />
-            <marker date="1555887499668" expanded="true" signature="1941:1961" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="1971:2272" ph="/// An expectation for checking the title of a page. ... " />
-            <marker date="1555887499668" expanded="true" signature="2339:2425" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="2435:2759" ph="/// An expectation for checking that the title of a page contains a case-sensitive substring. ... " />
-            <marker date="1555887499668" expanded="true" signature="2832:2925" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="2935:3250" ph="/// An expectation for the URL of the current page to be a specific URL. ... " />
-            <marker date="1555887499668" expanded="true" signature="3315:3440" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="3450:3783" ph="/// An expectation for the URL of the current page to be a specific URL. ... " />
-            <marker date="1555887499668" expanded="true" signature="3857:3989" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="3999:4348" ph="/// An expectation for the URL of the current page to be a specific URL. ... " />
-            <marker date="1555887499668" expanded="true" signature="4418:4709" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="4459:4698" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="4719:5077" ph="/// An expectation for checking that an element is present on the DOM of a ... " />
-            <marker date="1555887499668" expanded="true" signature="5155:5247" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="5257:5703" ph="/// An expectation for checking that an element is present on the DOM of a page ... " />
-            <marker date="1555887499668" expanded="true" signature="5784:6158" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="5825:6147" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="5867:5989" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="6048:6129" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="6168:6642" ph="/// An expectation for checking that all elements present on the web page that ... " />
-            <marker date="1555887499668" expanded="true" signature="6759:7296" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="6800:7285" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="6834:7147" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="6986:7067" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="7202:7271" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="7306:7763" ph="/// An expectation for checking that all elements present on the web page that ... " />
-            <marker date="1555887499668" expanded="true" signature="7910:8382" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="7951:8371" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="7985:8233" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="8072:8153" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="8288:8357" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="8392:8715" ph="/// An expectation for checking that all elements present on the web page that ... " />
-            <marker date="1555887499668" expanded="true" signature="8830:9216" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="8871:9205" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="8905:9067" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="9122:9191" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="9226:9619" ph="/// An expectation for checking if the given text is present in the specified element. ... " />
-            <marker date="1555887499668" expanded="true" signature="9723:10091" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="9764:10080" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="9798:9941" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="9996:10066" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="10101:10538" ph="/// An expectation for checking if the given text is present in the element that matches the given locator. ... " />
-            <marker date="1555887499668" expanded="true" signature="10640:11071" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="10681:11060" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="10715:10921" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="10976:11046" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="11081:11491" ph="/// An expectation for checking if the given text is present in the specified elements value attribute. ... " />
-            <marker date="1555887499668" expanded="true" signature="11600:12188" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="11641:12177" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="11675:12038" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="11809:11913" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="11938:12020" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="12093:12163" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="12198:12631" ph="/// An expectation for checking if the given text is present in the specified elements value attribute. ... " />
-            <marker date="1555887499668" expanded="true" signature="12731:13382" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="12772:13371" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="12806:13232" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="13003:13107" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="13132:13214" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="13287:13357" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="13392:13761" ph="/// An expectation for checking whether the given frame is available to switch ... " />
-            <marker date="1555887499668" expanded="true" signature="13865:14181" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="13906:14170" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="13940:14042" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="14087:14156" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="14191:14541" ph="/// An expectation for checking whether the given frame is available to switch ... " />
-            <marker date="1555887499668" expanded="true" signature="14636:15020" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="14677:15009" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="14711:14881" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="14926:14995" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="15030:15372" ph="/// An expectation for checking that an element is either invisible or not present on the DOM. ... " />
-            <marker date="1555887499668" expanded="true" signature="15458:16245" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="15499:16234" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="15533:15679" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="15726:15962" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="15765:15911" ph="/* Returns true because the element is not present in DOM. The ... */" />
-            <marker date="1555887499668" expanded="true" signature="16017:16220" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="16056:16169" ph="/* Returns true because stale element reference implies that element ... */" />
-            <marker date="1555887499668" expanded="true" signature="16255:16666" ph="/// An expectation for checking that an element with text is either invisible or not present on the DOM. ... " />
-            <marker date="1555887499668" expanded="true" signature="16766:17763" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="16807:17752" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="16841:17187" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="17033:17114" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="17234:17480" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="17273:17429" ph="/* Returns true because the element with text is not present in DOM. The ... */" />
-            <marker date="1555887499668" expanded="true" signature="17535:17738" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="17574:17687" ph="/* Returns true because stale element reference implies that element ... */" />
-            <marker date="1555887499668" expanded="true" signature="17773:18120" ph="/// An expectation for checking an element is visible and enabled such that you ... " />
-            <marker date="1555887499668" expanded="true" signature="18205:18792" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="18246:18781" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="18357:18643" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="18435:18519" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="18544:18625" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="18698:18767" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="18802:19112" ph="/// An expectation for checking an element is visible and enabled such that you ... " />
-            <marker date="1555887499668" expanded="true" signature="19206:19737" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="19247:19726" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="19281:19588" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="19380:19464" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="19489:19570" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="19643:19712" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="19747:20041" ph="/// Wait until an element is no longer attached to the DOM. ... " />
-            <marker date="1555887499668" expanded="true" signature="20119:20510" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="20160:20499" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="20194:20361" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="20416:20485" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="20520:20803" ph="/// An expectation for checking if the given element is selected. ... " />
-            <marker date="1555887499668" expanded="true" signature="20889:20970" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="20980:21347" ph="/// An expectation for checking if the given element is in correct state. ... " />
-            <marker date="1555887499668" expanded="true" signature="21448:21581" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="21489:21570" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="21591:21958" ph="/// An expectation for checking if the given element is in correct state. ... " />
-            <marker date="1555887499668" expanded="true" signature="22065:22198" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="22106:22187" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="22208:22516" ph="/// An expectation for checking if the given element is selected. ... " />
-            <marker date="1555887499668" expanded="true" signature="22593:22674" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="22684:23076" ph="/// An expectation for checking if the given element is in correct state. ... " />
-            <marker date="1555887499668" expanded="true" signature="23174:23555" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="23215:23544" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="23249:23405" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="23460:23530" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="23565:23698" ph="/// An expectation for checking the AlterIsPresent ... " />
-            <marker date="1555887499668" expanded="true" signature="23762:24069" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="23803:24058" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="23837:23927" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="23975:24044" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="24079:24447" ph="/// An expectation for checking the Alert State ... " />
-            <marker date="1555887499668" expanded="true" signature="24515:24997" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="24556:24986" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="24630:24800" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="24848:24972" ph="{...}" />
-            <marker date="1555887499668" expanded="true" signature="25071:25146" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Support/UI/LoadableComponent{T}.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
-          <folding>
-            <marker date="1555887586915" expanded="true" signature="0:890" ph="/* &lt;copyright file=&quot;LoadableComponent{T}.cs&quot; company=&quot;WebDriver Committers&quot;&gt; ... */" />
-            <marker date="1555887586915" expanded="true" signature="974:5502" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="981:1780" ph="/// Represents any abstraction of something that can be loaded. This may be an entire web page, or ... " />
-            <marker date="1555887586915" expanded="true" signature="1887:5500" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="1902:2034" ph="/// Gets or sets the message for the exception thrown when a component cannot be loaded ... " />
-            <marker date="1555887586915" expanded="true" signature="2084:2138" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="2148:2497" ph="/// Gets a value indicating whether the component is fully loaded. ... " />
-            <marker date="1555887586915" expanded="true" signature="2529:2895" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="2555:2885" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="2628:2724" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="2767:2837" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="2905:3140" ph="/// Ensure that the component is currently loaded. ... " />
-            <marker date="1555887586915" expanded="true" signature="3172:3530" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="3213:3273" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="3290:3350" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="3383:3491" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="3540:3720" ph="/// Ensure that the component is currently loaded. ... " />
-            <marker date="1555887586915" expanded="true" signature="3773:3845" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="3855:4147" ph="/// HandleLoadError gives a subclass the opportunity to handle a &lt;see cref=&quot;WebDriverException&quot;/&gt; that occurred ... " />
-            <marker date="1555887586915" expanded="true" signature="4217:4237" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="4247:4530" ph="/// When this method returns, the component modeled by the subclass should be fully loaded. This ... " />
-            <marker date="1555887586915" expanded="true" signature="4587:4879" ph="/// Determine whether or not the component is loaded. Subclasses are expected to provide the details ... " />
-            <marker date="1555887586915" expanded="true" signature="4945:5225" ph="/// Attempts to load this component, providing an opportunity for the user to handle any errors encountered ... " />
-            <marker date="1555887586915" expanded="true" signature="5255:5494" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="5281:5345" ph="{...}" />
-            <marker date="1555887586915" expanded="true" signature="5386:5455" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Support/UI/LoadableComponentException.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-          <folding>
-            <marker date="1555887499673" expanded="true" signature="0:896" ph="/* &lt;copyright file=&quot;LoadableComponentException.cs&quot; company=&quot;WebDriver Committers&quot;&gt; ... */" />
-            <marker date="1555887499673" expanded="false" signature="904:947" ph="..." />
-            <marker date="1555887499673" expanded="true" signature="996:3166" ph="{...}" />
-            <marker date="1555887499673" expanded="true" signature="1003:1174" ph="/// This exception is thrown by &lt;see cref=&quot;LoadableComponent{T}&quot;/&gt; to indicate that ... " />
-            <marker date="1555887499673" expanded="true" signature="1258:3164" ph="{...}" />
-            <marker date="1555887499673" expanded="true" signature="1273:1403" ph="/// Initializes a new instance of the &lt;see cref=&quot;LoadableComponentException&quot;/&gt; class. ... " />
-            <marker date="1555887499673" expanded="true" signature="1447:1467" ph="{...}" />
-            <marker date="1555887499673" expanded="true" signature="1477:1721" ph="/// Initializes a new instance of the &lt;see cref=&quot;LoadableComponentException&quot;/&gt; class with ... " />
-            <marker date="1555887499673" expanded="true" signature="1807:1827" ph="{...}" />
-            <marker date="1555887499673" expanded="true" signature="1837:2382" ph="/// Initializes a new instance of the &lt;see cref=&quot;LoadableComponentException&quot;/&gt; class with ... " />
-            <marker date="1555887499673" expanded="true" signature="2510:2530" ph="{...}" />
-            <marker date="1555887499673" expanded="true" signature="2540:3009" ph="/// Initializes a new instance of the &lt;see cref=&quot;LoadableComponentException&quot;/&gt; class with serialized data. ... " />
-            <marker date="1555887499673" expanded="true" signature="3138:3158" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-777">
-          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-          <folding>
-            <marker date="1555887618701" expanded="false" signature="6:127" ph="..." />
-            <marker date="1555887618701" expanded="true" signature="162:4949" ph="{...}" />
-            <marker date="1555887618701" expanded="true" signature="169:247" ph="/// Chrome Actions ... " />
-            <marker date="1555887618701" expanded="true" signature="283:4947" ph="{...}" />
-            <marker date="1555887618701" expanded="true" signature="298:389" ph="/// The Remote Web Driver that controls Chrome ... " />
-            <marker date="1555887618701" expanded="true" signature="461:579" ph="/// Public Constructor ... " />
-            <marker date="1555887618701" expanded="true" signature="635:702" ph="{...}" />
-            <marker date="1555887618701" expanded="true" signature="712:820" ph="/// Go back one page in the history. ... " />
-            <marker date="1555887618701" expanded="true" signature="849:916" ph="{...}" />
-            <marker date="1555887618701" expanded="true" signature="926:1037" ph="/// Go forward one page in the history. ... " />
-            <marker date="1555887618701" expanded="true" signature="1069:1139" ph="{...}" />
-            <marker date="1555887618701" expanded="true" signature="1170:1240" ph="{...}" />
-            <marker date="1555887618701" expanded="true" signature="1250:1618" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
-            <marker date="1555887618701" expanded="true" signature="1702:3216" ph="{...}" />
-            <marker date="1555887618701" expanded="true" signature="1758:3206" ph="{...}" />
-            <marker date="1555887618701" expanded="true" signature="3226:3586" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
-            <marker date="1555887618701" expanded="true" signature="3663:4650" ph="{...}" />
-            <marker date="1555887618701" expanded="true" signature="3706:4640" ph="{...}" />
-            <marker date="1555887618701" expanded="true" signature="4660:4827" ph="///  loads a specified URL into a controlled client page ... " />
-            <marker date="1555887618701" expanded="true" signature="4868:4941" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Edge/EdgeDriver.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1308">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <marker date="1555818023873" expanded="false" signature="6:54" ph="..." />
-            <marker date="1555818023873" expanded="true" signature="97:4645" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="104:193" ph="/// Provides a mechanism to write tests against Edge ... " />
-            <marker date="1555818023873" expanded="true" signature="239:4643" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="254:368" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class. ... " />
-            <marker date="1555818023873" expanded="true" signature="434:454" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="464:711" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified options. ... " />
-            <marker date="1555818023873" expanded="true" signature="851:871" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="881:1139" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified driver service. ... " />
-            <marker date="1555818023873" expanded="true" signature="1239:1259" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="1269:1575" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified path ... " />
-            <marker date="1555818023873" expanded="true" signature="1688:1708" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="1718:2141" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified path ... " />
-            <marker date="1555818023873" expanded="true" signature="2288:2308" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="2318:2861" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified path ... " />
-            <marker date="1555818023873" expanded="true" signature="3066:3086" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="3096:3475" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified ... " />
-            <marker date="1555818023873" expanded="true" signature="3609:3629" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="3639:4098" ph="/// Initializes a new instance of the &lt;see cref=&quot;EdgeDriver&quot;/&gt; class using the specified &lt;see cref=&quot;EdgeDriverSer ... " />
-            <marker date="1555818023873" expanded="true" signature="4314:4334" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="4422:4637" ph="{...}" />
-            <marker date="1555818023873" expanded="true" signature="4465:4581" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Resources.resx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1790" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/ISearchContext.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <marker date="1555711176253" expanded="true" signature="75:1159" ph="{...}" />
-            <marker date="1555711176253" expanded="true" signature="82:173" ph="/// Defines the interface used to search for elements. ... " />
-            <marker date="1555711176253" expanded="true" signature="209:1157" ph="{...}" />
-            <marker date="1555711176253" expanded="true" signature="224:607" ph="/// Finds the first &lt;see cref=&quot;IWebElement&quot;/&gt; using the given method. ... " />
-            <marker date="1555711176253" expanded="true" signature="657:1090" ph="/// Finds all &lt;see cref=&quot;IWebElement&quot;&gt;IWebElements&lt;/see&gt; within the current context ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Support/Extensions/WebDriverExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
-          <folding>
-            <marker date="1555887499707" expanded="true" signature="0:889" ph="/* &lt;copyright file=&quot;WebDriverExtensions.cs&quot; company=&quot;WebDriver Committers&quot;&gt; ... */" />
-            <marker date="1555887499707" expanded="false" signature="897:970" ph="..." />
-            <marker date="1555887499707" expanded="true" signature="1027:6071" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="1034:1137" ph="/// Provides extension methods for convenience in using WebDriver. ... " />
-            <marker date="1555887499707" expanded="true" signature="1181:6069" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="1196:1753" ph="/// Gets a &lt;see cref=&quot;Screenshot&quot;/&gt; object representing the image of the page on the screen. ... " />
-            <marker date="1555887499707" expanded="true" signature="1825:3279" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="1953:3215" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="2097:2249" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="2438:2581" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="2897:3064" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="3289:3802" ph="/// Executes JavaScript in the context of the currently selected frame or window ... " />
-            <marker date="1555887499707" expanded="true" signature="3908:3989" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="3999:4775" ph="/// Executes JavaScript in the context of the currently selected frame or window ... " />
-            <marker date="1555887499707" expanded="true" signature="4881:5648" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="5067:5323" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="5165:5309" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="5375:5530" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="5547:5610" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="5754:6063" ph="{...}" />
-            <marker date="1555887499707" expanded="true" signature="5872:5995" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Helpers/IeDriverHelper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <marker date="1555889820486" expanded="true" signature="6:167" ph="..." />
-            <marker date="1555889820486" expanded="true" signature="221:1234" ph="{...}" />
-            <marker date="1555889820486" expanded="true" signature="264:1232" ph="{...}" />
-            <marker date="1555889820486" expanded="true" signature="410:1226" ph="{...}" />
-            <marker date="1555889820486" expanded="true" signature="948:1139" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Helpers/JQueryHelper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="164" column="115" selection-start-line="164" selection-start-column="104" selection-end-line="164" selection-end-column="115" />
-          <folding>
-            <marker date="1555889672585" expanded="true" signature="6:189" ph="..." />
-            <marker date="1555889672585" expanded="true" signature="284:6730" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="323:6728" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="400:1317" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="474:590" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="629:1307" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="824:996" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="1044:1130" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="1158:1237" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="1398:1650" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="1772:1921" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="1998:2156" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="2291:2569" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="2317:2423" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="2466:2559" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="2718:2997" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="2744:2851" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="2894:2987" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="3116:3215" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="3336:3433" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="3561:3680" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="3810:3911" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="4034:4628" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="4190:4390" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="4486:4583" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="4744:4840" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="4959:5657" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="5773:5914" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="6041:6196" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="6321:6441" ph="{...}" />
-            <marker date="1555889672585" expanded="true" signature="6567:6722" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Helpers/SizesHelper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="22" column="48" lean-forward="true" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-          <folding>
-            <marker date="1555889813330" expanded="true" signature="6:209" ph="..." />
-            <marker date="1555889813330" expanded="true" signature="308:1712" ph="{...}" />
-            <marker date="1555889813330" expanded="true" signature="348:1710" ph="{...}" />
-            <marker date="1555889813330" expanded="true" signature="431:603" ph="{...}" />
-            <marker date="1555889813330" expanded="true" signature="680:851" ph="{...}" />
-            <marker date="1555889813330" expanded="true" signature="910:1250" ph="{...}" />
-            <marker date="1555889813330" expanded="true" signature="948:1240" ph="{...}" />
-            <marker date="1555889813330" expanded="true" signature="1342:1613" ph="{...}" />
-            <marker date="1555889813330" expanded="true" signature="1643:1704" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Json/ElementCoords.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="45">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding>
-            <marker date="1555888087853" expanded="true" signature="64:279" ph="{...}" />
-            <marker date="1555888087853" expanded="true" signature="116:277" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Compare/WdseImageComparer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="98" column="60" lean-forward="true" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
-          <folding>
-            <marker date="1555890165309" expanded="true" signature="6:107" ph="..." />
-            <marker date="1555890165309" expanded="true" signature="161:5106" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="168:234" ph="///     Images comparer class ... " />
-            <marker date="1555890165309" expanded="true" signature="276:5104" ph="{...}" />
-            <marker date="1555890165309" expanded="false" signature="291:1198" ph="Privates" />
-            <marker date="1555890165309" expanded="true" signature="407:1178" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="444:1168" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="489:1154" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="571:1136" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="684:842" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="1208:3416" ph="Compare and get image" />
-            <marker date="1555890165309" expanded="true" signature="1247:1529" ph="///     Compares two images and returns an image which show the difference between. ... " />
-            <marker date="1555890165309" expanded="true" signature="1607:1810" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="1820:2130" ph="///     Compares two images and returns an image which show the difference between. ... " />
-            <marker date="1555890165309" expanded="true" signature="2220:2435" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="2445:2727" ph="///     Compares two images and returns an image which show the difference between. ... " />
-            <marker date="1555890165309" expanded="true" signature="2847:3016" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="3146:3396" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="3426:5098" ph="Boolean compare" />
-            <marker date="1555890165309" expanded="true" signature="3459:3719" ph="///     Compares two images. Returns true if images are same. ... " />
-            <marker date="1555890165309" expanded="true" signature="3826:3980" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="3990:4250" ph="///     Compares two images. Returns true if images are same. ... " />
-            <marker date="1555890165309" expanded="true" signature="4315:4503" ph="{...}" />
-            <marker date="1555890165309" expanded="true" signature="4513:4801" ph="///     Compares two images. Returns true if images are same. ... " />
-            <marker date="1555890165309" expanded="true" signature="4878:5078" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/BaseScreenshotDecorator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-39">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <marker date="1555890128633" expanded="true" signature="6:119" ph="..." />
-            <marker date="1555890128633" expanded="true" signature="176:799" ph="{...}" />
-            <marker date="1555890128633" expanded="true" signature="250:797" ph="{...}" />
-            <marker date="1555890128633" expanded="false" signature="265:429" ph="Ctor" />
-            <marker date="1555890128633" expanded="true" signature="350:409" ph="{...}" />
-            <marker date="1555890128633" expanded="false" signature="440:634" ph="Props" />
-            <marker date="1555890128633" expanded="true" signature="463:555" ph="///     Nested strategy, if have. Else is null. ... " />
-            <marker date="1555890128633" expanded="true" signature="645:791" ph="Abstract member" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/CutterDecorator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <marker date="1555890139505" expanded="false" signature="6:119" ph="..." />
-            <marker date="1555890139505" expanded="true" signature="176:1657" ph="{...}" />
-            <marker date="1555890139505" expanded="true" signature="237:1655" ph="{...}" />
-            <marker date="1555890139505" expanded="false" signature="252:346" ph="Private fields" />
-            <marker date="1555890139505" expanded="false" signature="356:487" ph="Ctor" />
-            <marker date="1555890139505" expanded="true" signature="447:467" ph="{...}" />
-            <marker date="1555890139505" expanded="true" signature="497:726" ph="Override" />
-            <marker date="1555890139505" expanded="true" signature="615:706" ph="{...}" />
-            <marker date="1555890139505" expanded="false" signature="736:1191" ph="Public Methods" />
-            <marker date="1555890139505" expanded="true" signature="768:994" ph="///     Sets cutting strategy for specify how and what be cutting from screenshot. ... " />
-            <marker date="1555890139505" expanded="true" signature="1078:1171" ph="{...}" />
-            <marker date="1555890139505" expanded="false" signature="1201:1649" ph="Privates" />
-            <marker date="1555890139505" expanded="true" signature="1296:1629" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/CuttingStrategies/CutElementHeightOnEntireWidthThenCombine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <marker date="1555890151374" expanded="true" signature="6:191" ph="..." />
-            <marker date="1555890151374" expanded="true" signature="266:2034" ph="{...}" />
-            <marker date="1555890151374" expanded="true" signature="345:2032" ph="{...}" />
-            <marker date="1555890151374" expanded="true" signature="406:500" ph="/// ... " />
-            <marker date="1555890151374" expanded="true" signature="563:617" ph="{...}" />
-            <marker date="1555890151374" expanded="true" signature="725:2026" ph="{...}" />
-            <marker date="1555890151374" expanded="true" signature="1099:1832" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/OnlyElementDecorator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <marker date="1555890158831" expanded="false" signature="6:191" ph="..." />
-            <marker date="1555890158831" expanded="true" signature="248:1855" ph="{...}" />
-            <marker date="1555890158831" expanded="true" signature="314:1853" ph="{...}" />
-            <marker date="1555890158831" expanded="false" signature="329:396" ph="Private fields" />
-            <marker date="1555890158831" expanded="false" signature="406:542" ph="Ctor" />
-            <marker date="1555890158831" expanded="true" signature="502:522" ph="{...}" />
-            <marker date="1555890158831" expanded="true" signature="552:803" ph="Override" />
-            <marker date="1555890158831" expanded="true" signature="670:783" ph="{...}" />
-            <marker date="1555890158831" expanded="false" signature="814:1178" ph="Public Methods" />
-            <marker date="1555890158831" expanded="true" signature="846:1037" ph="///     Sets the element whose screenshot is to be made. ... " />
-            <marker date="1555890158831" expanded="true" signature="1091:1158" ph="{...}" />
-            <marker date="1555890158831" expanded="false" signature="1188:1847" ph="Privates" />
-            <marker date="1555890158831" expanded="true" signature="1305:1827" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Decorators/VerticalCombineDecorator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-          <folding>
-            <marker date="1555890182287" expanded="false" signature="6:193" ph="..." />
-            <marker date="1555890182287" expanded="true" signature="250:3776" ph="{...}" />
-            <marker date="1555890182287" expanded="true" signature="257:338" ph="///     Maker of the entire page screenshot. ... " />
-            <marker date="1555890182287" expanded="true" signature="406:3774" ph="{...}" />
-            <marker date="1555890182287" expanded="false" signature="421:507" ph="Private fields" />
-            <marker date="1555890182287" expanded="false" signature="517:657" ph="Ctor" />
-            <marker date="1555890182287" expanded="true" signature="617:637" ph="{...}" />
-            <marker date="1555890182287" expanded="true" signature="667:872" ph="Override" />
-            <marker date="1555890182287" expanded="true" signature="785:852" ph="{...}" />
-            <marker date="1555890182287" expanded="false" signature="882:1314" ph="Public methods" />
-            <marker date="1555890182287" expanded="true" signature="914:1127" ph="///     Sets interval to wait after scrolling the page to take the screenshot. ... " />
-            <marker date="1555890182287" expanded="true" signature="1208:1294" ph="{...}" />
-            <marker date="1555890182287" expanded="false" signature="1324:3768" ph="Privates" />
-            <marker date="1555890182287" expanded="true" signature="1383:1542" ph="{...}" />
-            <marker date="1555890182287" expanded="true" signature="1610:3748" ph="{...}" />
-            <marker date="1555890182287" expanded="true" signature="2403:3738" ph="{...}" />
-            <marker date="1555890182287" expanded="true" signature="2472:2798" ph="{...}" />
-            <marker date="1555890182287" expanded="true" signature="2831:3614" ph="{...}" />
+            <marker date="1555882643399" expanded="false" signature="6:51" ph="..." />
+            <marker date="1555882643399" expanded="true" signature="86:1163" ph="{...}" />
+            <marker date="1555882643399" expanded="true" signature="130:1161" ph="{...}" />
+            <marker date="1555882643399" expanded="true" signature="313:375" ph="{...}" />
+            <marker date="1555882643399" expanded="true" signature="412:464" ph="{...}" />
+            <marker date="1555882643399" expanded="true" signature="507:566" ph="{...}" />
+            <marker date="1555882643399" expanded="true" signature="622:694" ph="{...}" />
+            <marker date="1555882643399" expanded="true" signature="764:840" ph="{...}" />
+            <marker date="1555882643399" expanded="true" signature="925:1001" ph="{...}" />
+            <marker date="1555882643399" expanded="true" signature="1079:1155" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/ExtensionMethods.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
+        <state relative-caret-position="477">
           <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
           <folding>
-            <marker date="1555890201346" expanded="true" signature="6:275" ph="..." />
+            <marker date="1555890201346" expanded="false" signature="6:275" ph="..." />
             <marker date="1555890201346" expanded="true" signature="321:3007" ph="{...}" />
             <marker date="1555890201346" expanded="true" signature="364:3005" ph="{...}" />
             <marker date="1555890201346" expanded="true" signature="379:888" ph="///     Makes a screenshot of the browser and performs additional actions if decorators are used. ... " />
@@ -2477,61 +2333,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Interfaces/ICuttingStrategy.cs">
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/WebDriver/Screenshot.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state relative-caret-position="314">
+          <caret line="108" column="78" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="78" />
           <folding>
-            <marker date="1555890212590" expanded="true" signature="6:66" ph="..." />
-            <marker date="1555890212590" expanded="true" signature="123:278" ph="{...}" />
-            <marker date="1555890212590" expanded="true" signature="163:276" ph="{...}" />
+            <marker date="1555818033773" expanded="false" signature="6:131" ph="..." />
+            <marker date="1555818033773" expanded="true" signature="169:4881" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="176:252" ph="/// File format for saving screenshots. ... " />
+            <marker date="1555818033773" expanded="true" signature="290:849" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="305:397" ph="/// W3C Portable Network Graphics image format. ... " />
+            <marker date="1555818033773" expanded="true" signature="420:514" ph="/// Joint Photgraphic Experts Group image format. ... " />
+            <marker date="1555818033773" expanded="true" signature="538:628" ph="/// Graphics Interchange Format image format. ... " />
+            <marker date="1555818033773" expanded="true" signature="651:738" ph="/// Tagged Image File Format image format. ... " />
+            <marker date="1555818033773" expanded="true" signature="762:831" ph="/// Bitmap image format. ... " />
+            <marker date="1555818033773" expanded="true" signature="855:960" ph="/// Represents an image of the page currently loaded in the browser. ... " />
+            <marker date="1555818033773" expanded="true" signature="1007:4879" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="1110:1332" ph="/// Initializes a new instance of the &lt;see cref=&quot;Screenshot&quot;/&gt; class. ... " />
+            <marker date="1555818033773" expanded="true" signature="1390:1528" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="1538:1653" ph="/// Gets the value of the screenshot image as a Base64-encoded string. ... " />
+            <marker date="1555818033773" expanded="true" signature="1697:1759" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="1769:1878" ph="/// Gets the value of the screenshot image as an array of bytes. ... " />
+            <marker date="1555818033773" expanded="true" signature="1912:1970" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="1980:2245" ph="/// Saves the screenshot to a Portable Network Graphics (PNG) file, overwriting the ... " />
+            <marker date="1555818033773" expanded="true" signature="2293:2374" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="2384:2746" ph="/// Saves the screenshot to a file, overwriting the file if it already exists. ... " />
+            <marker date="1555818033773" expanded="true" signature="2824:3661" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="3181:3651" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="3278:3637" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="3472:3612" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="3671:3948" ph="/// Returns a &lt;see cref=&quot;string&quot;&gt;String&lt;/see&gt; that represents the current &lt;see cref=&quot;object&quot;&gt;Object&lt;/see&gt;. ... " />
+            <marker date="1555818033773" expanded="true" signature="3990:4044" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="4181:4866" ph="{...}" />
+            <marker date="1555818033773" expanded="true" signature="4269:4820" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/Interfaces/IScreenshotStrategy.cs">
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/IActions.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="-204">
+          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
           <folding>
-            <marker date="1555890224975" expanded="true" signature="6:66" ph="..." />
-            <marker date="1555890224975" expanded="true" signature="123:438" ph="{...}" />
-            <marker date="1555890224975" expanded="true" signature="166:436" ph="{...}" />
-            <marker date="1555890224975" expanded="true" signature="181:344" ph="///     Make a screenshot. Create or change. ... " />
+            <marker date="1555891617206" expanded="false" signature="6:55" ph="..." />
+            <marker date="1555891617206" expanded="true" signature="83:1604" ph="{...}" />
+            <marker date="1555891617206" expanded="true" signature="90:187" ph="/// Actions that can be invoked in the Browser's client page ... " />
+            <marker date="1555891617206" expanded="true" signature="217:1602" ph="{...}" />
+            <marker date="1555891617206" expanded="true" signature="232:371" ph="/// loads a specified URL into a controlled client page ... " />
+            <marker date="1555891617206" expanded="true" signature="416:497" ph="/// Go back one page in the history. ... " />
+            <marker date="1555891617206" expanded="true" signature="530:614" ph="/// Go forward one page in the history. ... " />
+            <marker date="1555891617206" expanded="true" signature="658:732" ph="/// Refreshes the client page ... " />
+            <marker date="1555891617206" expanded="true" signature="766:883" ph="/// Captures an image of the client page ... " />
+            <marker date="1555891617206" expanded="true" signature="918:1164" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
+            <marker date="1555891617206" expanded="true" signature="1260:1524" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/ScreenshotSupport/ScreenshotMaker/ScreenshotMaker.cs">
+    <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+        <state relative-caret-position="72">
+          <caret line="59" column="12" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
           <folding>
-            <marker date="1555890255268" expanded="true" signature="6:292" ph="..." />
-            <marker date="1555890255268" expanded="true" signature="395:5582" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="402:697" ph="///     &lt;para&gt;The default core strategy.&lt;/para&gt; ... " />
-            <marker date="1555890255268" expanded="true" signature="752:5580" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="850:1090" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="1100:1764" ph="///     &lt;para&gt;Sets which elements will be hidden from the DOM before taking the screenshot.&lt;/para&gt; ... " />
-            <marker date="1555890255268" expanded="true" signature="1834:1928" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="1938:2157" ph="///     &lt;para&gt;While taking a screenshot, the scrollbars will be hidden.&lt;/para&gt; ... " />
-            <marker date="1555890255268" expanded="true" signature="2220:2311" ph="{...}" />
-            <marker date="1555890255268" expanded="false" signature="2321:2670" ph="Private fields" />
-            <marker date="1555890255268" expanded="false" signature="2680:2716" ph="Override" />
-            <marker date="1555890255268" expanded="true" signature="2726:5574" ph="Privates" />
-            <marker date="1555890255268" expanded="true" signature="2804:2974" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="3022:3954" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="3163:3916" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="3353:3896" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="3510:3870" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="4011:4159" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="4209:4984" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="4262:4948" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="4519:4932" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="4601:4914" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="5037:5405" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="5175:5369" ph="{...}" />
-            <marker date="1555890255268" expanded="true" signature="5452:5554" ph="{...}" />
+            <marker date="1555901620204" expanded="false" signature="6:166" ph="..." />
+            <marker date="1555901620204" expanded="true" signature="201:5793" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="208:286" ph="/// Chrome Actions ... " />
+            <marker date="1555901620204" expanded="true" signature="322:5791" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="337:428" ph="/// The Remote Web Driver that controls Chrome ... " />
+            <marker date="1555901620204" expanded="true" signature="500:618" ph="/// Public Constructor ... " />
+            <marker date="1555901620204" expanded="true" signature="674:741" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="751:859" ph="/// Go back one page in the history. ... " />
+            <marker date="1555901620204" expanded="true" signature="888:955" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="965:1076" ph="/// Go forward one page in the history. ... " />
+            <marker date="1555901620204" expanded="true" signature="1108:1178" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="1209:1279" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="1311:2084" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="2094:2462" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
+            <marker date="1555901620204" expanded="true" signature="2546:4060" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="2602:4050" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="4070:4430" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
+            <marker date="1555901620204" expanded="true" signature="4507:5494" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="4550:5484" ph="{...}" />
+            <marker date="1555901620204" expanded="true" signature="5504:5671" ph="///  loads a specified URL into a controlled client page ... " />
+            <marker date="1555901620204" expanded="true" signature="5712:5785" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 
 namespace Netlenium.Driver
 {
@@ -27,6 +28,12 @@ namespace Netlenium.Driver
         /// Refreshes the client page
         /// </summary>
         void Refresh();
+
+        /// <summary>
+        /// Captures an image of the client page
+        /// </summary>
+        /// <returns></returns>
+        Image Capture();
 
         /// <summary>
         /// Returns a collection of live IWebElement objects from the current client page

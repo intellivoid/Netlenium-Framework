@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using Netlenium.Driver.WebDriver;
 using Netlenium.Driver.WebDriver.Remote;
@@ -46,6 +48,25 @@ namespace Netlenium.Driver.Chrome
         public void Refresh()
         {
             RemoteWebDriver.Navigate().Refresh();
+        }
+
+        /// <summary>
+        /// Captures an image of the Client Page (Stich Rendering Method)
+        /// </summary>
+        /// <returns></returns>
+        public Image Capture()
+        {
+            var scMaker = new ScreenshotSupport.ScreenshotMaker.ScreenshotMaker();
+            scMaker.RemoveScrollBarsWhileShooting();
+            
+            var cutFooterDecorator = new ScreenshotSupport.Decorators.CutterDecorator(scMaker);
+            cutFooterDecorator.SetCuttingStrategy(new ScreenshotSupport.Decorators.CuttingStrategies.CutElementHeightOnEntireWidthThenCombine(By.Id("footer")));
+            
+            var vcd = new ScreenshotSupport.Decorators.VerticalCombineDecorator(cutFooterDecorator);
+            var screenArrBytes = ScreenshotSupport.ExtensionMethods.TakeScreenshot(RemoteWebDriver, vcd);
+            var imageStream = new MemoryStream(screenArrBytes);
+            
+            return Image.FromStream(imageStream);
         }
 
         /// <inheritdoc />

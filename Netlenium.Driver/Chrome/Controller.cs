@@ -106,7 +106,7 @@ namespace Netlenium.Driver.Chrome
             if (Headless)
             {
                 options.Add("headless", string.Empty);
-                options.Add("window-size", "1200x600");
+                options.Add("window-size", "1920x1080");
             }
 
             if (DriverLoggingEnabled == false)
