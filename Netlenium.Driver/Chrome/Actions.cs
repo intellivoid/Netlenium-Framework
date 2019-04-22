@@ -50,6 +50,7 @@ namespace Netlenium.Driver.Chrome
             RemoteWebDriver.Navigate().Refresh();
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Captures an image of the Client Page (Stich Rendering Method)
         /// </summary>

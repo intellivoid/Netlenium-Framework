@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b49503ca-0549-4ca8-bdc3-4f8c6dd5c9ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Netlenium Framework/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Netlenium.Driver/Chrome/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium.Driver/Chrome/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Netlenium.Driver/IActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Netlenium.Driver/IActions.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,30 +29,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="59" column="12" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+            <state relative-caret-position="135">
+              <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
               <folding>
-                <marker date="1555901620204" expanded="false" signature="6:166" ph="..." />
-                <marker date="1555901620204" expanded="true" signature="201:5793" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="208:286" ph="/// Chrome Actions ... " />
-                <marker date="1555901620204" expanded="true" signature="322:5791" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="337:428" ph="/// The Remote Web Driver that controls Chrome ... " />
-                <marker date="1555901620204" expanded="true" signature="500:618" ph="/// Public Constructor ... " />
-                <marker date="1555901620204" expanded="true" signature="674:741" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="751:859" ph="/// Go back one page in the history. ... " />
-                <marker date="1555901620204" expanded="true" signature="888:955" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="965:1076" ph="/// Go forward one page in the history. ... " />
-                <marker date="1555901620204" expanded="true" signature="1108:1178" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="1209:1279" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="1311:2084" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="2094:2462" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
-                <marker date="1555901620204" expanded="true" signature="2546:4060" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="2602:4050" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="4070:4430" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
-                <marker date="1555901620204" expanded="true" signature="4507:5494" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="4550:5484" ph="{...}" />
-                <marker date="1555901620204" expanded="true" signature="5504:5671" ph="///  loads a specified URL into a controlled client page ... " />
-                <marker date="1555901620204" expanded="true" signature="5712:5785" ph="{...}" />
+                <marker date="1555901893092" expanded="false" signature="6:166" ph="..." />
+                <marker date="1555901893092" expanded="true" signature="201:5971" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="208:286" ph="/// Chrome Actions ... " />
+                <marker date="1555901893092" expanded="true" signature="322:5969" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="337:428" ph="/// The Remote Web Driver that controls Chrome ... " />
+                <marker date="1555901893092" expanded="true" signature="500:618" ph="/// Public Constructor ... " />
+                <marker date="1555901893092" expanded="true" signature="674:741" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="751:859" ph="/// Go back one page in the history. ... " />
+                <marker date="1555901893092" expanded="true" signature="888:955" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="965:1076" ph="/// Go forward one page in the history. ... " />
+                <marker date="1555901893092" expanded="true" signature="1108:1178" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="1209:1279" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="1289:1458" ph="///  ... " />
+                <marker date="1555901893092" expanded="true" signature="1489:2262" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="2272:2640" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
+                <marker date="1555901893092" expanded="true" signature="2724:4238" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="2780:4228" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="4248:4608" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
+                <marker date="1555901893092" expanded="true" signature="4685:5672" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="4728:5662" ph="{...}" />
+                <marker date="1555901893092" expanded="true" signature="5682:5849" ph="///  loads a specified URL into a controlled client page ... " />
+                <marker date="1555901893092" expanded="true" signature="5890:5963" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -64,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Netlenium.Driver/IActions.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+            <state relative-caret-position="126">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <marker date="1555891617206" expanded="false" signature="6:55" ph="..." />
                 <marker date="1555891617206" expanded="true" signature="83:1604" ph="{...}" />
@@ -411,12 +409,12 @@
       <workItem from="1555859778686" duration="1622000" />
       <workItem from="1555882933623" duration="363000" />
       <workItem from="1555883313413" duration="6451000" />
-      <workItem from="1555895422992" duration="1267000" />
+      <workItem from="1555895422992" duration="1528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35286000" />
+    <option name="totallyTimeSpent" value="35547000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,6 +427,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="20" width="1346" height="698" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49604222" visible="true" weight="0.29082426" />
       <window_info id="Structure" order="1" sideWeight="0.5039578" side_tool="true" weight="0.27293935" />
@@ -450,7 +449,7 @@
       <window_info anchor="bottom" id="Unit Tests" order="12" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.40530974" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Build" order="15" visible="true" weight="0.32920355" />
+      <window_info anchor="bottom" id="Build" order="15" weight="0.32920355" />
       <window_info anchor="bottom" id="Change Signature" order="16" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2372,8 +2371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/IActions.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+        <state relative-caret-position="126">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
             <marker date="1555891617206" expanded="false" signature="6:55" ph="..." />
             <marker date="1555891617206" expanded="true" signature="83:1604" ph="{...}" />
@@ -2392,30 +2391,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Netlenium.Driver/Chrome/Actions.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="59" column="12" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+        <state relative-caret-position="135">
+          <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
           <folding>
-            <marker date="1555901620204" expanded="false" signature="6:166" ph="..." />
-            <marker date="1555901620204" expanded="true" signature="201:5793" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="208:286" ph="/// Chrome Actions ... " />
-            <marker date="1555901620204" expanded="true" signature="322:5791" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="337:428" ph="/// The Remote Web Driver that controls Chrome ... " />
-            <marker date="1555901620204" expanded="true" signature="500:618" ph="/// Public Constructor ... " />
-            <marker date="1555901620204" expanded="true" signature="674:741" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="751:859" ph="/// Go back one page in the history. ... " />
-            <marker date="1555901620204" expanded="true" signature="888:955" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="965:1076" ph="/// Go forward one page in the history. ... " />
-            <marker date="1555901620204" expanded="true" signature="1108:1178" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="1209:1279" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="1311:2084" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="2094:2462" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
-            <marker date="1555901620204" expanded="true" signature="2546:4060" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="2602:4050" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="4070:4430" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
-            <marker date="1555901620204" expanded="true" signature="4507:5494" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="4550:5484" ph="{...}" />
-            <marker date="1555901620204" expanded="true" signature="5504:5671" ph="///  loads a specified URL into a controlled client page ... " />
-            <marker date="1555901620204" expanded="true" signature="5712:5785" ph="{...}" />
+            <marker date="1555901893092" expanded="false" signature="6:166" ph="..." />
+            <marker date="1555901893092" expanded="true" signature="201:5971" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="208:286" ph="/// Chrome Actions ... " />
+            <marker date="1555901893092" expanded="true" signature="322:5969" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="337:428" ph="/// The Remote Web Driver that controls Chrome ... " />
+            <marker date="1555901893092" expanded="true" signature="500:618" ph="/// Public Constructor ... " />
+            <marker date="1555901893092" expanded="true" signature="674:741" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="751:859" ph="/// Go back one page in the history. ... " />
+            <marker date="1555901893092" expanded="true" signature="888:955" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="965:1076" ph="/// Go forward one page in the history. ... " />
+            <marker date="1555901893092" expanded="true" signature="1108:1178" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="1209:1279" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="1289:1458" ph="///  ... " />
+            <marker date="1555901893092" expanded="true" signature="1489:2262" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="2272:2640" ph="/// Returns a collection of live IWebElement objects from the current client page ... " />
+            <marker date="1555901893092" expanded="true" signature="2724:4238" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="2780:4228" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="4248:4608" ph="/// Returns the first element found which is a live IWebElement object from the current client page ... " />
+            <marker date="1555901893092" expanded="true" signature="4685:5672" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="4728:5662" ph="{...}" />
+            <marker date="1555901893092" expanded="true" signature="5682:5849" ph="///  loads a specified URL into a controlled client page ... " />
+            <marker date="1555901893092" expanded="true" signature="5890:5963" ph="{...}" />
           </folding>
         </state>
       </provider>
