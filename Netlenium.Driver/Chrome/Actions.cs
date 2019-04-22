@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using Netlenium.Driver.WebDriver;
 using Netlenium.Driver.WebDriver.Remote;
+using Netlenium.Driver.ScreenshotSupport;
+using Netlenium.Driver.ScreenshotSupport.Decorators;
+using Netlenium.Driver.ScreenshotSupport.Decorators.CuttingStrategies;
 
 namespace Netlenium.Driver.Chrome
 {
@@ -52,7 +55,7 @@ namespace Netlenium.Driver.Chrome
 
         /// <inheritdoc />
         /// <summary>
-        /// Captures an image of the Client Page (Stich Rendering Method)
+        /// Captures an image of the Client Page (Stitch Rendering Method)
         /// </summary>
         /// <returns></returns>
         public Image Capture()
@@ -60,11 +63,11 @@ namespace Netlenium.Driver.Chrome
             var scMaker = new ScreenshotSupport.ScreenshotMaker.ScreenshotMaker();
             scMaker.RemoveScrollBarsWhileShooting();
             
-            var cutFooterDecorator = new ScreenshotSupport.Decorators.CutterDecorator(scMaker);
-            cutFooterDecorator.SetCuttingStrategy(new ScreenshotSupport.Decorators.CuttingStrategies.CutElementHeightOnEntireWidthThenCombine(By.Id("footer")));
+            var cutFooterDecorator = new CutterDecorator(scMaker);
+            cutFooterDecorator.SetCuttingStrategy(new CutElementHeightOnEntireWidthThenCombine(By.Id("footer")));
             
-            var vcd = new ScreenshotSupport.Decorators.VerticalCombineDecorator(cutFooterDecorator);
-            var screenArrBytes = ScreenshotSupport.ExtensionMethods.TakeScreenshot(RemoteWebDriver, vcd);
+            var vcd = new VerticalCombineDecorator(cutFooterDecorator);
+            var screenArrBytes = RemoteWebDriver.TakeScreenshot(vcd);
             var imageStream = new MemoryStream(screenArrBytes);
             
             return Image.FromStream(imageStream);
@@ -126,7 +129,7 @@ namespace Netlenium.Driver.Chrome
             switch (elementType)
             {
                 case ElementType.Id:
-                    return new WebElement(RemoteWebDriver.FindElement(By.Id(value)));;
+                    return new WebElement(RemoteWebDriver.FindElement(By.Id(value)));
                 
                 case ElementType.Name:
                     return new WebElement(RemoteWebDriver.FindElement(By.Name(value)));
