@@ -5,6 +5,12 @@ written under .NET Framework 4.5.2. Netlenium contains
 libraries to support Web Automation tasks on both
 full Web Browsers and Core-Library based Browsers.
 
+## NOTICE
+
+This repo is no longer used! The code in this repo is
+not finished and it is outdated, please refer to
+`Netlenium` instead!!!
+
 
 ## Difference between Full & Core-Library Web Browsers
 
